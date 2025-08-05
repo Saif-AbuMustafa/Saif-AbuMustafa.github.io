@@ -23,7 +23,8 @@ import {
   Utensils,
   Ticket,
   Smartphone,
-  Wallet
+  Wallet,
+  TrendingUp
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Navigation } from '@/components/layout/Navigation';

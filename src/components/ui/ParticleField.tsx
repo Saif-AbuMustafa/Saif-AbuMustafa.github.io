@@ -66,10 +66,8 @@ export const ParticleField = ({
       setParticles(prevParticles => 
         prevParticles.map(particle => ({
           ...particle,
-          x: particle.x + particle.speedX,
-          y: particle.y + particle.speedY,
-          x: particle.x > dimensions.width ? 0 : particle.x < 0 ? dimensions.width : particle.x,
-          y: particle.y > dimensions.height ? 0 : particle.y < 0 ? dimensions.height : particle.y
+          x: particle.x + particle.speedX > dimensions.width ? 0 : particle.x + particle.speedX < 0 ? dimensions.width : particle.x + particle.speedX,
+          y: particle.y + particle.speedY > dimensions.height ? 0 : particle.y + particle.speedY < 0 ? dimensions.height : particle.y + particle.speedY
         }))
       );
     };
