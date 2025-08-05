@@ -10,7 +10,7 @@ import {
   Github,
   ExternalLink
 } from 'lucide-react';
-import logo from '@/assets/keys-logo.png';
+import logo from '@/assets/keys-logo-transparent.png';
 
 export const Footer = () => {
   const { t } = useTranslation();
