@@ -125,8 +125,6 @@ export default function Services() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <Navigation />
-      
       <PageHeader
         title="Our Comprehensive"
         subtitle="Financial Ecosystem"

@@ -124,8 +124,6 @@ export default function WalletPage() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <Navigation />
-      
       <PageHeader
         title="AI KEYS"
         subtitle="Custodian Wallet"

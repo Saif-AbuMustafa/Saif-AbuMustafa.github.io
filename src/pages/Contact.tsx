@@ -58,17 +58,9 @@ export default function Contact() {
       icon: Mail,
       title: 'Email Support',
       description: 'Get help from our team',
-      contact: 'hello@aikeys.ai',
-      href: 'mailto:hello@aikeys.ai',
+      contact: 'info@aikeys.ai',
+      href: 'mailto:info@aikeys.ai',
       color: 'fintech-blue'
-    },
-    {
-      icon: Phone,
-      title: 'Phone Support',
-      description: 'Speak with our experts',
-      contact: '+971 4 XXX XXXX',
-      href: 'tel:+97114XXXXXX',
-      color: 'fintech-cyan'
     },
     {
       icon: MessageSquare,
@@ -114,29 +106,27 @@ export default function Contact() {
       icon: Headphones,
       title: 'Customer Support',
       description: 'General inquiries and account help',
-      email: 'support@aikeys.ai',
+      email: 'info@aikeys.ai',
       hours: '24/7 Support'
     },
     {
       icon: Users,
       title: 'Business Development',
       description: 'Partnerships and enterprise solutions',
-      email: 'business@aikeys.ai',
+      email: 'info@aikeys.ai',
       hours: 'Mon-Fri 9AM-6PM GST'
     },
     {
       icon: Building,
       title: 'Media & Press',
       description: 'Press inquiries and media kits',
-      email: 'press@aikeys.ai',
+      email: 'info@aikeys.ai',
       hours: 'Mon-Fri 9AM-6PM GST'
     }
   ];
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <Navigation />
-      
       <PageHeader
         title="Get in"
         subtitle="Touch"

@@ -83,7 +83,7 @@ const resources = {
         contact: {
           title: 'Contact Us',
           address: 'Dubai, UAE',
-          email: 'hello@aikeys.ai'
+          email: 'info@aikeys.ai'
         }
       }
     }
@@ -168,7 +168,7 @@ const resources = {
         contact: {
           title: 'اتصل بنا',
           address: 'دبي، الإمارات العربية المتحدة',
-          email: 'hello@aikeys.ai'
+          email: 'info@aikeys.ai'
         }
       }
     }
@@ -253,7 +253,7 @@ const resources = {
         contact: {
           title: 'Nous Contacter',
           address: 'Dubaï, EAU',
-          email: 'hello@aikeys.ai'
+          email: 'info@aikeys.ai'
         }
       }
     }

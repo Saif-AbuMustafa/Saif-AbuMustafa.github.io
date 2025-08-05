@@ -180,8 +180,6 @@ export default function Logistics() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <Navigation />
-      
       <PageHeader
         title="AI KEYS"
         subtitle="Logistics"

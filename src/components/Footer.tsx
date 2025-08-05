@@ -94,10 +94,6 @@ export const Footer = () => {
                   <Mail className="h-4 w-4 text-fintech-blue" />
                   <span>{t('footer.contact.email')}</span>
                 </div>
-                <div className="flex items-center space-x-3 text-sm">
-                  <Phone className="h-4 w-4 text-fintech-blue" />
-                  <span>+971 4 XXX XXXX</span>
-                </div>
               </div>
 
               {/* Social Links */}
