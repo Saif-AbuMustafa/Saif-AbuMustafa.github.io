@@ -77,24 +77,24 @@ export default function About() {
 
   const leadership = [
     {
-      name: 'Ahmed Al-Maktoum',
-      role: 'Chief Executive Officer',
-      bio: 'Former Goldman Sachs executive with 15+ years in fintech and blockchain innovation.'
+      name: 'Ahmed Al Nufie',
+      role: 'Chief Operating Officer',
+      bio: 'Entrepreneur for 3 different companies in oil and gas in KSA with extensive operational expertise.'
     },
     {
-      name: 'Sarah Chen',
+      name: 'Tito Guevara',
+      role: 'R&D Head',
+      bio: 'Consultant in Computer Engineering leading our research and development initiatives.'
+    },
+    {
+      name: 'Naresh Joshi',
       role: 'Chief Technology Officer',
-      bio: 'AI researcher and former Meta engineer, leading our technological advancement initiatives.'
+      bio: 'Software engineer and IT company owner driving our technological innovation.'
     },
     {
-      name: 'Omar Hassan',
-      role: 'Chief Financial Officer',
-      bio: 'Former DIFC banking executive with expertise in regulatory compliance and finance.'
-    },
-    {
-      name: 'Dr. Fatima Al-Zahra',
-      role: 'Chief AI Officer',
-      bio: 'PhD in Machine Learning from MIT, pioneering AI applications in financial services.'
+      name: 'Saifudeen Abu Mustafa',
+      role: 'Chief Operating Officer',
+      bio: 'EE engineer and AI specialist, Co-founder of AI KEYS with deep expertise in artificial intelligence.'
     }
   ];
 

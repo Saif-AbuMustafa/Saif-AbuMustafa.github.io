@@ -33,7 +33,7 @@ import {
   TrendingUp,
   ChevronRight
 } from 'lucide-react';
-import logo from '@/assets/logo.png';
+import logo from '@/assets/keys-logo.png';
 import { cn } from '@/lib/utils';
 
 export const Navigation = () => {
