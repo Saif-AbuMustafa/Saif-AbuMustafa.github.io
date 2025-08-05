@@ -8,6 +8,7 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
+    /* Base Design System - Professional Fintech Theme */
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
 
@@ -17,8 +18,17 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
+    /* Primary Brand Colors - AI KEYS Fintech */
+    --primary: 220 90% 15%;
     --primary-foreground: 210 40% 98%;
+    --primary-glow: 220 100% 70%;
+    --primary-dark: 220 90% 8%;
+
+    /* Fintech Color Palette */
+    --fintech-blue: 220 90% 56%;
+    --fintech-cyan: 190 100% 50%;
+    --fintech-gold: 45 100% 65%;
+    --fintech-purple: 260 100% 65%;
 
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
@@ -34,9 +44,15 @@ All colors MUST be HSL.
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --ring: 220 90% 56%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+    
+    /* Custom Gradients and Effects */
+    --gradient-mesh: radial-gradient(ellipse at top, hsl(var(--fintech-blue) / 0.3), transparent),
+                     radial-gradient(ellipse at bottom right, hsl(var(--fintech-cyan) / 0.2), transparent);
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,6 +72,7 @@ All colors MUST be HSL.
   }
 
   .dark {
+    /* Dark Theme - Professional Fintech */
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
 
@@ -65,8 +82,16 @@ All colors MUST be HSL.
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 220 100% 70%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --primary-glow: 220 100% 80%;
+    --primary-dark: 220 90% 8%;
+
+    /* Dark Fintech Colors */
+    --fintech-blue: 220 100% 70%;
+    --fintech-cyan: 190 100% 60%;
+    --fintech-gold: 45 100% 70%;
+    --fintech-purple: 260 100% 70%;
 
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
@@ -82,7 +107,13 @@ All colors MUST be HSL.
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --ring: 220 100% 70%;
+    
+    /* Dark Theme Effects */
+    --gradient-mesh: radial-gradient(ellipse at top, hsl(var(--fintech-blue) / 0.1), transparent),
+                     radial-gradient(ellipse at bottom right, hsl(var(--fintech-cyan) / 0.08), transparent);
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
