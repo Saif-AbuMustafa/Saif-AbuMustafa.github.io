@@ -132,5 +132,111 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    background-attachment: fixed;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-fintech-blue/50 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-fintech-blue/70;
+  }
+}
+
+@layer utilities {
+  /* Glass morphism effects */
+  .glass-card {
+    @apply backdrop-blur-md bg-white/10 dark:bg-white/5 border border-white/20;
+  }
+
+  .glass-card-strong {
+    @apply backdrop-blur-lg bg-white/20 dark:bg-white/10 border border-white/30;
+  }
+
+  /* Glow effects */
+  .glow-blue {
+    box-shadow: 0 0 40px rgba(59, 130, 246, 0.3);
+  }
+
+  .glow-cyan {
+    box-shadow: 0 0 40px rgba(6, 182, 212, 0.3);
+  }
+
+  .glow-purple {
+    box-shadow: 0 0 40px rgba(147, 51, 234, 0.3);
+  }
+
+  .glow-gold {
+    box-shadow: 0 0 40px rgba(245, 158, 11, 0.3);
+  }
+
+  /* Hover animations */
+  .hover-lift {
+    @apply transition-transform duration-300 hover:scale-105 hover:-translate-y-2;
+  }
+
+  .hover-glow {
+    @apply transition-all duration-300 hover:shadow-2xl;
+  }
+
+  /* Text effects */
+  .text-gradient-blue {
+    @apply bg-gradient-to-r from-fintech-blue to-fintech-cyan bg-clip-text text-transparent;
+  }
+
+  .text-gradient-purple {
+    @apply bg-gradient-to-r from-fintech-purple to-fintech-blue bg-clip-text text-transparent;
+  }
+
+  .text-gradient-gold {
+    @apply bg-gradient-to-r from-fintech-gold to-fintech-blue bg-clip-text text-transparent;
+  }
+
+  /* Micro-interactions */
+  .micro-bounce {
+    @apply transition-transform duration-200 hover:scale-110 active:scale-95;
+  }
+
+  .micro-rotate {
+    @apply transition-transform duration-300 hover:rotate-6;
+  }
+
+  .micro-float {
+    animation: micro-float 3s ease-in-out infinite;
+  }
+
+  @keyframes micro-float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  /* Loading states */
+  .skeleton {
+    @apply animate-pulse bg-muted rounded;
+  }
+
+  .shimmer {
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    animation: shimmer 2s infinite;
+  }
+
+  @keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
   }
 }
