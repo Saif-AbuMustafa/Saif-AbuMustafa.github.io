@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { TokenDisplay } from '@/components/TokenDisplay';
+import { TokenApiService } from '@/services/tokenApi';
 import { 
   Coins, 
   TrendingUp, 
@@ -40,13 +41,38 @@ interface TokenMetrics {
 
 export default function Token() {
   const [tokenMetrics, setTokenMetrics] = useState<TokenMetrics>({
-    price: 0.0234,
-    marketCap: 45600000,
+    price: 0.001344,
+    marketCap: 67000000,
     volume24h: 1250000,
-    holders: 12500,
-    totalSupply: 1000000000,
-    circulatingSupply: 450000000
+    holders: 600,
+    totalSupply: 50000000000, // 50B tokens
+    circulatingSupply: 36000000000 // 72% circulating based on rugcheck data
   });
+
+  useEffect(() => {
+    const fetchRealTokenData = async () => {
+      try {
+        const [priceData, tokenInfo] = await Promise.all([
+          TokenApiService.getTokenPrice(),
+          TokenApiService.getTokenInfo()
+        ]);
+        
+        setTokenMetrics(prev => ({
+          ...prev,
+          price: priceData.price,
+          marketCap: priceData.marketCap,
+          volume24h: priceData.volume24h,
+          holders: tokenInfo.holders,
+          totalSupply: tokenInfo.totalSupply,
+          circulatingSupply: tokenInfo.totalSupply * 0.72 // 72% based on LP locked data
+        }));
+      } catch (error) {
+        console.error('Error fetching real token data:', error);
+      }
+    };
+
+    fetchRealTokenData();
+  }, []);
 
   const tokenomics = [
     {
@@ -148,28 +174,30 @@ export default function Token() {
     {
       name: 'Solana Foundation',
       type: 'Blockchain Infrastructure',
-      description: 'Official partnership for blockchain development',
+      description: 'Built on Solana for fast, secure transactions',
       logo: '◎'
     },
     {
-      name: 'Serum',
-      type: 'DEX Integration',
-      description: 'Primary decentralized exchange listing',
-      logo: '🌀'
-    },
-    {
       name: 'Raydium',
-      type: 'Liquidity Provider',
-      description: 'Automated market maker and liquidity mining',
+      type: 'Primary DEX',
+      description: 'Main liquidity pool with 72% locked LP tokens',
       logo: '🚀'
     },
     {
-      name: 'Phantom',
-      type: 'Wallet Integration',
-      description: 'Native wallet support and integration',
-      logo: '👻'
+      name: 'Jupiter',
+      type: 'Aggregated Trading',
+      description: 'Best price discovery across Solana DEXs',
+      logo: '🪐'
+    },
+    {
+      name: 'FluxBot',
+      type: 'Trading Bot',
+      description: 'Automated trading integration via Telegram',
+      logo: '🤖'
     }
   ];
+
+  const platformLinks = TokenApiService.getPlatformLinks();
 
   const formatNumber = (num: number) => {
     if (num >= 1e9) return (num / 1e9).toFixed(2) + 'B';
@@ -198,13 +226,22 @@ export default function Token() {
         backTo="/services"
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button size="lg" className="bg-gradient-primary text-white h-14 px-8">
+          <Button 
+            size="lg" 
+            className="bg-gradient-primary text-white h-14 px-8"
+            onClick={() => window.open(platformLinks.raydium, '_blank')}
+          >
             <Coins className="mr-2 h-5 w-5" />
-            Buy AI KEYS
+            Buy on Raydium
           </Button>
-          <Button size="lg" variant="outline" className="h-14 px-8">
-            <Download className="mr-2 h-5 w-5" />
-            Whitepaper
+          <Button 
+            size="lg" 
+            variant="outline" 
+            className="h-14 px-8"
+            onClick={() => window.open(platformLinks.jupiter, '_blank')}
+          >
+            <ExternalLink className="mr-2 h-5 w-5" />
+            Trade on Jupiter
           </Button>
         </div>
       </PageHeader>
@@ -492,13 +529,22 @@ export default function Token() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Button size="lg" className="bg-gradient-primary text-white h-14 px-8">
+              <Button 
+                size="lg" 
+                className="bg-gradient-primary text-white h-14 px-8"
+                onClick={() => window.open(platformLinks.raydium, '_blank')}
+              >
                 <Coins className="mr-2 h-5 w-5" />
                 Buy on Raydium
               </Button>
-              <Button size="lg" variant="outline" className="h-14 px-8">
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="h-14 px-8"
+                onClick={() => window.open(platformLinks.geckoterminal, '_blank')}
+              >
                 <ExternalLink className="mr-2 h-5 w-5" />
-                View on CoinGecko
+                View on GeckoTerminal
               </Button>
             </div>
           </div>
@@ -521,13 +567,22 @@ export default function Token() {
               Be part of the future of AI-powered finance. Get AI KEYS tokens and unlock exclusive benefits.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Button size="lg" className="bg-gradient-primary text-white h-14 px-8">
+              <Button 
+                size="lg" 
+                className="bg-gradient-primary text-white h-14 px-8"
+                onClick={() => window.open(platformLinks.jupiter, '_blank')}
+              >
                 <Wallet className="mr-2 h-5 w-5" />
-                Get Started
+                Start Trading
               </Button>
-              <Button size="lg" variant="outline" className="h-14 px-8">
-                <Download className="mr-2 h-5 w-5" />
-                Download Whitepaper
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="h-14 px-8"
+                onClick={() => window.open(platformLinks.solscan, '_blank')}
+              >
+                <ExternalLink className="mr-2 h-5 w-5" />
+                View Contract
               </Button>
             </div>
           </div>
