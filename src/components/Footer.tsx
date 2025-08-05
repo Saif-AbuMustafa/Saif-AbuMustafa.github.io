@@ -37,8 +37,8 @@ export const Footer = () => {
     {
       title: 'Resources',
       links: [
-        { label: 'Documentation', href: '#docs' },
-        { label: 'API Reference', href: '#api' },
+         { label: 'Documentation', href: '/resources/docs' },
+         { label: 'API Reference', href: '/resources/api' },
         { label: t('footer.links.support'), href: '#support' },
         { label: 'Status Page', href: '#status' }
       ]
@@ -46,10 +46,10 @@ export const Footer = () => {
     {
       title: 'Legal',
       links: [
-        { label: t('footer.links.privacy'), href: '#privacy' },
-        { label: t('footer.links.terms'), href: '#terms' },
-        { label: 'Cookie Policy', href: '#cookies' },
-        { label: 'Compliance', href: '#compliance' }
+         { label: t('footer.links.privacy'), href: '/legal/privacy' },
+         { label: t('footer.links.terms'), href: '/legal/terms' },
+         { label: 'Cookie Policy', href: '/legal/cookies' },
+         { label: 'Compliance', href: '/legal/compliance' }
       ]
     }
   ];
@@ -86,10 +86,10 @@ export const Footer = () => {
 
               {/* Contact Info */}
               <div className="space-y-3 mb-6">
-                <div className="flex items-center space-x-3 text-sm">
-                  <MapPin className="h-4 w-4 text-fintech-blue" />
-                  <span>{t('footer.contact.address')}</span>
-                </div>
+                 <div className="flex items-center space-x-3 text-sm">
+                   <MapPin className="h-4 w-4 text-fintech-blue" />
+                   <span>B312 NASER AHMED SAEED MOHAMED ALAWADHI -UAE- License Number 1104443</span>
+                 </div>
                 <div className="flex items-center space-x-3 text-sm">
                   <Mail className="h-4 w-4 text-fintech-blue" />
                   <span>{t('footer.contact.email')}</span>
@@ -149,7 +149,7 @@ export const Footer = () => {
                 <span>All systems operational</span>
               </span>
               <span>•</span>
-              <span>VARA Licensed</span>
+              <span>Waiting for VARA Approval</span>
               <span>•</span>
               <span>Built on Solana</span>
             </div>
