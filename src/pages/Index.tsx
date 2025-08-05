@@ -1,6 +1,4 @@
 import { useEffect } from 'react';
-import { Navigation } from '@/components/layout/Navigation';
-import { Footer } from '@/components/Footer';
 import Home from './Home';
 import '../i18n';
 
@@ -10,13 +8,7 @@ const Index = () => {
     document.documentElement.classList.add('dark');
   }, []);
 
-  return (
-    <div className="min-h-screen bg-background text-foreground">
-      <Navigation />
-      <Home />
-      <Footer />
-    </div>
-  );
+  return <Home />;
 };
 
 export default Index;
