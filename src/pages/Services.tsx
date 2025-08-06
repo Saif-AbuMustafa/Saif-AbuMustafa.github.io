@@ -1,4 +1,5 @@
 import { PageHeader } from '@/components/layout/PageHeader';
+import { CTABackground } from '@/components/ui/CTABackground';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -289,21 +290,21 @@ export default function Services() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 lg:py-32 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-primary opacity-10" />
+      <section className="relative py-20 lg:py-32 overflow-hidden">
+        <CTABackground />
         <div className="relative z-10 container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-6xl font-bold mb-6">
+            <h2 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">
               Ready to Experience the
               <br />
               <span className="bg-gradient-primary bg-clip-text text-transparent">
                 Future of Finance?
               </span>
             </h2>
-            <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
+            <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto animate-slide-up">
               Start with our AI Keys Wallet and unlock access to the entire ecosystem of services.
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center animate-scale-in">
               <Button size="lg" asChild className="bg-gradient-primary text-white h-14 px-8">
                 <Link to="/wallet">
                   <Wallet className="mr-2 h-5 w-5" />

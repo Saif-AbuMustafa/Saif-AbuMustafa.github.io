@@ -1,4 +1,5 @@
 import { PageHeader } from '@/components/layout/PageHeader';
+import { CTABackground } from '@/components/ui/CTABackground';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -307,22 +308,22 @@ export default function About() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 lg:py-32 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-primary opacity-10" />
+      <section className="relative py-20 lg:py-32 overflow-hidden">
+        <CTABackground />
         <div className="relative z-10 container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 animate-fade-in">
               Join Our Mission to Transform
               <br />
               <span className="bg-gradient-primary bg-clip-text text-transparent">
                 Global Finance
               </span>
             </h2>
-            <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
+            <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto animate-slide-up">
               Whether you're looking to partner with us, join our team, or use our services, 
               we'd love to hear from you.
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center animate-scale-in">
               <Button size="lg" asChild className="bg-gradient-primary text-white">
                 <Link to="/careers">
                   <Users className="mr-2 h-5 w-5" />
