@@ -365,6 +365,37 @@ All colors MUST be HSL.
   animation: wave-move 8s ease-in-out infinite;
 }
 
+/* Mouse Following Animations */
+@keyframes mouse-trail {
+  0% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0) rotate(180deg);
+    opacity: 0;
+  }
+}
+
+@keyframes cursor-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+.mouse-trail {
+  animation: mouse-trail 1s ease-out forwards;
+}
+
+.cursor-pulse {
+  animation: cursor-pulse 2s ease-in-out infinite;
+}
+
 /* CTA Button Styles */
 .btn-primary {
   @apply inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-primary to-fintech-blue rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 hover:from-primary/90 hover:to-fintech-blue/90 animate-glow;

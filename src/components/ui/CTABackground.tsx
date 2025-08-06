@@ -1,4 +1,5 @@
 import React from 'react';
+import { MouseFollower } from './MouseFollower';
 
 export const CTABackground = () => {
   return (
@@ -81,6 +82,9 @@ export const CTABackground = () => {
         <div className="absolute inset-0 bg-gradient-to-l from-transparent via-fintech-blue/8 to-transparent -skew-y-2 animate-wave-move" 
              style={{ animationDelay: '2s' }} />
       </div>
+
+      {/* Mouse Follower Interactive Layer */}
+      <MouseFollower />
     </div>
   );
 };
