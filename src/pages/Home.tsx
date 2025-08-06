@@ -73,8 +73,8 @@ export default function Home() {
     },
     {
       icon: CheckCircle,
-      title: 'VARA Compliant',
-      description: 'Full regulatory compliance with UAE Virtual Asset Authority'
+      title: 'DIFC',
+      description: 'Aligned with DIFCs innovation and financial regulations'
     },
     {
       icon: Zap,
@@ -109,7 +109,7 @@ export default function Home() {
                 variant="outline" 
                 className="mb-6 border-fintech-blue text-fintech-blue bg-fintech-blue/5 backdrop-blur-sm animate-fade-in"
               >
-                VARA Compliant • Solana Blockchain • Dubai, UAE
+                Fintech Solutions • Solana Blockchain • Dubai, UAE
               </Badge>
 
               {/* Title */}
