@@ -22,6 +22,8 @@ import TravelDocs from "./pages/Resources/TravelDocs";
 import LogisticsDocs from "./pages/Resources/LogisticsDocs";
 import EducationDocs from "./pages/Resources/EducationDocs";
 import StatusPage from "./pages/Resources/StatusPage";
+import Documentation from "./pages/Resources/Documentation";
+import ApiReference from "./pages/Resources/ApiReference";
 import PressKit from "./pages/PressKit";
 import Privacy from "./pages/Legal/Privacy";
 import Terms from "./pages/Legal/Terms";
@@ -56,6 +58,8 @@ const App = () => {
               <Route path="/contact" element={<Contact />} />
               <Route path="/careers" element={<Careers />} />
               <Route path="/investors" element={<Investors />} />
+              <Route path="/resources/docs" element={<Documentation />} />
+              <Route path="/resources/api" element={<ApiReference />} />
               <Route path="/resources/wallet" element={<WalletDocs />} />
               <Route path="/resources/travel" element={<TravelDocs />} />
               <Route path="/resources/logistics" element={<LogisticsDocs />} />
