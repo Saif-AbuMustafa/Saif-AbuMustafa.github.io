@@ -1,4 +1,6 @@
 import { PageHeader } from '@/components/layout/PageHeader';
+import { CTABackground } from '@/components/ui/CTABackground';
+import { MouseFollower } from '@/components/ui/MouseFollower';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -386,8 +388,9 @@ export default function Travel() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 lg:py-32 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-primary opacity-10" />
+      <section className="relative py-20 lg:py-32 overflow-hidden mouse-follow-container">
+        <CTABackground />
+        <MouseFollower />
         <div className="relative z-10 container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl md:text-6xl font-bold mb-6">
