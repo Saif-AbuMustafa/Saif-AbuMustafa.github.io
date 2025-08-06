@@ -306,6 +306,74 @@ All colors MUST be HSL.
   animation: wave 6s ease-in-out infinite;
 }
 
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px) scale(1);
+  }
+  25% {
+    transform: translateY(-30px) translateX(20px) scale(1.05);
+  }
+  50% {
+    transform: translateY(-20px) translateX(-15px) scale(0.95);
+  }
+  75% {
+    transform: translateY(-40px) translateX(10px) scale(1.02);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+    box-shadow: 0 0 10px hsl(var(--primary) / 0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.6);
+  }
+}
+
+@keyframes mesh-drift {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate(60px, 40px) rotate(360deg);
+  }
+}
+
+@keyframes wave-move {
+  0% {
+    transform: translateX(-100%) skew(12deg);
+  }
+  100% {
+    transform: translateX(100%) skew(12deg);
+  }
+}
+
+/* CTA Animation Classes */
+.animate-float-slow {
+  animation: float-slow 15s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.animate-wave-move {
+  animation: wave-move 8s ease-in-out infinite;
+}
+
+/* CTA Button Styles */
+.btn-primary {
+  @apply inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-primary to-fintech-blue rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 hover:from-primary/90 hover:to-fintech-blue/90 animate-glow;
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-foreground bg-background/80 backdrop-blur-sm border border-border/50 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 hover:bg-background/90;
+}
+
 @layer base {
   * {
     @apply border-border;
