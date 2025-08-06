@@ -17,6 +17,10 @@ import Token from "./pages/Token";
 import Contact from "./pages/Contact";
 import Careers from "./pages/Careers";
 import Investors from "./pages/Investors";
+import Privacy from "./pages/Legal/Privacy";
+import Terms from "./pages/Legal/Terms";
+import Cookies from "./pages/Legal/Cookies";
+import Compliance from "./pages/Legal/Compliance";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -46,6 +50,10 @@ const App = () => {
               <Route path="/contact" element={<Contact />} />
               <Route path="/careers" element={<Careers />} />
               <Route path="/investors" element={<Investors />} />
+              <Route path="/legal/privacy" element={<Privacy />} />
+              <Route path="/legal/terms" element={<Terms />} />
+              <Route path="/legal/cookies" element={<Cookies />} />
+              <Route path="/legal/compliance" element={<Compliance />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
             <Footer />
