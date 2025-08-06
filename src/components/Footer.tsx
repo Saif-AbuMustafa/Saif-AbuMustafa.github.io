@@ -28,10 +28,10 @@ export const Footer = () => {
     {
       title: 'Company',
       links: [
-        { label: 'About Us', href: '#about' },
-        { label: t('footer.links.careers'), href: '#careers' },
-        { label: 'Investors', href: '#investors' },
-        { label: 'Press Kit', href: '#press' }
+        { label: 'About Us', href: '/about' },
+        { label: t('footer.links.careers'), href: '/careers' },
+        { label: 'Investors', href: '/investors' },
+        { label: 'Press Kit', href: '/press-kit' }
       ]
     },
     {
@@ -39,8 +39,8 @@ export const Footer = () => {
       links: [
          { label: 'Documentation', href: '/resources/docs' },
          { label: 'API Reference', href: '/resources/api' },
-        { label: t('footer.links.support'), href: '#support' },
-        { label: 'Status Page', href: '#status' }
+        { label: t('footer.links.support'), href: '/contact' },
+        { label: 'Status Page', href: '/resources/status' }
       ]
     },
     {

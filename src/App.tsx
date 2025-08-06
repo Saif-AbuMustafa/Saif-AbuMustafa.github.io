@@ -17,6 +17,12 @@ import Token from "./pages/Token";
 import Contact from "./pages/Contact";
 import Careers from "./pages/Careers";
 import Investors from "./pages/Investors";
+import WalletDocs from "./pages/Resources/WalletDocs";
+import TravelDocs from "./pages/Resources/TravelDocs";
+import LogisticsDocs from "./pages/Resources/LogisticsDocs";
+import EducationDocs from "./pages/Resources/EducationDocs";
+import StatusPage from "./pages/Resources/StatusPage";
+import PressKit from "./pages/PressKit";
 import Privacy from "./pages/Legal/Privacy";
 import Terms from "./pages/Legal/Terms";
 import Cookies from "./pages/Legal/Cookies";
@@ -50,6 +56,12 @@ const App = () => {
               <Route path="/contact" element={<Contact />} />
               <Route path="/careers" element={<Careers />} />
               <Route path="/investors" element={<Investors />} />
+              <Route path="/resources/wallet" element={<WalletDocs />} />
+              <Route path="/resources/travel" element={<TravelDocs />} />
+              <Route path="/resources/logistics" element={<LogisticsDocs />} />
+              <Route path="/resources/education" element={<EducationDocs />} />
+              <Route path="/resources/status" element={<StatusPage />} />
+              <Route path="/press-kit" element={<PressKit />} />
               <Route path="/legal/privacy" element={<Privacy />} />
               <Route path="/legal/terms" element={<Terms />} />
               <Route path="/legal/cookies" element={<Cookies />} />

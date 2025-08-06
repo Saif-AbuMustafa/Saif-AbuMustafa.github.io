@@ -1,13 +1,15 @@
 import { PageHeader } from '@/components/layout/PageHeader';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
 import { 
   TrendingUp, 
   DollarSign,
   BarChart3,
   Users,
   Globe,
-  Target
+  Target,
+  Calendar
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import heroBackground from '@/assets/hero-bg.jpg';
@@ -47,7 +49,7 @@ export default function Investors() {
       <section className="py-20 lg:py-32">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
               {metrics.map((metric, index) => (
                 <Card key={index} className="text-center p-8 border-border/50 bg-card/50 backdrop-blur-sm">
                   <metric.icon className="h-12 w-12 mx-auto mb-4 text-fintech-blue" />
@@ -58,6 +60,69 @@ export default function Investors() {
                 </Card>
               ))}
             </div>
+
+            {/* Key Investors */}
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                Key <span className="bg-gradient-primary bg-clip-text text-transparent">Investors</span>
+              </h2>
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                Backed by visionary investors who believe in the future of AI-powered fintech
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+              {[
+                {
+                  name: 'Ali Al Yami',
+                  title: 'Lead Investor & Strategic Advisor',
+                  description: 'Visionary entrepreneur with extensive experience in fintech and blockchain innovation',
+                  investment: 'Series A Lead'
+                },
+                {
+                  name: 'Hussein Al Shammari',
+                  title: 'Strategic Investor',
+                  description: 'Technology executive and investor focused on AI and financial services transformation',
+                  investment: 'Strategic Round'
+                },
+                {
+                  name: 'Manei',
+                  title: 'Angel Investor',
+                  description: 'Early-stage investor and advisor specializing in emerging markets and fintech solutions',
+                  investment: 'Seed Round'
+                }
+              ].map((investor, index) => (
+                <Card key={index} className="p-6 border-border/50 bg-card/50 backdrop-blur-sm text-center">
+                  <div className="w-20 h-20 bg-gradient-primary rounded-full mx-auto mb-4 flex items-center justify-center">
+                    <Users className="h-10 w-10 text-white" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2">{investor.name}</h3>
+                  <p className="text-sm text-fintech-blue font-medium mb-3">{investor.title}</p>
+                  <p className="text-sm text-muted-foreground mb-4">{investor.description}</p>
+                  <Badge variant="outline" className="bg-fintech-blue/10 text-fintech-blue border-fintech-blue/20">
+                    {investor.investment}
+                  </Badge>
+                </Card>
+              ))}
+            </div>
+
+            {/* Investment Opportunity */}
+            <Card className="p-8 text-center bg-gradient-to-r from-fintech-blue/10 to-fintech-blue/5 border-fintech-blue/20">
+              <h3 className="text-2xl font-bold mb-4">Ready to Join Our Journey?</h3>
+              <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+                We're looking for strategic investors who share our vision of revolutionizing finance through AI and blockchain technology.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button size="lg" className="bg-gradient-primary text-white">
+                  <TrendingUp className="mr-2 h-5 w-5" />
+                  Request Investment Info
+                </Button>
+                <Button size="lg" variant="outline">
+                  <Calendar className="mr-2 h-5 w-5" />
+                  Schedule Meeting
+                </Button>
+              </div>
+            </Card>
           </div>
         </div>
       </section>

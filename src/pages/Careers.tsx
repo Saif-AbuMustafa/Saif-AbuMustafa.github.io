@@ -19,25 +19,74 @@ import heroBackground from '@/assets/hero-bg.jpg';
 export default function Careers() {
   const positions = [
     {
-      title: 'Senior AI Engineer',
+      title: 'Senior Full-Stack Developer',
       department: 'Engineering',
-      location: 'Dubai, UAE',
+      location: 'Dubai, UAE / Remote',
       type: 'Full-time',
-      description: 'Lead AI development for our fintech platform'
+      description: 'Lead development of our fintech platform with React, Node.js, and blockchain integration'
     },
     {
-      title: 'Blockchain Developer',
+      title: 'DevOps Engineer',
       department: 'Engineering',
       location: 'Remote',
       type: 'Full-time',
-      description: 'Build and maintain Solana smart contracts'
+      description: 'Manage cloud infrastructure, CI/CD pipelines, and ensure 99.9% uptime'
     },
     {
-      title: 'Product Manager',
-      department: 'Product',
+      title: 'Product Designer (UI/UX)',
+      department: 'Design',
       location: 'Dubai, UAE',
       type: 'Full-time',
-      description: 'Drive product strategy and roadmap'
+      description: 'Create intuitive user experiences for our financial products and mobile apps'
+    },
+    {
+      title: 'Business Development Manager',
+      department: 'Business',
+      location: 'Dubai, UAE',
+      type: 'Full-time',
+      description: 'Drive partnerships and expand our market presence in MENA region'
+    },
+    {
+      title: 'Customer Success Manager',
+      department: 'Operations',
+      location: 'Remote',
+      type: 'Full-time',
+      description: 'Ensure customer satisfaction and drive product adoption for enterprise clients'
+    },
+    {
+      title: 'Marketing Specialist',
+      department: 'Marketing',
+      location: 'Dubai, UAE / Remote',
+      type: 'Full-time',
+      description: 'Lead digital marketing campaigns and brand awareness in fintech space'
+    },
+    {
+      title: 'Compliance Officer',
+      department: 'Legal',
+      location: 'Dubai, UAE',
+      type: 'Full-time',
+      description: 'Ensure regulatory compliance across all products and maintain VARA standards'
+    },
+    {
+      title: 'Data Scientist',
+      department: 'AI/ML',
+      location: 'Remote',
+      type: 'Full-time',
+      description: 'Build AI models for fraud detection, risk assessment, and user behavior analysis'
+    },
+    {
+      title: 'QA Engineer',
+      department: 'Engineering',
+      location: 'Remote',
+      type: 'Full-time',
+      description: 'Ensure product quality through automated testing and comprehensive QA processes'
+    },
+    {
+      title: 'Finance Manager',
+      department: 'Finance',
+      location: 'Dubai, UAE',
+      type: 'Full-time',
+      description: 'Manage financial planning, reporting, and funding operations for rapid growth'
     }
   ];
 
