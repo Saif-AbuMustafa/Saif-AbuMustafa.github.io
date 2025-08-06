@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Navigation } from "@/components/layout/Navigation";
 import ScrollToTop from "@/components/ScrollToTop";
+import { AnimatedBackground } from "@/components/ui/AnimatedBackground";
 import { Footer } from "@/components/Footer";
 import Index from "./pages/Index";
 import About from "./pages/About";
@@ -45,7 +46,8 @@ const App = () => {
         <Sonner />
         <BrowserRouter>
           <ScrollToTop />
-          <div className="min-h-screen bg-background text-foreground">
+          <AnimatedBackground />
+          <div className="relative min-h-screen bg-background text-foreground">
             <Navigation />
             <Routes>
               <Route path="/" element={<Index />} />
