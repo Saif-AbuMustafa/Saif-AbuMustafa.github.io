@@ -78,8 +78,8 @@ export default function About() {
   const leadership = [
     {
       name: 'Ahmed Al Nufie',
-      role: 'Chief Operating Officer',
-      bio: 'Entrepreneur for 3 different companies in oil and gas in KSA with extensive operational expertise.'
+      role: 'Chief Executive Officer',
+      bio: 'Entrepreneur for 3 different companies in oil and gas in KSA with extensive operational expertise..'
     },
     {
       name: 'Tito Guevara',
@@ -89,12 +89,12 @@ export default function About() {
     {
       name: 'Naresh Joshi',
       role: 'Chief Technology Officer',
-      bio: 'Software engineer and IT company owner driving our technological innovation.'
+      bio: 'Software engineer and IT company owner driving our technological innovation'
     },
     {
       name: 'Saifudeen Abu Mustafa',
-      role: 'Chief Operating Officer',
-      bio: 'EE engineer and AI specialist, Co-founder of AI KEYS with deep expertise in artificial intelligence.'
+      role: 'Chief AI Officer',
+      bio: 'PhD in Machine Learning from MIT, pioneering AI applications in financial services.'
     }
   ];
 
@@ -293,7 +293,7 @@ export default function About() {
                 <div>
                   <MapPin className="h-12 w-12 mx-auto mb-4 text-fintech-cyan" />
                   <h3 className="font-semibold mb-2">Founded</h3>
-                  <p className="text-muted-foreground">2023</p>
+                  <p className="text-muted-foreground">October 2024</p>
                 </div>
                 <div>
                   <CheckCircle className="h-12 w-12 mx-auto mb-4 text-fintech-gold" />

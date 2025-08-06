@@ -33,7 +33,11 @@ import {
   TrendingUp,
   ChevronRight
 } from 'lucide-react';
+<<<<<<< HEAD
 import logo from '@/assets/keys-logo-transparent.png';
+=======
+import logo from '@/assets/2.png'; //this is the logo in the navigation bar in the website
+>>>>>>> 094439f (Initial commit with local changes)
 import { cn } from '@/lib/utils';
 
 export const Navigation = () => {
