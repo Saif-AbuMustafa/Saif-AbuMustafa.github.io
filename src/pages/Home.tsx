@@ -2,6 +2,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { AnimatedCounter } from '@/components/ui/AnimatedCounter';
+import { CTABackground } from '@/components/ui/CTABackground';
 import { 
   ArrowRight, 
   Play, 
@@ -274,21 +275,21 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 lg:py-32 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-primary opacity-10" />
+      <section className="relative py-20 lg:py-32 overflow-hidden">
+        <CTABackground />
         <div className="relative z-10 container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-6xl font-bold mb-6">
+            <h2 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">
               Ready to Transform Your
               <br />
               <span className="bg-gradient-primary bg-clip-text text-transparent">
                 Financial Future?
               </span>
             </h2>
-            <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
+            <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto animate-slide-up">
               Join thousands of users who trust AI KEYS for their financial, travel, logistics, and educational needs.
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center animate-scale-in">
               <Button size="lg" asChild className="bg-gradient-primary text-white h-14 px-8">
                 <Link to="/wallet">
                   <Wallet className="mr-2 h-5 w-5" />
