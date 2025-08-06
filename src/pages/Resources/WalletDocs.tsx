@@ -1,4 +1,5 @@
 import { PageHeader } from '@/components/layout/PageHeader';
+import { CTABackground } from '@/components/ui/CTABackground';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -114,14 +115,15 @@ export default function WalletDocs() {
       </section>
 
       {/* Getting Started */}
-      <section className="py-20 bg-muted/30">
-        <div className="container mx-auto px-4">
+      <section className="relative py-20 overflow-hidden">
+        <CTABackground />
+        <div className="relative z-10 container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6">Ready to Get Started?</h2>
-            <p className="text-xl text-muted-foreground mb-8">
+            <h2 className="text-3xl font-bold mb-6 animate-fade-in">Ready to Get Started?</h2>
+            <p className="text-xl text-muted-foreground mb-8 animate-slide-up">
               Join thousands of users who trust AI KEYS Wallet for their financial needs
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-scale-in">
               <Button size="lg" className="bg-gradient-primary text-white">
                 <DollarSign className="mr-2 h-5 w-5" />
                 Open Wallet Account

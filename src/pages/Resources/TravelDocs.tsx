@@ -1,4 +1,5 @@
 import { PageHeader } from '@/components/layout/PageHeader';
+import { CTABackground } from '@/components/ui/CTABackground';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -151,9 +152,32 @@ export default function TravelDocs() {
               ))}
             </div>
 
-            <div className="text-center mt-12">
+            <div className="text-center mt-12 animate-scale-in">
               <Button size="lg" className="bg-gradient-primary text-white">
                 Start Your Journey
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="relative py-20 overflow-hidden">
+        <CTABackground />
+        <div className="relative z-10 container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl font-bold mb-6 animate-fade-in">Ready for Your Next Adventure?</h2>
+            <p className="text-xl text-muted-foreground mb-8 animate-slide-up">
+              Discover the world with AI-powered travel planning and seamless payments
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-scale-in">
+              <Button size="lg" className="bg-gradient-primary text-white">
+                <Plane className="mr-2 h-5 w-5" />
+                Start Planning
+              </Button>
+              <Button size="lg" variant="outline">
+                <MapPin className="mr-2 h-5 w-5" />
+                Explore Destinations
               </Button>
             </div>
           </div>
