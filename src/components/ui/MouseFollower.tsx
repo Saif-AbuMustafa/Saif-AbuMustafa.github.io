@@ -9,33 +9,23 @@ export const MouseFollower: React.FC<MouseFollowerProps> = ({ children }) => {
   const [isHovering, setIsHovering] = useState(false);
 
   useEffect(() => {
-    let animationFrameId: number;
-    
     const handleMouseMove = (e: MouseEvent) => {
-      if (animationFrameId) {
-        cancelAnimationFrame(animationFrameId);
+      const container = e.currentTarget as HTMLElement;
+      if (container) {
+        const rect = container.getBoundingClientRect();
+        setMousePosition({
+          x: e.clientX - rect.left,
+          y: e.clientY - rect.top
+        });
       }
-      
-      animationFrameId = requestAnimationFrame(() => {
-        const container = e.currentTarget as HTMLElement;
-        if (container) {
-          const rect = container.getBoundingClientRect();
-          setMousePosition({
-            x: e.clientX - rect.left,
-            y: e.clientY - rect.top
-          });
-        }
-      });
     };
 
     const handleMouseEnter = () => {
       setIsHovering(true);
-      console.log('Mouse entered CTA section'); // Debug log
     };
     
     const handleMouseLeave = () => {
       setIsHovering(false);
-      console.log('Mouse left CTA section'); // Debug log
     };
 
     const container = document.querySelector('.mouse-follow-container');
@@ -73,7 +63,7 @@ export const MouseFollower: React.FC<MouseFollowerProps> = ({ children }) => {
         <div
           key={i}
           className={`absolute w-3 h-3 rounded-full transition-all duration-700 ease-out ${
-            isHovering ? 'opacity-80 animate-spin' : 'opacity-0'
+            isHovering ? 'opacity-80' : 'opacity-0'
           }`}
           style={{
             left: mousePosition.x + Math.cos(i * 60 * Math.PI / 180) * 80,
@@ -81,8 +71,6 @@ export const MouseFollower: React.FC<MouseFollowerProps> = ({ children }) => {
             backgroundColor: i % 2 === 0 ? 'hsl(var(--primary))' : 'hsl(var(--fintech-blue))',
             transform: `scale(${isHovering ? 1 : 0}) rotate(${i * 60}deg)`,
             boxShadow: '0 0 10px currentColor',
-            animationDuration: '3s',
-            animationDelay: `${i * 0.5}s`
           }}
         />
       ))}
