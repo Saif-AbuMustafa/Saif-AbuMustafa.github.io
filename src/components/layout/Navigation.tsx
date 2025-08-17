@@ -201,10 +201,10 @@ export const Navigation = () => {
               asChild
               className="hidden sm:inline-flex bg-gradient-primary hover:opacity-90 text-white border-0"
             >
-              <Link to="/wallet">
+              <a href="https://aikeys-hub.com">
                 <Wallet className="h-4 w-4 mr-2" />
                 Launch Wallet
-              </Link>
+              </a>
             </Button>
 
             {/* Mobile Menu */}
@@ -262,10 +262,10 @@ export const Navigation = () => {
                     asChild
                     className="mt-6 bg-gradient-primary text-white border-0"
                   >
-                    <Link to="/wallet" onClick={() => setIsMobileOpen(false)}>
+                    <a href="https://aikeys-hub.com" onClick={() => setIsMobileOpen(false)}>
                       <Wallet className="h-4 w-4 mr-2" />
                       Launch Wallet
-                    </Link>
+                    </a>
                   </Button>
                 </div>
               </SheetContent>

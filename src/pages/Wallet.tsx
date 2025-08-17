@@ -140,9 +140,11 @@ export default function WalletPage() {
             <Download className="mr-2 h-5 w-5" />
             Download Wallet
           </Button>
-          <Button size="lg" variant="outline" className="h-14 px-8">
-            <QrCode className="mr-2 h-5 w-5" />
-            Web App
+          <Button size="lg" variant="outline" className="h-14 px-8" asChild>
+            <a href="https://aikeys-hub.com">
+              <QrCode className="mr-2 h-5 w-5" />
+              Web App
+            </a>
           </Button>
         </div>
       </PageHeader>
@@ -345,9 +347,11 @@ export default function WalletPage() {
                 <Download className="mr-2 h-5 w-5" />
                 Download Now
               </Button>
-              <Button size="lg" variant="outline" className="h-14 px-8">
-                <QrCode className="mr-2 h-5 w-5" />
-                Try Web App
+              <Button size="lg" variant="outline" className="h-14 px-8" asChild>
+                <a href="https://aikeys-hub.com">
+                  <QrCode className="mr-2 h-5 w-5" />
+                  Try Web App
+                </a>
               </Button>
             </div>
           </div>
