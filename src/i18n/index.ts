@@ -36,7 +36,7 @@ const resources = {
         title: 'Our Comprehensive',
         subtitle: 'Financial Ecosystem',
         wallet: {
-          title: 'AI Keys Custodian Wallet',
+          title: 'Keys Custodian Wallet',
           description: 'Secure crypto and fiat storage with AI-powered automation and seamless transactions'
         },
         travel: {
