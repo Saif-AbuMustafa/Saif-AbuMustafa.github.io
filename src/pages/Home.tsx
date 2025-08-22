@@ -34,28 +34,28 @@ export default function Home() {
   const services = [
     {
       icon: Wallet,
-      title: 'AI Keys Custodian Wallet',
+      title: 'Keys Custodian Wallet',
       description: 'Secure crypto and fiat storage with AI-powered automation',
       href: '/wallet',
       color: 'fintech-blue'
     },
     {
       icon: Plane,
-      title: 'AI Keys Travel Planner',
+      title: 'Keys Travel Planner',
       description: 'AI-based travel planning with integrated payments',
       href: '/travel',
       color: 'fintech-cyan'
     },
     {
       icon: Truck,
-      title: 'AI Keys Logistics',
+      title: 'Keys Logistics',
       description: 'Smart logistics solutions with automated payments',
       href: '/logistics',
       color: 'fintech-purple'
     },
     {
       icon: GraduationCap,
-      title: 'AI Keys Student Services',
+      title: 'Keys Student Services',
       description: 'AI learning assistance and educational support',
       href: '/education',
       color: 'fintech-gold'
