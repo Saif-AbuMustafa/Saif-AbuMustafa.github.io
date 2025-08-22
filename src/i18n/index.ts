@@ -21,7 +21,7 @@ const resources = {
       hero: {
         title: 'Revolutionary AI-Powered',
         subtitle: 'Fintech Solutions',
-        description: 'Empowering the future of finance with AI-driven custodian wallet, travel planning, logistics, and student services. Waiting for VARA approval and built on Solana blockchain.',
+        description: 'Empowering the future of finance with AI-driven custodian wallet, travel planning, logistics, and student services. UAE licensed and built on Solana blockchain.',
         cta: 'Explore Our Ecosystem',
         watchDemo: 'Watch Demo',
         stats: {
@@ -59,7 +59,7 @@ const resources = {
         ai: 'AI-Powered Automation',
         blockchain: 'Solana Blockchain',
         security: 'Enterprise Security',
-        compliance: 'Waiting for VARA Approval'
+        compliance: 'UAE Licensed & Regulated'
       },
       // Token
       token: {
@@ -106,7 +106,7 @@ const resources = {
       hero: {
         title: 'حلول مالية ثورية',
         subtitle: 'مدعومة بالذكاء الاصطناعي',
-        description: 'نمكن مستقبل التمويل بمحفظة الحراسة المدعومة بالذكاء الاصطناعي، وتخطيط السفر، واللوجستيات، وخدمات الطلاب. في انتظار موافقة VARA ومبني على بلوك تشين سولانا.',
+        description: 'نمكن مستقبل التمويل بمحفظة الحراسة المدعومة بالذكاء الاصطناعي، وتخطيط السفر، واللوجستيات، وخدمات الطلاب. مرخص في الإمارات ومبني على بلوك تشين سولانا.',
         cta: 'استكشف نظامنا البيئي',
         watchDemo: 'مشاهدة العرض التوضيحي',
         stats: {
@@ -144,7 +144,7 @@ const resources = {
         ai: 'أتمتة مدعومة بالذكاء الاصطناعي',
         blockchain: 'بلوك تشين سولانا',
         security: 'أمان المؤسسات',
-        compliance: 'في انتظار موافقة VARA'
+        compliance: 'مرخص ومنظم في الإمارات'
       },
       // Token
       token: {
@@ -191,7 +191,7 @@ const resources = {
       hero: {
         title: 'Solutions Fintech',
         subtitle: 'Révolutionnaires IA',
-        description: 'Propulser l\'avenir de la finance avec un portefeuille de garde alimenté par l\'IA, planification de voyage, logistique et services étudiants. En attente d\'approbation VARA et construit sur blockchain Solana.',
+        description: 'Propulser l\'avenir de la finance avec un portefeuille de garde alimenté par l\'IA, planification de voyage, logistique et services étudiants. Licencié aux EAU et construit sur blockchain Solana.',
         cta: 'Explorer Notre Écosystème',
         watchDemo: 'Voir la Démo',
         stats: {
@@ -229,7 +229,7 @@ const resources = {
         ai: 'Automatisation IA',
         blockchain: 'Blockchain Solana',
         security: 'Sécurité Entreprise',
-        compliance: 'En attente d\'approbation VARA'
+        compliance: 'Licencié et Réglementé aux EAU'
       },
       // Token
       token: {

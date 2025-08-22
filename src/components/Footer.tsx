@@ -149,7 +149,7 @@ export const Footer = () => {
                 <span>All systems operational</span>
               </span>
               <span>•</span>
-              <span>Waiting for VARA Approval</span>
+              <span>UAE Licensed & Regulated</span>
               <span>•</span>
               <span>Built on Solana</span>
             </div>

@@ -141,7 +141,7 @@ export default function WalletPage() {
             Download Wallet
           </Button>
           <Button size="lg" variant="outline" className="h-14 px-8" asChild>
-            <a href="https://aikeys-hub.com">
+            <a href="https://keys-pay.com">
               <QrCode className="mr-2 h-5 w-5" />
               Web App
             </a>
@@ -348,7 +348,7 @@ export default function WalletPage() {
                 Download Now
               </Button>
               <Button size="lg" variant="outline" className="h-14 px-8" asChild>
-                <a href="https://aikeys-hub.com">
+                <a href="https://keys-pay.com">
                   <QrCode className="mr-2 h-5 w-5" />
                   Try Web App
                 </a>

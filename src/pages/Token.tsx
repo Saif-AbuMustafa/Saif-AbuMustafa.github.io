@@ -118,7 +118,7 @@ export default function Token() {
     {
       icon: Wallet,
       title: 'Payment Medium',
-      description: 'Use AI KEYS tokens for all platform transactions with reduced fees',
+      description: 'Use KEYS tokens for all platform transactions with reduced fees',
       benefits: ['50% fee discount', 'Priority processing', 'Instant settlements']
     },
     {
@@ -153,7 +153,7 @@ export default function Token() {
       quarter: 'Q2 2024',
       status: 'in-progress',
       title: 'Platform Integration',
-      description: 'Token integration across AI KEYS services',
+      description: 'Token integration across KEYS services',
       milestones: ['Wallet integration', 'Payment processing', 'Staking mechanism']
     },
     {
@@ -219,9 +219,9 @@ export default function Token() {
   return (
     <div className="pt-20">
       <PageHeader
-        title="AI KEYS"
+        title="KEYS"
         subtitle="Token (SPL)"
-        description="The native utility token powering the entire AI KEYS ecosystem. Built on Solana blockchain for fast, secure, and cost-effective transactions with comprehensive utility across all platform services."
+        description="The native utility token powering the entire KEYS ecosystem. Built on Solana blockchain for fast, secure, and cost-effective transactions with comprehensive utility across all platform services."
         badge="Live on Solana • SPL Token • Fully Audited"
         background={heroBackground}
         showBackButton
@@ -264,7 +264,7 @@ export default function Token() {
                 Token <span className="bg-gradient-primary bg-clip-text text-transparent">Metrics</span>
               </h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Real-time metrics and statistics for AI KEYS token
+                Real-time metrics and statistics for KEYS token
               </p>
             </div>
 
@@ -379,7 +379,7 @@ export default function Token() {
                 Token <span className="bg-gradient-primary bg-clip-text text-transparent">Utility</span>
               </h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Multiple use cases and benefits within the AI KEYS ecosystem
+                Multiple use cases and benefits within the KEYS ecosystem
               </p>
             </div>
 
@@ -496,10 +496,10 @@ export default function Token() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              How to <span className="bg-gradient-primary bg-clip-text text-transparent">Buy AI KEYS</span>
+              How to <span className="bg-gradient-primary bg-clip-text text-transparent">Buy KEYS</span>
             </h2>
             <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
-              Simple steps to purchase AI KEYS tokens and join our ecosystem
+              Simple steps to purchase KEYS tokens and join our ecosystem
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
@@ -517,7 +517,7 @@ export default function Token() {
                 {
                   step: '3',
                   title: 'Swap Tokens',
-                  description: 'Exchange SOL for AI KEYS tokens instantly'
+                  description: 'Exchange SOL for KEYS tokens instantly'
                 }
               ].map((step, index) => (
                 <Card key={index} className="p-6 border-border/50 bg-card/50 backdrop-blur-sm">
@@ -560,14 +560,14 @@ export default function Token() {
         <div className="relative z-10 container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">
-              Join the AI KEYS
+              Join the KEYS
               <br />
               <span className="bg-gradient-primary bg-clip-text text-transparent">
                 Revolution
               </span>
             </h2>
             <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto animate-slide-up">
-              Be part of the future of AI-powered finance. Get AI KEYS tokens and unlock exclusive benefits.
+              Be part of the future of AI-powered finance. Get KEYS tokens and unlock exclusive benefits.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center animate-scale-in">
               <Button 

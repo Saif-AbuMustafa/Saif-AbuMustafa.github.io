@@ -122,7 +122,7 @@ export class TokenApiService {
       geckoterminal: 'https://www.geckoterminal.com/solana/pools/B8CJhRxiGeCA2a9sJDu9Y344Ug5DvZ9Rn9aehFu4Y59g',
       raydium: `https://raydium.io/swap/?outputCurrency=${AI_KEYS_TOKEN_ADDRESS}`,
       jupiter: `https://jup.ag/swap/SOL-${AI_KEYS_TOKEN_ADDRESS}`,
-      website: 'https://ai-keys.com',
+      website: 'https://keys-pay.com',
       twitter: 'https://x.com/_Ai_Keys',
       telegram: 'https://t.me/ai_keyscoin',
     };

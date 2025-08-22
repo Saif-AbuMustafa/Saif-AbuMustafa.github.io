@@ -80,9 +80,9 @@ export const TokenDisplay = () => {
     <div className="w-full max-w-6xl mx-auto px-4">
       <div className="text-center mb-8">
         <h2 className="text-3xl font-bold mb-2 bg-gradient-primary bg-clip-text text-transparent">
-          AI KEYS Token (KEYS)
+          KEYS Token (KEYS)
         </h2>
-        <p className="text-muted-foreground">Real-time market data for AI KEYS on Solana blockchain</p>
+        <p className="text-muted-foreground">Real-time market data for KEYS on Solana blockchain</p>
         <div className="flex flex-col items-center gap-2 mt-4">
           <Badge variant="outline" className="border-fintech-blue text-fintech-blue">
             Solana SPL Token
@@ -196,7 +196,7 @@ export const TokenDisplay = () => {
       <div className="mt-8 space-y-6">
         {/* Trading Platforms */}
         <div className="text-center">
-          <h3 className="text-lg font-semibold mb-4">Trade AI KEYS</h3>
+          <h3 className="text-lg font-semibold mb-4">Trade KEYS</h3>
           <div className="flex flex-wrap justify-center gap-3">
             <Button
               size="sm"

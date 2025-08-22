@@ -136,7 +136,7 @@ export default function Services() {
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button size="lg" asChild className="bg-gradient-primary text-white">
-            <a href="https://aikeys-hub.com">
+            <a href="https://keys-pay.com">
               <Wallet className="mr-2 h-5 w-5" />
               Launch Wallet
             </a>
@@ -308,7 +308,7 @@ export default function Services() {
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center animate-scale-in">
               <Button size="lg" asChild className="bg-gradient-primary text-white h-14 px-8">
-                <a href="https://aikeys-hub.com">
+                <a href="https://keys-pay.com">
                   <Wallet className="mr-2 h-5 w-5" />
                   Launch Wallet
                 </a>

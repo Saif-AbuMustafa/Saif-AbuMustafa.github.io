@@ -68,7 +68,7 @@ export const Navigation = () => {
       trigger: true,
       items: [
         { label: 'Overview', href: '/services', icon: Building, desc: 'All our services' },
-        { label: 'AI Keys Wallet', href: '/wallet', icon: Wallet, desc: 'Secure crypto & fiat storage' },
+        { label: 'KEYS Wallet', href: '/wallet', icon: Wallet, desc: 'Secure crypto & fiat storage' },
         { label: 'Travel Planner', href: '/travel', icon: Plane, desc: 'AI-powered travel solutions' },
         { label: 'Logistics', href: '/logistics', icon: Truck, desc: 'Smart logistics automation' },
         { label: 'Student Services', href: '/education', icon: GraduationCap, desc: 'Educational AI assistance' }
@@ -80,7 +80,7 @@ export const Navigation = () => {
       icon: Code 
     },
     { 
-      label: 'AI KEYS Token', 
+      label: 'KEYS Token', 
       href: '/token', 
       icon: Coins 
     },
@@ -201,7 +201,7 @@ export const Navigation = () => {
               asChild
               className="hidden sm:inline-flex bg-gradient-primary hover:opacity-90 text-white border-0"
             >
-              <a href="https://aikeys-hub.com">
+              <a href="https://keys-pay.com">
                 <Wallet className="h-4 w-4 mr-2" />
                 Launch Wallet
               </a>
@@ -262,7 +262,7 @@ export const Navigation = () => {
                     asChild
                     className="mt-6 bg-gradient-primary text-white border-0"
                   >
-                    <a href="https://aikeys-hub.com" onClick={() => setIsMobileOpen(false)}>
+                    <a href="https://keys-pay.com" onClick={() => setIsMobileOpen(false)}>
                       <Wallet className="h-4 w-4 mr-2" />
                       Launch Wallet
                     </a>
