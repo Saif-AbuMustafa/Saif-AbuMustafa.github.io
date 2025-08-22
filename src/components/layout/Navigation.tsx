@@ -34,7 +34,7 @@ import {
   ChevronRight
 } from 'lucide-react';
 
-import logo from '/lovable-uploads/10e0ace0-b146-4fc1-a6ce-f2502ce919d0.png'; //this is the logo in the navigation bar in the website
+import logo from '@/assets/keys-favicon.png';
 
 import { cn } from '@/lib/utils';
 
