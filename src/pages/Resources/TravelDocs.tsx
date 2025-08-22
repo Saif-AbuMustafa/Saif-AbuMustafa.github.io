@@ -1,3 +1,4 @@
+
 import { PageHeader } from '@/components/layout/PageHeader';
 import { CTABackground } from '@/components/ui/CTABackground';
 import { MouseFollower } from '@/components/ui/MouseFollower';
@@ -54,7 +55,7 @@ export default function TravelDocs() {
   return (
     <div className="pt-20">
       <PageHeader
-        title="AI KEYS"
+        title="KEYS"
         subtitle="Travel"
         description="Your AI-powered travel companion. Book flights, hotels, cars, and travel insurance with intelligent recommendations and seamless payment integration."
         badge="Global Coverage • AI-Powered • Instant Booking"
@@ -141,7 +142,7 @@ export default function TravelDocs() {
               {[
                 { step: '1', title: 'Tell Us Your Plans', description: 'Share your destination, dates, and preferences' },
                 { step: '2', title: 'Get AI Recommendations', description: 'Receive personalized travel options and deals' },
-                { step: '3', title: 'Book & Pay Securely', description: 'Complete booking with your AI KEYS wallet' }
+                { step: '3', title: 'Book & Pay Securely', description: 'Complete booking with your Keys wallet' }
               ].map((step, index) => (
                 <div key={index} className="text-center">
                   <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center text-white font-bold text-lg mx-auto mb-4">
