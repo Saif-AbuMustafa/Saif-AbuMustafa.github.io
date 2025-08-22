@@ -1,3 +1,4 @@
+
 import { PageHeader } from '@/components/layout/PageHeader';
 import { CTABackground } from '@/components/ui/CTABackground';
 import { MouseFollower } from '@/components/ui/MouseFollower';
@@ -29,7 +30,7 @@ export default function Services() {
   const services = [
     {
       icon: Wallet,
-      title: 'AI Keys Custodian Wallet',
+      title: 'Keys Custodian Wallet',
       description: 'Secure crypto and fiat storage with AI-powered automation and seamless transactions',
       href: '/wallet',
       color: 'fintech-blue',
@@ -39,7 +40,7 @@ export default function Services() {
     },
     {
       icon: Plane,
-      title: 'AI Keys Travel Planner',
+      title: 'Keys Travel Planner',
       description: 'AI-based travel planning with integrated payments and personalized recommendations',
       href: '/travel',
       color: 'fintech-cyan',
@@ -49,7 +50,7 @@ export default function Services() {
     },
     {
       icon: Truck,
-      title: 'AI Keys Logistics',
+      title: 'Keys Logistics',
       description: 'Smart logistics solutions with automated payments and tracking systems',
       href: '/logistics',
       color: 'fintech-purple',
@@ -59,7 +60,7 @@ export default function Services() {
     },
     {
       icon: GraduationCap,
-      title: 'AI Keys Student Services',
+      title: 'Keys Student Services',
       description: 'AI learning assistance and admission support with integrated financial services',
       href: '/education',
       color: 'fintech-gold',
@@ -304,7 +305,7 @@ export default function Services() {
               </span>
             </h2>
             <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto animate-slide-up">
-              Start with our AI Keys Wallet and unlock access to the entire ecosystem of services.
+              Start with our Keys Wallet and unlock access to the entire ecosystem of services.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center animate-scale-in">
               <Button size="lg" asChild className="bg-gradient-primary text-white h-14 px-8">
