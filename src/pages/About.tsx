@@ -95,8 +95,8 @@ export default function About() {
     },
     {
       name: 'Saifudeen Abu Mustafa',
-      role: 'Chief AI Officer',
-      bio: 'PhD in Machine Learning from MIT, pioneering AI applications in financial services.'
+      role: 'Chief Operations Officer',
+      bio: 'EE and AI Engineer graduated from Brunel University London with 1 year experience in blockchain.'
     }
   ];
 
