@@ -96,7 +96,7 @@ export default function About() {
     {
       name: 'Saifudeen Abu Mustafa',
       role: 'Chief Operations Officer',
-      bio: 'EE and AI Engineer graduated from Brunel University London with 1 year experience in blockchain.'
+      bio: 'Electrical Engineering and AI graduate from Brunel University London, specializing in blockchain technology with operational expertise.'
     }
   ];
 
