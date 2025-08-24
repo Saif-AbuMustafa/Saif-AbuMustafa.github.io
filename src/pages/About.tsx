@@ -81,17 +81,17 @@ export default function About() {
     {
       name: 'Ahmed Al Nufie',
       role: 'Chief Executive Officer',
-      bio: 'Entrepreneur for 3 different companies in oil and gas in KSA with extensive operational expertise..'
+      bio: 'Serial entrepreneur with extensive leadership experience across three successful oil and gas companies in Saudi Arabia, bringing operational excellence to fintech innovation.'
     },
     {
       name: 'Tito Guevara',
       role: 'R&D Head',
-      bio: 'Consultant in Computer Engineering leading our research and development initiatives.'
+      bio: 'Computer Engineering consultant with deep expertise in emerging technologies, leading strategic research and development initiatives across AI and blockchain solutions.'
     },
     {
       name: 'Naresh Joshi',
       role: 'Chief Technology Officer',
-      bio: 'Software engineer and IT company owner driving our technological innovation'
+      bio: 'Seasoned software engineer and IT company founder, driving technological innovation and architecting scalable fintech solutions.'
     },
     {
       name: 'Saifudeen Abu Mustafa',
