@@ -119,8 +119,8 @@ export class TokenApiService {
     return {
       solscan: `https://solscan.io/token/${AI_KEYS_TOKEN_ADDRESS}`,
       rugcheck: `https://rugcheck.xyz/tokens/${AI_KEYS_TOKEN_ADDRESS}`,
-      geckoterminal: 'https://www.geckoterminal.com/solana/pools/B8CJhRxiGeCA2a9sJDu9Y344Ug5DvZ9Rn9aehFu4Y59g',
-      raydium: `https://raydium.io/swap/?outputCurrency=${AI_KEYS_TOKEN_ADDRESS}`,
+      geckoterminal: `https://www.geckoterminal.com/solana/tokens/${AI_KEYS_TOKEN_ADDRESS}`,
+      raydium: `https://raydium.io/swap?inputCurrency=sol&outputCurrency=${AI_KEYS_TOKEN_ADDRESS}`,
       jupiter: `https://jup.ag/swap/SOL-${AI_KEYS_TOKEN_ADDRESS}`,
       website: 'https://keys-pay.com',
       twitter: 'https://x.com/_Ai_Keys',
