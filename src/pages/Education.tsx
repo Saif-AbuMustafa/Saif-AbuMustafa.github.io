@@ -173,8 +173,8 @@ export default function Education() {
   return (
     <div className="pt-20">
       <PageHeader
-        title="AI KEYS"
-        subtitle="Student Services"
+        title="Keys Education Services"
+        subtitle=""
         description="Revolutionary AI-powered educational platform with integrated financial services. From personalized learning to study abroad support, we empower students to achieve their academic and career goals."
         badge="Coming Q4 2024 • AI-Powered • Global Education"
         background={heroBackground}

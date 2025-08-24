@@ -52,8 +52,8 @@ export default function WalletDocs() {
   return (
     <div className="pt-20">
       <PageHeader
-        title="AI KEYS"
-        subtitle="Wallet"
+        title="Keys Pay"
+        subtitle=""
         description="Next-generation digital wallet combining traditional banking with crypto innovation. Seamlessly manage fiat and digital assets in one secure platform."
         badge="Multi-Currency • VARA Compliant • Global Cards"
         background={heroBackground}

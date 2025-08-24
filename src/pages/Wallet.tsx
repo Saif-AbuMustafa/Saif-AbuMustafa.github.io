@@ -127,8 +127,8 @@ export default function WalletPage() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <PageHeader
-        title="AI KEYS"
-        subtitle="Custodian Wallet"
+        title="Keys Pay"
+        subtitle=""
         description="The world's most advanced AI-powered custodian wallet. Secure crypto and fiat storage with intelligent automation, built on Solana blockchain with full VARA compliance."
         badge="Live Now • VARA Compliant • Solana Powered"
         background={heroBackground}

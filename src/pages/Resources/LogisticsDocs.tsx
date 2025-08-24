@@ -63,8 +63,8 @@ export default function LogisticsDocs() {
   return (
     <div className="pt-20">
       <PageHeader
-        title="AI KEYS"
-        subtitle="Logistics"
+        title="Keys Logistics"
+        subtitle=""
         description="Revolutionary logistics platform powered by AI and blockchain technology. Optimize your supply chain with intelligent routing, real-time tracking, and seamless payment integration."
         badge="AI-Powered • Real-time Tracking • Blockchain Verified"
         background={heroBackground}

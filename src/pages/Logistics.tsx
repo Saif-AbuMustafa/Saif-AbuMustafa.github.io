@@ -183,8 +183,8 @@ export default function Logistics() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <PageHeader
-        title="AI KEYS"
-        subtitle="Logistics"
+        title="Keys Logistics"
+        subtitle=""
         description="Revolutionary smart logistics solutions powered by AI and blockchain technology. Optimize your supply chain with automated payments, real-time tracking, and intelligent route optimization."
         badge="Coming Q3 2024 • AI-Powered • Blockchain Secured"
         background={heroBackground}

@@ -55,8 +55,8 @@ export default function TravelDocs() {
   return (
     <div className="pt-20">
       <PageHeader
-        title="KEYS"
-        subtitle="Travel"
+        title="Keys Travel"
+        subtitle=""
         description="Your AI-powered travel companion. Book flights, hotels, cars, and travel insurance with intelligent recommendations and seamless payment integration."
         badge="Global Coverage • AI-Powered • Instant Booking"
         background={heroBackground}

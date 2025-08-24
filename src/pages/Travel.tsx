@@ -161,8 +161,8 @@ export default function Travel() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <PageHeader
-        title="Keys"
-        subtitle="Travel Planner"
+        title="Keys Travel"
+        subtitle=""
         description="Revolutionary AI-powered travel planning with integrated crypto payments. Plan, book, and experience your perfect journey with intelligent automation and seamless financial integration."
         badge="Coming Q2 2024 • AI-Powered • Global Coverage"
         background={heroBackground}

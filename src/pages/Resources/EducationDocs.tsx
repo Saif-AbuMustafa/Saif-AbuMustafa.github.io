@@ -75,8 +75,8 @@ export default function EducationDocs() {
   return (
     <div className="pt-20">
       <PageHeader
-        title="AI KEYS"
-        subtitle="Education"
+        title="Keys Education Services"
+        subtitle=""
         description="Empower your financial future with comprehensive education programs. Learn about blockchain, AI, traditional finance, and emerging technologies from industry experts."
         badge="Expert-Led • Interactive Learning • Certified Programs"
         background={heroBackground}
