@@ -56,24 +56,24 @@ export default function About() {
 
   const milestones = [
     {
-      year: '2023',
-      title: 'Company Founded',
-      description: 'AI KEYS was established in Dubai with a vision to revolutionize fintech through AI'
-    },
-    {
-      year: '2023',
-      title: 'VARA Registration',
-      description: 'Obtained commercial registration and VARA compliance in the UAE'
-    },
-    {
-      year: '2024',
-      title: 'SPL Token Launch',
+      year: 'October 2024',
+      title: 'Token Launch',
       description: 'Launched AI KEYS token on Solana blockchain with successful initial offering'
     },
     {
-      year: '2024',
-      title: 'Multi-Service Platform',
-      description: 'Expanded beyond wallet services to include travel, logistics, and education'
+      year: 'March 2025',
+      title: 'Company Founded in UAE',
+      description: 'AI KEYS was officially established in Dubai with VARA registration and compliance'
+    },
+    {
+      year: 'May 2025',
+      title: 'KEYS Pay & Travel Created',
+      description: 'Developed KEYS Pay payment system and KEYS Travel booking platform'
+    },
+    {
+      year: 'August 2025',
+      title: 'Applications Launched',
+      description: 'Successfully launched KEYS Pay and KEYS Travel applications to the public'
     }
   ];
 
@@ -106,7 +106,7 @@ export default function About() {
         title="About"
         subtitle="AI KEYS"
         description="We're revolutionizing the global financial ecosystem by merging artificial intelligence with secure, accessible, and versatile digital asset management."
-        badge="Dubai, UAE • Since 2023"
+        badge="Dubai, UAE • Since 2025"
         background={heroBackground}
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -295,7 +295,7 @@ export default function About() {
                 <div>
                   <MapPin className="h-12 w-12 mx-auto mb-4 text-fintech-cyan" />
                   <h3 className="font-semibold mb-2">Founded</h3>
-                  <p className="text-muted-foreground">October 2024</p>
+                  <p className="text-muted-foreground">March 2025</p>
                 </div>
                 <div>
                   <CheckCircle className="h-12 w-12 mx-auto mb-4 text-fintech-gold" />
