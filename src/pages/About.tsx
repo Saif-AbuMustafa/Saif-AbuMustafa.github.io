@@ -97,6 +97,16 @@ export default function About() {
       name: 'Saifudeen Abu Mustafa',
       role: 'Chief Operations Officer',
       bio: 'Electrical Engineering and AI graduate from Brunel University London, specializing in blockchain technology with operational expertise.'
+    },
+    {
+      name: 'Mohammed Abdelwahhab',
+      role: 'Chief Legal Officer',
+      bio: 'Distinguished legal expert with PhD in International Law from Egypt, ensuring comprehensive regulatory compliance and legal strategy across global markets.'
+    },
+    {
+      name: 'Qusai',
+      role: 'Chief Financial Officer',
+      bio: 'Accomplished finance executive with over 20 years of experience in financial management and strategic planning, currently pursuing doctoral studies in advanced financial theory.'
     }
   ];
 
