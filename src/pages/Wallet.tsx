@@ -257,20 +257,20 @@ export default function WalletPage() {
                     </div>
                   </div>
                   <Card className="p-8 border-border/50 bg-card/50 backdrop-blur-sm">
-                    <h4 className="text-xl font-semibold mb-6">Security Certifications</h4>
+                    <h4 className="text-xl font-semibold mb-6">Security Roadmap</h4>
                     <div className="grid grid-cols-2 gap-6">
                       {[
-                        { name: 'VARA', desc: 'UAE Compliant' },
-                        { name: 'ISO 27001', desc: 'Security Standard' },
-                        { name: 'SOC 2', desc: 'Type II Certified' },
-                        { name: 'Insurance', desc: 'Up to $1M Coverage' }
-                      ].map((cert, index) => (
+                        { name: 'Q1 2025', desc: 'VARA Application' },
+                        { name: 'Q2 2025', desc: 'ISO 27001 Audit' },
+                        { name: 'Q3 2025', desc: 'SOC 2 Type II' },
+                        { name: 'Q4 2025', desc: 'Insurance Coverage' }
+                      ].map((milestone, index) => (
                         <div key={index} className="text-center">
                           <div className="w-16 h-16 mx-auto mb-3 bg-gradient-primary rounded-full flex items-center justify-center">
                             <Shield className="h-8 w-8 text-white" />
                           </div>
-                          <div className="font-medium text-sm mb-1">{cert.name}</div>
-                          <div className="text-xs text-muted-foreground">{cert.desc}</div>
+                          <div className="font-medium text-sm mb-1">{milestone.name}</div>
+                          <div className="text-xs text-muted-foreground">{milestone.desc}</div>
                         </div>
                       ))}
                     </div>
