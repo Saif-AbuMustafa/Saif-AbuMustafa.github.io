@@ -71,7 +71,7 @@ export default function Investors() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
               {[
                 {
                   name: 'Ali Al Yami',
@@ -83,6 +83,18 @@ export default function Investors() {
                   name: 'Hussein Al Shammari',
                   title: 'Strategic Investor',
                   description: 'Technology executive and investor focused on AI and financial services transformation',
+                  investment: 'Strategic Round'
+                },
+                {
+                  name: 'Suhail abu mustafa',
+                  title: 'Key Investor & Technology Advisor',
+                  description: 'Strategic investor with deep expertise in emerging technologies and digital transformation initiatives',
+                  investment: 'Growth Round'
+                },
+                {
+                  name: 'Mohammed Mesmeh',
+                  title: 'Key Investor & Market Strategist',
+                  description: 'Experienced investor and business strategist focused on scaling innovative fintech solutions in global markets',
                   investment: 'Strategic Round'
                 },
                 {
