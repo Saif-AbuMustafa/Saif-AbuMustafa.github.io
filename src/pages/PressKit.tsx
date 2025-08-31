@@ -83,12 +83,6 @@ export default function PressKit() {
       contact: 'cso@aikeys.ai'
     },
     {
-      name: 'Naresh Joshi',
-      title: 'Chief Technology Officer',
-      bio: 'Seasoned software engineer and IT company founder, driving technological innovation and architecting scalable fintech solutions.',
-      contact: 'cto@aikeys.ai'
-    },
-    {
       name: 'Saifudeen Abu Mustafa',
       title: 'Chief Operations Officer',
       bio: 'Electrical Engineering and AI graduate from Brunel University London, specializing in blockchain technology with operational expertise.',
