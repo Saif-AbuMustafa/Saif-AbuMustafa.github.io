@@ -85,7 +85,7 @@ export default function About() {
     },
     {
       name: 'Tito Guevara',
-      role: 'R&D Head',
+      role: 'Chief Strategic Officer',
       bio: 'Computer Engineering consultant with deep expertise in emerging technologies, leading strategic research and development initiatives across AI and blockchain solutions.'
     },
     {
