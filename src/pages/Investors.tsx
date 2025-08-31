@@ -86,7 +86,7 @@ export default function Investors() {
                   investment: 'Strategic Round'
                 },
                 {
-                  name: 'Suhail abu mustafa',
+                  name: 'Suhail Abu Mustafa',
                   title: 'Key Investor & Technology Advisor',
                   description: 'Strategic investor with deep expertise in emerging technologies and digital transformation initiatives',
                   investment: 'Growth Round'
