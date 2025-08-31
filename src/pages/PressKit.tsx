@@ -71,22 +71,28 @@ export default function PressKit() {
 
   const leadership = [
     {
-      name: '[CEO Name]',
-      title: 'Chief Executive Officer & Co-Founder',
-      bio: 'Visionary leader with 15+ years in fintech and AI innovation',
+      name: 'Ahmed Al Nufie',
+      title: 'Chief Executive Officer',
+      bio: 'Serial entrepreneur with extensive leadership experience across three successful oil and gas companies in Saudi Arabia, bringing operational excellence to fintech innovation.',
       contact: 'ceo@aikeys.ai'
     },
     {
-      name: '[CTO Name]',
-      title: 'Chief Technology Officer & Co-Founder',
-      bio: 'Technical expert specializing in blockchain and artificial intelligence',
+      name: 'Tito Guevara',
+      title: 'Chief Strategic Officer',
+      bio: 'Computer Engineering consultant with deep expertise in emerging technologies, leading strategic research and development initiatives across AI and blockchain solutions.',
+      contact: 'cso@aikeys.ai'
+    },
+    {
+      name: 'Naresh Joshi',
+      title: 'Chief Technology Officer',
+      bio: 'Seasoned software engineer and IT company founder, driving technological innovation and architecting scalable fintech solutions.',
       contact: 'cto@aikeys.ai'
     },
     {
-      name: '[CMO Name]',
-      title: 'Chief Marketing Officer',
-      bio: 'Marketing strategist with deep expertise in financial services',
-      contact: 'cmo@aikeys.ai'
+      name: 'Saifudeen Abu Mustafa',
+      title: 'Chief Operations Officer',
+      bio: 'Electrical Engineering and AI graduate from Brunel University London, specializing in blockchain technology with operational expertise.',
+      contact: 'coo@aikeys.ai'
     }
   ];
 
