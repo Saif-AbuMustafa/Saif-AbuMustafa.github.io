@@ -272,7 +272,7 @@ export default function Services() {
         <BackgroundAnimations variant="subtle" />
         <ModernContainer>
           <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl font-black mb-8 tracking-tight">
+            <h2 className="text-5xl md:text-6xl font-black mb-8 tracking-tight text-ak-text">
               Perfect for <span className="bg-gradient-primary bg-clip-text text-transparent">Every User</span>
             </h2>
             <p className="text-2xl text-ak-muted max-w-4xl mx-auto leading-relaxed">
