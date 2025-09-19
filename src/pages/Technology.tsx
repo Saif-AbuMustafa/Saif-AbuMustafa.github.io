@@ -423,7 +423,7 @@ export default function Technology() {
                     <Shield className="h-10 w-10 text-ak-white" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-2xl font-bold mb-4 text-ak-text">{cert.standard}</h3>
+                    <h3 className="text-2xl font-bold mb-4 text-white">{cert.standard}</h3>
                     <p className="text-ak-muted mb-4 text-lg">{cert.description}</p>
                     <div className="text-ak-blue font-semibold">
                       <strong>Scope:</strong> {cert.scope}
