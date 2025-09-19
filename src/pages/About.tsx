@@ -5,9 +5,11 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { AnimatedCounter } from '@/components/ui/AnimatedCounter';
-import { ModernCard, ModernCardContent } from '@/components/ui/ModernCard';
+import { BackgroundAnimations } from '@/components/ui/BackgroundAnimations';
 import { ModernSection, ModernContainer, ModernGrid } from '@/components/ui/ModernSection';
+import { ModernCard, ModernCardContent } from '@/components/ui/ModernCard';
 import { ModernHero } from '@/components/ui/ModernHero';
+import { InteractiveSection } from '@/components/ui/InteractiveSection';
 import { 
   Users, 
   TrendingUp, 
@@ -24,7 +26,7 @@ import {
   CheckCircle
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import heroBackground from '@/assets/hero-bg.jpg';
+import premiumHeroBg from '@/assets/premium-hero-bg.jpg';
 
 export default function About() {
   const stats = [
@@ -120,8 +122,10 @@ export default function About() {
         subtitle="AI KEYS"
         description="We're revolutionizing the global financial ecosystem by merging artificial intelligence with secure, accessible, and versatile digital asset management."
         badge="Dubai, UAE • Since 2025"
-        background={heroBackground}
+        background={premiumHeroBg}
+        backgroundVariant="gradient"
       >
+        <BackgroundAnimations variant="hero" />
         <div className="flex flex-col sm:flex-row gap-6 justify-center">
           <Button size="xl" variant="premium" asChild className="group">
             <Link to="/careers">

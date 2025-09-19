@@ -1,10 +1,13 @@
 
 import { PageHeader } from '@/components/layout/PageHeader';
 import { CTABackground } from '@/components/ui/CTABackground';
-import { MouseFollower } from '@/components/ui/MouseFollower';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { BackgroundAnimations } from '@/components/ui/BackgroundAnimations';
+import { ModernSection, ModernContainer, ModernGrid } from '@/components/ui/ModernSection';
+import { ModernCard, ModernCardContent } from '@/components/ui/ModernCard';
+import { InteractiveSection } from '@/components/ui/InteractiveSection';
 import { 
   Wallet, 
   Plane, 
@@ -23,7 +26,7 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Navigation } from '@/components/layout/Navigation';
-import heroBackground from '@/assets/hero-bg.jpg';
+import premiumHeroBg from '@/assets/premium-hero-bg.jpg';
 import { cn } from '@/lib/utils';
 
 export default function Services() {
@@ -33,7 +36,7 @@ export default function Services() {
       title: 'Keys Custodian Wallet',
       description: 'Secure crypto and fiat storage with AI-powered automation and seamless transactions',
       href: '/wallet',
-      color: 'fintech-blue',
+      color: 'ak-red',
       features: ['Multi-Chain Support', 'AI Automation', 'DeFi Integration', 'Instant Swaps'],
       comingSoon: false,
       highlight: 'Live Now'
@@ -43,30 +46,30 @@ export default function Services() {
       title: 'Keys Travel Planner',
       description: 'AI-based travel planning with integrated payments and personalized recommendations',
       href: '/travel',
-      color: 'fintech-cyan',
+      color: 'ak-red',
       features: ['AI Trip Planning', 'Integrated Payments', 'Real-time Booking', 'Expense Tracking'],
-      comingSoon: true,
-      highlight: 'Q2 2024'
+      comingSoon: false,
+      highlight: 'Live Now'
     },
     {
       icon: Truck,
       title: 'Keys Logistics',
       description: 'Smart logistics solutions with automated payments and tracking systems',
       href: '/logistics',
-      color: 'fintech-purple',
+      color: 'ak-red',
       features: ['Smart Routing', 'Payment Automation', 'Real-time Tracking', 'Supply Chain AI'],
       comingSoon: true,
-      highlight: 'Q3 2024'
+      highlight: 'Coming Soon'
     },
     {
       icon: GraduationCap,
       title: 'Keys Student Services',
       description: 'AI learning assistance and admission support with integrated financial services',
       href: '/education',
-      color: 'fintech-gold',
+      color: 'ak-red',
       features: ['AI Learning Assistant', 'Admission Support', 'Financial Aid', 'Study Abroad'],
       comingSoon: true,
-      highlight: 'Q4 2024'
+      highlight: 'Coming Soon'
     }
   ];
 
@@ -128,217 +131,204 @@ export default function Services() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <PageHeader
-        title="Our Comprehensive"
-        subtitle="Financial Ecosystem"
-        description="Four interconnected platforms powered by AI to revolutionize how you manage finance, travel, logistics, and education. Built on Solana blockchain with full VARA compliance."
-        badge="Four Core Services • AI-Powered • VARA Compliant"
-        background={heroBackground}
-      >
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button size="lg" asChild className="bg-gradient-primary text-white">
-            <a href="https://keys-pay.com">
-              <Wallet className="mr-2 h-5 w-5" />
-              Launch Wallet
-            </a>
-          </Button>
-          <Button size="lg" variant="outline" asChild>
-            <Link to="/contact">
-              Contact Sales
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
-          </Button>
-        </div>
-      </PageHeader>
+      <InteractiveSection background="gradient" className="py-20">
+        <BackgroundAnimations variant="hero" />
+        <ModernContainer>
+          <div className="text-center max-w-6xl mx-auto py-20">
+            {/* Badge */}
+            <Badge 
+              variant="outline" 
+              className="mb-8 border-ak-red/30 text-ak-red bg-ak-red/5 backdrop-blur-sm animate-fade-in px-6 py-2 text-sm font-medium"
+            >
+              Four Core Services • AI-Powered • VARA Compliant
+            </Badge>
+
+            {/* Title */}
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 animate-slide-up tracking-tight">
+              <span className="text-ak-text">Our Comprehensive</span>
+              <br />
+              <span className="bg-gradient-primary bg-clip-text text-transparent">
+                Financial Ecosystem
+              </span>
+            </h1>
+
+            {/* Description */}
+            <p className="text-xl md:text-2xl text-ak-muted max-w-4xl mx-auto mb-12 animate-fade-in leading-relaxed" style={{ animationDelay: '0.3s' }}>
+              Four interconnected platforms powered by AI to revolutionize how you manage finance, travel, logistics, and education. Built on Solana blockchain with full VARA compliance.
+            </p>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-8 justify-center mb-24 animate-fade-in" style={{ animationDelay: '0.6s' }}>
+              <Button size="xl" variant="premium" asChild>
+                <a href="https://keys-pay.com">
+                  <Wallet className="mr-2 h-5 w-5" />
+                  Launch Wallet
+                </a>
+              </Button>
+              <Button size="xl" variant="glass" asChild>
+                <Link to="/contact">
+                  Contact Sales
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </ModernContainer>
+      </InteractiveSection>
 
       {/* Services Grid */}
-      <section className="py-20 lg:py-32">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
-              {services.map((service, index) => (
-                <Card 
-                  key={index}
-                  className="group hover:shadow-2xl transition-all duration-500 border-border/50 bg-card/50 backdrop-blur-sm hover:scale-[1.02] relative overflow-hidden"
+      <ModernSection padding="xl">
+        <BackgroundAnimations variant="section" />
+        <ModernContainer>
+          <ModernGrid cols={2} gap="xl">
+            {services.map((service, index) => (
+              <ModernCard 
+                key={index}
+                variant="premium" 
+                hover="lift"
+                className="group relative overflow-hidden"
+              >
+                {/* Status Badge */}
+                <Badge 
+                  variant={service.comingSoon ? "secondary" : "default"}
+                  className={`absolute top-6 right-6 z-10 ${
+                    service.comingSoon 
+                      ? 'bg-ak-beige-300/50 text-ak-muted border-ak-beige-300' 
+                      : 'bg-green-500/20 text-green-600 border-green-500/30'
+                  }`}
                 >
-                  {/* Status Badge */}
-                  <Badge 
-                    variant={service.comingSoon ? "secondary" : "default"}
-                    className={`absolute top-6 right-6 z-10 ${
-                      service.comingSoon 
-                        ? 'bg-fintech-gold/20 text-fintech-gold border-fintech-gold/30' 
-                        : 'bg-green-500/20 text-green-500 border-green-500/30'
-                    }`}
-                  >
-                    {service.highlight}
-                  </Badge>
+                  {service.highlight}
+                </Badge>
 
-                  <CardHeader className="pb-4">
-                    <div className="flex items-start space-x-4 mb-4">
-                      <div className={cn(
-                        "p-4 rounded-xl transition-colors",
-                        service.color === 'fintech-blue' && 'bg-fintech-blue/10 group-hover:bg-fintech-blue/20',
-                        service.color === 'fintech-cyan' && 'bg-fintech-cyan/10 group-hover:bg-fintech-cyan/20',
-                        service.color === 'fintech-purple' && 'bg-fintech-purple/10 group-hover:bg-fintech-purple/20',
-                        service.color === 'fintech-gold' && 'bg-fintech-gold/10 group-hover:bg-fintech-gold/20'
-                      )}>
-                        <service.icon className={cn(
-                          "h-10 w-10 group-hover:scale-110 transition-transform",
-                          service.color === 'fintech-blue' && 'text-fintech-blue',
-                          service.color === 'fintech-cyan' && 'text-fintech-cyan',
-                          service.color === 'fintech-purple' && 'text-fintech-purple',
-                          service.color === 'fintech-gold' && 'text-fintech-gold'
-                        )} />
-                      </div>
-                      <div className="flex-1">
-                        <CardTitle className="text-2xl mb-3">{service.title}</CardTitle>
-                        <p className="text-muted-foreground">{service.description}</p>
-                      </div>
+                <ModernCardContent className="p-10">
+                  <div className="flex items-start space-x-6 mb-8">
+                    <div className="p-4 rounded-xl bg-ak-red/10 group-hover:bg-ak-red/20 transition-colors">
+                      <service.icon className="h-10 w-10 text-ak-red group-hover:scale-110 transition-transform" />
                     </div>
-                  </CardHeader>
+                    <div className="flex-1">
+                      <h3 className="text-2xl font-bold mb-4 text-ak-text">{service.title}</h3>
+                      <p className="text-ak-muted text-lg leading-relaxed">{service.description}</p>
+                    </div>
+                  </div>
+                  
+                  {/* Features */}
+                  <div className="grid grid-cols-2 gap-4 mb-8">
+                    {service.features.map((feature, idx) => (
+                      <div key={idx} className="flex items-center space-x-3">
+                        <div className="w-2 h-2 rounded-full bg-ak-red" />
+                        <span className="text-ak-muted font-medium">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
 
-                  <CardContent className="pt-0">
-                    {/* Features */}
-                    <div className="grid grid-cols-2 gap-3 mb-6">
-                      {service.features.map((feature, idx) => (
-                        <div key={idx} className="flex items-center space-x-2 text-sm">
-                    <div className={cn(
-                      "w-2 h-2 rounded-full",
-                      service.color === 'fintech-blue' && 'bg-fintech-blue',
-                      service.color === 'fintech-cyan' && 'bg-fintech-cyan',
-                      service.color === 'fintech-purple' && 'bg-fintech-purple',
-                      service.color === 'fintech-gold' && 'bg-fintech-gold'
-                    )} />
-                          <span className="text-muted-foreground">{feature}</span>
+                  {/* Action Button */}
+                  <Button 
+                    asChild
+                    variant={service.comingSoon ? "outline" : "premium"}
+                    className="w-full group/btn"
+                    disabled={service.comingSoon}
+                  >
+                    <Link to={service.href}>
+                      {service.comingSoon ? 'Coming Soon' : 'Explore Service'}
+                      {!service.comingSoon && (
+                        <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
+                      )}
+                    </Link>
+                  </Button>
+                </ModernCardContent>
+              </ModernCard>
+            ))}
+          </ModernGrid>
+        </ModernContainer>
+      </ModernSection>
+
+      {/* Platform Integrations */}
+      <InteractiveSection background="mesh" className="py-20 lg:py-32">
+        <BackgroundAnimations variant="section" />
+        <ModernContainer>
+          <div className="text-center mb-20">
+            <h2 className="text-5xl md:text-6xl font-black mb-8 tracking-tight">
+              Platform <span className="bg-gradient-primary bg-clip-text text-transparent">Integrations</span>
+            </h2>
+            <p className="text-2xl text-ak-muted max-w-4xl mx-auto leading-relaxed">
+              Powerful features that work seamlessly across all our services
+            </p>
+          </div>
+
+          <ModernGrid cols={3} gap="lg">
+            {integrations.map((integration, index) => (
+              <ModernCard key={index} variant="glass" hover="lift" className="text-center p-8 group">
+                <integration.icon className="h-16 w-16 mx-auto mb-8 text-ak-red group-hover:scale-110 transition-transform" />
+                <h3 className="font-bold mb-4 text-xl text-ak-text">{integration.title}</h3>
+                <p className="text-ak-muted leading-relaxed">{integration.description}</p>
+              </ModernCard>
+            ))}
+          </ModernGrid>
+        </ModernContainer>
+      </InteractiveSection>
+
+      {/* Use Cases */}
+      <ModernSection padding="xl">
+        <BackgroundAnimations variant="subtle" />
+        <ModernContainer>
+          <div className="text-center mb-20">
+            <h2 className="text-5xl md:text-6xl font-black mb-8 tracking-tight">
+              Perfect for <span className="bg-gradient-primary bg-clip-text text-transparent">Every User</span>
+            </h2>
+            <p className="text-2xl text-ak-muted max-w-4xl mx-auto leading-relaxed">
+              Tailored solutions for different user types and needs
+            </p>
+          </div>
+
+          <ModernGrid cols={2} gap="xl">
+            {useCases.map((useCase, index) => (
+              <ModernCard key={index} variant="premium" hover="lift" className="p-10 group">
+                <div className="flex items-start space-x-6">
+                  <div className="p-4 rounded-xl bg-ak-red/10 group-hover:bg-ak-red/20 transition-colors">
+                    <Users className="h-10 w-10 text-ak-red" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-2xl font-bold mb-4 text-ak-text">{useCase.title}</h3>
+                    <p className="text-ak-muted mb-6 text-lg leading-relaxed">{useCase.description}</p>
+                    <div className="grid grid-cols-2 gap-3">
+                      {useCase.features.map((feature, idx) => (
+                        <div key={idx} className="flex items-center space-x-3">
+                          <div className="w-2 h-2 rounded-full bg-ak-red" />
+                          <span className="text-ak-muted font-medium">{feature}</span>
                         </div>
                       ))}
                     </div>
-
-                    {/* Action Button */}
-                    <Button 
-                      asChild
-                      variant={service.comingSoon ? "outline" : "default"}
-                      className={`w-full group/btn ${
-                        service.comingSoon 
-                          ? 'border-border hover:bg-accent/50' 
-                          : 'bg-gradient-primary hover:opacity-90 text-white border-0'
-                      }`}
-                      disabled={service.comingSoon}
-                    >
-                      <Link to={service.href}>
-                        {service.comingSoon ? 'Coming Soon' : 'Explore Service'}
-                        {!service.comingSoon && (
-                          <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
-                        )}
-                      </Link>
-                    </Button>
-                  </CardContent>
-
-                  {/* Hover Effect */}
-                  <div className={cn(
-                    "absolute inset-0 bg-gradient-to-br to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none",
-                    service.color === 'fintech-blue' && 'from-fintech-blue/5',
-                    service.color === 'fintech-cyan' && 'from-fintech-cyan/5',
-                    service.color === 'fintech-purple' && 'from-fintech-purple/5',
-                    service.color === 'fintech-gold' && 'from-fintech-gold/5'
-                  )} />
-                </Card>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Platform Integrations */}
-      <section className="py-20 lg:py-32 bg-accent/5">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                Platform <span className="bg-gradient-primary bg-clip-text text-transparent">Integrations</span>
-              </h2>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Powerful features that work seamlessly across all our services
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {integrations.map((integration, index) => (
-                <Card key={index} className="text-center p-8 border-border/50 bg-card/30 backdrop-blur-sm group hover:shadow-lg transition-all duration-300">
-                  <integration.icon className="h-12 w-12 mx-auto mb-6 text-fintech-blue group-hover:scale-110 transition-transform" />
-                  <h3 className="font-semibold mb-3 text-lg">{integration.title}</h3>
-                  <p className="text-muted-foreground">{integration.description}</p>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Use Cases */}
-      <section className="py-20 lg:py-32">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                Perfect for <span className="bg-gradient-primary bg-clip-text text-transparent">Every User</span>
-              </h2>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Tailored solutions for different user types and needs
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {useCases.map((useCase, index) => (
-                <Card key={index} className="p-8 border-border/50 bg-card/50 backdrop-blur-sm group hover:shadow-lg transition-all duration-300">
-                  <div className="flex items-start space-x-4">
-                    <div className="p-3 rounded-xl bg-fintech-blue/10 group-hover:bg-fintech-blue/20 transition-colors">
-                      <Users className="h-8 w-8 text-fintech-blue" />
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-xl font-semibold mb-3">{useCase.title}</h3>
-                      <p className="text-muted-foreground mb-4">{useCase.description}</p>
-                      <div className="grid grid-cols-2 gap-2">
-                        {useCase.features.map((feature, idx) => (
-                          <div key={idx} className="flex items-center space-x-2 text-sm">
-                            <div className="w-2 h-2 rounded-full bg-fintech-blue" />
-                            <span className="text-muted-foreground">{feature}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
                   </div>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+                </div>
+              </ModernCard>
+            ))}
+          </ModernGrid>
+        </ModernContainer>
+      </ModernSection>
 
       {/* CTA Section */}
-      <section className="relative py-20 lg:py-32 overflow-hidden mouse-follow-container">
-        <CTABackground />
-        <MouseFollower />
-        <div className="relative z-10 container mx-auto px-4">
+      <InteractiveSection background="gradient" className="py-20 lg:py-32" interactive={true}>
+        <BackgroundAnimations variant="hero" />
+        <ModernContainer>
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">
+            <h2 className="text-5xl md:text-7xl font-black mb-8 animate-fade-in tracking-tight">
               Ready to Experience the
               <br />
               <span className="bg-gradient-primary bg-clip-text text-transparent">
                 Future of Finance?
               </span>
             </h2>
-            <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto animate-slide-up">
+            <p className="text-xl md:text-2xl text-ak-muted mb-16 max-w-3xl mx-auto animate-slide-up leading-relaxed">
               Start with our Keys Wallet and unlock access to the entire ecosystem of services.
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center animate-scale-in">
-              <Button size="lg" asChild className="bg-gradient-primary text-white h-14 px-8">
+            <div className="flex flex-col sm:flex-row gap-8 justify-center animate-scale-in">
+              <Button size="xl" variant="premium" asChild>
                 <a href="https://keys-pay.com">
                   <Wallet className="mr-2 h-5 w-5" />
                   Launch Wallet
                 </a>
               </Button>
-              <Button size="lg" variant="outline" asChild className="h-14 px-8">
+              <Button size="xl" variant="glass" asChild>
                 <Link to="/contact">
                   <Clock className="mr-2 h-5 w-5" />
                   Schedule Demo
@@ -346,8 +336,8 @@ export default function Services() {
               </Button>
             </div>
           </div>
-        </div>
-      </section>
+        </ModernContainer>
+      </InteractiveSection>
     </div>
   );
 }

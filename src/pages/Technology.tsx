@@ -1,10 +1,13 @@
 import { PageHeader } from '@/components/layout/PageHeader';
 import { CTABackground } from '@/components/ui/CTABackground';
-import { MouseFollower } from '@/components/ui/MouseFollower';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { BackgroundAnimations } from '@/components/ui/BackgroundAnimations';
+import { ModernSection, ModernContainer, ModernGrid } from '@/components/ui/ModernSection';
+import { ModernCard, ModernCardContent } from '@/components/ui/ModernCard';
+import { InteractiveSection } from '@/components/ui/InteractiveSection';
 import { 
   Brain, 
   Shield, 
@@ -29,7 +32,7 @@ import {
   Server
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import heroBackground from '@/assets/hero-bg.jpg';
+import premiumHeroBg from '@/assets/premium-hero-bg.jpg';
 
 export default function Technology() {
   const techStack = [
@@ -38,28 +41,28 @@ export default function Technology() {
       title: 'Artificial Intelligence',
       description: 'Advanced machine learning algorithms for intelligent automation and prediction',
       technologies: ['TensorFlow', 'PyTorch', 'OpenAI GPT', 'Natural Language Processing'],
-      color: 'fintech-blue'
+      color: 'ak-red'
     },
     {
       icon: Blocks,
       title: 'Blockchain Infrastructure',
       description: 'Built on Solana for fast, scalable, and cost-effective transactions',
       technologies: ['Solana', 'Rust', 'Smart Contracts', 'Web3.js'],
-      color: 'fintech-purple'
+      color: 'ak-red'
     },
     {
       icon: Shield,
       title: 'Cybersecurity',
       description: 'Enterprise-grade security with multiple layers of protection',
       technologies: ['Zero Trust', 'Multi-Factor Auth', 'End-to-End Encryption', 'Hardware Security'],
-      color: 'fintech-cyan'
+      color: 'ak-red'
     },
     {
       icon: Cloud,
       title: 'Cloud Architecture',
       description: 'Scalable cloud infrastructure with global distribution',
       technologies: ['AWS', 'Kubernetes', 'Docker', 'Microservices'],
-      color: 'fintech-gold'
+      color: 'ak-red'
     }
   ];
 
@@ -188,103 +191,123 @@ export default function Technology() {
 
   return (
     <div className="pt-20">
-      <PageHeader
-        title="Cutting-Edge"
-        subtitle="Technology Stack"
-        description="Built on the most advanced technologies in AI, blockchain, and cybersecurity. Our platform leverages cutting-edge innovations to deliver unparalleled performance, security, and user experience."
-        badge="Enterprise Grade • AI-Powered • Blockchain Native"
-        background={heroBackground}
-        showBackButton
-        backTo="/services"
-      >
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button size="lg" className="bg-gradient-primary text-white h-14 px-8">
-            <Code className="mr-2 h-5 w-5" />
-            View Documentation
-          </Button>
-          <Button size="lg" variant="outline" className="h-14 px-8">
-            <GitBranch className="mr-2 h-5 w-5" />
-            Open Source
-          </Button>
-        </div>
-      </PageHeader>
+      <InteractiveSection background="gradient" className="min-h-screen flex items-center">
+        <BackgroundAnimations variant="hero" />
+        <ModernContainer>
+          <div className="text-center max-w-6xl mx-auto py-20">
+            {/* Badge */}
+            <Badge 
+              variant="outline" 
+              className="mb-8 border-ak-red/30 text-ak-red bg-ak-red/5 backdrop-blur-sm animate-fade-in px-6 py-2 text-sm font-medium"
+            >
+              Enterprise Grade • AI-Powered • Blockchain Native
+            </Badge>
+
+            {/* Title */}
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 animate-slide-up tracking-tight">
+              <span className="bg-gradient-primary bg-clip-text text-transparent">
+                Cutting-Edge
+              </span>
+              <br />
+              <span className="text-ak-text">
+                Technology Stack
+              </span>
+            </h1>
+
+            {/* Description */}
+            <p className="text-xl md:text-2xl text-ak-muted max-w-4xl mx-auto mb-12 animate-fade-in leading-relaxed" style={{ animationDelay: '0.3s' }}>
+              Built on the most advanced technologies in AI, blockchain, and cybersecurity. Our platform leverages cutting-edge innovations to deliver unparalleled performance, security, and user experience.
+            </p>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-8 justify-center mb-24 animate-fade-in" style={{ animationDelay: '0.6s' }}>
+              <Button size="xl" variant="premium" className="group">
+                <Code className="mr-2 h-5 w-5" />
+                View Documentation
+              </Button>
+              <Button size="xl" variant="glass" className="group">
+                <GitBranch className="mr-2 h-5 w-5" />
+                Open Source
+              </Button>
+            </div>
+          </div>
+        </ModernContainer>
+      </InteractiveSection>
 
       {/* Technology Stack Overview */}
-      <section className="py-20 lg:py-32">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              {techStack.map((tech, index) => (
-                <Card key={index} className="p-8 border-border/50 bg-card/50 backdrop-blur-sm group hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] relative overflow-hidden">
-                  <div className={`absolute inset-0 bg-gradient-to-br from-${tech.color}/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
-                  <div className="relative z-10">
-                    <div className="flex items-start space-x-4 mb-6">
-                      <div className={`p-3 rounded-xl bg-${tech.color}/10 group-hover:bg-${tech.color}/20 transition-colors`}>
-                        <tech.icon className={`h-8 w-8 text-${tech.color}`} />
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-semibold mb-2">{tech.title}</h3>
-                        <p className="text-muted-foreground">{tech.description}</p>
-                      </div>
+      <ModernSection padding="xl">
+        <BackgroundAnimations variant="section" />
+        <ModernContainer>
+          <ModernGrid cols={2} gap="xl">
+            {techStack.map((tech, index) => (
+              <ModernCard key={index} variant="premium" hover="lift" className="p-10 group relative overflow-hidden">
+                <div className="relative z-10">
+                  <div className="flex items-start space-x-6 mb-8">
+                    <div className="p-4 rounded-xl bg-ak-red/10 group-hover:bg-ak-red/20 transition-colors">
+                      <tech.icon className="h-10 w-10 text-ak-red" />
                     </div>
-                    
+                    <div>
+                      <h3 className="text-2xl font-bold mb-3 text-ak-text">{tech.title}</h3>
+                      <p className="text-ak-muted text-lg">{tech.description}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="grid grid-cols-2 gap-4">
+                    {tech.technologies.map((technology, idx) => (
+                      <div key={idx} className="flex items-center space-x-3 text-sm">
+                        <div className="w-2 h-2 rounded-full bg-ak-red" />
+                        <span className="text-ak-muted font-medium">{technology}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </ModernCard>
+            ))}
+          </ModernGrid>
+        </ModernContainer>
+      </ModernSection>
+
+      {/* Detailed Technology Sections */}
+      <InteractiveSection background="particles" className="py-20 lg:py-32">
+        <BackgroundAnimations variant="subtle" />
+        <ModernContainer>
+          <Tabs defaultValue="ai" className="w-full">
+            <TabsList className="grid w-full grid-cols-4 mb-16 bg-ak-beige-300/30">
+              <TabsTrigger value="ai" className="text-ak-text data-[state=active]:bg-ak-red data-[state=active]:text-ak-white">AI & Machine Learning</TabsTrigger>
+              <TabsTrigger value="blockchain" className="text-ak-text data-[state=active]:bg-ak-red data-[state=active]:text-ak-white">Blockchain</TabsTrigger>
+              <TabsTrigger value="security" className="text-ak-text data-[state=active]:bg-ak-red data-[state=active]:text-ak-white">Security</TabsTrigger>
+              <TabsTrigger value="development" className="text-ak-text data-[state=active]:bg-ak-red data-[state=active]:text-ak-white">Development</TabsTrigger>
+            </TabsList>
+              
+            <TabsContent value="ai">
+              <div className="text-center mb-12">
+                <h3 className="text-4xl font-bold mb-6 text-ak-text">
+                  <Brain className="inline h-10 w-10 mr-4 text-ak-red" />
+                  Artificial Intelligence
+                </h3>
+                <p className="text-xl text-ak-muted max-w-4xl mx-auto leading-relaxed">
+                  Our AI systems leverage the latest advances in machine learning to provide intelligent 
+                  automation, predictive analytics, and personalized experiences.
+                </p>
+              </div>
+              
+              <ModernGrid cols={2} gap="lg">
+                {aiCapabilities.map((capability, index) => (
+                  <ModernCard key={index} variant="glass" hover="lift" className="p-8">
+                    <h4 className="text-2xl font-bold mb-4 text-ak-text">{capability.title}</h4>
+                    <p className="text-ak-muted mb-6 text-lg leading-relaxed">{capability.description}</p>
                     <div className="grid grid-cols-2 gap-3">
-                      {tech.technologies.map((technology, idx) => (
-                        <div key={idx} className="flex items-center space-x-2 text-sm">
-                          <div className={`w-2 h-2 rounded-full bg-${tech.color}`} />
-                          <span className="text-muted-foreground">{technology}</span>
+                      {capability.applications.map((app, idx) => (
+                        <div key={idx} className="flex items-center space-x-3">
+                          <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0" />
+                          <span className="text-ak-muted font-medium">{app}</span>
                         </div>
                       ))}
                     </div>
-                  </div>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Detailed Technology Sections */}
-      <section className="py-20 lg:py-32 bg-accent/5">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <Tabs defaultValue="ai" className="w-full">
-              <TabsList className="grid w-full grid-cols-4 mb-16">
-                <TabsTrigger value="ai">AI & Machine Learning</TabsTrigger>
-                <TabsTrigger value="blockchain">Blockchain</TabsTrigger>
-                <TabsTrigger value="security">Security</TabsTrigger>
-                <TabsTrigger value="development">Development</TabsTrigger>
-              </TabsList>
-              
-              <TabsContent value="ai">
-                <div className="text-center mb-12">
-                  <h3 className="text-3xl font-bold mb-4">
-                    <Brain className="inline h-8 w-8 mr-3 text-fintech-blue" />
-                    Artificial Intelligence
-                  </h3>
-                  <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                    Our AI systems leverage the latest advances in machine learning to provide intelligent 
-                    automation, predictive analytics, and personalized experiences.
-                  </p>
-                </div>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  {aiCapabilities.map((capability, index) => (
-                    <Card key={index} className="p-6 border-border/50 bg-card/50 backdrop-blur-sm">
-                      <h4 className="text-xl font-semibold mb-3">{capability.title}</h4>
-                      <p className="text-muted-foreground mb-4">{capability.description}</p>
-                      <div className="grid grid-cols-2 gap-2">
-                        {capability.applications.map((app, idx) => (
-                          <div key={idx} className="flex items-center space-x-2 text-sm">
-                            <CheckCircle className="h-4 w-4 text-green-500" />
-                            <span className="text-muted-foreground">{app}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </Card>
-                  ))}
-                </div>
-              </TabsContent>
+                  </ModernCard>
+                ))}
+              </ModernGrid>
+            </TabsContent>
               
               <TabsContent value="blockchain">
                 <div className="text-center mb-12">
@@ -374,44 +397,42 @@ export default function Technology() {
                 </div>
               </TabsContent>
             </Tabs>
-          </div>
-        </div>
-      </section>
+        </ModernContainer>
+      </InteractiveSection>
 
       {/* Compliance & Certifications */}
-      <section className="py-20 lg:py-32">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                Compliance & <span className="bg-gradient-primary bg-clip-text text-transparent">Certifications</span>
-              </h2>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                We adhere to the highest industry standards and regulatory requirements
-              </p>
-            </div>
+      <ModernSection padding="xl">
+        <BackgroundAnimations variant="section" />
+        <ModernContainer>
+          <div className="text-center mb-20">
+            <h2 className="text-5xl md:text-6xl font-black mb-8 tracking-tight">
+              Compliance & <span className="bg-gradient-primary bg-clip-text text-transparent">Certifications</span>
+            </h2>
+            <p className="text-2xl text-ak-muted max-w-4xl mx-auto leading-relaxed">
+              We adhere to the highest industry standards and regulatory requirements
+            </p>
+          </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {compliance.map((cert, index) => (
-                <Card key={index} className="p-8 border-border/50 bg-card/50 backdrop-blur-sm group hover:shadow-lg transition-all duration-300">
-                  <div className="flex items-start space-x-4">
-                    <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                      <Shield className="h-8 w-8 text-white" />
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-xl font-semibold mb-2">{cert.standard}</h3>
-                      <p className="text-muted-foreground mb-3">{cert.description}</p>
-                      <div className="text-sm text-fintech-blue">
-                        <strong>Scope:</strong> {cert.scope}
-                      </div>
+          <ModernGrid cols={2} gap="xl">
+            {compliance.map((cert, index) => (
+              <ModernCard key={index} variant="premium" hover="lift" className="p-10 group">
+                <div className="flex items-start space-x-6">
+                  <div className="w-20 h-20 bg-ak-red rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <Shield className="h-10 w-10 text-ak-white" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-2xl font-bold mb-4 text-ak-text">{cert.standard}</h3>
+                    <p className="text-ak-muted mb-4 text-lg">{cert.description}</p>
+                    <div className="text-ak-red font-semibold">
+                      <strong>Scope:</strong> {cert.scope}
                     </div>
                   </div>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+                </div>
+              </ModernCard>
+            ))}
+          </ModernGrid>
+        </ModernContainer>
+      </ModernSection>
 
       {/* Performance Metrics */}
       <section className="py-20 lg:py-32 bg-accent/5">
@@ -447,9 +468,8 @@ export default function Technology() {
       </section>
 
       {/* CTA Section */}
-      <section className="relative py-20 lg:py-32 overflow-hidden mouse-follow-container">
+      <section className="relative py-20 lg:py-32 overflow-hidden">
         <CTABackground />
-        <MouseFollower />
         <div className="relative z-10 container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">
