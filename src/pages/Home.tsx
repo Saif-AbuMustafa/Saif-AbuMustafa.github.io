@@ -7,7 +7,7 @@ import { ModernCard, ModernCardContent } from '@/components/ui/ModernCard';
 import { ModernSection, ModernContainer, ModernGrid } from '@/components/ui/ModernSection';
 import { ModernHero } from '@/components/ui/ModernHero';
 import { InteractiveSection } from '@/components/ui/InteractiveSection';
-import { TextOverlay } from '@/components/ui/TextOverlay';
+
 import { 
   ArrowRight, 
   Play, 
@@ -156,21 +156,21 @@ export default function Home() {
       >
         <BackgroundAnimations variant="section" />
         <ModernContainer>
-          <TextOverlay variant="glass" position="center" className="mb-20">
+          <div className="text-center mb-20">
             <Badge variant="outline" className="mb-6 border-ak-blue text-ak-blue bg-ak-blue/5 px-6 py-2 text-sm font-medium">
               Our Ecosystem
             </Badge>
             <h2 className="text-5xl md:text-7xl font-black mb-8 tracking-tight">
-              <span className="text-ak-text">Comprehensive</span>
+              <span className="text-black">Comprehensive</span>
               <br />
               <span className="bg-gradient-to-r from-ak-blue to-ak-blue/70 bg-clip-text text-transparent">
                 Financial Solutions
               </span>
             </h2>
-            <p className="text-xl md:text-2xl text-ak-text/70 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-black/70 max-w-4xl mx-auto leading-relaxed">
               Four interconnected platforms powered by AI to revolutionize how you manage finance, travel, logistics, and education
             </p>
-          </TextOverlay>
+          </div>
 
           <ModernGrid cols={2} gap="xl" className="mb-20">
             {services.map((service, index) => (
@@ -188,8 +188,8 @@ export default function Home() {
                       <service.icon className="h-10 w-10 transition-all duration-500 text-ak-blue" />
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-2xl font-bold mb-4 text-ak-text">{service.title}</h3>
-                      <p className="text-lg text-ak-text/70 mb-8 leading-relaxed">{service.description}</p>
+                      <h3 className="text-2xl font-bold mb-4 text-black">{service.title}</h3>
+                      <p className="text-lg text-black/70 mb-8 leading-relaxed">{service.description}</p>
                       <Button asChild size="lg" className="group/btn bg-ak-blue hover:bg-ak-blue/90 text-white">
                         <Link to={service.href}>
                           Learn More
@@ -224,21 +224,21 @@ export default function Home() {
       >
         <BackgroundAnimations variant="subtle" />
         <ModernContainer>
-          <TextOverlay variant="medium" position="center" className="mb-20">
+          <div className="text-center mb-20">
             <h2 className="text-5xl md:text-6xl font-black mb-8 tracking-tight">
               Why Choose <span className="bg-gradient-to-r from-ak-blue to-ak-blue/70 bg-clip-text text-transparent">AI KEYS</span>
             </h2>
-            <p className="text-xl md:text-2xl text-ak-text/70 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-black/70 max-w-4xl mx-auto leading-relaxed">
               Built on cutting-edge technology with enterprise-grade security and regulatory compliance
             </p>
-          </TextOverlay>
+          </div>
 
           <ModernGrid cols={4} gap="xl">
             {features.map((feature, index) => (
               <ModernCard key={index} variant="glass" hover="lift" className="text-center p-10 group">
                 <feature.icon className="h-16 w-16 mx-auto mb-8 text-ak-blue group-hover:scale-125 transition-all duration-500" />
-                <h3 className="font-bold mb-4 text-xl text-ak-text">{feature.title}</h3>
-                <p className="text-ak-text/70 leading-relaxed">{feature.description}</p>
+                <h3 className="font-bold mb-4 text-xl text-black">{feature.title}</h3>
+                <p className="text-black/70 leading-relaxed">{feature.description}</p>
               </ModernCard>
             ))}
           </ModernGrid>
@@ -251,33 +251,31 @@ export default function Home() {
         interactive={true}
         className="py-20 lg:py-32"
       >
-        <div className="relative z-10 container mx-auto px-4">
-          <TextOverlay variant="strong" position="center">
-            <h2 className="text-5xl md:text-7xl font-black mb-8 animate-fade-in tracking-tight">
-              Ready to Transform Your
-              <br />
-              <span className="bg-gradient-to-r from-ak-blue to-ak-blue/70 bg-clip-text text-transparent">
-                Financial Future?
-              </span>
-            </h2>
-            <p className="text-xl md:text-2xl text-ak-text/80 mb-16 max-w-3xl mx-auto animate-slide-up leading-relaxed">
-              Join thousands of users who trust AI KEYS for their financial, travel, logistics, and educational needs.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-8 justify-center animate-scale-in">
-              <Button size="xl" variant="premium" asChild className="group bg-ak-blue hover:bg-ak-blue/90 text-white">
-                <a href="https://keys-pay.com">
-                  <Wallet className="mr-2 h-6 w-6" />
-                  Launch Wallet
-                </a>
-              </Button>
-              <Button size="xl" variant="glass" asChild className="group border-ak-blue text-ak-blue hover:bg-ak-blue/10">
-                <Link to="/contact">
-                  Contact Sales
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </Button>
-            </div>
-          </TextOverlay>
+        <div className="relative z-10 container mx-auto px-4 text-center">
+          <h2 className="text-5xl md:text-7xl font-black mb-8 animate-fade-in tracking-tight">
+            Ready to Transform Your
+            <br />
+            <span className="bg-gradient-to-r from-ak-blue to-ak-blue/70 bg-clip-text text-transparent">
+              Financial Future?
+            </span>
+          </h2>
+          <p className="text-xl md:text-2xl text-black/80 mb-16 max-w-3xl mx-auto animate-slide-up leading-relaxed">
+            Join thousands of users who trust AI KEYS for their financial, travel, logistics, and educational needs.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-8 justify-center animate-scale-in">
+            <Button size="xl" variant="premium" asChild className="group bg-ak-blue hover:bg-ak-blue/90 text-white">
+              <a href="https://keys-pay.com">
+                <Wallet className="mr-2 h-6 w-6" />
+                Launch Wallet
+              </a>
+            </Button>
+            <Button size="xl" variant="glass" asChild className="group border-ak-blue text-ak-blue hover:bg-ak-blue/10">
+              <Link to="/contact">
+                Contact Sales
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </Button>
+          </div>
         </div>
       </InteractiveSection>
     </div>
