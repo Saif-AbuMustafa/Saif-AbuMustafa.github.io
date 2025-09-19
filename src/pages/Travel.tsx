@@ -170,9 +170,11 @@ export default function Travel() {
         backTo="/services"
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button size="lg" className="bg-gradient-primary text-white h-14 px-8">
-            <Calendar className="mr-2 h-5 w-5" />
-            Join Waitlist
+          <Button size="lg" asChild className="bg-gradient-primary text-white h-14 px-8">
+            <a href="https://keys-explorer.com/" target="_blank" rel="noopener noreferrer">
+              <Calendar className="mr-2 h-5 w-5" />
+              Join Waitlist
+            </a>
           </Button>
           <Button size="lg" variant="outline" className="h-14 px-8">
             <Camera className="mr-2 h-5 w-5" />
@@ -378,9 +380,11 @@ export default function Travel() {
                   Explore Wallet
                 </Link>
               </Button>
-              <Button size="lg" variant="outline">
-                <Calendar className="mr-2 h-5 w-5" />
-                Join Travel Waitlist
+              <Button size="lg" variant="outline" asChild>
+                <a href="https://keys-explorer.com/" target="_blank" rel="noopener noreferrer">
+                  <Calendar className="mr-2 h-5 w-5" />
+                  Join Travel Waitlist
+                </a>
               </Button>
             </div>
           </div>
@@ -404,9 +408,11 @@ export default function Travel() {
               Be among the first to experience AI-powered travel planning with integrated crypto payments.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Button size="lg" className="bg-gradient-primary text-white h-14 px-8">
-                <Users className="mr-2 h-5 w-5" />
-                Join Waitlist
+              <Button size="lg" asChild className="bg-gradient-primary text-white h-14 px-8">
+                <a href="https://keys-explorer.com/" target="_blank" rel="noopener noreferrer">
+                  <Users className="mr-2 h-5 w-5" />
+                  Join Waitlist
+                </a>
               </Button>
               <Button size="lg" variant="outline" className="h-14 px-8">
                 <Clock className="mr-2 h-5 w-5" />
