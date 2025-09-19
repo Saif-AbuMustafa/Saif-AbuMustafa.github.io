@@ -93,11 +93,11 @@ export const BackgroundAnimations: React.FC<BackgroundAnimationsProps> = ({
 
       {/* Subtle ambient glow pattern */}
       <div 
-        className="absolute inset-0 opacity-1"
+        className="absolute inset-0 opacity-[0.02]"
         style={{
           backgroundImage: `
-            radial-gradient(circle at 25% 25%, hsl(var(--ak-blue) / 0.08) 0%, transparent 50%),
-            radial-gradient(circle at 75% 75%, hsl(var(--ak-beige-300) / 0.06) 0%, transparent 40%)
+            radial-gradient(circle at 25% 25%, hsl(var(--ak-blue) / 0.03) 0%, transparent 50%),
+            radial-gradient(circle at 75% 75%, hsl(var(--ak-beige-300) / 0.02) 0%, transparent 40%)
           `,
           backgroundSize: '800px 800px, 600px 600px',
           animation: 'gentleFloat 60s ease-in-out infinite'
