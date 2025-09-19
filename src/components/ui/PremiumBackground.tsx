@@ -22,46 +22,46 @@ const PremiumBackground = React.forwardRef<HTMLDivElement, PremiumBackgroundProp
         
         {(variant === "gradient" || variant === "hero") && (
           <>
-            {/* Primary gradient orb */}
-            <div className="absolute top-0 -right-40 w-80 h-80 bg-gradient-radial from-ak-blue/15 to-transparent rounded-full blur-3xl animate-pulse-slow" />
-            {/* Secondary gradient orb */}
-            <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-radial from-ak-blue/10 to-transparent rounded-full blur-3xl animate-float-slow" />
+            {/* Primary gradient orb - very subtle */}
+            <div className="absolute top-0 -right-40 w-80 h-80 bg-gradient-radial from-ak-blue/5 to-transparent rounded-full blur-3xl animate-pulse-slow" />
+            {/* Secondary gradient orb - very subtle */}
+            <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-radial from-ak-blue/3 to-transparent rounded-full blur-3xl animate-float-slow" />
           </>
         )}
 
         {variant === "mesh" && (
           <>
-            {/* Mesh grid pattern */}
-            <div className="absolute inset-0 bg-grid-pattern opacity-20 animate-gradient-shift" />
-            {/* Floating geometric shapes */}
-            <div className="absolute top-20 left-20 w-32 h-32 border border-ak-blue/15 rotate-45 animate-spin-slow" />
-            <div className="absolute bottom-32 right-32 w-24 h-24 bg-ak-blue/8 rounded-full animate-pulse-glow" />
-            <div className="absolute top-1/2 left-1/3 w-16 h-16 bg-gradient-to-r from-ak-blue/15 to-ak-beige-300/30 transform rotate-12 animate-float" />
+            {/* Mesh grid pattern - very subtle */}
+            <div className="absolute inset-0 bg-grid-pattern opacity-5 animate-gradient-shift" />
+            {/* Floating geometric shapes - very subtle */}
+            <div className="absolute top-20 left-20 w-32 h-32 border border-ak-blue/5 rotate-45 animate-spin-slow" />
+            <div className="absolute bottom-32 right-32 w-24 h-24 bg-ak-blue/3 rounded-full animate-pulse-glow" />
+            <div className="absolute top-1/2 left-1/3 w-16 h-16 bg-gradient-to-r from-ak-blue/5 to-ak-beige-300/10 transform rotate-12 animate-float" />
           </>
         )}
 
         {variant === "particles" && (
           <>
-            {/* Floating particles */}
-            {[...Array(12)].map((_, i) => (
+            {/* Floating particles - very subtle */}
+            {[...Array(8)].map((_, i) => (
               <div
                 key={i}
                 className={cn(
-                  "absolute w-1 h-1 bg-ak-blue/40 rounded-full animate-float",
-                  i % 3 === 0 && "bg-ak-blue/30 w-2 h-2",
-                  i % 4 === 0 && "bg-ak-beige-300/50 w-1.5 h-1.5"
+                  "absolute w-1 h-1 bg-ak-blue/15 rounded-full animate-float",
+                  i % 3 === 0 && "bg-ak-blue/12 w-1.5 h-1.5",
+                  i % 4 === 0 && "bg-ak-beige-300/20 w-1 h-1"
                 )}
                 style={{
                   left: `${Math.random() * 100}%`,
                   top: `${Math.random() * 100}%`,
-                  animationDelay: `${i * 0.5}s`,
-                  animationDuration: `${8 + Math.random() * 4}s`
+                  animationDelay: `${i * 1}s`,
+                  animationDuration: `${12 + Math.random() * 6}s`
                 }}
               />
             ))}
             {/* Subtle light rays */}
-            <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-ak-blue/15 to-transparent animate-wave-move opacity-60" />
-            <div className="absolute top-0 right-1/3 w-px h-full bg-gradient-to-b from-transparent via-ak-blue/10 to-transparent animate-wave-move opacity-40" style={{ animationDelay: "2s" }} />
+            <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-ak-blue/5 to-transparent animate-wave-move opacity-30" />
+            <div className="absolute top-0 right-1/3 w-px h-full bg-gradient-to-b from-transparent via-ak-blue/3 to-transparent animate-wave-move opacity-20" style={{ animationDelay: "4s" }} />
           </>
         )}
 

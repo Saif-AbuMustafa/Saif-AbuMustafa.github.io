@@ -9,17 +9,17 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-gradient-primary text-white shadow-lg hover:shadow-xl hover:shadow-primary/25 hover:-translate-y-0.5 active:translate-y-0 active:shadow-md",
+        default: "bg-ak-blue text-white shadow-lg hover:shadow-xl hover:shadow-ak-blue/25 hover:-translate-y-0.5 active:translate-y-0 active:shadow-md hover:bg-ak-blue/90",
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90 shadow-lg hover:shadow-destructive/25 hover:-translate-y-0.5",
         outline:
-          "border border-border bg-background/50 backdrop-blur-sm hover:bg-accent hover:text-accent-foreground shadow-sm hover:shadow-md hover:-translate-y-0.5",
+          "border border-ak-blue bg-background/50 backdrop-blur-sm hover:bg-ak-blue/10 hover:text-ak-blue shadow-sm hover:shadow-md hover:-translate-y-0.5 text-ak-blue",
         secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80 shadow-sm hover:shadow-md hover:-translate-y-0.5",
-        ghost: "hover:bg-accent hover:text-accent-foreground hover:-translate-y-0.5",
-        link: "text-primary underline-offset-4 hover:underline",
-        premium: "bg-gradient-to-r from-fintech-gold via-fintech-blue to-fintech-purple text-white shadow-lg hover:shadow-2xl hover:shadow-primary/30 hover:-translate-y-1 active:translate-y-0",
-        glass: "bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-white/20 shadow-lg hover:shadow-xl",
+          "bg-ak-beige-200 text-ak-text hover:bg-ak-beige-300 shadow-sm hover:shadow-md hover:-translate-y-0.5",
+        ghost: "hover:bg-ak-beige-100 hover:text-ak-text hover:-translate-y-0.5 text-ak-text",
+        link: "text-ak-blue underline-offset-4 hover:underline",
+        premium: "bg-gradient-to-r from-ak-blue to-ak-blue/80 text-white shadow-lg hover:shadow-2xl hover:shadow-ak-blue/30 hover:-translate-y-1 active:translate-y-0",
+        glass: "bg-ak-beige-50/60 backdrop-blur-md border border-ak-beige-200/30 text-ak-text hover:bg-ak-beige-100/60 shadow-lg hover:shadow-xl",
       },
       size: {
         default: "h-11 px-6 py-2.5",

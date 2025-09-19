@@ -23,43 +23,43 @@ export const BackgroundAnimations: React.FC<BackgroundAnimationsProps> = ({
 
   return (
     <div className={`absolute inset-0 overflow-hidden ${className}`}>
-      {/* Animated gradient background */}
+      {/* Animated gradient background - very subtle */}
       <div 
-        className="absolute inset-0 opacity-60"
+        className="absolute inset-0 opacity-20"
         style={{
           background: `
             linear-gradient(135deg, hsl(var(--ak-beige-50)) 0%, hsl(var(--ak-beige-100)) 50%, hsl(var(--ak-beige-300)) 100%),
-            radial-gradient(circle at 20% 80%, hsl(var(--ak-blue) / 0.05) 0%, transparent 50%),
-            radial-gradient(circle at 80% 20%, hsl(var(--ak-blue) / 0.03) 0%, transparent 50%)
+            radial-gradient(circle at 20% 80%, hsl(var(--ak-blue) / 0.02) 0%, transparent 50%),
+            radial-gradient(circle at 80% 20%, hsl(var(--ak-blue) / 0.01) 0%, transparent 50%)
           `,
           backgroundSize: '400% 400%, 800px 800px, 600px 600px',
           animation: `
-            gradientShift 20s ease-in-out infinite,
-            float 30s ease-in-out infinite,
-            pulse 15s ease-in-out infinite
+            gradientShift 30s ease-in-out infinite,
+            float 40s ease-in-out infinite,
+            pulse 25s ease-in-out infinite
           `
         }}
       />
 
       {variant === 'hero' && (
         <>
-          {/* Large floating shapes for hero */}
+          {/* Large floating shapes for hero - very subtle */}
           <div 
-            className="absolute w-96 h-96 rounded-full opacity-20 will-change-transform"
+            className="absolute w-96 h-96 rounded-full opacity-5 will-change-transform"
             style={{
               top: '10%',
               left: '80%',
-              background: 'radial-gradient(circle, hsl(var(--ak-blue) / 0.1) 0%, transparent 70%)',
-              animation: 'floatSlow 25s ease-in-out infinite, rotateSlow 40s linear infinite'
+              background: 'radial-gradient(circle, hsl(var(--ak-blue) / 0.03) 0%, transparent 70%)',
+              animation: 'floatSlow 35s ease-in-out infinite, rotateSlow 50s linear infinite'
             }}
           />
           <div 
-            className="absolute w-64 h-64 rounded-full opacity-15 will-change-transform"
+            className="absolute w-64 h-64 rounded-full opacity-4 will-change-transform"
             style={{
               bottom: '20%',
               left: '10%',
-              background: 'radial-gradient(circle, hsl(var(--ak-beige-300)) 0%, transparent 70%)',
-              animation: 'floatSlow 30s ease-in-out infinite reverse, pulse 20s ease-in-out infinite'
+              background: 'radial-gradient(circle, hsl(var(--ak-beige-300) / 0.5) 0%, transparent 70%)',
+              animation: 'floatSlow 40s ease-in-out infinite reverse, pulse 30s ease-in-out infinite'
             }}
           />
         </>
@@ -67,25 +67,25 @@ export const BackgroundAnimations: React.FC<BackgroundAnimationsProps> = ({
 
       {variant === 'section' && (
         <>
-          {/* Medium floating elements for sections */}
+          {/* Medium floating elements for sections - very subtle */}
           <div 
-            className="absolute w-32 h-32 opacity-10 will-change-transform"
+            className="absolute w-32 h-32 opacity-3 will-change-transform"
             style={{
               top: '15%',
               right: '15%',
-              background: 'linear-gradient(45deg, hsl(var(--ak-blue) / 0.2), transparent)',
+              background: 'linear-gradient(45deg, hsl(var(--ak-blue) / 0.05), transparent)',
               borderRadius: '30% 70% 70% 30% / 30% 30% 70% 70%',
-              animation: 'morph 35s ease-in-out infinite, floatGentle 20s ease-in-out infinite'
+              animation: 'morph 45s ease-in-out infinite, floatGentle 30s ease-in-out infinite'
             }}
           />
           <div 
-            className="absolute w-24 h-24 opacity-8 will-change-transform"
+            className="absolute w-24 h-24 opacity-2 will-change-transform"
             style={{
               bottom: '25%',
               right: '25%',
-              background: 'hsl(var(--ak-beige-300) / 0.6)',
+              background: 'hsl(var(--ak-beige-300) / 0.3)',
               borderRadius: '50%',
-              animation: 'pulse 25s ease-in-out infinite, drift 40s linear infinite'
+              animation: 'pulse 35s ease-in-out infinite, drift 50s linear infinite'
             }}
           />
         </>
@@ -93,13 +93,13 @@ export const BackgroundAnimations: React.FC<BackgroundAnimationsProps> = ({
 
       {/* Subtle animated grid pattern */}
       <div 
-        className="absolute inset-0 opacity-5"
+        className="absolute inset-0 opacity-2"
         style={{
           backgroundImage: `
-            radial-gradient(circle at 2px 2px, hsl(var(--ak-text)) 1px, transparent 0)
+            radial-gradient(circle at 2px 2px, hsl(var(--ak-blue) / 0.3) 1px, transparent 0)
           `,
-          backgroundSize: '40px 40px',
-          animation: 'gridMove 60s linear infinite'
+          backgroundSize: '60px 60px',
+          animation: 'gridMove 80s linear infinite'
         }}
       />
     </div>

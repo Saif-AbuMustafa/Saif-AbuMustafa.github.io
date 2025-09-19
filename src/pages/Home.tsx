@@ -7,6 +7,7 @@ import { ModernCard, ModernCardContent } from '@/components/ui/ModernCard';
 import { ModernSection, ModernContainer, ModernGrid } from '@/components/ui/ModernSection';
 import { ModernHero } from '@/components/ui/ModernHero';
 import { InteractiveSection } from '@/components/ui/InteractiveSection';
+import { TextOverlay } from '@/components/ui/TextOverlay';
 import { 
   ArrowRight, 
   Play, 
@@ -155,21 +156,21 @@ export default function Home() {
       >
         <BackgroundAnimations variant="section" />
         <ModernContainer>
-          <div className="text-center mb-20">
-            <Badge variant="outline" className="mb-6 border-fintech-blue text-fintech-blue bg-fintech-blue/5 px-6 py-2 text-sm font-medium">
+          <TextOverlay variant="glass" position="center" className="mb-20">
+            <Badge variant="outline" className="mb-6 border-ak-blue text-ak-blue bg-ak-blue/5 px-6 py-2 text-sm font-medium">
               Our Ecosystem
             </Badge>
             <h2 className="text-5xl md:text-7xl font-black mb-8 tracking-tight">
-              <span className="text-foreground">Comprehensive</span>
+              <span className="text-ak-text">Comprehensive</span>
               <br />
-              <span className="bg-gradient-primary bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-ak-blue to-ak-blue/70 bg-clip-text text-transparent">
                 Financial Solutions
               </span>
             </h2>
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-ak-text/70 max-w-4xl mx-auto leading-relaxed">
               Four interconnected platforms powered by AI to revolutionize how you manage finance, travel, logistics, and education
             </p>
-          </div>
+          </TextOverlay>
 
           <ModernGrid cols={2} gap="xl" className="mb-20">
             {services.map((service, index) => (
@@ -182,24 +183,14 @@ export default function Home() {
                 <ModernCardContent className="p-10">
                   <div className="flex items-start space-x-8">
                     <div className={cn(
-                      "p-5 rounded-2xl transition-all duration-500 group-hover:scale-110",
-                      service.color === 'fintech-blue' && 'bg-fintech-blue/10 group-hover:bg-fintech-blue/20',
-                      service.color === 'fintech-cyan' && 'bg-fintech-cyan/10 group-hover:bg-fintech-cyan/20',
-                      service.color === 'fintech-purple' && 'bg-fintech-purple/10 group-hover:bg-fintech-purple/20',
-                      service.color === 'fintech-gold' && 'bg-fintech-gold/10 group-hover:bg-fintech-gold/20'
+                      "p-5 rounded-2xl transition-all duration-500 group-hover:scale-110 bg-ak-blue/10 group-hover:bg-ak-blue/20"
                     )}>
-                      <service.icon className={cn(
-                        "h-10 w-10 transition-all duration-500",
-                        service.color === 'fintech-blue' && 'text-fintech-blue',
-                        service.color === 'fintech-cyan' && 'text-fintech-cyan',
-                        service.color === 'fintech-purple' && 'text-fintech-purple',
-                        service.color === 'fintech-gold' && 'text-fintech-gold'
-                      )} />
+                      <service.icon className="h-10 w-10 transition-all duration-500 text-ak-blue" />
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-2xl font-bold mb-4 text-foreground">{service.title}</h3>
-                      <p className="text-lg text-muted-foreground mb-8 leading-relaxed">{service.description}</p>
-                      <Button asChild size="lg" className="group/btn">
+                      <h3 className="text-2xl font-bold mb-4 text-ak-text">{service.title}</h3>
+                      <p className="text-lg text-ak-text/70 mb-8 leading-relaxed">{service.description}</p>
+                      <Button asChild size="lg" className="group/btn bg-ak-blue hover:bg-ak-blue/90 text-white">
                         <Link to={service.href}>
                           Learn More
                           <ArrowRight className="ml-2 h-5 w-5 group-hover/btn:translate-x-1 transition-transform" />
@@ -210,19 +201,13 @@ export default function Home() {
                 </ModernCardContent>
                 
                 {/* Animated background */}
-                <div className={cn(
-                  "absolute inset-0 bg-gradient-to-br to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none",
-                  service.color === 'fintech-blue' && 'from-fintech-blue/5',
-                  service.color === 'fintech-cyan' && 'from-fintech-cyan/5',
-                  service.color === 'fintech-purple' && 'from-fintech-purple/5',
-                  service.color === 'fintech-gold' && 'from-fintech-gold/5'
-                )} />
+                <div className="absolute inset-0 bg-gradient-to-br from-ak-blue/3 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
               </ModernCard>
             ))}
           </ModernGrid>
 
           <div className="text-center">
-            <Button size="xl" variant="premium" asChild className="group">
+            <Button size="xl" variant="premium" asChild className="group bg-ak-blue hover:bg-ak-blue/90 text-white">
               <Link to="/services">
                 View All Services
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
@@ -239,21 +224,21 @@ export default function Home() {
       >
         <BackgroundAnimations variant="subtle" />
         <ModernContainer>
-          <div className="text-center mb-20">
+          <TextOverlay variant="medium" position="center" className="mb-20">
             <h2 className="text-5xl md:text-6xl font-black mb-8 tracking-tight">
-              Why Choose <span className="bg-gradient-primary bg-clip-text text-transparent">AI KEYS</span>
+              Why Choose <span className="bg-gradient-to-r from-ak-blue to-ak-blue/70 bg-clip-text text-transparent">AI KEYS</span>
             </h2>
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-ak-text/70 max-w-4xl mx-auto leading-relaxed">
               Built on cutting-edge technology with enterprise-grade security and regulatory compliance
             </p>
-          </div>
+          </TextOverlay>
 
           <ModernGrid cols={4} gap="xl">
             {features.map((feature, index) => (
               <ModernCard key={index} variant="glass" hover="lift" className="text-center p-10 group">
-                <feature.icon className="h-16 w-16 mx-auto mb-8 text-fintech-blue group-hover:scale-125 transition-all duration-500" />
-                <h3 className="font-bold mb-4 text-xl">{feature.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
+                <feature.icon className="h-16 w-16 mx-auto mb-8 text-ak-blue group-hover:scale-125 transition-all duration-500" />
+                <h3 className="font-bold mb-4 text-xl text-ak-text">{feature.title}</h3>
+                <p className="text-ak-text/70 leading-relaxed">{feature.description}</p>
               </ModernCard>
             ))}
           </ModernGrid>
@@ -267,32 +252,32 @@ export default function Home() {
         className="py-20 lg:py-32"
       >
         <div className="relative z-10 container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
+          <TextOverlay variant="strong" position="center">
             <h2 className="text-5xl md:text-7xl font-black mb-8 animate-fade-in tracking-tight">
               Ready to Transform Your
               <br />
-              <span className="bg-gradient-primary bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-ak-blue to-ak-blue/70 bg-clip-text text-transparent">
                 Financial Future?
               </span>
             </h2>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-16 max-w-3xl mx-auto animate-slide-up leading-relaxed">
+            <p className="text-xl md:text-2xl text-ak-text/80 mb-16 max-w-3xl mx-auto animate-slide-up leading-relaxed">
               Join thousands of users who trust AI KEYS for their financial, travel, logistics, and educational needs.
             </p>
             <div className="flex flex-col sm:flex-row gap-8 justify-center animate-scale-in">
-              <Button size="xl" variant="premium" asChild className="group">
+              <Button size="xl" variant="premium" asChild className="group bg-ak-blue hover:bg-ak-blue/90 text-white">
                 <a href="https://keys-pay.com">
                   <Wallet className="mr-2 h-6 w-6" />
                   Launch Wallet
                 </a>
               </Button>
-              <Button size="xl" variant="glass" asChild className="group">
+              <Button size="xl" variant="glass" asChild className="group border-ak-blue text-ak-blue hover:bg-ak-blue/10">
                 <Link to="/contact">
                   Contact Sales
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </Button>
             </div>
-          </div>
+          </TextOverlay>
         </div>
       </InteractiveSection>
     </div>
