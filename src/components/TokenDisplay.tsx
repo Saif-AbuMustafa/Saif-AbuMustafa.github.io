@@ -79,26 +79,26 @@ export const TokenDisplay = () => {
   return (
     <div className="w-full max-w-6xl mx-auto px-4">
       <div className="text-center mb-8">
-        <h2 className="text-3xl font-bold mb-2 bg-gradient-primary bg-clip-text text-transparent">
+        <h2 className="text-4xl md:text-5xl font-black mb-4 bg-gradient-primary bg-clip-text text-transparent">
           KEYS Token (KEYS)
         </h2>
-        <p className="text-muted-foreground">Real-time market data for KEYS on Solana blockchain</p>
-        <div className="flex flex-col items-center gap-2 mt-4">
-          <Badge variant="outline" className="border-fintech-blue text-fintech-blue">
+        <p className="text-xl text-ak-muted">Real-time market data for KEYS on Solana blockchain</p>
+        <div className="flex flex-col items-center gap-2 mt-6">
+          <Badge variant="outline" className="border-ak-blue/30 text-ak-blue bg-ak-blue/5">
             Solana SPL Token
           </Badge>
           
           {/* Contract Address */}
-          <div className="flex items-center gap-2 mt-2">
-            <span className="text-sm text-muted-foreground">Contract:</span>
-            <code className="text-xs bg-muted px-2 py-1 rounded font-mono">
+          <div className="flex items-center gap-2 mt-4">
+            <span className="text-sm text-ak-muted">Contract:</span>
+            <code className="text-xs bg-ak-beige-300/20 text-ak-text px-3 py-1 rounded font-mono">
               {TokenApiService.getContractAddress().slice(0, 8)}...{TokenApiService.getContractAddress().slice(-8)}
             </code>
             <Button
               size="sm"
               variant="ghost"
               onClick={copyContractAddress}
-              className="h-6 w-6 p-0"
+              className="h-6 w-6 p-0 text-ak-text hover:text-ak-blue"
             >
               {copied ? (
                 <CheckCircle className="h-3 w-3 text-green-500" />
@@ -112,17 +112,17 @@ export const TokenDisplay = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {/* Price */}
-        <Card className="group hover:shadow-lg transition-all duration-300 border-border/50 bg-card/50 backdrop-blur-sm">
+        <Card className="group hover:shadow-lg transition-all duration-300 border-ak-beige-300/30 bg-ak-white/10 backdrop-blur-sm">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium text-muted-foreground">
+            <CardTitle className="text-sm font-medium text-ak-muted">
               {t('token.price')}
             </CardTitle>
-            <DollarSign className="h-4 w-4 text-fintech-blue group-hover:animate-pulse" />
+            <DollarSign className="h-4 w-4 text-ak-blue group-hover:animate-pulse" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">
+            <div className="text-2xl font-bold text-ak-text">
               {isLoading ? (
-                <div className="h-8 w-20 bg-muted animate-pulse rounded" />
+                <div className="h-8 w-20 bg-ak-beige-300/20 animate-pulse rounded" />
               ) : (
                 formatCurrency(tokenData.price)
               )}
@@ -131,9 +131,9 @@ export const TokenDisplay = () => {
         </Card>
 
         {/* 24h Change */}
-        <Card className="group hover:shadow-lg transition-all duration-300 border-border/50 bg-card/50 backdrop-blur-sm">
+        <Card className="group hover:shadow-lg transition-all duration-300 border-ak-beige-300/30 bg-ak-white/10 backdrop-blur-sm">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium text-muted-foreground">
+            <CardTitle className="text-sm font-medium text-ak-muted">
               {t('token.change')}
             </CardTitle>
             {tokenData.change24h >= 0 ? (
@@ -145,7 +145,7 @@ export const TokenDisplay = () => {
           <CardContent>
             <div className={`text-2xl font-bold ${tokenData.change24h >= 0 ? 'text-green-500' : 'text-red-500'}`}>
               {isLoading ? (
-                <div className="h-8 w-16 bg-muted animate-pulse rounded" />
+                <div className="h-8 w-16 bg-ak-beige-300/20 animate-pulse rounded" />
               ) : (
                 `${tokenData.change24h >= 0 ? '+' : ''}${tokenData.change24h.toFixed(2)}%`
               )}
@@ -154,17 +154,17 @@ export const TokenDisplay = () => {
         </Card>
 
         {/* Volume */}
-        <Card className="group hover:shadow-lg transition-all duration-300 border-border/50 bg-card/50 backdrop-blur-sm">
+        <Card className="group hover:shadow-lg transition-all duration-300 border-ak-beige-300/30 bg-ak-white/10 backdrop-blur-sm">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium text-muted-foreground">
+            <CardTitle className="text-sm font-medium text-ak-muted">
               {t('token.volume')}
             </CardTitle>
-            <BarChart3 className="h-4 w-4 text-fintech-cyan group-hover:animate-pulse" />
+            <BarChart3 className="h-4 w-4 text-ak-blue group-hover:animate-pulse" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">
+            <div className="text-2xl font-bold text-ak-text">
               {isLoading ? (
-                <div className="h-8 w-16 bg-muted animate-pulse rounded" />
+                <div className="h-8 w-16 bg-ak-beige-300/20 animate-pulse rounded" />
               ) : (
                 `$${formatNumber(tokenData.volume24h)}`
               )}
@@ -173,17 +173,17 @@ export const TokenDisplay = () => {
         </Card>
 
         {/* Market Cap */}
-        <Card className="group hover:shadow-lg transition-all duration-300 border-border/50 bg-card/50 backdrop-blur-sm">
+        <Card className="group hover:shadow-lg transition-all duration-300 border-ak-beige-300/30 bg-ak-white/10 backdrop-blur-sm">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium text-muted-foreground">
+            <CardTitle className="text-sm font-medium text-ak-muted">
               {t('token.marketCap')}
             </CardTitle>
-            <TrendingUp className="h-4 w-4 text-fintech-gold group-hover:animate-pulse" />
+            <TrendingUp className="h-4 w-4 text-ak-blue group-hover:animate-pulse" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">
+            <div className="text-2xl font-bold text-ak-text">
               {isLoading ? (
-                <div className="h-8 w-16 bg-muted animate-pulse rounded" />
+                <div className="h-8 w-16 bg-ak-beige-300/20 animate-pulse rounded" />
               ) : (
                 `$${formatNumber(tokenData.marketCap)}`
               )}
@@ -196,22 +196,22 @@ export const TokenDisplay = () => {
       <div className="mt-8 space-y-6">
         {/* Trading Platforms */}
         <div className="text-center">
-          <h3 className="text-lg font-semibold mb-4">Trade KEYS</h3>
-          <div className="flex flex-wrap justify-center gap-3">
+          <h3 className="text-xl font-bold mb-6 text-ak-text">Trade KEYS</h3>
+          <div className="flex flex-wrap justify-center gap-4">
             <Button
-              size="sm"
+              size="lg"
               variant="outline"
               onClick={() => window.open(platformLinks.raydium, '_blank')}
-              className="border-fintech-blue text-fintech-blue hover:bg-fintech-blue hover:text-white"
+              className="border-ak-blue/30 text-ak-blue bg-ak-blue/5 hover:bg-ak-blue hover:text-ak-white"
             >
               <ExternalLink className="h-4 w-4 mr-2" />
               Raydium
             </Button>
             <Button
-              size="sm"
+              size="lg"
               variant="outline"
               onClick={() => window.open(platformLinks.jupiter, '_blank')}
-              className="border-fintech-cyan text-fintech-cyan hover:bg-fintech-cyan hover:text-white"
+              className="border-ak-blue/30 text-ak-blue bg-ak-blue/5 hover:bg-ak-blue hover:text-ak-white"
             >
               <ExternalLink className="h-4 w-4 mr-2" />
               Jupiter
@@ -221,13 +221,13 @@ export const TokenDisplay = () => {
 
         {/* Analytics Platforms */}
         <div className="text-center">
-          <h3 className="text-lg font-semibold mb-4">Analytics & Info</h3>
-          <div className="flex flex-wrap justify-center gap-3">
+          <h3 className="text-xl font-bold mb-6 text-ak-text">Analytics & Info</h3>
+          <div className="flex flex-wrap justify-center gap-4">
             <Button
               size="sm"
               variant="outline"
               onClick={() => window.open(platformLinks.solscan, '_blank')}
-              className="border-fintech-purple text-fintech-purple hover:bg-fintech-purple hover:text-white"
+              className="border-ak-blue/30 text-ak-blue bg-ak-blue/5 hover:bg-ak-blue hover:text-ak-white"
             >
               <ExternalLink className="h-4 w-4 mr-2" />
               Solscan
@@ -236,7 +236,7 @@ export const TokenDisplay = () => {
               size="sm"
               variant="outline"
               onClick={() => window.open(platformLinks.rugcheck, '_blank')}
-              className="border-fintech-gold text-fintech-gold hover:bg-fintech-gold hover:text-white"
+              className="border-ak-blue/30 text-ak-blue bg-ak-blue/5 hover:bg-ak-blue hover:text-ak-white"
             >
               <ExternalLink className="h-4 w-4 mr-2" />
               Rugcheck
@@ -245,7 +245,7 @@ export const TokenDisplay = () => {
               size="sm"
               variant="outline"
               onClick={() => window.open(platformLinks.geckoterminal, '_blank')}
-              className="border-fintech-blue text-fintech-blue hover:bg-fintech-blue hover:text-white"
+              className="border-ak-blue/30 text-ak-blue bg-ak-blue/5 hover:bg-ak-blue hover:text-ak-white"
             >
               <ExternalLink className="h-4 w-4 mr-2" />
               GeckoTerminal
@@ -255,13 +255,13 @@ export const TokenDisplay = () => {
 
         {/* Social Links */}
         <div className="text-center">
-          <h3 className="text-lg font-semibold mb-4">Community</h3>
-          <div className="flex flex-wrap justify-center gap-3">
+          <h3 className="text-xl font-bold mb-6 text-ak-text">Community</h3>
+          <div className="flex flex-wrap justify-center gap-4">
             <Button
               size="sm"
               variant="outline"
               onClick={() => window.open(platformLinks.twitter, '_blank')}
-              className="border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white"
+              className="border-blue-500/30 text-blue-600 bg-blue-500/5 hover:bg-blue-500 hover:text-white"
             >
               <ExternalLink className="h-4 w-4 mr-2" />
               Twitter
@@ -270,7 +270,7 @@ export const TokenDisplay = () => {
               size="sm"
               variant="outline"
               onClick={() => window.open(platformLinks.telegram, '_blank')}
-              className="border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white"
+              className="border-blue-400/30 text-blue-500 bg-blue-400/5 hover:bg-blue-400 hover:text-white"
             >
               <ExternalLink className="h-4 w-4 mr-2" />
               Telegram
@@ -280,8 +280,8 @@ export const TokenDisplay = () => {
 
         {/* Live indicator */}
         <div className="flex items-center justify-center gap-2">
-          <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-          <span className="text-sm text-muted-foreground">
+          <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+          <span className="text-sm text-ak-muted">
             Live Market Data • Last updated: {new Date(tokenData.lastUpdated).toLocaleTimeString()}
           </span>
         </div>
