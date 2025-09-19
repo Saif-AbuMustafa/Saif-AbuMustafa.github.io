@@ -168,7 +168,7 @@ export default function Home() {
               </span>
             </h2>
             <p className="text-xl md:text-2xl text-black/70 max-w-4xl mx-auto leading-relaxed">
-              Four interconnected platforms powered by AI to revolutionize how you manage finance, travel, logistics, and education
+              Four interconnected <span className="text-black">platforms</span> powered by AI to revolutionize how you manage finance, travel, logistics, and education
             </p>
           </div>
 
