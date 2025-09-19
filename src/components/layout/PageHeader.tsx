@@ -42,12 +42,12 @@ export const PageHeader = ({
           <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/80 to-background/95" />
         </>
       )}
-      <div className="absolute inset-0 bg-grid-pattern opacity-5" />
-      
-      {/* Floating Elements */}
-      <div className="absolute top-20 left-10 w-32 h-32 bg-fintech-blue/10 rounded-full blur-3xl animate-float" />
-      <div className="absolute bottom-20 right-10 w-48 h-48 bg-fintech-cyan/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
-
+      {/* Background Animations */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-10 left-10 w-32 h-32 bg-ak-blue/5 rounded-full blur-2xl animate-float" />
+        <div className="absolute bottom-10 right-10 w-40 h-40 bg-ak-blue/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-ak-blue/5 rounded-full blur-xl animate-float" style={{ animationDelay: '4s' }} />
+      </div>
       <div className="relative z-10 container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           {/* Back Button */}
@@ -66,7 +66,7 @@ export const PageHeader = ({
           {badge && (
             <Badge 
               variant={badgeVariant}
-              className="mb-6 border-fintech-blue text-fintech-blue bg-fintech-blue/5 backdrop-blur-sm animate-fade-in"
+              className="mb-6 border-ak-blue text-ak-blue bg-ak-blue/5 backdrop-blur-sm animate-fade-in"
             >
               {badge}
             </Badge>
