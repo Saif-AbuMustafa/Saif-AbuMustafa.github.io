@@ -8,27 +8,27 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Base Design System - Professional Fintech Theme */
+    /* Apple-Inspired Premium Design System */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 0 0% 3%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 0 0% 98%;
+    --card-foreground: 0 0% 8%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 0 0% 3%;
 
-    /* Primary Brand Colors - AI KEYS Fintech */
-    --primary: 220 90% 15%;
-    --primary-foreground: 210 40% 98%;
-    --primary-glow: 220 100% 70%;
-    --primary-dark: 220 90% 8%;
+    /* Premium Brand Colors - Apple/GE Style */
+    --primary: 210 100% 12%;
+    --primary-foreground: 0 0% 98%;
+    --primary-glow: 210 100% 58%;
+    --primary-dark: 210 100% 8%;
 
-    /* Fintech Color Palette */
-    --fintech-blue: 220 90% 56%;
-    --fintech-cyan: 190 100% 50%;
-    --fintech-gold: 45 100% 65%;
-    --fintech-purple: 260 100% 65%;
+    /* Premium Color Palette */
+    --fintech-blue: 210 100% 50%;
+    --fintech-cyan: 195 100% 45%;
+    --fintech-gold: 40 95% 55%;
+    --fintech-purple: 250 100% 60%;
 
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
@@ -72,26 +72,26 @@ All colors MUST be HSL.
   }
 
   .dark {
-    /* Dark Theme - Professional Fintech */
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Apple-Inspired Dark Theme */
+    --background: 0 0% 2%;
+    --foreground: 0 0% 98%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 4%;
+    --card-foreground: 0 0% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 3%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 220 100% 70%;
-    --primary-foreground: 222.2 84% 4.9%;
-    --primary-glow: 220 100% 80%;
-    --primary-dark: 220 90% 8%;
+    --primary: 210 100% 58%;
+    --primary-foreground: 0 0% 2%;
+    --primary-glow: 210 100% 70%;
+    --primary-dark: 210 100% 45%;
 
-    /* Dark Fintech Colors */
-    --fintech-blue: 220 100% 70%;
-    --fintech-cyan: 190 100% 60%;
-    --fintech-gold: 45 100% 70%;
-    --fintech-purple: 260 100% 70%;
+    /* Premium Dark Colors */
+    --fintech-blue: 210 100% 60%;
+    --fintech-cyan: 195 100% 55%;
+    --fintech-gold: 40 95% 65%;
+    --fintech-purple: 250 100% 70%;
 
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;

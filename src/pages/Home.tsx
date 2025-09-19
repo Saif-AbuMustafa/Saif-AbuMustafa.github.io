@@ -6,6 +6,7 @@ import { MouseFollower } from '@/components/ui/MouseFollower';
 import { ModernCard, ModernCardContent } from '@/components/ui/ModernCard';
 import { ModernSection, ModernContainer, ModernGrid } from '@/components/ui/ModernSection';
 import { ModernHero } from '@/components/ui/ModernHero';
+import { InteractiveSection } from '@/components/ui/InteractiveSection';
 import { 
   ArrowRight, 
   Play, 
@@ -24,7 +25,8 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
-import heroBackground from '@/assets/hero-bg.jpg';
+import premiumHeroBg from '@/assets/premium-hero-bg.jpg';
+import premiumSectionBg from '@/assets/premium-section-bg.jpg';
 
 export default function Home() {
   const stats = [
@@ -96,7 +98,8 @@ export default function Home() {
         subtitle="Fintech Solutions"
         description="Empowering the future of finance with AI-driven custodian wallet, travel planning, logistics, and student services. Built on Solana blockchain with full VARA compliance."
         badge="Fintech Solutions • Solana Blockchain • Dubai, UAE"
-        background={heroBackground}
+        background={premiumHeroBg}
+        backgroundVariant="gradient"
       >
         <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
           <Button 
@@ -143,7 +146,11 @@ export default function Home() {
       </ModernHero>
 
       {/* Services Preview */}
-      <ModernSection variant="gradient" padding="xl">
+      <InteractiveSection
+        background="mesh"
+        interactive={true}
+        className="py-20 lg:py-32"
+      >
         <ModernContainer>
           <div className="text-center mb-20">
             <Badge variant="outline" className="mb-6 border-fintech-blue text-fintech-blue bg-fintech-blue/5 px-6 py-2 text-sm font-medium">
@@ -220,10 +227,13 @@ export default function Home() {
             </Button>
           </div>
         </ModernContainer>
-      </ModernSection>
+      </InteractiveSection>
 
       {/* Features */}
-      <ModernSection variant="accent" padding="xl">
+      <InteractiveSection
+        background="particles"
+        className="py-20 lg:py-32 bg-accent/5"
+      >
         <ModernContainer>
           <div className="text-center mb-20">
             <h2 className="text-5xl md:text-6xl font-black mb-8 tracking-tight">
@@ -244,12 +254,14 @@ export default function Home() {
             ))}
           </ModernGrid>
         </ModernContainer>
-      </ModernSection>
+      </InteractiveSection>
 
       {/* CTA Section */}
-      <section className="relative py-20 lg:py-32 overflow-hidden mouse-follow-container">
-        <CTABackground />
-        <MouseFollower />
+      <InteractiveSection
+        background="gradient"
+        interactive={true}
+        className="py-20 lg:py-32"
+      >
         <div className="relative z-10 container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-5xl md:text-7xl font-black mb-8 animate-fade-in tracking-tight">
@@ -278,7 +290,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </InteractiveSection>
     </div>
   );
 }
