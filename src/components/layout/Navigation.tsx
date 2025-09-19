@@ -105,7 +105,7 @@ export const Navigation = () => {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         isScrolled 
-          ? 'bg-background/95 backdrop-blur-xl shadow-lg border-b border-border/50' 
+          ? 'bg-ak-white/98 backdrop-blur-xl shadow-xl border-b border-ak-beige-300/80' 
           : 'bg-transparent'
       )}
     >
