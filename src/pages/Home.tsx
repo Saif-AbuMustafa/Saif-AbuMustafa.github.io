@@ -25,6 +25,7 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
+import { BackgroundAnimations } from '@/components/ui/BackgroundAnimations';
 import premiumHeroBg from '@/assets/premium-hero-bg.jpg';
 import premiumSectionBg from '@/assets/premium-section-bg.jpg';
 
@@ -101,6 +102,7 @@ export default function Home() {
         background={premiumHeroBg}
         backgroundVariant="gradient"
       >
+        <BackgroundAnimations variant="hero" />
         <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
           <Button 
             size="xl" 
@@ -151,6 +153,7 @@ export default function Home() {
         interactive={true}
         className="py-20 lg:py-32"
       >
+        <BackgroundAnimations variant="section" />
         <ModernContainer>
           <div className="text-center mb-20">
             <Badge variant="outline" className="mb-6 border-fintech-blue text-fintech-blue bg-fintech-blue/5 px-6 py-2 text-sm font-medium">
@@ -234,6 +237,7 @@ export default function Home() {
         background="particles"
         className="py-20 lg:py-32 bg-accent/5"
       >
+        <BackgroundAnimations variant="subtle" />
         <ModernContainer>
           <div className="text-center mb-20">
             <h2 className="text-5xl md:text-6xl font-black mb-8 tracking-tight">

@@ -42,6 +42,17 @@ export default {
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
+				
+				// AI KEYS Color Palette
+				'ak-beige-50': 'hsl(var(--ak-beige-50))',
+				'ak-beige-100': 'hsl(var(--ak-beige-100))',
+				'ak-beige-300': 'hsl(var(--ak-beige-300))',
+				'ak-text': 'hsl(var(--ak-text))',
+				'ak-muted': 'hsl(var(--ak-muted))',
+				'ak-red': 'hsl(var(--ak-red))',
+				'ak-red-dark': 'hsl(var(--ak-red-dark))',
+				'ak-white': 'hsl(var(--ak-white))',
+				
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))',
@@ -149,9 +160,9 @@ export default {
 				'morph': 'morph 4s ease-in-out infinite'
 			},
 			backgroundImage: {
-				'gradient-primary': 'linear-gradient(135deg, hsl(var(--fintech-blue)), hsl(var(--fintech-cyan)))',
-				'gradient-secondary': 'linear-gradient(135deg, hsl(var(--fintech-purple)), hsl(var(--fintech-blue)))',
-				'gradient-gold': 'linear-gradient(135deg, hsl(var(--fintech-gold)), hsl(var(--primary)))',
+				'gradient-primary': 'linear-gradient(135deg, hsl(var(--ak-red)), hsl(var(--ak-red-dark)))',
+				'gradient-secondary': 'linear-gradient(135deg, hsl(var(--ak-beige-100)), hsl(var(--ak-beige-300)))',
+				'gradient-gold': 'linear-gradient(135deg, hsl(var(--ak-red)), hsl(var(--ak-red-dark)))',
 				'gradient-radial': 'radial-gradient(ellipse at center, var(--tw-gradient-stops))',
 				'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
 				'grid-pattern': 'radial-gradient(circle at 2px 2px, rgba(255,255,255,0.15) 1px, transparent 0)',

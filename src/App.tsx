@@ -8,6 +8,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 import { AnimatedBackground } from "@/components/ui/AnimatedBackground";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { Footer } from "@/components/Footer";
+import { OptimizedCursor } from "@/components/ui/OptimizedCursor";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Services from "./pages/Services";
@@ -37,9 +38,6 @@ import NotFound from "./pages/NotFound";
 const queryClient = new QueryClient();
 
 const App = () => {
-  // Set dark mode by default for professional fintech look
-  document.documentElement.classList.add('dark');
-
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
@@ -49,6 +47,7 @@ const App = () => {
           <BrowserRouter>
             <ScrollToTop />
             <AnimatedBackground />
+            <OptimizedCursor />
             <div className="relative min-h-screen bg-background text-foreground">
               <Navigation />
               <Routes>

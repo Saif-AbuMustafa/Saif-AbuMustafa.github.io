@@ -11,7 +11,7 @@ interface ModernHeroProps extends React.HTMLAttributes<HTMLElement> {
   background?: string
   children?: React.ReactNode
   overlay?: "default" | "strong" | "minimal"
-  backgroundVariant?: "default" | "gradient" | "mesh" | "particles"
+  backgroundVariant?: "default" | "gradient" | "mesh" | "particles" | "hero"
 }
 
 const ModernHero = React.forwardRef<HTMLElement, ModernHeroProps>(
