@@ -311,11 +311,11 @@ export default function Services() {
         <BackgroundAnimations variant="hero" />
         <ModernContainer>
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-5xl md:text-7xl font-black mb-8 animate-fade-in tracking-tight">
-              Ready to Experience the
+            <h2 className="text-5xl md:text-7xl font-black mb-8 animate-fade-in tracking-tight text-ak-text">
+              Transform Your Financial
               <br />
               <span className="bg-gradient-primary bg-clip-text text-transparent">
-                Future of Finance?
+                Experience Today
               </span>
             </h2>
             <p className="text-xl md:text-2xl text-ak-muted mb-16 max-w-3xl mx-auto animate-slide-up leading-relaxed">
