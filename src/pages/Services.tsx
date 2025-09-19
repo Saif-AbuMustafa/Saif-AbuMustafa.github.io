@@ -36,7 +36,7 @@ export default function Services() {
       title: 'Keys Custodian Wallet',
       description: 'Secure crypto and fiat storage with AI-powered automation and seamless transactions',
       href: '/wallet',
-      color: 'ak-red',
+      color: 'ak-blue',
       features: ['Multi-Chain Support', 'AI Automation', 'DeFi Integration', 'Instant Swaps'],
       comingSoon: false,
       highlight: 'Live Now'
@@ -46,7 +46,7 @@ export default function Services() {
       title: 'Keys Travel Planner',
       description: 'AI-based travel planning with integrated payments and personalized recommendations',
       href: '/travel',
-      color: 'ak-red',
+      color: 'ak-blue',
       features: ['AI Trip Planning', 'Integrated Payments', 'Real-time Booking', 'Expense Tracking'],
       comingSoon: false,
       highlight: 'Live Now'
@@ -56,7 +56,7 @@ export default function Services() {
       title: 'Keys Logistics',
       description: 'Smart logistics solutions with automated payments and tracking systems',
       href: '/logistics',
-      color: 'ak-red',
+      color: 'ak-blue',
       features: ['Smart Routing', 'Payment Automation', 'Real-time Tracking', 'Supply Chain AI'],
       comingSoon: true,
       highlight: 'Coming Soon'
@@ -66,7 +66,7 @@ export default function Services() {
       title: 'Keys Student Services',
       description: 'AI learning assistance and admission support with integrated financial services',
       href: '/education',
-      color: 'ak-red',
+      color: 'ak-blue',
       features: ['AI Learning Assistant', 'Admission Support', 'Financial Aid', 'Study Abroad'],
       comingSoon: true,
       highlight: 'Coming Soon'
@@ -138,7 +138,7 @@ export default function Services() {
             {/* Badge */}
             <Badge 
               variant="outline" 
-              className="mb-8 border-ak-red/30 text-ak-red bg-ak-red/5 backdrop-blur-sm animate-fade-in px-6 py-2 text-sm font-medium"
+              className="mb-8 border-ak-blue/30 text-ak-blue bg-ak-blue/5 backdrop-blur-sm animate-fade-in px-6 py-2 text-sm font-medium"
             >
               Four Core Services • AI-Powered • VARA Compliant
             </Badge>
@@ -202,8 +202,8 @@ export default function Services() {
 
                 <ModernCardContent className="p-10">
                   <div className="flex items-start space-x-6 mb-8">
-                    <div className="p-4 rounded-xl bg-ak-red/10 group-hover:bg-ak-red/20 transition-colors">
-                      <service.icon className="h-10 w-10 text-ak-red group-hover:scale-110 transition-transform" />
+                     <div className="p-4 rounded-xl bg-ak-blue/10 group-hover:bg-ak-blue/20 transition-colors">
+                       <service.icon className="h-10 w-10 text-ak-blue group-hover:scale-110 transition-transform" />
                     </div>
                     <div className="flex-1">
                       <h3 className="text-2xl font-bold mb-4 text-ak-text">{service.title}</h3>
@@ -215,7 +215,7 @@ export default function Services() {
                   <div className="grid grid-cols-2 gap-4 mb-8">
                     {service.features.map((feature, idx) => (
                       <div key={idx} className="flex items-center space-x-3">
-                        <div className="w-2 h-2 rounded-full bg-ak-red" />
+                         <div className="w-2 h-2 rounded-full bg-ak-blue" />
                         <span className="text-ak-muted font-medium">{feature}</span>
                       </div>
                     ))}
@@ -258,7 +258,7 @@ export default function Services() {
           <ModernGrid cols={3} gap="lg">
             {integrations.map((integration, index) => (
               <ModernCard key={index} variant="glass" hover="lift" className="text-center p-8 group">
-                <integration.icon className="h-16 w-16 mx-auto mb-8 text-ak-red group-hover:scale-110 transition-transform" />
+                <integration.icon className="h-16 w-16 mx-auto mb-8 text-ak-blue group-hover:scale-110 transition-transform" />
                 <h3 className="font-bold mb-4 text-xl text-ak-text">{integration.title}</h3>
                 <p className="text-ak-muted leading-relaxed">{integration.description}</p>
               </ModernCard>
@@ -284,8 +284,8 @@ export default function Services() {
             {useCases.map((useCase, index) => (
               <ModernCard key={index} variant="premium" hover="lift" className="p-10 group">
                 <div className="flex items-start space-x-6">
-                  <div className="p-4 rounded-xl bg-ak-red/10 group-hover:bg-ak-red/20 transition-colors">
-                    <Users className="h-10 w-10 text-ak-red" />
+                   <div className="p-4 rounded-xl bg-ak-blue/10 group-hover:bg-ak-blue/20 transition-colors">
+                     <Users className="h-10 w-10 text-ak-blue" />
                   </div>
                   <div className="flex-1">
                     <h3 className="text-2xl font-bold mb-4 text-ak-text">{useCase.title}</h3>
@@ -293,7 +293,7 @@ export default function Services() {
                     <div className="grid grid-cols-2 gap-3">
                       {useCase.features.map((feature, idx) => (
                         <div key={idx} className="flex items-center space-x-3">
-                          <div className="w-2 h-2 rounded-full bg-ak-red" />
+                          <div className="w-2 h-2 rounded-full bg-ak-blue" />
                           <span className="text-ak-muted font-medium">{feature}</span>
                         </div>
                       ))}

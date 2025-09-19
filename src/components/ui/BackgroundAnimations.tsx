@@ -29,8 +29,8 @@ export const BackgroundAnimations: React.FC<BackgroundAnimationsProps> = ({
         style={{
           background: `
             linear-gradient(135deg, hsl(var(--ak-beige-50)) 0%, hsl(var(--ak-beige-100)) 50%, hsl(var(--ak-beige-300)) 100%),
-            radial-gradient(circle at 20% 80%, hsl(var(--ak-red) / 0.05) 0%, transparent 50%),
-            radial-gradient(circle at 80% 20%, hsl(var(--ak-red) / 0.03) 0%, transparent 50%)
+            radial-gradient(circle at 20% 80%, hsl(var(--ak-blue) / 0.05) 0%, transparent 50%),
+            radial-gradient(circle at 80% 20%, hsl(var(--ak-blue) / 0.03) 0%, transparent 50%)
           `,
           backgroundSize: '400% 400%, 800px 800px, 600px 600px',
           animation: `
@@ -49,7 +49,7 @@ export const BackgroundAnimations: React.FC<BackgroundAnimationsProps> = ({
             style={{
               top: '10%',
               left: '80%',
-              background: 'radial-gradient(circle, hsl(var(--ak-red) / 0.1) 0%, transparent 70%)',
+              background: 'radial-gradient(circle, hsl(var(--ak-blue) / 0.1) 0%, transparent 70%)',
               animation: 'floatSlow 25s ease-in-out infinite, rotateSlow 40s linear infinite'
             }}
           />
@@ -73,7 +73,7 @@ export const BackgroundAnimations: React.FC<BackgroundAnimationsProps> = ({
             style={{
               top: '15%',
               right: '15%',
-              background: 'linear-gradient(45deg, hsl(var(--ak-red) / 0.2), transparent)',
+              background: 'linear-gradient(45deg, hsl(var(--ak-blue) / 0.2), transparent)',
               borderRadius: '30% 70% 70% 30% / 30% 30% 70% 70%',
               animation: 'morph 35s ease-in-out infinite, floatGentle 20s ease-in-out infinite'
             }}

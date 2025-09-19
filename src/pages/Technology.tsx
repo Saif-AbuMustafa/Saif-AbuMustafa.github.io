@@ -41,28 +41,28 @@ export default function Technology() {
       title: 'Artificial Intelligence',
       description: 'Advanced machine learning algorithms for intelligent automation and prediction',
       technologies: ['TensorFlow', 'PyTorch', 'OpenAI GPT', 'Natural Language Processing'],
-      color: 'ak-red'
+      color: 'ak-blue'
     },
     {
       icon: Blocks,
       title: 'Blockchain Infrastructure',
       description: 'Built on Solana for fast, scalable, and cost-effective transactions',
       technologies: ['Solana', 'Rust', 'Smart Contracts', 'Web3.js'],
-      color: 'ak-red'
+      color: 'ak-blue'
     },
     {
       icon: Shield,
       title: 'Cybersecurity',
       description: 'Enterprise-grade security with multiple layers of protection',
       technologies: ['Zero Trust', 'Multi-Factor Auth', 'End-to-End Encryption', 'Hardware Security'],
-      color: 'ak-red'
+      color: 'ak-blue'
     },
     {
       icon: Cloud,
       title: 'Cloud Architecture',
       description: 'Scalable cloud infrastructure with global distribution',
       technologies: ['AWS', 'Kubernetes', 'Docker', 'Microservices'],
-      color: 'ak-red'
+      color: 'ak-blue'
     }
   ];
 
@@ -198,7 +198,7 @@ export default function Technology() {
             {/* Badge */}
             <Badge 
               variant="outline" 
-              className="mb-8 border-ak-red/30 text-ak-red bg-ak-red/5 backdrop-blur-sm animate-fade-in px-6 py-2 text-sm font-medium"
+              className="mb-8 border-ak-blue/30 text-ak-blue bg-ak-blue/5 backdrop-blur-sm animate-fade-in px-6 py-2 text-sm font-medium"
             >
               Enterprise Grade • AI-Powered • Blockchain Native
             </Badge>
@@ -243,8 +243,8 @@ export default function Technology() {
               <ModernCard key={index} variant="premium" hover="lift" className="p-10 group relative overflow-hidden">
                 <div className="relative z-10">
                   <div className="flex items-start space-x-6 mb-8">
-                    <div className="p-4 rounded-xl bg-ak-red/10 group-hover:bg-ak-red/20 transition-colors">
-                      <tech.icon className="h-10 w-10 text-ak-red" />
+                     <div className="p-4 rounded-xl bg-ak-blue/10 group-hover:bg-ak-blue/20 transition-colors">
+                       <tech.icon className="h-10 w-10 text-ak-blue" />
                     </div>
                     <div>
                       <h3 className="text-2xl font-bold mb-3 text-ak-text">{tech.title}</h3>
@@ -255,7 +255,7 @@ export default function Technology() {
                   <div className="grid grid-cols-2 gap-4">
                     {tech.technologies.map((technology, idx) => (
                       <div key={idx} className="flex items-center space-x-3 text-sm">
-                        <div className="w-2 h-2 rounded-full bg-ak-red" />
+                        <div className="w-2 h-2 rounded-full bg-ak-blue" />
                         <span className="text-ak-muted font-medium">{technology}</span>
                       </div>
                     ))}
@@ -273,16 +273,16 @@ export default function Technology() {
         <ModernContainer>
           <Tabs defaultValue="ai" className="w-full">
             <TabsList className="grid w-full grid-cols-4 mb-16 bg-ak-beige-300/30">
-              <TabsTrigger value="ai" className="text-ak-text data-[state=active]:bg-ak-red data-[state=active]:text-ak-white">AI & Machine Learning</TabsTrigger>
-              <TabsTrigger value="blockchain" className="text-ak-text data-[state=active]:bg-ak-red data-[state=active]:text-ak-white">Blockchain</TabsTrigger>
-              <TabsTrigger value="security" className="text-ak-text data-[state=active]:bg-ak-red data-[state=active]:text-ak-white">Security</TabsTrigger>
-              <TabsTrigger value="development" className="text-ak-text data-[state=active]:bg-ak-red data-[state=active]:text-ak-white">Development</TabsTrigger>
+              <TabsTrigger value="ai" className="text-ak-text data-[state=active]:bg-ak-blue data-[state=active]:text-ak-white">AI & Machine Learning</TabsTrigger>
+              <TabsTrigger value="blockchain" className="text-ak-text data-[state=active]:bg-ak-blue data-[state=active]:text-ak-white">Blockchain</TabsTrigger>
+              <TabsTrigger value="security" className="text-ak-text data-[state=active]:bg-ak-blue data-[state=active]:text-ak-white">Security</TabsTrigger>
+              <TabsTrigger value="development" className="text-ak-text data-[state=active]:bg-ak-blue data-[state=active]:text-ak-white">Development</TabsTrigger>
             </TabsList>
               
             <TabsContent value="ai">
               <div className="text-center mb-12">
                 <h3 className="text-4xl font-bold mb-6 text-ak-text">
-                  <Brain className="inline h-10 w-10 mr-4 text-ak-red" />
+                  <Brain className="inline h-10 w-10 mr-4 text-ak-blue" />
                   Artificial Intelligence
                 </h3>
                 <p className="text-xl text-ak-muted max-w-4xl mx-auto leading-relaxed">
@@ -417,13 +417,13 @@ export default function Technology() {
             {compliance.map((cert, index) => (
               <ModernCard key={index} variant="premium" hover="lift" className="p-10 group">
                 <div className="flex items-start space-x-6">
-                  <div className="w-20 h-20 bg-ak-red rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <div className="w-20 h-20 bg-ak-blue rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
                     <Shield className="h-10 w-10 text-ak-white" />
                   </div>
                   <div className="flex-1">
                     <h3 className="text-2xl font-bold mb-4 text-ak-text">{cert.standard}</h3>
                     <p className="text-ak-muted mb-4 text-lg">{cert.description}</p>
-                    <div className="text-ak-red font-semibold">
+                    <div className="text-ak-blue font-semibold">
                       <strong>Scope:</strong> {cert.scope}
                     </div>
                   </div>

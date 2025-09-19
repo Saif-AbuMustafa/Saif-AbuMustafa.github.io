@@ -35,7 +35,7 @@ const InteractiveSection = React.forwardRef<HTMLElement, InteractiveSectionProps
         
         {interactive && (
           <div
-            className="absolute pointer-events-none z-10 w-96 h-96 bg-gradient-radial from-ak-red/8 to-transparent rounded-full blur-2xl transition-all duration-300"
+            className="absolute pointer-events-none z-10 w-96 h-96 bg-gradient-radial from-ak-blue/8 to-transparent rounded-full blur-2xl transition-all duration-300"
             style={{
               left: `${mousePosition.x * 100}%`,
               top: `${mousePosition.y * 100}%`,

@@ -49,8 +49,8 @@ export default {
 				'ak-beige-300': 'hsl(var(--ak-beige-300))',
 				'ak-text': 'hsl(var(--ak-text))',
 				'ak-muted': 'hsl(var(--ak-muted))',
-				'ak-red': 'hsl(var(--ak-red))',
-				'ak-red-dark': 'hsl(var(--ak-red-dark))',
+				'ak-blue': 'hsl(var(--ak-blue))',
+				'ak-blue-dark': 'hsl(var(--ak-blue-dark))',
 				'ak-white': 'hsl(var(--ak-white))',
 				
 				primary: {
@@ -160,9 +160,9 @@ export default {
 				'morph': 'morph 4s ease-in-out infinite'
 			},
 			backgroundImage: {
-				'gradient-primary': 'linear-gradient(135deg, hsl(var(--ak-red)), hsl(var(--ak-red-dark)))',
+				'gradient-primary': 'linear-gradient(135deg, hsl(var(--ak-blue)), hsl(var(--ak-blue-dark)))',
 				'gradient-secondary': 'linear-gradient(135deg, hsl(var(--ak-beige-100)), hsl(var(--ak-beige-300)))',
-				'gradient-gold': 'linear-gradient(135deg, hsl(var(--ak-red)), hsl(var(--ak-red-dark)))',
+				'gradient-gold': 'linear-gradient(135deg, hsl(var(--ak-blue)), hsl(var(--ak-blue-dark)))',
 				'gradient-radial': 'radial-gradient(ellipse at center, var(--tw-gradient-stops))',
 				'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
 				'grid-pattern': 'radial-gradient(circle at 2px 2px, rgba(255,255,255,0.15) 1px, transparent 0)',

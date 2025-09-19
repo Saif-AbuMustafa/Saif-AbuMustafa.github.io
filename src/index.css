@@ -8,16 +8,16 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* AI KEYS Beige & Red Premium Design System */
+    /* AI KEYS Beige & Blue Premium Design System */
     
-    /* New Color Palette - Beige & Red Theme */
+    /* New Color Palette - Beige & Blue Theme */
     --ak-beige-50: 30 20% 98%;     /* #FBF9F7 */
     --ak-beige-100: 30 15% 95%;    /* #F5EFE6 */
     --ak-beige-300: 30 12% 88%;    /* #E9E0D2 */
-    --ak-text: 330 65% 25%;        /* Red-Navy mixture for text */
+    --ak-text: 220 26% 9%;         /* #111827 */
     --ak-muted: 220 9% 46%;        /* #6B7280 */
-    --ak-red: 0 79% 47%;           /* #C92A2A */
-    --ak-red-dark: 0 80% 42%;      /* #B02222 */
+    --ak-blue: 217 91% 60%;        /* #3B82F6 */
+    --ak-blue-dark: 217 91% 50%;   /* #1E40AF */
     --ak-white: 0 0% 100%;         /* #FFFFFF */
 
     /* Theme Mappings */
@@ -30,17 +30,17 @@ All colors MUST be HSL.
     --popover: var(--ak-white);
     --popover-foreground: var(--ak-text);
 
-    /* Primary Brand Colors - Red CTAs */
-    --primary: var(--ak-red);
+    /* Primary Brand Colors - Blue CTAs */
+    --primary: var(--ak-blue);
     --primary-foreground: var(--ak-white);
-    --primary-glow: 0 79% 67%;
-    --primary-dark: var(--ak-red-dark);
+    --primary-glow: 217 91% 80%;
+    --primary-dark: var(--ak-blue-dark);
 
     /* Supporting Color Palette */
-    --fintech-blue: var(--ak-red);
-    --fintech-cyan: var(--ak-red);
-    --fintech-gold: var(--ak-red);
-    --fintech-purple: var(--ak-red);
+    --fintech-blue: var(--ak-blue);
+    --fintech-cyan: var(--ak-blue);
+    --fintech-gold: var(--ak-blue);
+    --fintech-purple: var(--ak-blue);
 
     --secondary: var(--ak-beige-300);
     --secondary-foreground: var(--ak-text);
@@ -51,12 +51,12 @@ All colors MUST be HSL.
     --accent: var(--ak-beige-300);
     --accent-foreground: var(--ak-text);
 
-    --destructive: var(--ak-red);
+    --destructive: var(--ak-blue);
     --destructive-foreground: var(--ak-white);
 
     --border: var(--ak-beige-300);
     --input: var(--ak-beige-300);
-    --ring: var(--ak-red);
+    --ring: var(--ak-blue);
 
     --radius: 0.75rem;
     
@@ -94,16 +94,16 @@ All colors MUST be HSL.
     --popover: 220 26% 8%;
     --popover-foreground: var(--ak-beige-50);
 
-    --primary: var(--ak-red);
+    --primary: var(--ak-blue);
     --primary-foreground: var(--ak-white);
-    --primary-glow: 0 79% 67%;
-    --primary-dark: var(--ak-red-dark);
+    --primary-glow: 217 91% 80%;
+    --primary-dark: var(--ak-blue-dark);
 
     /* Dark Theme Supporting Colors */
-    --fintech-blue: var(--ak-red);
-    --fintech-cyan: var(--ak-red);
-    --fintech-gold: var(--ak-red);
-    --fintech-purple: var(--ak-red);
+    --fintech-blue: var(--ak-blue);
+    --fintech-cyan: var(--ak-blue);
+    --fintech-gold: var(--ak-blue);
+    --fintech-purple: var(--ak-blue);
 
     --secondary: 220 26% 15%;
     --secondary-foreground: var(--ak-beige-50);
@@ -114,12 +114,12 @@ All colors MUST be HSL.
     --accent: 220 26% 15%;
     --accent-foreground: var(--ak-beige-50);
 
-    --destructive: var(--ak-red);
+    --destructive: var(--ak-blue);
     --destructive-foreground: var(--ak-white);
 
     --border: 220 26% 20%;
     --input: 220 26% 15%;
-    --ring: var(--ak-red);
+    --ring: var(--ak-blue);
     
     /* Dark Theme Effects */
     --gradient-mesh: radial-gradient(ellipse at top, hsl(var(--fintech-blue) / 0.1), transparent),
@@ -173,10 +173,10 @@ All colors MUST be HSL.
 
 @keyframes glow {
   0%, 100% {
-    box-shadow: 0 0 20px hsl(var(--ak-red) / 0.3);
+    box-shadow: 0 0 20px hsl(var(--ak-blue) / 0.3);
   }
   50% {
-    box-shadow: 0 0 30px hsl(var(--ak-red) / 0.6);
+    box-shadow: 0 0 30px hsl(var(--ak-blue) / 0.6);
   }
 }
 
@@ -455,7 +455,7 @@ All colors MUST be HSL.
 
 /* CTA Button Styles */
 .btn-primary {
-  @apply inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-ak-white bg-ak-red rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 hover:bg-ak-red-dark;
+  @apply inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-ak-white bg-ak-blue rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 hover:bg-ak-blue-dark;
 }
 
 .btn-secondary {
@@ -489,11 +489,11 @@ All colors MUST be HSL.
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-ak-red/50 rounded-full;
+    @apply bg-ak-blue/50 rounded-full;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-ak-red/70;
+    @apply bg-ak-blue/70;
   }
 }
 
@@ -509,19 +509,19 @@ All colors MUST be HSL.
 
   /* Glow effects */
   .glow-blue {
-    box-shadow: 0 0 40px hsl(var(--ak-red) / 0.3);
+    box-shadow: 0 0 40px hsl(var(--ak-blue) / 0.3);
   }
 
   .glow-cyan {
-    box-shadow: 0 0 40px hsl(var(--ak-red) / 0.3);
+    box-shadow: 0 0 40px hsl(var(--ak-blue) / 0.3);
   }
 
   .glow-purple {
-    box-shadow: 0 0 40px hsl(var(--ak-red) / 0.3);
+    box-shadow: 0 0 40px hsl(var(--ak-blue) / 0.3);
   }
 
   .glow-gold {
-    box-shadow: 0 0 40px hsl(var(--ak-red) / 0.3);
+    box-shadow: 0 0 40px hsl(var(--ak-blue) / 0.3);
   }
 
   /* Hover animations */
@@ -535,15 +535,15 @@ All colors MUST be HSL.
 
   /* Text effects */
   .text-gradient-blue {
-    @apply bg-gradient-to-r from-ak-red to-ak-red-dark bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-ak-blue to-ak-blue-dark bg-clip-text text-transparent;
   }
 
   .text-gradient-purple {
-    @apply bg-gradient-to-r from-ak-red to-ak-red-dark bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-ak-blue to-ak-blue-dark bg-clip-text text-transparent;
   }
 
   .text-gradient-gold {
-    @apply bg-gradient-to-r from-ak-red to-ak-red-dark bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-ak-blue to-ak-blue-dark bg-clip-text text-transparent;
   }
 
   /* Micro-interactions */

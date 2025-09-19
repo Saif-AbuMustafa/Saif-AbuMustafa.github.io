@@ -81,24 +81,24 @@ export const OptimizedCursor: React.FC<OptimizedCursorProps> = ({ disabled = fal
       {/* Main cursor dot */}
       <div
         className={`absolute -translate-x-1/2 -translate-y-1/2 rounded-full transition-all duration-300 ${
-          isHovering ? 'w-8 h-8 bg-ak-red' : 'w-2 h-2 bg-ak-red'
+          isHovering ? 'w-8 h-8 bg-ak-blue' : 'w-2 h-2 bg-ak-blue'
         }`}
         style={{
-          boxShadow: isHovering ? '0 0 20px hsl(var(--ak-red) / 0.6)' : 'none'
+          boxShadow: isHovering ? '0 0 20px hsl(var(--ak-blue) / 0.6)' : 'none'
         }}
       />
       
       {/* Outer ring */}
       <div
-        className={`absolute -translate-x-1/2 -translate-y-1/2 rounded-full border border-ak-red/40 transition-all duration-500 ${
-          isHovering ? 'w-16 h-16 border-ak-red/60' : 'w-8 h-8'
+        className={`absolute -translate-x-1/2 -translate-y-1/2 rounded-full border border-ak-blue/40 transition-all duration-500 ${
+          isHovering ? 'w-16 h-16 border-ak-blue/60' : 'w-8 h-8'
         }`}
       />
       
       {/* Trailing effect */}
       {isMoving && (
         <div
-          className="absolute -translate-x-1/2 -translate-y-1/2 w-1 h-1 bg-ak-red/30 rounded-full animate-ping"
+          className="absolute -translate-x-1/2 -translate-y-1/2 w-1 h-1 bg-ak-blue/30 rounded-full animate-ping"
         />
       )}
     </div>

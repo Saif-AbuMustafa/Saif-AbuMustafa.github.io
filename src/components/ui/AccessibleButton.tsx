@@ -18,7 +18,7 @@ export const AccessibleButton = React.forwardRef<HTMLButtonElement, AccessibleBu
         size={size}
         className={cn(
           // Ensure high contrast for accessibility
-          'focus-visible:ring-ak-red focus-visible:ring-offset-2 focus-visible:ring-offset-background',
+          'focus-visible:ring-ak-blue focus-visible:ring-offset-2 focus-visible:ring-offset-background',
           // Improve touch targets for mobile
           'min-h-[44px] min-w-[44px]',
           className
