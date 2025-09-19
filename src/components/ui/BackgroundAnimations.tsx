@@ -22,10 +22,10 @@ export const BackgroundAnimations: React.FC<BackgroundAnimationsProps> = ({
   }
 
   return (
-    <div className={`absolute inset-0 overflow-hidden ${className}`}>
+    <div className={`absolute inset-0 overflow-hidden -z-10 ${className}`}>
       {/* Animated gradient background - very subtle */}
       <div 
-        className="absolute inset-0 opacity-20"
+        className="absolute inset-0 opacity-20 -z-10"
         style={{
           background: `
             linear-gradient(135deg, hsl(var(--ak-beige-50)) 0%, hsl(var(--ak-beige-100)) 50%, hsl(var(--ak-beige-300)) 100%),
@@ -45,7 +45,7 @@ export const BackgroundAnimations: React.FC<BackgroundAnimationsProps> = ({
         <>
           {/* Large floating shapes for hero - very subtle */}
           <div 
-            className="absolute w-96 h-96 rounded-full opacity-5 will-change-transform"
+            className="absolute w-96 h-96 rounded-full opacity-5 will-change-transform -z-10"
             style={{
               top: '10%',
               left: '80%',
@@ -54,7 +54,7 @@ export const BackgroundAnimations: React.FC<BackgroundAnimationsProps> = ({
             }}
           />
           <div 
-            className="absolute w-64 h-64 rounded-full opacity-4 will-change-transform"
+            className="absolute w-64 h-64 rounded-full opacity-4 will-change-transform -z-10"
             style={{
               bottom: '20%',
               left: '10%',
@@ -69,7 +69,7 @@ export const BackgroundAnimations: React.FC<BackgroundAnimationsProps> = ({
         <>
           {/* Medium floating elements for sections - very subtle */}
           <div 
-            className="absolute w-32 h-32 opacity-3 will-change-transform"
+            className="absolute w-32 h-32 opacity-3 will-change-transform -z-10"
             style={{
               top: '15%',
               right: '15%',
@@ -79,7 +79,7 @@ export const BackgroundAnimations: React.FC<BackgroundAnimationsProps> = ({
             }}
           />
           <div 
-            className="absolute w-24 h-24 opacity-2 will-change-transform"
+            className="absolute w-24 h-24 opacity-2 will-change-transform -z-10"
             style={{
               bottom: '25%',
               right: '25%',
@@ -93,7 +93,7 @@ export const BackgroundAnimations: React.FC<BackgroundAnimationsProps> = ({
 
       {/* Subtle ambient glow pattern */}
       <div 
-        className="absolute inset-0 opacity-[0.02]"
+        className="absolute inset-0 opacity-[0.02] -z-10"
         style={{
           backgroundImage: `
             radial-gradient(circle at 25% 25%, hsl(var(--ak-blue) / 0.03) 0%, transparent 50%),
