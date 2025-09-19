@@ -29,6 +29,7 @@ import { Navigation } from '@/components/layout/Navigation';
 import { Footer } from '@/components/Footer';
 import { TokenDisplay } from '@/components/TokenDisplay';
 import heroBackground from '@/assets/hero-bg.jpg';
+import { cn } from '@/lib/utils';
 
 export default function WalletPage() {
   const features = [
@@ -282,11 +283,22 @@ export default function WalletPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                   {supportedChains.map((chain, index) => (
                     <Card key={index} className="p-6 text-center border-border/50 bg-card/50 backdrop-blur-sm group hover:shadow-lg transition-all duration-300">
-                      <div className={`text-4xl mb-4 text-${chain.color} group-hover:scale-110 transition-transform`}>
-                        {chain.logo}
-                      </div>
-                      <h3 className="font-semibold mb-2">{chain.name}</h3>
-                      <Badge variant="outline" className={`border-${chain.color} text-${chain.color}`}>
+                  <div className={cn(
+                    "text-4xl mb-4 group-hover:scale-110 transition-transform",
+                    chain.color === 'fintech-blue' && 'text-fintech-blue',
+                    chain.color === 'fintech-cyan' && 'text-fintech-cyan',
+                    chain.color === 'fintech-purple' && 'text-fintech-purple',
+                    chain.color === 'fintech-gold' && 'text-fintech-gold'
+                  )}>
+                    {chain.logo}
+                  </div>
+                  <h3 className="font-semibold mb-2">{chain.name}</h3>
+                  <Badge variant="outline" className={cn(
+                    chain.color === 'fintech-blue' && 'border-fintech-blue text-fintech-blue',
+                    chain.color === 'fintech-cyan' && 'border-fintech-cyan text-fintech-cyan', 
+                    chain.color === 'fintech-purple' && 'border-fintech-purple text-fintech-purple',
+                    chain.color === 'fintech-gold' && 'border-fintech-gold text-fintech-gold'
+                  )}>
                         {chain.symbol}
                       </Badge>
                     </Card>

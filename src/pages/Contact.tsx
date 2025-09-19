@@ -23,6 +23,7 @@ import {
 import { Navigation } from '@/components/layout/Navigation';
 import { Footer } from '@/components/Footer';
 import heroBackground from '@/assets/hero-bg.jpg';
+import { cn } from '@/lib/utils';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -147,10 +148,28 @@ export default function Contact() {
                   key={index}
                   className="text-center p-8 border-border/50 bg-card/50 backdrop-blur-sm group hover:shadow-2xl transition-all duration-500 hover:scale-105 relative overflow-hidden"
                 >
-                  <div className={`absolute inset-0 bg-gradient-to-br from-${method.color}/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+                  <div className={cn(
+                    "absolute inset-0 bg-gradient-to-br to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500",
+                    method.color === 'fintech-blue' && 'from-fintech-blue/5',
+                    method.color === 'fintech-cyan' && 'from-fintech-cyan/5', 
+                    method.color === 'fintech-purple' && 'from-fintech-purple/5',
+                    method.color === 'fintech-gold' && 'from-fintech-gold/5'
+                  )} />
                   <div className="relative z-10">
-                    <div className={`p-4 rounded-xl bg-${method.color}/10 group-hover:bg-${method.color}/20 transition-colors mx-auto w-fit mb-6`}>
-                      <method.icon className={`h-8 w-8 text-${method.color} group-hover:scale-110 transition-transform`} />
+                    <div className={cn(
+                      "p-4 rounded-xl transition-colors mx-auto w-fit mb-6",
+                      method.color === 'fintech-blue' && 'bg-fintech-blue/10 group-hover:bg-fintech-blue/20',
+                      method.color === 'fintech-cyan' && 'bg-fintech-cyan/10 group-hover:bg-fintech-cyan/20',
+                      method.color === 'fintech-purple' && 'bg-fintech-purple/10 group-hover:bg-fintech-purple/20',
+                      method.color === 'fintech-gold' && 'bg-fintech-gold/10 group-hover:bg-fintech-gold/20'
+                    )}>
+                      <method.icon className={cn(
+                        "h-8 w-8 group-hover:scale-110 transition-transform",
+                        method.color === 'fintech-blue' && 'text-fintech-blue',
+                        method.color === 'fintech-cyan' && 'text-fintech-cyan',
+                        method.color === 'fintech-purple' && 'text-fintech-purple',
+                        method.color === 'fintech-gold' && 'text-fintech-gold'
+                      )} />
                     </div>
                     <h3 className="font-semibold mb-2 text-lg">{method.title}</h3>
                     <p className="text-muted-foreground mb-4 text-sm">{method.description}</p>

@@ -21,6 +21,7 @@ import {
   CheckCircle
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { cn } from '@/lib/utils';
 import heroBackground from '@/assets/hero-bg.jpg';
 
 export default function Home() {
@@ -217,8 +218,20 @@ export default function Home() {
                 >
                   <CardContent className="p-8">
                     <div className="flex items-start space-x-6">
-                      <div className={`p-4 rounded-xl bg-${service.color}/10 group-hover:bg-${service.color}/20 transition-colors`}>
-                        <service.icon className={`h-8 w-8 text-${service.color} group-hover:scale-110 transition-transform`} />
+                      <div className={cn(
+                        "p-4 rounded-xl transition-colors",
+                        service.color === 'fintech-blue' && 'bg-fintech-blue/10 group-hover:bg-fintech-blue/20',
+                        service.color === 'fintech-cyan' && 'bg-fintech-cyan/10 group-hover:bg-fintech-cyan/20',
+                        service.color === 'fintech-purple' && 'bg-fintech-purple/10 group-hover:bg-fintech-purple/20',
+                        service.color === 'fintech-gold' && 'bg-fintech-gold/10 group-hover:bg-fintech-gold/20'
+                      )}>
+                        <service.icon className={cn(
+                          "h-8 w-8 group-hover:scale-110 transition-transform",
+                          service.color === 'fintech-blue' && 'text-fintech-blue',
+                          service.color === 'fintech-cyan' && 'text-fintech-cyan',
+                          service.color === 'fintech-purple' && 'text-fintech-purple',
+                          service.color === 'fintech-gold' && 'text-fintech-gold'
+                        )} />
                       </div>
                       <div className="flex-1">
                         <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
@@ -232,7 +245,13 @@ export default function Home() {
                       </div>
                     </div>
                   </CardContent>
-                  <div className={`absolute inset-0 bg-gradient-to-br from-${service.color}/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`} />
+                  <div className={cn(
+                    "absolute inset-0 bg-gradient-to-br to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none",
+                    service.color === 'fintech-blue' && 'from-fintech-blue/5',
+                    service.color === 'fintech-cyan' && 'from-fintech-cyan/5',
+                    service.color === 'fintech-purple' && 'from-fintech-purple/5',
+                    service.color === 'fintech-gold' && 'from-fintech-gold/5'
+                  )} />
                 </Card>
               ))}
             </div>

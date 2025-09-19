@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Navigation } from "@/components/layout/Navigation";
 import ScrollToTop from "@/components/ScrollToTop";
 import { AnimatedBackground } from "@/components/ui/AnimatedBackground";
+import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { Footer } from "@/components/Footer";
 import Index from "./pages/Index";
 import About from "./pages/About";
@@ -42,43 +43,45 @@ const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <ScrollToTop />
-          <AnimatedBackground />
-          <div className="relative min-h-screen bg-background text-foreground">
-            <Navigation />
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/services" element={<Services />} />
-              <Route path="/wallet" element={<Wallet />} />
-              <Route path="/travel" element={<Travel />} />
-              <Route path="/logistics" element={<Logistics />} />
-              <Route path="/education" element={<Education />} />
-              <Route path="/technology" element={<Technology />} />
-              <Route path="/token" element={<Token />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/careers" element={<Careers />} />
-              <Route path="/investors" element={<Investors />} />
-              <Route path="/resources/docs" element={<Documentation />} />
-              <Route path="/resources/api" element={<ApiReference />} />
-              <Route path="/resources/wallet" element={<WalletDocs />} />
-              <Route path="/resources/travel" element={<TravelDocs />} />
-              <Route path="/resources/logistics" element={<LogisticsDocs />} />
-              <Route path="/resources/education" element={<EducationDocs />} />
-              <Route path="/resources/status" element={<StatusPage />} />
-              <Route path="/press-kit" element={<PressKit />} />
-              <Route path="/legal/privacy" element={<Privacy />} />
-              <Route path="/legal/terms" element={<Terms />} />
-              <Route path="/legal/cookies" element={<Cookies />} />
-              <Route path="/legal/compliance" element={<Compliance />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-            <Footer />
-          </div>
-        </BrowserRouter>
+        <ErrorBoundary>
+          <Toaster />
+          <Sonner />
+          <BrowserRouter>
+            <ScrollToTop />
+            <AnimatedBackground />
+            <div className="relative min-h-screen bg-background text-foreground">
+              <Navigation />
+              <Routes>
+                <Route path="/" element={<Index />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/services" element={<Services />} />
+                <Route path="/wallet" element={<Wallet />} />
+                <Route path="/travel" element={<Travel />} />
+                <Route path="/logistics" element={<Logistics />} />
+                <Route path="/education" element={<Education />} />
+                <Route path="/technology" element={<Technology />} />
+                <Route path="/token" element={<Token />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/careers" element={<Careers />} />
+                <Route path="/investors" element={<Investors />} />
+                <Route path="/resources/docs" element={<Documentation />} />
+                <Route path="/resources/api" element={<ApiReference />} />
+                <Route path="/resources/wallet" element={<WalletDocs />} />
+                <Route path="/resources/travel" element={<TravelDocs />} />
+                <Route path="/resources/logistics" element={<LogisticsDocs />} />
+                <Route path="/resources/education" element={<EducationDocs />} />
+                <Route path="/resources/status" element={<StatusPage />} />
+                <Route path="/press-kit" element={<PressKit />} />
+                <Route path="/legal/privacy" element={<Privacy />} />
+                <Route path="/legal/terms" element={<Terms />} />
+                <Route path="/legal/cookies" element={<Cookies />} />
+                <Route path="/legal/compliance" element={<Compliance />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+              <Footer />
+            </div>
+          </BrowserRouter>
+        </ErrorBoundary>
       </TooltipProvider>
     </QueryClientProvider>
   );

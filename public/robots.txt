@@ -12,3 +12,29 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+# Important pages
+Allow: /about
+Allow: /services
+Allow: /wallet
+Allow: /travel
+Allow: /logistics
+Allow: /education
+Allow: /technology
+Allow: /token
+Allow: /contact
+Allow: /careers
+Allow: /investors
+
+# Legal pages
+Allow: /legal/
+
+# Resources
+Allow: /resources/
+
+# Block certain file types
+Disallow: *.json$
+Disallow: /api/
+
+# Sitemap location
+Sitemap: https://aikeys.finance/sitemap.xml

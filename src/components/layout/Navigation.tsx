@@ -116,8 +116,9 @@ export const Navigation = () => {
             <div className="relative">
               <img 
                 src={logo} 
-                alt="AI KEYS" 
-                className="h-12 w-12 transition-transform group-hover:scale-110" 
+                alt="AI KEYS Company Logo - Navigate to homepage" 
+                className="h-12 w-12 transition-transform group-hover:scale-110"
+                loading="eager"
               />
               <div className="absolute inset-0 bg-fintech-blue/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
             </div>

@@ -240,7 +240,7 @@ export default function Token() {
             size="lg" 
             variant="outline" 
             className="h-14 px-8"
-            onClick={() => window.open(platformLinks.jupiter, '_blank')}
+            onClick={() => window.open(platformLinks.jupiter, '_blank', 'noopener,noreferrer')}
           >
             <ExternalLink className="mr-2 h-5 w-5" />
             Trade on Jupiter
@@ -543,7 +543,7 @@ export default function Token() {
                 size="lg" 
                 variant="outline" 
                 className="h-14 px-8"
-                onClick={() => window.open(platformLinks.geckoterminal, '_blank')}
+                onClick={() => window.open(platformLinks.geckoterminal, '_blank', 'noopener,noreferrer')}
               >
                 <ExternalLink className="mr-2 h-5 w-5" />
                 View on GeckoTerminal
@@ -582,7 +582,7 @@ export default function Token() {
                 size="lg" 
                 variant="outline" 
                 className="h-14 px-8"
-                onClick={() => window.open(platformLinks.solscan, '_blank')}
+                onClick={() => window.open(platformLinks.solscan, '_blank', 'noopener,noreferrer')}
               >
                 <ExternalLink className="mr-2 h-5 w-5" />
                 View Contract

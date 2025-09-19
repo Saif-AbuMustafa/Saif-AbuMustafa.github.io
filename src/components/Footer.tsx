@@ -19,10 +19,10 @@ export const Footer = () => {
     {
       title: 'Platform',
       links: [
-        { label: t('nav.wallet'), href: '#wallet' },
-        { label: t('nav.travel'), href: '#travel' },
-        { label: t('nav.logistics'), href: '#logistics' },
-        { label: t('nav.education'), href: '#education' }
+        { label: t('nav.wallet'), href: '/wallet' },
+        { label: t('nav.travel'), href: '/travel' },
+        { label: t('nav.logistics'), href: '/logistics' },
+        { label: t('nav.education'), href: '/education' }
       ]
     },
     {
@@ -55,9 +55,9 @@ export const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
-    { icon: Github, href: '#', label: 'GitHub' }
+    { icon: Twitter, href: 'https://twitter.com/AIKeysOfficial', label: 'Follow AI KEYS on Twitter' },
+    { icon: Linkedin, href: 'https://linkedin.com/company/ai-keys', label: 'Connect with AI KEYS on LinkedIn' },
+    { icon: Github, href: 'https://github.com/ai-keys', label: 'View AI KEYS on GitHub' }
   ];
 
   return (
@@ -69,7 +69,7 @@ export const Footer = () => {
             {/* Company Info */}
             <div className="lg:col-span-2">
               <div className="flex items-center space-x-3 mb-6">
-                <img src={logo} alt="AI KEYS" className="h-10 w-10" />
+                <img src={logo} alt="AI KEYS Company Logo" className="h-10 w-10" />
                 <div>
                   <div className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent">
                     AI KEYS
@@ -106,7 +106,12 @@ export const Footer = () => {
                     className="border-border/50 hover:bg-fintech-blue/10 hover:border-fintech-blue/50 group"
                     asChild
                   >
-                    <a href={social.href} aria-label={social.label}>
+                    <a 
+                      href={social.href} 
+                      aria-label={social.label}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <social.icon className="h-4 w-4 group-hover:text-fintech-blue transition-colors" />
                     </a>
                   </Button>
@@ -121,9 +126,13 @@ export const Footer = () => {
                 <ul className="space-y-3">
                   {section.links.map((link, linkIndex) => (
                     <li key={linkIndex}>
-                      <a 
+                     <a 
                         href={link.href}
                         className="text-muted-foreground hover:text-fintech-blue transition-colors text-sm flex items-center group"
+                        {...(link.href.startsWith('http') && {
+                          target: '_blank',
+                          rel: 'noopener noreferrer'
+                        })}
                       >
                         {link.label}
                         <ExternalLink className="h-3 w-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />

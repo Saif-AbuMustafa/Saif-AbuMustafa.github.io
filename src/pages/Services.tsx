@@ -24,6 +24,7 @@ import {
 import { Link } from 'react-router-dom';
 import { Navigation } from '@/components/layout/Navigation';
 import heroBackground from '@/assets/hero-bg.jpg';
+import { cn } from '@/lib/utils';
 
 export default function Services() {
   const services = [
@@ -174,8 +175,20 @@ export default function Services() {
 
                   <CardHeader className="pb-4">
                     <div className="flex items-start space-x-4 mb-4">
-                      <div className={`p-4 rounded-xl bg-${service.color}/10 group-hover:bg-${service.color}/20 transition-colors`}>
-                        <service.icon className={`h-10 w-10 text-${service.color} group-hover:scale-110 transition-transform`} />
+                      <div className={cn(
+                        "p-4 rounded-xl transition-colors",
+                        service.color === 'fintech-blue' && 'bg-fintech-blue/10 group-hover:bg-fintech-blue/20',
+                        service.color === 'fintech-cyan' && 'bg-fintech-cyan/10 group-hover:bg-fintech-cyan/20',
+                        service.color === 'fintech-purple' && 'bg-fintech-purple/10 group-hover:bg-fintech-purple/20',
+                        service.color === 'fintech-gold' && 'bg-fintech-gold/10 group-hover:bg-fintech-gold/20'
+                      )}>
+                        <service.icon className={cn(
+                          "h-10 w-10 group-hover:scale-110 transition-transform",
+                          service.color === 'fintech-blue' && 'text-fintech-blue',
+                          service.color === 'fintech-cyan' && 'text-fintech-cyan',
+                          service.color === 'fintech-purple' && 'text-fintech-purple',
+                          service.color === 'fintech-gold' && 'text-fintech-gold'
+                        )} />
                       </div>
                       <div className="flex-1">
                         <CardTitle className="text-2xl mb-3">{service.title}</CardTitle>
@@ -189,7 +202,13 @@ export default function Services() {
                     <div className="grid grid-cols-2 gap-3 mb-6">
                       {service.features.map((feature, idx) => (
                         <div key={idx} className="flex items-center space-x-2 text-sm">
-                          <div className={`w-2 h-2 rounded-full bg-${service.color}`} />
+                    <div className={cn(
+                      "w-2 h-2 rounded-full",
+                      service.color === 'fintech-blue' && 'bg-fintech-blue',
+                      service.color === 'fintech-cyan' && 'bg-fintech-cyan',
+                      service.color === 'fintech-purple' && 'bg-fintech-purple',
+                      service.color === 'fintech-gold' && 'bg-fintech-gold'
+                    )} />
                           <span className="text-muted-foreground">{feature}</span>
                         </div>
                       ))}
@@ -216,7 +235,13 @@ export default function Services() {
                   </CardContent>
 
                   {/* Hover Effect */}
-                  <div className={`absolute inset-0 bg-gradient-to-br from-${service.color}/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`} />
+                  <div className={cn(
+                    "absolute inset-0 bg-gradient-to-br to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none",
+                    service.color === 'fintech-blue' && 'from-fintech-blue/5',
+                    service.color === 'fintech-cyan' && 'from-fintech-cyan/5',
+                    service.color === 'fintech-purple' && 'from-fintech-purple/5',
+                    service.color === 'fintech-gold' && 'from-fintech-gold/5'
+                  )} />
                 </Card>
               ))}
             </div>
