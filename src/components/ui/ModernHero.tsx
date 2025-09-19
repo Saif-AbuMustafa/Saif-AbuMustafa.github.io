@@ -89,7 +89,7 @@ const ModernHero = React.forwardRef<HTMLElement, ModernHeroProps>(
             </h1>
 
             {/* Description */}
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto mb-12 animate-fade-in leading-relaxed" style={{ animationDelay: '0.3s' }}>
+            <p className="text-xl md:text-2xl text-black max-w-4xl mx-auto mb-12 animate-fade-in leading-relaxed" style={{ animationDelay: '0.3s' }}>
               {description}
             </p>
 
