@@ -142,7 +142,7 @@ export const Navigation = () => {
                       <NavigationMenuTrigger 
                         className={cn(
                           "bg-transparent hover:bg-accent/50 data-[state=open]:bg-accent/50",
-                          "text-foreground/80 hover:text-foreground"
+                          "text-ak-text hover:text-ak-blue font-medium"
                         )}
                       >
                         {item.label}
@@ -181,8 +181,8 @@ export const Navigation = () => {
                         className={cn(
                           "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50",
                           isActivePath(item.href) 
-                            ? 'text-foreground bg-accent/50' 
-                            : 'text-foreground/80'
+                            ? 'text-ak-text bg-accent/50 font-semibold' 
+                            : 'text-ak-text hover:text-ak-blue'
                         )}
                       >
                         {item.label}
