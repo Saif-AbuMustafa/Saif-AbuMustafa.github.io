@@ -5,6 +5,9 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { AnimatedCounter } from '@/components/ui/AnimatedCounter';
+import { ModernCard, ModernCardContent } from '@/components/ui/ModernCard';
+import { ModernSection, ModernContainer, ModernGrid } from '@/components/ui/ModernSection';
+import { ModernHero } from '@/components/ui/ModernHero';
 import { 
   Users, 
   TrendingUp, 
@@ -112,84 +115,80 @@ export default function About() {
 
   return (
     <div className="min-h-screen pt-20">
-      <PageHeader
+      <ModernHero
         title="About"
         subtitle="AI KEYS"
         description="We're revolutionizing the global financial ecosystem by merging artificial intelligence with secure, accessible, and versatile digital asset management."
         badge="Dubai, UAE • Since 2025"
         background={heroBackground}
       >
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button size="lg" asChild className="bg-gradient-primary text-white">
+        <div className="flex flex-col sm:flex-row gap-6 justify-center">
+          <Button size="xl" variant="premium" asChild className="group">
             <Link to="/careers">
               <Users className="mr-2 h-5 w-5" />
               Join Our Team
             </Link>
           </Button>
-          <Button size="lg" variant="outline" asChild>
+          <Button size="xl" variant="glass" asChild className="group">
             <Link to="/contact">
               Contact Us
-              <ArrowRight className="ml-2 h-5 w-5" />
+              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Link>
           </Button>
         </div>
-      </PageHeader>
+      </ModernHero>
 
       {/* Company Stats */}
-      <section className="py-20 lg:py-32 bg-accent/5">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-              {stats.map((stat, index) => (
-                <Card key={index} className="text-center p-8 border-border/50 bg-card/50 backdrop-blur-sm group hover:shadow-lg transition-all duration-300">
-                  <stat.icon className="h-12 w-12 mx-auto mb-4 text-fintech-blue group-hover:scale-110 transition-transform" />
-                  <div className="text-3xl font-bold mb-2 bg-gradient-primary bg-clip-text text-transparent">
-                    <AnimatedCounter 
-                      end={stat.value} 
-                      prefix={stat.prefix} 
-                      suffix={stat.suffix}
-                    />
-                  </div>
-                  <div className="text-sm text-muted-foreground">{stat.label}</div>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <ModernSection variant="accent" padding="xl">
+        <ModernContainer>
+          <ModernGrid cols={4} gap="xl">
+            {stats.map((stat, index) => (
+              <ModernCard key={index} variant="premium" hover="lift" className="text-center p-10">
+                <stat.icon className="h-16 w-16 mx-auto mb-6 text-fintech-blue group-hover:scale-125 transition-all duration-500" />
+                <div className="text-4xl font-black mb-3 bg-gradient-primary bg-clip-text text-transparent">
+                  <AnimatedCounter 
+                    end={stat.value} 
+                    prefix={stat.prefix} 
+                    suffix={stat.suffix}
+                  />
+                </div>
+                <div className="text-sm font-medium text-muted-foreground">{stat.label}</div>
+              </ModernCard>
+            ))}
+          </ModernGrid>
+        </ModernContainer>
+      </ModernSection>
 
       {/* Vision & Mission */}
-      <section className="py-20 lg:py-32">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              <Card className="p-8 border-border/50 bg-card/50 backdrop-blur-sm">
-                <div className="flex items-center space-x-3 mb-6">
-                  <Eye className="h-8 w-8 text-fintech-blue" />
-                  <h2 className="text-3xl font-bold">Our Vision</h2>
-                </div>
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  To revolutionize the global financial ecosystem by merging artificial intelligence with secure, 
-                  accessible, and versatile digital asset management, creating a world where financial services 
-                  are intelligent, seamless, and universally accessible.
-                </p>
-              </Card>
+      <ModernSection padding="xl">
+        <ModernContainer>
+          <ModernGrid cols={2} gap="xl">
+            <ModernCard variant="premium" hover="lift" className="p-10">
+              <div className="flex items-center space-x-4 mb-8">
+                <Eye className="h-10 w-10 text-fintech-blue" />
+                <h2 className="text-4xl font-bold">Our Vision</h2>
+              </div>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                To revolutionize the global financial ecosystem by merging artificial intelligence with secure, 
+                accessible, and versatile digital asset management, creating a world where financial services 
+                are intelligent, seamless, and universally accessible.
+              </p>
+            </ModernCard>
 
-              <Card className="p-8 border-border/50 bg-card/50 backdrop-blur-sm">
-                <div className="flex items-center space-x-3 mb-6">
-                  <Target className="h-8 w-8 text-fintech-cyan" />
-                  <h2 className="text-3xl font-bold">Our Mission</h2>
-                </div>
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  Our mission is to empower users with an AI-driven, all-in-one financial platform that securely 
-                  manages cryptocurrencies, facilitates fiat payments, and automates financial processes — ensuring 
-                  ease of use, transparency, and full regulatory compliance.
-                </p>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
+            <ModernCard variant="premium" hover="lift" className="p-10">
+              <div className="flex items-center space-x-4 mb-8">
+                <Target className="h-10 w-10 text-fintech-cyan" />
+                <h2 className="text-4xl font-bold">Our Mission</h2>
+              </div>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Our mission is to empower users with an AI-driven, all-in-one financial platform that securely 
+                manages cryptocurrencies, facilitates fiat payments, and automates financial processes — ensuring 
+                ease of use, transparency, and full regulatory compliance.
+              </p>
+            </ModernCard>
+          </ModernGrid>
+        </ModernContainer>
+      </ModernSection>
 
       {/* Company Values */}
       <section className="py-20 lg:py-32 bg-accent/5">
@@ -324,25 +323,25 @@ export default function About() {
         <MouseFollower />
         <div className="relative z-10 container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 animate-fade-in">
+            <h2 className="text-5xl md:text-7xl font-black mb-8 animate-fade-in tracking-tight">
               Join Our Mission to Transform
               <br />
               <span className="bg-gradient-primary bg-clip-text text-transparent">
                 Global Finance
               </span>
             </h2>
-            <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto animate-slide-up">
+            <p className="text-xl md:text-2xl text-muted-foreground mb-16 max-w-3xl mx-auto animate-slide-up leading-relaxed">
               Whether you're looking to partner with us, join our team, or use our services, 
               we'd love to hear from you.
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center animate-scale-in">
-              <Button size="lg" asChild className="bg-gradient-primary text-white">
+            <div className="flex flex-col sm:flex-row gap-8 justify-center animate-scale-in">
+              <Button size="xl" variant="premium" asChild className="group">
                 <Link to="/careers">
-                  <Users className="mr-2 h-5 w-5" />
+                  <Users className="mr-2 h-6 w-6" />
                   View Careers
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" asChild>
+              <Button size="xl" variant="glass" asChild className="group">
                 <Link to="/investors">
                   <TrendingUp className="mr-2 h-5 w-5" />
                   Investor Relations
