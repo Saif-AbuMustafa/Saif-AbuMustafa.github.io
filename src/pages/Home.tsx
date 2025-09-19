@@ -252,7 +252,7 @@ export default function Home() {
         className="py-20 lg:py-32"
       >
         <div className="relative z-10 container mx-auto px-4 text-center">
-          <h2 className="text-5xl md:text-7xl font-black mb-8 animate-fade-in tracking-tight">
+          <h2 className="text-5xl md:text-7xl font-black mb-8 animate-fade-in tracking-tight" style={{ WebkitTextStroke: '2px black' }}>
             Ready to Transform Your
             <br />
             <span className="bg-gradient-to-r from-ak-blue to-ak-blue/70 bg-clip-text text-transparent">
