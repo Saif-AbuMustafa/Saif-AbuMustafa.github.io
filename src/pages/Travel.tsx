@@ -4,6 +4,11 @@ import { MouseFollower } from '@/components/ui/MouseFollower';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { BackgroundAnimations } from '@/components/ui/BackgroundAnimations';
+import { ModernSection, ModernContainer, ModernGrid } from '@/components/ui/ModernSection';
+import { ModernCard, ModernCardContent } from '@/components/ui/ModernCard';
+import { InteractiveSection } from '@/components/ui/InteractiveSection';
 import { 
   Plane, 
   MapPin, 
@@ -184,67 +189,65 @@ export default function Travel() {
       </PageHeader>
 
       {/* Core Features */}
-      <section className="py-20 lg:py-32">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              {features.map((feature, index) => (
-                <Card key={index} className="p-8 border-border/50 bg-card/50 backdrop-blur-sm group hover:shadow-2xl transition-all duration-500 hover:scale-[1.02]">
-                  <div className="flex items-start space-x-4 mb-6">
-                    <div className="p-3 rounded-xl bg-fintech-cyan/10 group-hover:bg-fintech-cyan/20 transition-colors">
-                      <feature.icon className="h-8 w-8 text-fintech-cyan" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                      <p className="text-muted-foreground">{feature.description}</p>
-                    </div>
+      <InteractiveSection background="gradient" className="py-20 lg:py-32">
+        <BackgroundAnimations variant="section" />
+        <ModernContainer>
+          <ModernGrid cols={2} gap="xl">
+            {features.map((feature, index) => (
+              <ModernCard key={index} variant="premium" hover="lift" className="p-10 group">
+                <div className="flex items-start space-x-6 mb-8">
+                  <div className="p-4 rounded-xl bg-ak-blue/10 group-hover:bg-ak-blue/20 transition-colors">
+                    <feature.icon className="h-10 w-10 text-ak-blue" />
                   </div>
-                  
-                  <div className="grid grid-cols-2 gap-3">
-                    {feature.benefits.map((benefit, idx) => (
-                      <div key={idx} className="flex items-center space-x-2 text-sm">
-                        <div className="w-2 h-2 rounded-full bg-fintech-cyan" />
-                        <span className="text-muted-foreground">{benefit}</span>
-                      </div>
-                    ))}
+                  <div>
+                    <h3 className="text-2xl font-bold mb-4 text-ak-text">{feature.title}</h3>
+                    <p className="text-ak-muted text-lg leading-relaxed mb-6">{feature.description}</p>
                   </div>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+                </div>
+                
+                <div className="grid grid-cols-2 gap-4">
+                  {feature.benefits.map((benefit, idx) => (
+                    <div key={idx} className="flex items-center space-x-3">
+                      <div className="w-3 h-3 rounded-full bg-ak-blue" />
+                      <span className="text-ak-muted font-medium">{benefit}</span>
+                    </div>
+                  ))}
+                </div>
+              </ModernCard>
+            ))}
+          </ModernGrid>
+        </ModernContainer>
+      </InteractiveSection>
 
       {/* Travel Services */}
-      <section className="py-20 lg:py-32 bg-accent/5">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                Complete Travel <span className="bg-gradient-primary bg-clip-text text-transparent">Ecosystem</span>
-              </h2>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Everything you need for seamless travel planning and booking in one intelligent platform
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {services.map((service, index) => (
-                <Card key={index} className="text-center p-8 border-border/50 bg-card/30 backdrop-blur-sm group hover:shadow-lg transition-all duration-300 relative overflow-hidden">
-                  <div className={`absolute inset-0 bg-gradient-to-br from-${service.color}/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
-                  <div className="relative z-10">
-                    <div className={`p-4 rounded-xl bg-${service.color}/10 group-hover:bg-${service.color}/20 transition-colors mx-auto w-fit mb-6`}>
-                      <service.icon className={`h-8 w-8 text-${service.color} group-hover:scale-110 transition-transform`} />
-                    </div>
-                    <h3 className="font-semibold mb-3 text-lg">{service.title}</h3>
-                    <p className="text-muted-foreground">{service.description}</p>
-                  </div>
-                </Card>
-              ))}
-            </div>
+      <ModernSection padding="xl">
+        <BackgroundAnimations variant="subtle" />
+        <ModernContainer>
+          <div className="text-center mb-20">
+            <h2 className="text-5xl md:text-6xl font-black mb-8 tracking-tight text-ak-text">
+              Complete Travel <span className="bg-gradient-primary bg-clip-text text-transparent">Ecosystem</span>
+            </h2>
+            <p className="text-2xl text-ak-muted max-w-4xl mx-auto leading-relaxed">
+              Everything you need for seamless travel planning and booking in one intelligent platform
+            </p>
           </div>
-        </div>
-      </section>
+
+          <ModernGrid cols={3} gap="lg">
+            {services.map((service, index) => (
+              <ModernCard key={index} variant="glass" hover="lift" className="text-center p-8 group relative overflow-hidden">
+                <div className="absolute inset-0 bg-ak-blue/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative z-10">
+                  <div className="p-4 rounded-xl bg-ak-blue/10 group-hover:bg-ak-blue/20 transition-colors mx-auto w-fit mb-8">
+                    <service.icon className="h-10 w-10 text-ak-blue group-hover:scale-110 transition-transform" />
+                  </div>
+                  <h3 className="font-bold mb-4 text-xl text-ak-text">{service.title}</h3>
+                  <p className="text-ak-muted leading-relaxed">{service.description}</p>
+                </div>
+              </ModernCard>
+            ))}
+          </ModernGrid>
+        </ModernContainer>
+      </ModernSection>
 
       {/* AI Capabilities */}
       <section className="py-20 lg:py-32">

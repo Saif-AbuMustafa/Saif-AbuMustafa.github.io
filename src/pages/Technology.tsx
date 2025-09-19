@@ -310,91 +310,93 @@ export default function Technology() {
             </TabsContent>
               
               <TabsContent value="blockchain">
-                <div className="text-center mb-12">
-                  <h3 className="text-3xl font-bold mb-4">
-                    <Blocks className="inline h-8 w-8 mr-3 text-fintech-purple" />
-                    Blockchain Infrastructure
-                  </h3>
-                  <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                    Built on Solana blockchain for maximum performance, scalability, and cost-effectiveness 
-                    while maintaining enterprise-grade security.
-                  </p>
-                </div>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                  {blockchainFeatures.map((feature, index) => (
-                    <Card key={index} className="text-center p-6 border-border/50 bg-card/50 backdrop-blur-sm">
-                      <feature.icon className="h-12 w-12 mx-auto mb-4 text-fintech-purple" />
-                      <h4 className="font-semibold mb-2">{feature.title}</h4>
-                      <p className="text-sm text-muted-foreground mb-4">{feature.description}</p>
-                      <div className="text-2xl font-bold text-fintech-purple">{feature.metrics[0]}</div>
-                      <div className="text-xs text-muted-foreground">{feature.metrics[1]}</div>
-                    </Card>
-                  ))}
-                </div>
+               <div className="text-center mb-12">
+                 <h3 className="text-4xl font-bold mb-6 text-ak-text">
+                   <Blocks className="inline h-10 w-10 mr-4 text-ak-blue" />
+                   Blockchain Infrastructure
+                 </h3>
+                 <p className="text-xl text-ak-muted max-w-4xl mx-auto leading-relaxed">
+                   Built on Solana blockchain for maximum performance, scalability, and cost-effectiveness 
+                   while maintaining enterprise-grade security.
+                 </p>
+               </div>
+               
+               <ModernGrid cols={4} gap="lg">
+                 {blockchainFeatures.map((feature, index) => (
+                   <ModernCard key={index} variant="glass" hover="lift" className="text-center p-8">
+                     <feature.icon className="h-12 w-12 mx-auto mb-6 text-ak-blue" />
+                     <h4 className="font-bold mb-4 text-lg text-ak-text">{feature.title}</h4>
+                     <p className="text-ak-muted mb-6 text-sm leading-relaxed">{feature.description}</p>
+                     <div className="text-3xl font-black text-ak-blue mb-2">{feature.metrics[0]}</div>
+                     <div className="text-xs text-ak-muted font-medium">{feature.metrics[1]}</div>
+                   </ModernCard>
+                 ))}
+               </ModernGrid>
               </TabsContent>
               
               <TabsContent value="security">
-                <div className="text-center mb-12">
-                  <h3 className="text-3xl font-bold mb-4">
-                    <Shield className="inline h-8 w-8 mr-3 text-fintech-cyan" />
-                    Multi-Layer Security
-                  </h3>
-                  <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                    Enterprise-grade security with multiple layers of protection, regular audits, 
-                    and compliance with international standards.
-                  </p>
-                </div>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  {securityLayers.map((layer, index) => (
-                    <Card key={index} className="p-6 border-border/50 bg-card/50 backdrop-blur-sm">
-                      <div className="flex items-center space-x-3 mb-4">
-                        <layer.icon className="h-6 w-6 text-fintech-cyan" />
-                        <h4 className="text-xl font-semibold">{layer.layer}</h4>
-                      </div>
-                      <div className="grid grid-cols-2 gap-2">
-                        {layer.features.map((feature, idx) => (
-                          <div key={idx} className="flex items-center space-x-2 text-sm">
-                            <CheckCircle className="h-4 w-4 text-green-500" />
-                            <span className="text-muted-foreground">{feature}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </Card>
-                  ))}
-                </div>
+               <div className="text-center mb-12">
+                 <h3 className="text-4xl font-bold mb-6 text-ak-text">
+                   <Shield className="inline h-10 w-10 mr-4 text-ak-blue" />
+                   Multi-Layer Security
+                 </h3>
+                 <p className="text-xl text-ak-muted max-w-4xl mx-auto leading-relaxed">
+                   Enterprise-grade security with multiple layers of protection, regular audits, 
+                   and compliance with international standards.
+                 </p>
+               </div>
+               
+               <ModernGrid cols={2} gap="lg">
+                 {securityLayers.map((layer, index) => (
+                   <ModernCard key={index} variant="glass" hover="lift" className="p-8">
+                     <div className="flex items-center space-x-4 mb-6">
+                       <div className="p-3 rounded-xl bg-ak-blue/10">
+                         <layer.icon className="h-8 w-8 text-ak-blue" />
+                       </div>
+                       <h4 className="text-2xl font-bold text-ak-text">{layer.layer}</h4>
+                     </div>
+                     <div className="grid grid-cols-2 gap-4">
+                       {layer.features.map((feature, idx) => (
+                         <div key={idx} className="flex items-center space-x-3">
+                           <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0" />
+                           <span className="text-ak-muted font-medium">{feature}</span>
+                         </div>
+                       ))}
+                     </div>
+                   </ModernCard>
+                 ))}
+               </ModernGrid>
               </TabsContent>
               
               <TabsContent value="development">
-                <div className="text-center mb-12">
-                  <h3 className="text-3xl font-bold mb-4">
-                    <Code className="inline h-8 w-8 mr-3 text-fintech-gold" />
-                    Development Process
-                  </h3>
-                  <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                    Agile development methodology with continuous integration, automated testing, 
-                    and rapid deployment cycles.
-                  </p>
-                </div>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                  {developmentProcess.map((phase, index) => (
-                    <Card key={index} className="p-6 border-border/50 bg-card/50 backdrop-blur-sm text-center">
-                      <div className="w-12 h-12 mx-auto mb-4 bg-gradient-primary rounded-full flex items-center justify-center text-white font-bold">
-                        {index + 1}
-                      </div>
-                      <h4 className="font-semibold mb-2">{phase.phase}</h4>
-                      <p className="text-sm text-muted-foreground mb-4">{phase.description}</p>
-                      <Badge variant="outline" className="mb-3">{phase.duration}</Badge>
-                      <div className="space-y-1">
-                        {phase.tools.map((tool, idx) => (
-                          <div key={idx} className="text-xs text-muted-foreground">{tool}</div>
-                        ))}
-                      </div>
-                    </Card>
-                  ))}
-                </div>
+               <div className="text-center mb-12">
+                 <h3 className="text-4xl font-bold mb-6 text-ak-text">
+                   <Code className="inline h-10 w-10 mr-4 text-ak-blue" />
+                   Development Process
+                 </h3>
+                 <p className="text-xl text-ak-muted max-w-4xl mx-auto leading-relaxed">
+                   Agile development methodology with continuous integration, automated testing, 
+                   and rapid deployment cycles.
+                 </p>
+               </div>
+               
+               <ModernGrid cols={4} gap="lg">
+                 {developmentProcess.map((phase, index) => (
+                   <ModernCard key={index} variant="glass" hover="lift" className="p-8 text-center group">
+                     <div className="w-16 h-16 mx-auto mb-6 bg-gradient-primary rounded-full flex items-center justify-center text-ak-white font-black text-xl group-hover:scale-110 transition-transform">
+                       {index + 1}
+                     </div>
+                     <h4 className="font-bold mb-4 text-xl text-ak-text">{phase.phase}</h4>
+                     <p className="text-ak-muted mb-6 leading-relaxed">{phase.description}</p>
+                     <Badge variant="outline" className="mb-6 border-ak-blue/30 text-ak-blue">{phase.duration}</Badge>
+                     <div className="space-y-2">
+                       {phase.tools.map((tool, idx) => (
+                         <div key={idx} className="text-sm text-ak-muted font-medium">{tool}</div>
+                       ))}
+                     </div>
+                   </ModernCard>
+                 ))}
+               </ModernGrid>
               </TabsContent>
             </Tabs>
         </ModernContainer>

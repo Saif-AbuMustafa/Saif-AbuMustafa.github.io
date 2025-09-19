@@ -8,6 +8,10 @@ import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { TokenDisplay } from '@/components/TokenDisplay';
 import { TokenApiService } from '@/services/tokenApi';
+import { BackgroundAnimations } from '@/components/ui/BackgroundAnimations';
+import { ModernSection, ModernContainer, ModernGrid } from '@/components/ui/ModernSection';
+import { ModernCard, ModernCardContent } from '@/components/ui/ModernCard';
+import { InteractiveSection } from '@/components/ui/InteractiveSection';
 import { 
   Coins, 
   TrendingUp, 
@@ -249,76 +253,72 @@ export default function Token() {
       </PageHeader>
 
       {/* Live Token Data */}
-      <section className="py-20 lg:py-32">
-        <div className="container mx-auto px-4">
+      <InteractiveSection background="gradient" className="py-20 lg:py-32">
+        <BackgroundAnimations variant="subtle" />
+        <ModernContainer>
           <TokenDisplay />
-        </div>
-      </section>
+        </ModernContainer>
+      </InteractiveSection>
 
       {/* Token Metrics */}
-      <section className="py-20 lg:py-32 bg-accent/5">
-        <div className="container mx-auto px-4">
+      <ModernSection padding="xl">
+        <BackgroundAnimations variant="section" />
+        <ModernContainer>
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <div className="text-center mb-20">
+              <h2 className="text-5xl md:text-6xl font-black mb-8 tracking-tight text-ak-text">
                 Token <span className="bg-gradient-primary bg-clip-text text-transparent">Metrics</span>
               </h2>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              <p className="text-2xl text-ak-muted max-w-4xl mx-auto leading-relaxed">
                 Real-time metrics and statistics for KEYS token
               </p>
             </div>
 
-            <div className="grid grid-cols-2 lg:grid-cols-3 gap-8">
+            <ModernGrid cols={3} gap="lg">
               {[
                 { 
                   label: 'Total Supply', 
                   value: formatNumber(tokenMetrics.totalSupply), 
                   icon: Coins,
-                  color: 'fintech-blue'
+                  color: 'ak-blue'
                 },
                 { 
                   label: 'Circulating Supply', 
                   value: formatNumber(tokenMetrics.circulatingSupply), 
                   icon: Activity,
-                  color: 'fintech-cyan'
+                  color: 'ak-blue'
                 },
                 { 
                   label: 'Token Holders', 
                   value: formatNumber(tokenMetrics.holders), 
                   icon: Users,
-                  color: 'fintech-purple'
+                  color: 'ak-blue'
                 },
                 { 
                   label: 'Market Cap', 
                   value: `$${formatNumber(tokenMetrics.marketCap)}`, 
                   icon: TrendingUp,
-                  color: 'fintech-gold'
+                  color: 'ak-blue'
                 },
                 { 
                   label: '24h Volume', 
                   value: `$${formatNumber(tokenMetrics.volume24h)}`, 
                   icon: BarChart3,
-                  color: 'fintech-blue'
-                },
-                { 
-                  label: 'Current Price', 
-                  value: formatCurrency(tokenMetrics.price), 
-                  icon: DollarSign,
-                  color: 'fintech-cyan'
+                  color: 'ak-blue'
                 }
               ].map((metric, index) => (
-                <Card key={index} className="text-center p-6 border-border/50 bg-card/50 backdrop-blur-sm group hover:shadow-lg transition-all duration-300">
-                  <metric.icon className={`h-10 w-10 mx-auto mb-4 text-${metric.color} group-hover:scale-110 transition-transform`} />
-                  <div className="text-2xl font-bold mb-2 bg-gradient-primary bg-clip-text text-transparent">
+                <ModernCard key={index} variant="glass" hover="lift" className="text-center p-8 group">
+                  <metric.icon className="h-12 w-12 mx-auto mb-6 text-ak-blue group-hover:scale-110 transition-transform" />
+                  <div className="text-3xl font-black mb-4 bg-gradient-primary bg-clip-text text-transparent">
                     {metric.value}
                   </div>
-                  <div className="text-sm text-muted-foreground">{metric.label}</div>
-                </Card>
+                  <div className="text-ak-muted font-medium">{metric.label}</div>
+                </ModernCard>
               ))}
-            </div>
+            </ModernGrid>
           </div>
-        </div>
-      </section>
+        </ModernContainer>
+      </ModernSection>
 
       {/* Tokenomics */}
       <section className="py-20 lg:py-32">
