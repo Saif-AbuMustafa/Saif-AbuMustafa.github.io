@@ -153,7 +153,10 @@ export const Navigation = () => {
                             <NavigationMenuLink key={subIndex} asChild>
                               <Link
                                 to={subItem.href}
-                                className="block select-none space-y-1 rounded-lg p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground group"
+                                className={cn(
+                                  "block select-none space-y-1 rounded-lg p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground group",
+                                  isActivePath(subItem.href) && "bg-accent text-accent-foreground"
+                                )}
                               >
                                 <div className="flex items-center space-x-3">
                                   <div className="p-2 rounded-lg bg-fintech-blue/10 group-hover:bg-fintech-blue/20 transition-colors">
@@ -202,7 +205,7 @@ export const Navigation = () => {
               asChild
               className="hidden sm:inline-flex bg-gradient-primary hover:opacity-90 text-white border-0"
             >
-              <a href="https://keys-pay.com">
+              <a href="https://keys-pay.com" target="_blank" rel="noopener noreferrer">
                 <Wallet className="h-4 w-4 mr-2" />
                 Launch Wallet
               </a>
@@ -232,7 +235,10 @@ export const Navigation = () => {
                               key={subIndex}
                               to={subItem.href}
                               onClick={() => setIsMobileOpen(false)}
-                              className="flex items-center space-x-3 p-3 rounded-lg hover:bg-accent transition-colors group"
+                              className={cn(
+                                "flex items-center space-x-3 p-3 rounded-lg hover:bg-accent transition-colors group",
+                                isActivePath(subItem.href) && "bg-accent text-accent-foreground"
+                              )}
                             >
                               <subItem.icon className="h-5 w-5 text-fintech-blue" />
                               <div className="flex-1">
@@ -263,7 +269,7 @@ export const Navigation = () => {
                     asChild
                     className="mt-6 bg-gradient-primary text-white border-0"
                   >
-                    <a href="https://keys-pay.com" onClick={() => setIsMobileOpen(false)}>
+                    <a href="https://keys-pay.com" target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileOpen(false)}>
                       <Wallet className="h-4 w-4 mr-2" />
                       Launch Wallet
                     </a>
