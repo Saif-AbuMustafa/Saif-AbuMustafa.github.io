@@ -164,7 +164,7 @@ export default function Travel() {
         title="Keys Travel"
         subtitle=""
         description="Revolutionary AI-powered travel planning with integrated crypto payments. Plan, book, and experience your perfect journey with intelligent automation and seamless financial integration."
-        badge="Coming Q2 2024 • AI-Powered • Global Coverage"
+        badge="Live Now • AI-Powered • Global Coverage"
         background={heroBackground}
         showBackButton
         backTo="/services"
@@ -172,8 +172,8 @@ export default function Travel() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button size="lg" asChild className="bg-gradient-primary text-white h-14 px-8">
             <a href="https://keys-explorer.com/" target="_blank" rel="noopener noreferrer">
-              <Calendar className="mr-2 h-5 w-5" />
-              Join Waitlist
+              <Plane className="mr-2 h-5 w-5" />
+              Start Planning
             </a>
           </Button>
           <Button size="lg" variant="outline" className="h-14 px-8">
@@ -325,8 +325,8 @@ export default function Travel() {
               <h2 className="text-4xl md:text-5xl font-bold mb-6">
                 Traveler <span className="bg-gradient-primary bg-clip-text text-transparent">Stories</span>
               </h2>
-              <p className="text-xl text-muted-foreground">
-                What our beta users are saying about AI KEYS Travel
+               <p className="text-xl text-muted-foreground">
+                What our users are saying about AI KEYS Travel
               </p>
             </div>
 
@@ -382,8 +382,8 @@ export default function Travel() {
               </Button>
               <Button size="lg" variant="outline" asChild>
                 <a href="https://keys-explorer.com/" target="_blank" rel="noopener noreferrer">
-                  <Calendar className="mr-2 h-5 w-5" />
-                  Join Travel Waitlist
+                  <Plane className="mr-2 h-5 w-5" />
+                  Launch Travel App
                 </a>
               </Button>
             </div>
@@ -405,13 +405,13 @@ export default function Travel() {
               </span>
             </h2>
             <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
-              Be among the first to experience AI-powered travel planning with integrated crypto payments.
+              Experience AI-powered travel planning with integrated crypto payments. Start planning your perfect journey today.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Button size="lg" asChild className="bg-gradient-primary text-white h-14 px-8">
                 <a href="https://keys-explorer.com/" target="_blank" rel="noopener noreferrer">
-                  <Users className="mr-2 h-5 w-5" />
-                  Join Waitlist
+                  <ArrowRight className="mr-2 h-5 w-5" />
+                  Get Started Now
                 </a>
               </Button>
               <Button size="lg" variant="outline" className="h-14 px-8">
