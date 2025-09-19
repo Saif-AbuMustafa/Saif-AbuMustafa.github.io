@@ -194,7 +194,7 @@ export default function Technology() {
       <InteractiveSection background="gradient" className="min-h-screen flex items-center">
         <BackgroundAnimations variant="hero" />
         <ModernContainer>
-          <div className="text-center max-w-6xl mx-auto py-20">
+          <div className="text-center max-w-6xl mx-auto py-32 px-4">
             {/* Badge */}
             <Badge 
               variant="outline" 
@@ -220,7 +220,7 @@ export default function Technology() {
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-8 justify-center mb-24 animate-fade-in" style={{ animationDelay: '0.6s' }}>
+            <div className="flex flex-col sm:flex-row gap-8 justify-center animate-fade-in" style={{ animationDelay: '0.6s' }}>
               <Button size="xl" variant="premium" className="group">
                 <Code className="mr-2 h-5 w-5" />
                 View Documentation
