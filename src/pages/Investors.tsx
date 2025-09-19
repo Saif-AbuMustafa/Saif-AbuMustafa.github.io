@@ -34,11 +34,11 @@ export default function Investors() {
         backTo="/about"
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button size="lg" className="bg-gradient-primary text-white h-14 px-8">
+          <Button size="lg" variant="premium" className="h-14 px-8">
             <TrendingUp className="mr-2 h-5 w-5" />
             Investment Deck
           </Button>
-          <Button size="lg" variant="outline" className="h-14 px-8">
+          <Button size="lg" variant="glass" className="h-14 px-8">
             <BarChart3 className="mr-2 h-5 w-5" />
             Financial Reports
           </Button>
@@ -52,7 +52,7 @@ export default function Investors() {
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
               {metrics.map((metric, index) => (
                 <Card key={index} className="text-center p-8 border-border/50 bg-card/50 backdrop-blur-sm">
-                  <metric.icon className="h-12 w-12 mx-auto mb-4 text-fintech-blue" />
+                  <metric.icon className="h-12 w-12 mx-auto mb-4 text-ak-blue" />
                   <div className="text-3xl font-bold mb-2 bg-gradient-primary bg-clip-text text-transparent">
                     {metric.value}
                   </div>
@@ -109,9 +109,9 @@ export default function Investors() {
                     <Users className="h-10 w-10 text-white" />
                   </div>
                   <h3 className="text-xl font-semibold mb-2">{investor.name}</h3>
-                  <p className="text-sm text-fintech-blue font-medium mb-3">{investor.title}</p>
+                  <p className="text-sm text-ak-blue font-medium mb-3">{investor.title}</p>
                   <p className="text-sm text-muted-foreground mb-4">{investor.description}</p>
-                  <Badge variant="outline" className="bg-fintech-blue/10 text-fintech-blue border-fintech-blue/20">
+                  <Badge variant="outline" className="bg-ak-blue/10 text-ak-blue border-ak-blue/20">
                     {investor.investment}
                   </Badge>
                 </Card>
@@ -119,17 +119,17 @@ export default function Investors() {
             </div>
 
             {/* Investment Opportunity */}
-            <Card className="p-8 text-center bg-gradient-to-r from-fintech-blue/10 to-fintech-blue/5 border-fintech-blue/20">
+            <Card className="p-8 text-center bg-gradient-to-r from-ak-blue/10 to-ak-blue/5 border-ak-blue/20">
               <h3 className="text-2xl font-bold mb-4">Ready to Join Our Journey?</h3>
               <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
                 We're looking for strategic investors who share our vision of revolutionizing finance through AI and blockchain technology.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="bg-gradient-primary text-white">
+                <Button size="lg" variant="premium">
                   <TrendingUp className="mr-2 h-5 w-5" />
                   Request Investment Info
                 </Button>
-                <Button size="lg" variant="outline">
+                <Button size="lg" variant="glass">
                   <Calendar className="mr-2 h-5 w-5" />
                   Schedule Meeting
                 </Button>

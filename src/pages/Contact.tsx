@@ -61,7 +61,7 @@ export default function Contact() {
       description: 'Get help from our team',
       contact: 'info@aikeys.ai',
       href: 'mailto:info@aikeys.ai',
-      color: 'fintech-blue'
+      color: 'ak-blue'
     },
     {
       icon: MessageSquare,
@@ -69,7 +69,7 @@ export default function Contact() {
       description: '24/7 instant support',
       contact: 'Start Chat',
       href: '#chat',
-      color: 'fintech-purple'
+      color: 'ak-blue'
     },
     {
       icon: Calendar,
@@ -77,7 +77,7 @@ export default function Contact() {
       description: 'Book a consultation',
       contact: 'Book Now',
       href: '#schedule',
-      color: 'fintech-gold'
+      color: 'ak-blue'
     }
   ];
 
@@ -148,28 +148,10 @@ export default function Contact() {
                   key={index}
                   className="text-center p-8 border-border/50 bg-card/50 backdrop-blur-sm group hover:shadow-2xl transition-all duration-500 hover:scale-105 relative overflow-hidden"
                 >
-                  <div className={cn(
-                    "absolute inset-0 bg-gradient-to-br to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500",
-                    method.color === 'fintech-blue' && 'from-fintech-blue/5',
-                    method.color === 'fintech-cyan' && 'from-fintech-cyan/5', 
-                    method.color === 'fintech-purple' && 'from-fintech-purple/5',
-                    method.color === 'fintech-gold' && 'from-fintech-gold/5'
-                  )} />
+                  <div className="absolute inset-0 bg-gradient-to-br from-ak-blue/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <div className="relative z-10">
-                    <div className={cn(
-                      "p-4 rounded-xl transition-colors mx-auto w-fit mb-6",
-                      method.color === 'fintech-blue' && 'bg-fintech-blue/10 group-hover:bg-fintech-blue/20',
-                      method.color === 'fintech-cyan' && 'bg-fintech-cyan/10 group-hover:bg-fintech-cyan/20',
-                      method.color === 'fintech-purple' && 'bg-fintech-purple/10 group-hover:bg-fintech-purple/20',
-                      method.color === 'fintech-gold' && 'bg-fintech-gold/10 group-hover:bg-fintech-gold/20'
-                    )}>
-                      <method.icon className={cn(
-                        "h-8 w-8 group-hover:scale-110 transition-transform",
-                        method.color === 'fintech-blue' && 'text-fintech-blue',
-                        method.color === 'fintech-cyan' && 'text-fintech-cyan',
-                        method.color === 'fintech-purple' && 'text-fintech-purple',
-                        method.color === 'fintech-gold' && 'text-fintech-gold'
-                      )} />
+                    <div className="p-4 rounded-xl bg-ak-blue/10 group-hover:bg-ak-blue/20 transition-colors mx-auto w-fit mb-6">
+                      <method.icon className="h-8 w-8 text-ak-blue group-hover:scale-110 transition-transform" />
                     </div>
                     <h3 className="font-semibold mb-2 text-lg">{method.title}</h3>
                     <p className="text-muted-foreground mb-4 text-sm">{method.description}</p>
@@ -194,7 +176,7 @@ export default function Contact() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
               {/* Contact Form */}
               <Card className="p-8 border-border/50 bg-card/50 backdrop-blur-sm relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-fintech-blue/5 to-fintech-cyan/5 opacity-50" />
+                <div className="absolute inset-0 bg-gradient-to-br from-ak-blue/5 to-ak-blue/10 opacity-50" />
                 <div className="relative z-10">
                   <CardHeader className="px-0 pt-0">
                     <CardTitle className="text-2xl mb-2">Send us a Message</CardTitle>
@@ -223,7 +205,7 @@ export default function Contact() {
                               required
                               value={formData.name}
                               onChange={(e) => setFormData({...formData, name: e.target.value})}
-                              className="bg-background/50 border-border/50 focus:border-fintech-blue"
+                              className="bg-background/50 border-border/50 focus:border-ak-blue"
                               placeholder="Your full name"
                             />
                           </div>
@@ -234,7 +216,7 @@ export default function Contact() {
                               required
                               value={formData.email}
                               onChange={(e) => setFormData({...formData, email: e.target.value})}
-                              className="bg-background/50 border-border/50 focus:border-fintech-blue"
+                              className="bg-background/50 border-border/50 focus:border-ak-blue"
                               placeholder="your@email.com"
                             />
                           </div>
@@ -246,7 +228,7 @@ export default function Contact() {
                             <Input
                               value={formData.company}
                               onChange={(e) => setFormData({...formData, company: e.target.value})}
-                              className="bg-background/50 border-border/50 focus:border-fintech-blue"
+                              className="bg-background/50 border-border/50 focus:border-ak-blue"
                               placeholder="Your company"
                             />
                           </div>
@@ -256,7 +238,7 @@ export default function Contact() {
                               required
                               value={formData.subject}
                               onChange={(e) => setFormData({...formData, subject: e.target.value})}
-                              className="bg-background/50 border-border/50 focus:border-fintech-blue"
+                              className="bg-background/50 border-border/50 focus:border-ak-blue"
                               placeholder="What's this about?"
                             />
                           </div>
@@ -268,7 +250,7 @@ export default function Contact() {
                             required
                             value={formData.message}
                             onChange={(e) => setFormData({...formData, message: e.target.value})}
-                            className="bg-background/50 border-border/50 focus:border-fintech-blue min-h-[120px]"
+                            className="bg-background/50 border-border/50 focus:border-ak-blue min-h-[120px]"
                             placeholder="Tell us more about your inquiry..."
                           />
                         </div>
@@ -277,7 +259,8 @@ export default function Contact() {
                           type="submit" 
                           size="lg" 
                           disabled={isSubmitting}
-                          className="w-full bg-gradient-primary text-white border-0 h-12"
+                          className="w-full h-12"
+                          variant="premium"
                         >
                           {isSubmitting ? (
                             <>
@@ -306,14 +289,14 @@ export default function Contact() {
                     {supportTeams.map((team, index) => (
                       <Card key={index} className="p-6 border-border/50 bg-card/30 backdrop-blur-sm group hover:shadow-lg transition-all duration-300">
                         <div className="flex items-start space-x-4">
-                          <div className="p-3 rounded-xl bg-fintech-blue/10 group-hover:bg-fintech-blue/20 transition-colors">
-                            <team.icon className="h-6 w-6 text-fintech-blue" />
+                          <div className="p-3 rounded-xl bg-ak-blue/10 group-hover:bg-ak-blue/20 transition-colors">
+                            <team.icon className="h-6 w-6 text-ak-blue" />
                           </div>
                           <div className="flex-1">
                             <h4 className="font-semibold mb-1">{team.title}</h4>
                             <p className="text-sm text-muted-foreground mb-2">{team.description}</p>
                             <div className="flex items-center space-x-4 text-sm">
-                              <a href={`mailto:${team.email}`} className="text-fintech-blue hover:underline">
+                              <a href={`mailto:${team.email}`} className="text-ak-blue hover:underline">
                                 {team.email}
                               </a>
                               <span className="text-muted-foreground flex items-center">
@@ -333,11 +316,11 @@ export default function Contact() {
                   <h4 className="font-semibold mb-4">Response Times</h4>
                   <div className="grid grid-cols-2 gap-4">
                     <div className="text-center">
-                      <div className="text-2xl font-bold text-fintech-blue mb-1">&lt; 1h</div>
+                      <div className="text-2xl font-bold text-ak-blue mb-1">&lt; 1h</div>
                       <div className="text-sm text-muted-foreground">Live Chat</div>
                     </div>
                     <div className="text-center">
-                      <div className="text-2xl font-bold text-fintech-cyan mb-1">&lt; 24h</div>
+                      <div className="text-2xl font-bold text-ak-blue mb-1">&lt; 24h</div>
                       <div className="text-sm text-muted-foreground">Email</div>
                     </div>
                   </div>
@@ -368,7 +351,7 @@ export default function Contact() {
                   className="p-8 border-border/50 bg-card/50 backdrop-blur-sm group hover:shadow-lg transition-all duration-300 relative overflow-hidden"
                 >
                   {office.isHeadquarters && (
-                    <Badge className="absolute top-4 right-4 bg-fintech-gold/20 text-fintech-gold border-fintech-gold/30">
+                    <Badge className="absolute top-4 right-4 bg-ak-beige-300/20 text-ak-beige-300 border-ak-beige-300/30">
                       Headquarters
                     </Badge>
                   )}
@@ -378,7 +361,7 @@ export default function Contact() {
                       <Building className="h-8 w-8 text-white" />
                     </div>
                     <h3 className="text-xl font-semibold mb-2">{office.city}</h3>
-                    <p className="text-fintech-blue font-medium mb-4">{office.country}</p>
+                    <p className="text-ak-blue font-medium mb-4">{office.country}</p>
                     <div className="text-sm text-muted-foreground whitespace-pre-line">
                       {office.address}
                     </div>

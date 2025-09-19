@@ -102,11 +102,11 @@ export default function Careers() {
         backTo="/about"
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button size="lg" className="bg-gradient-primary text-white h-14 px-8">
+          <Button size="lg" variant="premium" className="h-14 px-8">
             <Users className="mr-2 h-5 w-5" />
             View Positions
           </Button>
-          <Button size="lg" variant="outline" className="h-14 px-8">
+          <Button size="lg" variant="glass" className="h-14 px-8">
             <Building className="mr-2 h-5 w-5" />
             Our Culture
           </Button>
@@ -139,7 +139,7 @@ export default function Careers() {
                         <span>{position.type}</span>
                       </div>
                     </div>
-                    <Button variant="outline">
+                    <Button variant="premium" size="sm">
                       Apply Now
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
