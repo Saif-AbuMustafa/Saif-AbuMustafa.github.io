@@ -191,10 +191,10 @@ export default function Technology() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <InteractiveSection background="gradient" className="min-h-screen flex items-center">
+      <InteractiveSection background="gradient" className="min-h-[calc(100vh-80px)] pt-20 flex items-center justify-center">
         <BackgroundAnimations variant="hero" />
         <ModernContainer>
-          <div className="text-center max-w-6xl mx-auto py-32 px-4">
+          <div className="text-center max-w-6xl mx-auto px-4">
             {/* Badge */}
             <Badge 
               variant="outline" 
