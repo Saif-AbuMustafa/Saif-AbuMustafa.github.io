@@ -408,7 +408,7 @@ export default function Technology() {
         <ModernContainer>
           <div className="text-center mb-20">
             <h2 className="text-5xl md:text-6xl font-black mb-8 tracking-tight">
-              <span className="text-black">Compliance &</span> <span className="bg-gradient-primary bg-clip-text text-transparent">Certifications</span>
+              <span className="text-white">Compliance &</span> <span className="bg-gradient-primary bg-clip-text text-transparent">Certifications</span>
             </h2>
             <p className="text-2xl text-ak-muted max-w-4xl mx-auto leading-relaxed">
               We adhere to the highest industry standards and regulatory requirements
