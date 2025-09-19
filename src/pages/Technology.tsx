@@ -190,7 +190,7 @@ export default function Technology() {
   ];
 
   return (
-    <div className="pt-20">
+    <div className="min-h-screen bg-background text-foreground">
       <InteractiveSection background="gradient" className="min-h-screen flex items-center">
         <BackgroundAnimations variant="hero" />
         <ModernContainer>
@@ -407,7 +407,7 @@ export default function Technology() {
         <BackgroundAnimations variant="section" />
         <ModernContainer>
           <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl font-black mb-8 tracking-tight">
+            <h2 className="text-5xl md:text-6xl font-black mb-8 tracking-tight text-ak-text">
               Compliance & <span className="bg-gradient-primary bg-clip-text text-transparent">Certifications</span>
             </h2>
             <p className="text-2xl text-ak-muted max-w-4xl mx-auto leading-relaxed">
@@ -437,68 +437,67 @@ export default function Technology() {
       </ModernSection>
 
       {/* Performance Metrics */}
-      <section className="py-20 lg:py-32 bg-accent/5">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                Performance <span className="bg-gradient-primary bg-clip-text text-transparent">Metrics</span>
-              </h2>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Real-time performance data from our production systems
-              </p>
-            </div>
-
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-              {[
-                { metric: '99.99%', label: 'Uptime', icon: Server },
-                { metric: '<100ms', label: 'API Response', icon: Zap },
-                { metric: '50M+', label: 'Transactions', icon: BarChart3 },
-                { metric: '256-bit', label: 'Encryption', icon: Lock }
-              ].map((stat, index) => (
-                <Card key={index} className="text-center p-8 border-border/50 bg-card/30 backdrop-blur-sm group hover:shadow-lg transition-all duration-300">
-                  <stat.icon className="h-12 w-12 mx-auto mb-6 text-fintech-blue group-hover:scale-110 transition-transform" />
-                  <div className="text-3xl font-bold mb-2 bg-gradient-primary bg-clip-text text-transparent">
-                    {stat.metric}
-                  </div>
-                  <div className="text-sm text-muted-foreground">{stat.label}</div>
-                </Card>
-              ))}
-            </div>
+      <InteractiveSection background="mesh" className="py-20 lg:py-32">
+        <BackgroundAnimations variant="section" />
+        <ModernContainer>
+          <div className="text-center mb-20">
+            <h2 className="text-5xl md:text-6xl font-black mb-8 tracking-tight text-ak-text">
+              Performance <span className="bg-gradient-primary bg-clip-text text-transparent">Metrics</span>
+            </h2>
+            <p className="text-2xl text-ak-muted max-w-4xl mx-auto leading-relaxed">
+              Real-time performance data from our production systems
+            </p>
           </div>
-        </div>
-      </section>
+
+          <ModernGrid cols={4} gap="lg">
+            {[
+              { metric: '99.99%', label: 'Uptime', icon: Server },
+              { metric: '<100ms', label: 'API Response', icon: Zap },
+              { metric: '50M+', label: 'Transactions', icon: BarChart3 },
+              { metric: '256-bit', label: 'Encryption', icon: Lock }
+            ].map((stat, index) => (
+              <ModernCard key={index} variant="glass" hover="lift" className="text-center p-8 group">
+                <stat.icon className="h-16 w-16 mx-auto mb-8 text-ak-blue group-hover:scale-110 transition-transform" />
+                <div className="text-4xl font-black mb-4 bg-gradient-primary bg-clip-text text-transparent">
+                  {stat.metric}
+                </div>
+                <div className="text-ak-muted font-medium">{stat.label}</div>
+              </ModernCard>
+            ))}
+          </ModernGrid>
+        </ModernContainer>
+      </InteractiveSection>
 
       {/* CTA Section */}
-      <section className="relative py-20 lg:py-32 overflow-hidden">
-        <CTABackground />
-        <div className="relative z-10 container mx-auto px-4">
+      <InteractiveSection background="gradient" className="py-20 lg:py-32" interactive={true}>
+        <BackgroundAnimations variant="hero" />
+        <ModernContainer>
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">
+            <h2 className="text-5xl md:text-7xl font-black mb-8 animate-fade-in tracking-tight text-ak-text">
               Ready to Build the
               <br />
               <span className="bg-gradient-primary bg-clip-text text-transparent">
                 Future of Finance?
               </span>
             </h2>
-            <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto animate-slide-up">
+            <p className="text-xl md:text-2xl text-ak-muted mb-16 max-w-3xl mx-auto animate-slide-up leading-relaxed">
               Join our team of world-class engineers building the next generation of AI-powered fintech solutions.
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center animate-scale-in">
-              <Button size="lg" asChild className="bg-gradient-primary text-white h-14 px-8">
+            <div className="flex flex-col sm:flex-row gap-8 justify-center animate-scale-in">
+              <Button size="xl" variant="premium" asChild>
                 <Link to="/careers">
                   <Users className="mr-2 h-5 w-5" />
                   Join Our Team
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" className="h-14 px-8">
+              <Button size="xl" variant="glass">
                 <Code className="mr-2 h-5 w-5" />
                 View Documentation
               </Button>
             </div>
           </div>
-        </div>
-      </section>
+        </ModernContainer>
+      </InteractiveSection>
     </div>
   );
 }
