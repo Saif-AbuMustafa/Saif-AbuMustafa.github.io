@@ -177,7 +177,7 @@ export default function Services() {
       </InteractiveSection>
 
       {/* Services Grid */}
-      <ModernSection padding="xl">
+      <InteractiveSection background="gradient" className="py-20 lg:py-32">
         <BackgroundAnimations variant="section" />
         <ModernContainer>
           <ModernGrid cols={2} gap="xl">
@@ -240,7 +240,7 @@ export default function Services() {
             ))}
           </ModernGrid>
         </ModernContainer>
-      </ModernSection>
+      </InteractiveSection>
 
       {/* Platform Integrations */}
       <InteractiveSection background="mesh" className="py-20 lg:py-32">
@@ -268,7 +268,7 @@ export default function Services() {
       </InteractiveSection>
 
       {/* Use Cases */}
-      <ModernSection padding="xl">
+      <InteractiveSection background="mesh" className="py-20 lg:py-32">
         <BackgroundAnimations variant="subtle" />
         <ModernContainer>
           <div className="text-center mb-20">
@@ -304,7 +304,7 @@ export default function Services() {
             ))}
           </ModernGrid>
         </ModernContainer>
-      </ModernSection>
+      </InteractiveSection>
 
       {/* CTA Section */}
       <InteractiveSection background="gradient" className="py-20 lg:py-32" interactive={true}>
