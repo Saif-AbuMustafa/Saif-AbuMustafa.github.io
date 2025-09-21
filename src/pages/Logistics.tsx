@@ -205,16 +205,24 @@ export default function Logistics() {
       <section className="py-20 lg:py-32">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16 animate-fade-in">
+              <h2 className="text-5xl md:text-6xl font-black mb-8 tracking-tight text-white">
+                Revolutionary <span className="bg-gradient-primary bg-clip-text text-transparent">Smart Features</span>
+              </h2>
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: '0.3s' }}>
+                AI-powered logistics solutions that transform your supply chain operations
+              </p>
+            </div>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               {features.map((feature, index) => (
-                <Card key={index} className="p-8 border-border/50 bg-card/50 backdrop-blur-sm group hover:shadow-2xl transition-all duration-500 hover:scale-[1.02]">
+                <Card key={index} className="p-8 border-border/50 bg-card/50 backdrop-blur-sm group hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] hover-scale animate-fade-in" style={{ animationDelay: `${index * 0.2}s` }}>
                   <div className="flex items-start space-x-4 mb-6">
-                    <div className="p-3 rounded-xl bg-ak-blue/10 group-hover:bg-ak-blue/20 transition-colors">
-                      <feature.icon className="h-8 w-8 text-ak-blue" />
+                    <div className="p-3 rounded-xl bg-ak-blue/10 group-hover:bg-ak-blue/20 transition-colors group-hover:scale-110">
+                      <feature.icon className="h-8 w-8 text-ak-blue transition-transform" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                      <p className="text-muted-foreground">{feature.description}</p>
+                      <h3 className="text-xl font-semibold mb-2 text-white animate-slide-in-right" style={{ animationDelay: `${index * 0.2 + 0.1}s` }}>{feature.title}</h3>
+                      <p className="text-muted-foreground animate-fade-in" style={{ animationDelay: `${index * 0.2 + 0.2}s` }}>{feature.description}</p>
                     </div>
                   </div>
                   
@@ -238,23 +246,23 @@ export default function Logistics() {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                Measurable <span className="bg-gradient-primary bg-clip-text text-transparent">Results</span>
+              <h2 className="text-5xl md:text-6xl font-black mb-8 tracking-tight text-white animate-enter">
+                Measurable <span className="bg-gradient-primary bg-clip-text text-transparent animate-scale-in" style={{ animationDelay: '0.3s' }}>Results</span>
               </h2>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: '0.5s' }}>
                 Real performance improvements our clients experience with AI KEYS Logistics
               </p>
             </div>
 
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
               {benefits.map((benefit, index) => (
-                <Card key={index} className="text-center p-8 border-border/50 bg-card/30 backdrop-blur-sm group hover:shadow-lg transition-all duration-300">
-                  <benefit.icon className="h-12 w-12 mx-auto mb-6 text-fintech-purple group-hover:scale-110 transition-transform" />
-                  <div className="text-3xl font-bold mb-2 bg-gradient-primary bg-clip-text text-transparent">
+                <Card key={index} className="text-center p-8 border-border/50 bg-card/30 backdrop-blur-sm group hover:shadow-lg transition-all duration-300 hover-scale animate-fade-in" style={{ animationDelay: `${index * 0.1 + 0.7}s` }}>
+                  <benefit.icon className="h-12 w-12 mx-auto mb-6 text-fintech-purple group-hover:scale-125 transition-all duration-300 animate-scale-in" style={{ animationDelay: `${index * 0.1 + 0.8}s` }} />
+                  <div className="text-3xl font-bold mb-2 bg-gradient-primary bg-clip-text text-transparent animate-enter" style={{ animationDelay: `${index * 0.1 + 0.9}s` }}>
                     {benefit.value}
                   </div>
-                  <h3 className="font-semibold mb-3">{benefit.title}</h3>
-                  <p className="text-sm text-muted-foreground">{benefit.description}</p>
+                  <h3 className="font-semibold mb-3 text-white animate-slide-in-right" style={{ animationDelay: `${index * 0.1 + 1}s` }}>{benefit.title}</h3>
+                  <p className="text-sm text-muted-foreground animate-fade-in" style={{ animationDelay: `${index * 0.1 + 1.1}s` }}>{benefit.description}</p>
                 </Card>
               ))}
             </div>
@@ -267,24 +275,24 @@ export default function Logistics() {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                Comprehensive <span className="bg-gradient-primary bg-clip-text text-transparent">Logistics Services</span>
+              <h2 className="text-5xl md:text-6xl font-black mb-8 tracking-tight text-white animate-enter">
+                Comprehensive <span className="bg-gradient-primary bg-clip-text text-transparent animate-scale-in" style={{ animationDelay: '0.3s' }}>Logistics Services</span>
               </h2>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: '0.5s' }}>
                 End-to-end logistics solutions covering every aspect of your supply chain
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {services.map((service, index) => (
-                <Card key={index} className="text-center p-8 border-border/50 bg-card/30 backdrop-blur-sm group hover:shadow-lg transition-all duration-300 relative overflow-hidden">
+                <Card key={index} className="text-center p-8 border-border/50 bg-card/30 backdrop-blur-sm group hover:shadow-lg transition-all duration-300 relative overflow-hidden hover-scale animate-fade-in" style={{ animationDelay: `${index * 0.1 + 0.7}s` }}>
                   <div className={`absolute inset-0 bg-gradient-to-br from-${service.color}/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
                   <div className="relative z-10">
-                    <div className={`p-4 rounded-xl bg-${service.color}/10 group-hover:bg-${service.color}/20 transition-colors mx-auto w-fit mb-6`}>
-                      <service.icon className={`h-8 w-8 text-${service.color} group-hover:scale-110 transition-transform`} />
+                    <div className={`p-4 rounded-xl bg-${service.color}/10 group-hover:bg-${service.color}/20 transition-colors mx-auto w-fit mb-6 group-hover:scale-110`}>
+                      <service.icon className={`h-8 w-8 text-${service.color} transition-transform`} />
                     </div>
-                    <h3 className="font-semibold mb-3 text-lg">{service.title}</h3>
-                    <p className="text-muted-foreground">{service.description}</p>
+                    <h3 className="font-semibold mb-3 text-lg text-white animate-slide-in-right" style={{ animationDelay: `${index * 0.1 + 0.8}s` }}>{service.title}</h3>
+                    <p className="text-muted-foreground animate-fade-in" style={{ animationDelay: `${index * 0.1 + 0.9}s` }}>{service.description}</p>
                   </div>
                 </Card>
               ))}
@@ -298,24 +306,24 @@ export default function Logistics() {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                Advanced <span className="bg-gradient-primary bg-clip-text text-transparent">Technology Stack</span>
+              <h2 className="text-5xl md:text-6xl font-black mb-8 tracking-tight text-white animate-enter">
+                Advanced <span className="bg-gradient-primary bg-clip-text text-transparent animate-scale-in" style={{ animationDelay: '0.3s' }}>Technology Stack</span>
               </h2>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: '0.5s' }}>
                 Cutting-edge technologies that power our intelligent logistics platform
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {technologies.map((tech, index) => (
-                <Card key={index} className="p-8 border-border/50 bg-card/50 backdrop-blur-sm group hover:shadow-lg transition-all duration-300">
+                <Card key={index} className="p-8 border-border/50 bg-card/50 backdrop-blur-sm group hover:shadow-lg transition-all duration-300 hover-scale animate-fade-in" style={{ animationDelay: `${index * 0.2 + 0.7}s` }}>
                   <div className="flex items-start space-x-4 mb-6">
-                    <div className="p-3 rounded-xl bg-fintech-gold/10 group-hover:bg-fintech-gold/20 transition-colors">
-                      <tech.icon className="h-8 w-8 text-fintech-gold" />
+                    <div className="p-3 rounded-xl bg-fintech-gold/10 group-hover:bg-fintech-gold/20 transition-colors group-hover:scale-110">
+                      <tech.icon className="h-8 w-8 text-fintech-gold transition-transform" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-semibold mb-2">{tech.title}</h3>
-                      <p className="text-muted-foreground mb-4">{tech.description}</p>
+                      <h3 className="text-xl font-semibold mb-2 text-white animate-slide-in-right" style={{ animationDelay: `${index * 0.2 + 0.8}s` }}>{tech.title}</h3>
+                      <p className="text-muted-foreground mb-4 animate-fade-in" style={{ animationDelay: `${index * 0.2 + 0.9}s` }}>{tech.description}</p>
                     </div>
                   </div>
                   
@@ -339,24 +347,24 @@ export default function Logistics() {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                Industry <span className="bg-gradient-primary bg-clip-text text-transparent">Solutions</span>
+              <h2 className="text-5xl md:text-6xl font-black mb-8 tracking-tight text-white animate-enter">
+                Industry <span className="bg-gradient-primary bg-clip-text text-transparent animate-scale-in" style={{ animationDelay: '0.3s' }}>Solutions</span>
               </h2>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: '0.5s' }}>
                 Tailored logistics solutions for different industries and business needs
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {industries.map((industry, index) => (
-                <Card key={index} className="p-8 border-border/50 bg-card/50 backdrop-blur-sm group hover:shadow-lg transition-all duration-300">
+                <Card key={index} className="p-8 border-border/50 bg-card/50 backdrop-blur-sm group hover:shadow-lg transition-all duration-300 hover-scale animate-fade-in" style={{ animationDelay: `${index * 0.2 + 0.7}s` }}>
                   <div className="flex items-start space-x-4 mb-6">
-                    <div className="p-3 rounded-xl bg-fintech-blue/10 group-hover:bg-fintech-blue/20 transition-colors">
-                      <industry.icon className="h-8 w-8 text-fintech-blue" />
+                    <div className="p-3 rounded-xl bg-fintech-blue/10 group-hover:bg-fintech-blue/20 transition-colors group-hover:scale-110">
+                      <industry.icon className="h-8 w-8 text-fintech-blue transition-transform" />
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-xl font-semibold mb-2">{industry.title}</h3>
-                      <p className="text-muted-foreground mb-6">{industry.description}</p>
+                      <h3 className="text-xl font-semibold mb-2 text-white animate-slide-in-right" style={{ animationDelay: `${index * 0.2 + 0.8}s` }}>{industry.title}</h3>
+                      <p className="text-muted-foreground mb-6 animate-fade-in" style={{ animationDelay: `${index * 0.2 + 0.9}s` }}>{industry.description}</p>
                     </div>
                   </div>
                   
@@ -388,25 +396,25 @@ export default function Logistics() {
             <div className="w-24 h-24 mx-auto mb-8 bg-gradient-primary rounded-full flex items-center justify-center">
               <Globe className="h-12 w-12 text-white" />
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <h2 className="text-5xl md:text-6xl font-black mb-8 tracking-tight text-white animate-enter">
               Integrated with
               <br />
-              <span className="bg-gradient-primary bg-clip-text text-transparent">
+              <span className="bg-gradient-primary bg-clip-text text-transparent animate-scale-in" style={{ animationDelay: '0.3s' }}>
                 AI KEYS Ecosystem
               </span>
             </h2>
-            <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
+            <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: '0.5s' }}>
               Seamlessly connects with AI KEYS Wallet for automated payments and financial management, 
               providing a complete business solution.
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Button size="lg" asChild className="bg-gradient-primary text-white">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in" style={{ animationDelay: '0.7s' }}>
+              <Button size="lg" asChild className="bg-gradient-primary text-white hover-scale story-link">
                 <Link to="/wallet">
                   <CreditCard className="mr-2 h-5 w-5" />
                   Explore Payments
                 </Link>
               </Button>
-              <Button size="lg" variant="outline">
+              <Button size="lg" variant="outline" className="hover-scale story-link">
                 <Package className="mr-2 h-5 w-5" />
                 Request Demo
               </Button>
