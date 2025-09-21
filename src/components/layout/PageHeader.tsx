@@ -44,9 +44,10 @@ export const PageHeader = ({
       )}
       {/* Background Animations */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-10 left-10 w-32 h-32 bg-ak-blue/5 rounded-full blur-2xl animate-float" />
-        <div className="absolute bottom-10 right-10 w-40 h-40 bg-ak-blue/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
-        <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-ak-blue/5 rounded-full blur-xl animate-float" style={{ animationDelay: '4s' }} />
+        <div className="absolute top-10 left-10 w-32 h-32 bg-ak-blue/5 rounded-full blur-2xl animate-fade-in" />
+        <div className="absolute bottom-10 right-10 w-40 h-40 bg-ak-blue/10 rounded-full blur-3xl animate-scale-in" style={{ animationDelay: '0.5s' }} />
+        <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-ak-blue/5 rounded-full blur-xl animate-fade-in" style={{ animationDelay: '1s' }} />
+        <div className="absolute top-20 right-1/4 w-28 h-28 bg-ak-blue/3 rounded-full blur-2xl animate-scale-in" style={{ animationDelay: '1.5s' }} />
       </div>
       <div className="relative z-10 container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
@@ -73,17 +74,17 @@ export const PageHeader = ({
           )}
 
           {/* Title */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-slide-up">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in">
             {subtitle ? (
               <>
-                <span className="text-foreground">{title}</span>
+                <span className="text-foreground animate-slide-in-right">{title}</span>
                 <br />
-                <span className="bg-gradient-primary bg-clip-text text-transparent">
+                <span className="bg-gradient-primary bg-clip-text text-transparent animate-scale-in" style={{ animationDelay: '0.2s' }}>
                   {subtitle}
                 </span>
               </>
             ) : (
-              <span className="bg-gradient-primary bg-clip-text text-transparent">
+              <span className="bg-gradient-primary bg-clip-text text-transparent animate-enter">
                 {title}
               </span>
             )}

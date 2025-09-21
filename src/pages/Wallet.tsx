@@ -160,14 +160,14 @@ export default function WalletPage() {
         <ModernContainer>
           <ModernGrid cols={2} gap="xl">
             {features.map((feature, index) => (
-              <ModernCard key={index} variant="premium" hover="lift" className="p-10 group">
+              <ModernCard key={index} variant="premium" hover="lift" className="p-10 group animate-fade-in hover-scale" style={{ animationDelay: `${index * 0.2}s` }}>
                 <div className="flex items-start space-x-6 mb-8">
-                  <div className="p-4 rounded-xl bg-ak-blue/10 group-hover:bg-ak-blue/20 transition-colors">
-                    <feature.icon className="h-10 w-10 text-ak-blue" />
+                  <div className="p-4 rounded-xl bg-ak-blue/10 group-hover:bg-ak-blue/20 transition-colors group-hover:scale-110">
+                    <feature.icon className="h-10 w-10 text-ak-blue transition-transform" />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold mb-4 text-ak-text">{feature.title}</h3>
-                    <p className="text-ak-muted text-lg leading-relaxed mb-6">{feature.description}</p>
+                    <h3 className="text-2xl font-bold mb-4 text-ak-text animate-slide-in-right" style={{ animationDelay: `${index * 0.2 + 0.1}s` }}>{feature.title}</h3>
+                    <p className="text-ak-muted text-lg leading-relaxed mb-6 animate-fade-in" style={{ animationDelay: `${index * 0.2 + 0.2}s` }}>{feature.description}</p>
                   </div>
                 </div>
                 
@@ -190,20 +190,20 @@ export default function WalletPage() {
         <BackgroundAnimations variant="subtle" />
         <ModernContainer>
           <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl font-black mb-8 tracking-tight text-ak-text">
-              Everything You Need in <span className="bg-gradient-primary bg-clip-text text-transparent">One Wallet</span>
+            <h2 className="text-5xl md:text-6xl font-black mb-8 tracking-tight text-ak-text animate-enter">
+              Everything You Need in <span className="bg-gradient-primary bg-clip-text text-transparent animate-scale-in" style={{ animationDelay: '0.3s' }}>One Wallet</span>
             </h2>
-            <p className="text-2xl text-ak-muted max-w-4xl mx-auto leading-relaxed">
+            <p className="text-2xl text-ak-muted max-w-4xl mx-auto leading-relaxed animate-fade-in" style={{ animationDelay: '0.5s' }}>
               From basic transactions to advanced DeFi strategies, AI KEYS Wallet has you covered
             </p>
           </div>
 
           <ModernGrid cols={3} gap="lg">
             {walletFeatures.map((feature, index) => (
-              <ModernCard key={index} variant="glass" hover="lift" className="text-center p-8 group">
-                <feature.icon className="h-16 w-16 mx-auto mb-8 text-ak-blue group-hover:scale-110 transition-transform" />
-                <h3 className="font-bold mb-4 text-xl text-ak-text">{feature.title}</h3>
-                <p className="text-ak-muted leading-relaxed">{feature.description}</p>
+              <ModernCard key={index} variant="glass" hover="lift" className="text-center p-8 group hover-scale animate-fade-in" style={{ animationDelay: `${index * 0.1 + 0.7}s` }}>
+                <feature.icon className="h-16 w-16 mx-auto mb-8 text-ak-blue group-hover:scale-125 transition-all duration-300 animate-scale-in" style={{ animationDelay: `${index * 0.1 + 0.8}s` }} />
+                <h3 className="font-bold mb-4 text-xl text-ak-text animate-slide-in-right" style={{ animationDelay: `${index * 0.1 + 0.9}s` }}>{feature.title}</h3>
+                <p className="text-ak-muted leading-relaxed animate-fade-in" style={{ animationDelay: `${index * 0.1 + 1}s` }}>{feature.description}</p>
               </ModernCard>
             ))}
           </ModernGrid>
@@ -216,15 +216,17 @@ export default function WalletPage() {
         <ModernContainer>
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-20">
-              <h2 className="text-5xl md:text-6xl font-black mb-8 tracking-tight text-ak-text">
-                AI KEYS <span className="bg-gradient-primary bg-clip-text text-transparent">Token</span>
+              <h2 className="text-5xl md:text-6xl font-black mb-8 tracking-tight text-ak-text animate-enter">
+                AI KEYS <span className="bg-gradient-primary bg-clip-text text-transparent animate-scale-in" style={{ animationDelay: '0.3s' }}>Token</span>
               </h2>
-              <p className="text-xl md:text-2xl text-ak-muted max-w-4xl mx-auto leading-relaxed">
+              <p className="text-xl md:text-2xl text-ak-muted max-w-4xl mx-auto leading-relaxed animate-fade-in" style={{ animationDelay: '0.5s' }}>
                 Native SPL token on Solana blockchain powering the entire AI KEYS ecosystem
               </p>
             </div>
             
-            <TokenDisplay />
+            <div className="animate-scale-in" style={{ animationDelay: '0.7s' }}>
+              <TokenDisplay />
+            </div>
           </div>
         </ModernContainer>
       </ModernSection>
@@ -350,14 +352,14 @@ export default function WalletPage() {
           <p className="text-xl md:text-2xl text-ak-muted mb-16 max-w-4xl mx-auto leading-relaxed">
             Join thousands of users who trust AI KEYS Wallet for secure, intelligent cryptocurrency management.
           </p>
-          <div className="flex flex-col sm:flex-row gap-8 justify-center">
-            <Button size="xl" variant="premium" className="group">
-              <Download className="mr-2 h-5 w-5" />
+          <div className="flex flex-col sm:flex-row gap-8 justify-center animate-fade-in" style={{ animationDelay: '1s' }}>
+            <Button size="xl" variant="premium" className="group hover-scale story-link">
+              <Download className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
               Download Now
             </Button>
-            <Button size="xl" variant="glass" className="group" asChild>
+            <Button size="xl" variant="glass" className="group hover-scale story-link" asChild>
               <a href="https://keys-pay.com">
-                <QrCode className="mr-2 h-5 w-5" />
+                <QrCode className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
                 Try Web App
               </a>
             </Button>
