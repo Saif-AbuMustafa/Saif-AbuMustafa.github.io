@@ -190,7 +190,7 @@ export default function WalletPage() {
         <BackgroundAnimations variant="subtle" />
         <ModernContainer>
           <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl font-black mb-8 tracking-tight text-ak-text animate-enter">
+            <h2 className="text-5xl md:text-6xl font-black mb-8 tracking-tight text-white animate-enter">
               Everything You Need in <span className="bg-gradient-primary bg-clip-text text-transparent animate-scale-in" style={{ animationDelay: '0.3s' }}>One Wallet</span>
             </h2>
             <p className="text-2xl text-ak-muted max-w-4xl mx-auto leading-relaxed animate-fade-in" style={{ animationDelay: '0.5s' }}>
