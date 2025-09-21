@@ -148,7 +148,7 @@ export default function About() {
           <ModernGrid cols={4} gap="xl">
             {stats.map((stat, index) => (
               <ModernCard key={index} variant="premium" hover="lift" className="text-center p-10">
-                <stat.icon className="h-16 w-16 mx-auto mb-6 text-fintech-blue group-hover:scale-125 transition-all duration-500" />
+                <stat.icon className="h-16 w-16 mx-auto mb-6 text-ak-blue group-hover:scale-125 transition-all duration-500" />
                 <div className="text-4xl font-black mb-3 bg-gradient-primary bg-clip-text text-transparent">
                   <AnimatedCounter 
                     end={stat.value} 
@@ -169,8 +169,8 @@ export default function About() {
           <ModernGrid cols={2} gap="xl">
             <ModernCard variant="premium" hover="lift" className="p-10">
               <div className="flex items-center space-x-4 mb-8">
-                <Eye className="h-10 w-10 text-fintech-blue" />
-                <h2 className="text-4xl font-bold">Our Vision</h2>
+                <Eye className="h-10 w-10 text-ak-blue" />
+                <h2 className="text-4xl font-bold text-ak-text">Our Vision</h2>
               </div>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 To revolutionize the global financial ecosystem by merging artificial intelligence with secure, 
@@ -181,8 +181,8 @@ export default function About() {
 
             <ModernCard variant="premium" hover="lift" className="p-10">
               <div className="flex items-center space-x-4 mb-8">
-                <Target className="h-10 w-10 text-fintech-cyan" />
-                <h2 className="text-4xl font-bold">Our Mission</h2>
+                <Target className="h-10 w-10 text-ak-blue" />
+                <h2 className="text-4xl font-bold text-ak-text">Our Mission</h2>
               </div>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 Our mission is to empower users with an AI-driven, all-in-one financial platform that securely 
@@ -195,46 +195,48 @@ export default function About() {
       </ModernSection>
 
       {/* Company Values */}
-      <section className="py-20 lg:py-32 bg-accent/5">
-        <div className="container mx-auto px-4">
+      <InteractiveSection background="particles" className="py-20 lg:py-32">
+        <BackgroundAnimations variant="subtle" />
+        <ModernContainer>
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <div className="text-center mb-20">
+              <h2 className="text-5xl md:text-6xl font-black mb-8 tracking-tight text-ak-text">
                 Our <span className="bg-gradient-primary bg-clip-text text-transparent">Core Values</span>
               </h2>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              <p className="text-xl md:text-2xl text-ak-muted max-w-4xl mx-auto leading-relaxed">
                 The principles that guide every decision we make and every solution we build
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <ModernGrid cols={2} gap="xl">
               {values.map((value, index) => (
-                <Card key={index} className="p-8 border-border/50 bg-card/50 backdrop-blur-sm group hover:shadow-lg transition-all duration-300">
-                  <div className="flex items-start space-x-4">
-                    <div className="p-3 rounded-xl bg-fintech-blue/10 group-hover:bg-fintech-blue/20 transition-colors">
-                      <value.icon className="h-8 w-8 text-fintech-blue" />
+                <ModernCard key={index} variant="glass" hover="lift" className="p-10 group">
+                  <div className="flex items-start space-x-6">
+                    <div className="p-4 rounded-xl bg-ak-blue/10 group-hover:bg-ak-blue/20 transition-colors">
+                      <value.icon className="h-10 w-10 text-ak-blue" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-semibold mb-3">{value.title}</h3>
-                      <p className="text-muted-foreground">{value.description}</p>
+                      <h3 className="text-2xl font-bold mb-4 text-ak-text">{value.title}</h3>
+                      <p className="text-lg text-ak-muted leading-relaxed">{value.description}</p>
                     </div>
                   </div>
-                </Card>
+                </ModernCard>
               ))}
-            </div>
+            </ModernGrid>
           </div>
-        </div>
-      </section>
+        </ModernContainer>
+      </InteractiveSection>
 
       {/* Company Timeline */}
-      <section className="py-20 lg:py-32">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
+      <ModernSection padding="xl">
+        <BackgroundAnimations variant="section" />
+        <ModernContainer>
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-20">
+              <h2 className="text-5xl md:text-6xl font-black mb-8 tracking-tight text-ak-text">
                 Our <span className="bg-gradient-primary bg-clip-text text-transparent">Journey</span>
               </h2>
-              <p className="text-xl text-muted-foreground">
+              <p className="text-xl md:text-2xl text-ak-muted max-w-3xl mx-auto leading-relaxed">
                 Key milestones in our mission to revolutionize fintech
               </p>
             </div>
@@ -248,7 +250,7 @@ export default function About() {
                     </div>
                   </div>
                   <div className="flex-1">
-                    <Badge variant="outline" className="mb-2 border-fintech-blue text-fintech-blue">
+                    <Badge variant="outline" className="mb-2 border-ak-blue text-ak-blue bg-ak-blue/5">
                       {milestone.year}
                     </Badge>
                     <h3 className="text-2xl font-semibold mb-2">{milestone.title}</h3>
@@ -258,103 +260,103 @@ export default function About() {
               ))}
             </div>
           </div>
-        </div>
-      </section>
+        </ModernContainer>
+      </ModernSection>
 
       {/* Leadership Team */}
-      <section className="py-20 lg:py-32 bg-accent/5">
-        <div className="container mx-auto px-4">
+      <InteractiveSection background="particles" className="py-20 lg:py-32">
+        <BackgroundAnimations variant="subtle" />
+        <ModernContainer>
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <div className="text-center mb-20">
+              <h2 className="text-5xl md:text-6xl font-black mb-8 tracking-tight text-ak-text">
                 Leadership <span className="bg-gradient-primary bg-clip-text text-transparent">Team</span>
               </h2>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              <p className="text-xl md:text-2xl text-ak-muted max-w-4xl mx-auto leading-relaxed">
                 Experienced leaders driving innovation in AI-powered financial services
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <ModernGrid cols={2} gap="xl">
               {leadership.map((leader, index) => (
-                <Card key={index} className="p-8 border-border/50 bg-card/50 backdrop-blur-sm group hover:shadow-lg transition-all duration-300">
-                  <div className="text-center">
-                    <div className="w-24 h-24 bg-gradient-primary rounded-full mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform">
-                      <Users className="h-12 w-12 text-white" />
-                    </div>
-                    <h3 className="text-xl font-semibold mb-2">{leader.name}</h3>
-                    <Badge variant="outline" className="mb-4 border-fintech-blue text-fintech-blue">
-                      {leader.role}
-                    </Badge>
-                    <p className="text-muted-foreground">{leader.bio}</p>
+                <ModernCard key={index} variant="glass" hover="lift" className="p-10 group text-center">
+                  <div className="w-28 h-28 bg-gradient-primary rounded-full mx-auto mb-8 flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <Users className="h-14 w-14 text-white" />
                   </div>
-                </Card>
+                  <h3 className="text-2xl font-bold mb-3 text-ak-text">{leader.name}</h3>
+                  <Badge variant="outline" className="mb-6 border-ak-blue text-ak-blue bg-ak-blue/5">
+                    {leader.role}
+                  </Badge>
+                  <p className="text-ak-muted leading-relaxed">{leader.bio}</p>
+                </ModernCard>
               ))}
-            </div>
+            </ModernGrid>
           </div>
-        </div>
-      </section>
+        </ModernContainer>
+      </InteractiveSection>
 
       {/* Company Info */}
-      <section className="py-20 lg:py-32">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <Card className="p-8 border-border/50 bg-card/50 backdrop-blur-sm">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+      <ModernSection padding="xl">
+        <BackgroundAnimations variant="section" />
+        <ModernContainer>
+          <div className="max-w-5xl mx-auto">
+            <ModernCard variant="premium" className="p-12">
+              <ModernGrid cols={3} gap="xl" className="text-center">
                 <div>
-                  <Building className="h-12 w-12 mx-auto mb-4 text-fintech-blue" />
-                  <h3 className="font-semibold mb-2">Headquarters</h3>
-                  <p className="text-muted-foreground">Dubai, UAE</p>
+                  <Building className="h-16 w-16 mx-auto mb-6 text-ak-blue" />
+                  <h3 className="text-xl font-bold mb-3 text-ak-text">Headquarters</h3>
+                  <p className="text-ak-muted text-lg">Dubai, UAE</p>
                 </div>
                 <div>
-                  <MapPin className="h-12 w-12 mx-auto mb-4 text-fintech-cyan" />
-                  <h3 className="font-semibold mb-2">Founded</h3>
-                  <p className="text-muted-foreground">March 2025</p>
+                  <MapPin className="h-16 w-16 mx-auto mb-6 text-ak-blue" />
+                  <h3 className="text-xl font-bold mb-3 text-ak-text">Founded</h3>
+                  <p className="text-ak-muted text-lg">March 2025</p>
                 </div>
                 <div>
-                  <CheckCircle className="h-12 w-12 mx-auto mb-4 text-fintech-gold" />
-                  <h3 className="font-semibold mb-2">Regulation</h3>
-                  <p className="text-muted-foreground">VARA Compliant</p>
+                  <CheckCircle className="h-16 w-16 mx-auto mb-6 text-ak-blue" />
+                  <h3 className="text-xl font-bold mb-3 text-ak-text">Regulation</h3>
+                  <p className="text-ak-muted text-lg">VARA Compliant</p>
                 </div>
-              </div>
-            </Card>
+              </ModernGrid>
+            </ModernCard>
           </div>
-        </div>
-      </section>
+        </ModernContainer>
+      </ModernSection>
 
       {/* CTA */}
-      <section className="relative py-20 lg:py-32 overflow-hidden mouse-follow-container">
-        <CTABackground />
-        <MouseFollower />
-        <div className="relative z-10 container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-5xl md:text-7xl font-black mb-8 animate-fade-in tracking-tight">
-              Join Our Mission to Transform
-              <br />
-              <span className="bg-gradient-primary bg-clip-text text-transparent">
-                Global Finance
-              </span>
-            </h2>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-16 max-w-3xl mx-auto animate-slide-up leading-relaxed">
-              Whether you're looking to partner with us, join our team, or use our services, 
-              we'd love to hear from you.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-8 justify-center animate-scale-in">
-              <Button size="xl" variant="premium" asChild className="group">
-                <Link to="/careers">
-                  <Users className="mr-2 h-6 w-6" />
-                  View Careers
-                </Link>
-              </Button>
-              <Button size="xl" variant="glass" asChild className="group">
-                <Link to="/investors">
-                  <TrendingUp className="mr-2 h-5 w-5" />
-                  Investor Relations
-                </Link>
-              </Button>
-            </div>
+      <InteractiveSection
+        background="gradient"
+        interactive={true}
+        className="py-20 lg:py-32"
+      >
+        <div className="relative z-10 container mx-auto px-4 text-center">
+          <h2 className="text-5xl md:text-7xl font-black mb-8 animate-fade-in tracking-tight text-ak-text">
+            Join Our Mission to Transform
+            <br />
+            <span className="bg-gradient-primary bg-clip-text text-transparent">
+              Global Finance
+            </span>
+          </h2>
+          <p className="text-xl md:text-2xl text-ak-muted mb-16 max-w-4xl mx-auto animate-slide-up leading-relaxed">
+            Whether you're looking to partner with us, join our team, or use our services, 
+            we'd love to hear from you.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-8 justify-center animate-scale-in">
+            <Button size="xl" variant="premium" asChild className="group">
+              <Link to="/careers">
+                <Users className="mr-2 h-6 w-6" />
+                View Careers
+              </Link>
+            </Button>
+            <Button size="xl" variant="glass" asChild className="group">
+              <Link to="/investors">
+                <TrendingUp className="mr-2 h-5 w-5" />
+                Investor Relations
+              </Link>
+            </Button>
           </div>
         </div>
-      </section>
+      </InteractiveSection>
     </div>
   );
 }

@@ -269,7 +269,7 @@ export default function Token() {
               <h2 className="text-5xl md:text-6xl font-black mb-8 tracking-tight text-ak-text">
                 Token <span className="bg-gradient-primary bg-clip-text text-transparent">Metrics</span>
               </h2>
-              <p className="text-2xl text-ak-muted max-w-4xl mx-auto leading-relaxed">
+              <p className="text-xl md:text-2xl text-ak-muted max-w-4xl mx-auto leading-relaxed">
                 Real-time metrics and statistics for KEYS token
               </p>
             </div>
@@ -321,14 +321,15 @@ export default function Token() {
       </ModernSection>
 
       {/* Tokenomics */}
-      <section className="py-20 lg:py-32">
-        <div className="container mx-auto px-4">
+      <InteractiveSection background="particles" className="py-20 lg:py-32">
+        <BackgroundAnimations variant="subtle" />
+        <ModernContainer>
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <div className="text-center mb-20">
+              <h2 className="text-5xl md:text-6xl font-black mb-8 tracking-tight text-ak-text">
                 Token <span className="bg-gradient-primary bg-clip-text text-transparent">Distribution</span>
               </h2>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              <p className="text-xl md:text-2xl text-ak-muted max-w-4xl mx-auto leading-relaxed">
                 Transparent and sustainable token distribution model
               </p>
             </div>
@@ -348,68 +349,69 @@ export default function Token() {
               </div>
 
               {/* Distribution Details */}
-              <div className="space-y-6">
+              <div className="space-y-8">
                 {tokenomics.map((item, index) => (
-                  <Card key={index} className="p-6 border-border/50 bg-card/50 backdrop-blur-sm">
-                    <div className="flex items-center justify-between mb-3">
-                      <div className="flex items-center space-x-3">
-                        <div className={`w-4 h-4 rounded-full bg-${item.color}`}></div>
-                        <h3 className="font-semibold">{item.category}</h3>
+                  <ModernCard key={index} variant="glass" hover="lift" className="p-8">
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="flex items-center space-x-4">
+                        <div className="w-5 h-5 rounded-full bg-ak-blue"></div>
+                        <h3 className="text-lg font-bold text-ak-text">{item.category}</h3>
                       </div>
                       <div className="text-right">
-                        <div className="font-bold">{item.percentage}%</div>
-                        <div className="text-sm text-muted-foreground">{formatNumber(item.amount)}</div>
+                        <div className="text-2xl font-black text-ak-blue">{item.percentage}%</div>
+                        <div className="text-sm text-ak-muted font-medium">{formatNumber(item.amount)}</div>
                       </div>
                     </div>
-                    <p className="text-sm text-muted-foreground">{item.description}</p>
-                  </Card>
+                    <p className="text-ak-muted leading-relaxed">{item.description}</p>
+                  </ModernCard>
                 ))}
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </ModernContainer>
+      </InteractiveSection>
 
       {/* Token Utility */}
-      <section className="py-20 lg:py-32 bg-accent/5">
-        <div className="container mx-auto px-4">
+      <ModernSection padding="xl">
+        <BackgroundAnimations variant="section" />
+        <ModernContainer>
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <div className="text-center mb-20">
+              <h2 className="text-5xl md:text-6xl font-black mb-8 tracking-tight text-ak-text">
                 Token <span className="bg-gradient-primary bg-clip-text text-transparent">Utility</span>
               </h2>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              <p className="text-xl md:text-2xl text-ak-muted max-w-4xl mx-auto leading-relaxed">
                 Multiple use cases and benefits within the KEYS ecosystem
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <ModernGrid cols={2} gap="xl">
               {utilities.map((utility, index) => (
-                <Card key={index} className="p-8 border-border/50 bg-card/50 backdrop-blur-sm group hover:shadow-lg transition-all duration-300">
-                  <div className="flex items-start space-x-4 mb-6">
-                    <div className="p-3 rounded-xl bg-fintech-blue/10 group-hover:bg-fintech-blue/20 transition-colors">
-                      <utility.icon className="h-8 w-8 text-fintech-blue" />
+                <ModernCard key={index} variant="premium" hover="lift" className="p-10 group">
+                  <div className="flex items-start space-x-6 mb-8">
+                    <div className="p-4 rounded-xl bg-ak-blue/10 group-hover:bg-ak-blue/20 transition-colors">
+                      <utility.icon className="h-10 w-10 text-ak-blue" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-semibold mb-2">{utility.title}</h3>
-                      <p className="text-muted-foreground">{utility.description}</p>
+                      <h3 className="text-2xl font-bold mb-3 text-ak-text">{utility.title}</h3>
+                      <p className="text-ak-muted text-lg leading-relaxed">{utility.description}</p>
                     </div>
                   </div>
                   
-                  <div className="space-y-2">
+                  <div className="grid grid-cols-1 gap-4">
                     {utility.benefits.map((benefit, idx) => (
-                      <div key={idx} className="flex items-center space-x-2 text-sm">
-                        <CheckCircle className="h-4 w-4 text-green-500" />
-                        <span className="text-muted-foreground">{benefit}</span>
+                      <div key={idx} className="flex items-center space-x-3">
+                        <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0" />
+                        <span className="text-ak-muted font-medium">{benefit}</span>
                       </div>
                     ))}
                   </div>
-                </Card>
+                </ModernCard>
               ))}
-            </div>
+            </ModernGrid>
           </div>
-        </div>
-      </section>
+        </ModernContainer>
+      </ModernSection>
 
       {/* Roadmap */}
       <section className="py-20 lg:py-32">

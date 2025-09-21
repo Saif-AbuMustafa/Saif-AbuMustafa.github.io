@@ -201,8 +201,8 @@ export default function Education() {
               {features.map((feature, index) => (
                 <Card key={index} className="p-8 border-border/50 bg-card/50 backdrop-blur-sm group hover:shadow-2xl transition-all duration-500 hover:scale-[1.02]">
                   <div className="flex items-start space-x-4 mb-6">
-                    <div className="p-3 rounded-xl bg-fintech-gold/10 group-hover:bg-fintech-gold/20 transition-colors">
-                      <feature.icon className="h-8 w-8 text-fintech-gold" />
+                    <div className="p-3 rounded-xl bg-ak-blue/10 group-hover:bg-ak-blue/20 transition-colors">
+                      <feature.icon className="h-8 w-8 text-ak-blue" />
                     </div>
                     <div>
                       <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>

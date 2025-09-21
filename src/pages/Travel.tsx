@@ -250,140 +250,142 @@ export default function Travel() {
       </ModernSection>
 
       {/* AI Capabilities */}
-      <section className="py-20 lg:py-32">
-        <div className="container mx-auto px-4">
+      <InteractiveSection background="particles" className="py-20 lg:py-32">
+        <BackgroundAnimations variant="subtle" />
+        <ModernContainer>
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <div className="text-center mb-20">
+              <h2 className="text-5xl md:text-6xl font-black mb-8 tracking-tight text-ak-text">
                 Powered by <span className="bg-gradient-primary bg-clip-text text-transparent">Advanced AI</span>
               </h2>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              <p className="text-xl md:text-2xl text-ak-muted max-w-4xl mx-auto leading-relaxed">
                 Our intelligent algorithms learn from millions of travel patterns to optimize your journey
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <ModernGrid cols={2} gap="xl">
               {aiCapabilities.map((capability, index) => (
-                <Card key={index} className="p-8 border-border/50 bg-card/50 backdrop-blur-sm group hover:shadow-lg transition-all duration-300">
-                  <div className="flex items-start space-x-4">
-                    <div className="p-3 rounded-xl bg-fintech-purple/10 group-hover:bg-fintech-purple/20 transition-colors">
-                      <capability.icon className="h-8 w-8 text-fintech-purple" />
+                <ModernCard key={index} variant="glass" hover="lift" className="p-10 group">
+                  <div className="flex items-start space-x-6">
+                    <div className="p-4 rounded-xl bg-ak-blue/10 group-hover:bg-ak-blue/20 transition-colors">
+                      <capability.icon className="h-10 w-10 text-ak-blue" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-semibold mb-3">{capability.title}</h3>
-                      <p className="text-muted-foreground">{capability.description}</p>
+                      <h3 className="text-2xl font-bold mb-4 text-ak-text">{capability.title}</h3>
+                      <p className="text-ak-muted text-lg leading-relaxed">{capability.description}</p>
                     </div>
                   </div>
-                </Card>
+                </ModernCard>
               ))}
-            </div>
+            </ModernGrid>
           </div>
-        </div>
-      </section>
+        </ModernContainer>
+      </InteractiveSection>
 
       {/* Use Cases */}
-      <section className="py-20 lg:py-32 bg-accent/5">
-        <div className="container mx-auto px-4">
+      <ModernSection padding="xl">
+        <BackgroundAnimations variant="section" />
+        <ModernContainer>
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <div className="text-center mb-20">
+              <h2 className="text-5xl md:text-6xl font-black mb-8 tracking-tight text-ak-text">
                 Perfect for <span className="bg-gradient-primary bg-clip-text text-transparent">Every Journey</span>
               </h2>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              <p className="text-xl md:text-2xl text-ak-muted max-w-4xl mx-auto leading-relaxed">
                 Tailored solutions for different types of travelers and trip purposes
               </p>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <ModernGrid cols={3} gap="lg">
               {useCases.map((useCase, index) => (
-                <Card key={index} className="p-8 border-border/50 bg-card/50 backdrop-blur-sm group hover:shadow-lg transition-all duration-300">
-                  <div className="text-center mb-6">
-                    <div className="w-16 h-16 mx-auto mb-4 bg-gradient-primary rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                      <Users className="h-8 w-8 text-white" />
-                    </div>
-                    <h3 className="text-xl font-semibold mb-2">{useCase.title}</h3>
-                    <p className="text-muted-foreground mb-6">{useCase.description}</p>
+                <ModernCard key={index} variant="premium" hover="lift" className="p-10 group text-center">
+                  <div className="w-20 h-20 mx-auto mb-8 bg-gradient-primary rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <Users className="h-10 w-10 text-white" />
                   </div>
+                  <h3 className="text-2xl font-bold mb-4 text-ak-text">{useCase.title}</h3>
+                  <p className="text-ak-muted mb-8 text-lg leading-relaxed">{useCase.description}</p>
                   
-                  <div className="space-y-3">
+                  <div className="space-y-4">
                     {useCase.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-center space-x-2 text-sm">
-                        <div className="w-2 h-2 rounded-full bg-fintech-cyan" />
-                        <span className="text-muted-foreground">{feature}</span>
+                      <div key={idx} className="flex items-center justify-center space-x-3">
+                        <div className="w-3 h-3 rounded-full bg-ak-blue" />
+                        <span className="text-ak-muted font-medium">{feature}</span>
                       </div>
                     ))}
                   </div>
-                </Card>
+                </ModernCard>
               ))}
-            </div>
+            </ModernGrid>
           </div>
-        </div>
-      </section>
+        </ModernContainer>
+      </ModernSection>
 
       {/* Testimonials */}
-      <section className="py-20 lg:py-32">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
+      <InteractiveSection background="particles" className="py-20 lg:py-32">
+        <BackgroundAnimations variant="subtle" />
+        <ModernContainer>
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-20">
+              <h2 className="text-5xl md:text-6xl font-black mb-8 tracking-tight text-ak-text">
                 Traveler <span className="bg-gradient-primary bg-clip-text text-transparent">Stories</span>
               </h2>
-               <p className="text-xl text-muted-foreground">
+               <p className="text-xl md:text-2xl text-ak-muted max-w-3xl mx-auto leading-relaxed">
                 What our users are saying about AI KEYS Travel
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <ModernGrid cols={2} gap="xl">
               {testimonials.map((testimonial, index) => (
-                <Card key={index} className="p-8 border-border/50 bg-card/50 backdrop-blur-sm group hover:shadow-lg transition-all duration-300">
-                  <div className="flex items-center space-x-1 mb-4">
+                <ModernCard key={index} variant="glass" hover="lift" className="p-10 group">
+                  <div className="flex items-center space-x-1 mb-6">
                     {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-5 w-5 text-yellow-500 fill-current" />
+                      <Star key={i} className="h-6 w-6 text-yellow-500 fill-current" />
                     ))}
                   </div>
-                  <blockquote className="text-lg mb-6">"{testimonial.quote}"</blockquote>
+                  <blockquote className="text-xl text-ak-muted mb-8 leading-relaxed">"{testimonial.quote}"</blockquote>
                   <div className="flex items-center justify-between">
                     <div>
-                      <div className="font-semibold">{testimonial.name}</div>
-                      <div className="text-sm text-muted-foreground">{testimonial.role}</div>
+                      <div className="text-lg font-bold text-ak-text">{testimonial.name}</div>
+                      <div className="text-ak-muted">{testimonial.role}</div>
                     </div>
                     <div className="text-right">
-                      <div className="text-sm font-medium text-fintech-cyan">{testimonial.destination}</div>
+                      <div className="font-bold text-ak-blue">{testimonial.destination}</div>
                     </div>
                   </div>
-                </Card>
+                </ModernCard>
               ))}
-            </div>
+            </ModernGrid>
           </div>
-        </div>
-      </section>
+        </ModernContainer>
+      </InteractiveSection>
 
       {/* Integration with Wallet */}
-      <section className="py-20 lg:py-32 bg-accent/5">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="w-24 h-24 mx-auto mb-8 bg-gradient-primary rounded-full flex items-center justify-center">
-              <Wallet className="h-12 w-12 text-white" />
+      <ModernSection padding="xl">
+        <BackgroundAnimations variant="section" />
+        <ModernContainer>
+          <div className="max-w-5xl mx-auto text-center">
+            <div className="w-28 h-28 mx-auto mb-12 bg-gradient-primary rounded-full flex items-center justify-center">
+              <Wallet className="h-14 w-14 text-white" />
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <h2 className="text-5xl md:text-6xl font-black mb-8 tracking-tight text-ak-text">
               Seamlessly Integrated with
               <br />
               <span className="bg-gradient-primary bg-clip-text text-transparent">
                 AI KEYS Wallet
               </span>
             </h2>
-            <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
+            <p className="text-xl md:text-2xl text-ak-muted mb-16 max-w-4xl mx-auto leading-relaxed">
               Your travel expenses are automatically tracked and categorized in your AI KEYS Wallet, 
               with intelligent budgeting and expense optimization.
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Button size="lg" asChild className="bg-gradient-primary text-white">
+            <div className="flex flex-col sm:flex-row gap-8 justify-center">
+              <Button size="xl" variant="premium" asChild className="group">
                 <Link to="/wallet">
                   <Wallet className="mr-2 h-5 w-5" />
                   Explore Wallet
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" asChild>
+              <Button size="xl" variant="glass" asChild className="group">
                 <a href="https://keys-explorer.com/" target="_blank" rel="noopener noreferrer">
                   <Plane className="mr-2 h-5 w-5" />
                   Launch Travel App
@@ -391,40 +393,40 @@ export default function Travel() {
               </Button>
             </div>
           </div>
-        </div>
-      </section>
+        </ModernContainer>
+      </ModernSection>
 
       {/* CTA Section */}
-      <section className="relative py-20 lg:py-32 overflow-hidden mouse-follow-container">
-        <CTABackground />
-        <MouseFollower />
-        <div className="relative z-10 container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-6xl font-bold mb-6">
-              Ready to Transform
-              <br />
-              <span className="bg-gradient-primary bg-clip-text text-transparent">
-                Your Travel Experience?
-              </span>
-            </h2>
-            <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
-              Experience AI-powered travel planning with integrated crypto payments. Start planning your perfect journey today.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Button size="lg" asChild className="bg-gradient-primary text-white h-14 px-8">
-                <a href="https://keys-explorer.com/" target="_blank" rel="noopener noreferrer">
-                  <ArrowRight className="mr-2 h-5 w-5" />
-                  Get Started Now
-                </a>
-              </Button>
-              <Button size="lg" variant="outline" className="h-14 px-8">
-                <Clock className="mr-2 h-5 w-5" />
-                Schedule Demo
-              </Button>
-            </div>
+      <InteractiveSection
+        background="gradient"
+        interactive={true}
+        className="py-20 lg:py-32"
+      >
+        <div className="relative z-10 container mx-auto px-4 text-center">
+          <h2 className="text-5xl md:text-7xl font-black mb-8 tracking-tight text-ak-text">
+            Ready to Transform
+            <br />
+            <span className="bg-gradient-primary bg-clip-text text-transparent">
+              Your Travel Experience?
+            </span>
+          </h2>
+          <p className="text-xl md:text-2xl text-ak-muted mb-16 max-w-4xl mx-auto leading-relaxed">
+            Experience AI-powered travel planning with integrated crypto payments. Start planning your perfect journey today.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-8 justify-center">
+            <Button size="xl" variant="premium" asChild className="group">
+              <a href="https://keys-explorer.com/" target="_blank" rel="noopener noreferrer">
+                <ArrowRight className="mr-2 h-5 w-5" />
+                Get Started Now
+              </a>
+            </Button>
+            <Button size="xl" variant="glass" className="group">
+              <Clock className="mr-2 h-5 w-5" />
+              Schedule Demo
+            </Button>
           </div>
         </div>
-      </section>
+      </InteractiveSection>
 
       <Footer />
     </div>

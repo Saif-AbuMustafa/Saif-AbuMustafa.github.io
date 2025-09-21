@@ -211,57 +211,59 @@ export default function WalletPage() {
       </ModernSection>
 
       {/* Token Information */}
-      <section className="py-20 lg:py-32">
-        <div className="container mx-auto px-4">
+      <ModernSection padding="xl">
+        <BackgroundAnimations variant="section" />
+        <ModernContainer>
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <div className="text-center mb-20">
+              <h2 className="text-5xl md:text-6xl font-black mb-8 tracking-tight text-ak-text">
                 AI KEYS <span className="bg-gradient-primary bg-clip-text text-transparent">Token</span>
               </h2>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              <p className="text-xl md:text-2xl text-ak-muted max-w-4xl mx-auto leading-relaxed">
                 Native SPL token on Solana blockchain powering the entire AI KEYS ecosystem
               </p>
             </div>
             
             <TokenDisplay />
           </div>
-        </div>
-      </section>
+        </ModernContainer>
+      </ModernSection>
 
       {/* Security & Compliance */}
-      <section className="py-20 lg:py-32 bg-accent/5">
-        <div className="container mx-auto px-4">
+      <InteractiveSection background="particles" className="py-20 lg:py-32">
+        <BackgroundAnimations variant="subtle" />
+        <ModernContainer>
           <div className="max-w-6xl mx-auto">
             <Tabs defaultValue="security" className="w-full">
-              <TabsList className="grid w-full grid-cols-3 mb-16">
-                <TabsTrigger value="security">Security</TabsTrigger>
-                <TabsTrigger value="supported">Supported Assets</TabsTrigger>
-                <TabsTrigger value="testimonials">Testimonials</TabsTrigger>
+              <TabsList className="grid w-full grid-cols-3 mb-16 bg-ak-beige-300/30">
+                <TabsTrigger value="security" className="text-ak-text data-[state=active]:bg-ak-blue data-[state=active]:text-ak-white">Security</TabsTrigger>
+                <TabsTrigger value="supported" className="text-ak-text data-[state=active]:bg-ak-blue data-[state=active]:text-ak-white">Supported Assets</TabsTrigger>
+                <TabsTrigger value="testimonials" className="text-ak-text data-[state=active]:bg-ak-blue data-[state=active]:text-ak-white">Testimonials</TabsTrigger>
               </TabsList>
               
               <TabsContent value="security">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                  <div>
-                    <h3 className="text-3xl font-bold mb-6">
-                      <Lock className="inline h-8 w-8 mr-3 text-fintech-blue" />
+                <ModernGrid cols={2} gap="xl">
+                  <ModernCard variant="glass" hover="lift" className="p-10">
+                    <h3 className="text-3xl font-bold mb-6 text-ak-text">
+                      <Lock className="inline h-8 w-8 mr-3 text-ak-blue" />
                       Bank-Grade Security
                     </h3>
-                    <p className="text-lg text-muted-foreground mb-8">
+                    <p className="text-lg text-ak-muted mb-8 leading-relaxed">
                       Your assets are protected by the same security standards used by major financial institutions,
                       with additional blockchain-native security features.
                     </p>
                     <div className="space-y-4">
                       {securityFeatures.map((feature, index) => (
                         <div key={index} className="flex items-center space-x-3">
-                          <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
-                          <span>{feature}</span>
+                          <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0" />
+                          <span className="text-ak-muted font-medium">{feature}</span>
                         </div>
                       ))}
                     </div>
-                  </div>
-                  <Card className="p-8 border-border/50 bg-card/50 backdrop-blur-sm">
-                    <h4 className="text-xl font-semibold mb-6">Security Roadmap</h4>
-                    <div className="grid grid-cols-2 gap-6">
+                  </ModernCard>
+                  <ModernCard variant="premium" hover="lift" className="p-10">
+                    <h4 className="text-2xl font-bold mb-8 text-ak-text">Security Roadmap</h4>
+                    <ModernGrid cols={2} gap="md">
                       {[
                         { name: 'Q1 2025', desc: 'VARA Application' },
                         { name: 'Q2 2025', desc: 'ISO 27001 Audit' },
@@ -269,40 +271,31 @@ export default function WalletPage() {
                         { name: 'Q4 2025', desc: 'Insurance Coverage' }
                       ].map((milestone, index) => (
                         <div key={index} className="text-center">
-                          <div className="w-16 h-16 mx-auto mb-3 bg-gradient-primary rounded-full flex items-center justify-center">
+                          <div className="w-16 h-16 mx-auto mb-4 bg-gradient-primary rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
                             <Shield className="h-8 w-8 text-white" />
                           </div>
-                          <div className="font-medium text-sm mb-1">{milestone.name}</div>
-                          <div className="text-xs text-muted-foreground">{milestone.desc}</div>
+                          <div className="font-bold text-ak-text mb-2">{milestone.name}</div>
+                          <div className="text-sm text-ak-muted">{milestone.desc}</div>
                         </div>
                       ))}
-                    </div>
-                  </Card>
-                </div>
+                    </ModernGrid>
+                  </ModernCard>
+                </ModernGrid>
               </TabsContent>
               
               <TabsContent value="supported">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                   {supportedChains.map((chain, index) => (
                     <Card key={index} className="p-6 text-center border-border/50 bg-card/50 backdrop-blur-sm group hover:shadow-lg transition-all duration-300">
-                  <div className={cn(
-                    "text-4xl mb-4 group-hover:scale-110 transition-transform",
-                    chain.color === 'fintech-blue' && 'text-fintech-blue',
-                    chain.color === 'fintech-cyan' && 'text-fintech-cyan',
-                    chain.color === 'fintech-purple' && 'text-fintech-purple',
-                    chain.color === 'fintech-gold' && 'text-fintech-gold'
-                  )}>
-                    {chain.logo}
-                  </div>
-                  <h3 className="font-semibold mb-2">{chain.name}</h3>
-                  <Badge variant="outline" className={cn(
-                    chain.color === 'fintech-blue' && 'border-fintech-blue text-fintech-blue',
-                    chain.color === 'fintech-cyan' && 'border-fintech-cyan text-fintech-cyan', 
-                    chain.color === 'fintech-purple' && 'border-fintech-purple text-fintech-purple',
-                    chain.color === 'fintech-gold' && 'border-fintech-gold text-fintech-gold'
-                  )}>
-                        {chain.symbol}
-                      </Badge>
+                    <div className={cn(
+                      "text-4xl mb-4 group-hover:scale-110 transition-transform text-ak-blue"
+                    )}>
+                      {chain.logo}
+                    </div>
+                    <h3 className="font-semibold mb-2">{chain.name}</h3>
+                    <Badge variant="outline" className="border-ak-blue text-ak-blue bg-ak-blue/5">
+                      {chain.symbol}
+                    </Badge>
                     </Card>
                   ))}
                 </div>
@@ -318,59 +311,59 @@ export default function WalletPage() {
               </TabsContent>
               
               <TabsContent value="testimonials">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <ModernGrid cols={2} gap="xl">
                   {testimonials.map((testimonial, index) => (
-                    <Card key={index} className="p-8 border-border/50 bg-card/50 backdrop-blur-sm">
-                      <div className="flex items-center space-x-1 mb-4">
+                    <ModernCard key={index} variant="glass" hover="lift" className="p-10">
+                      <div className="flex items-center space-x-1 mb-6">
                         {[...Array(testimonial.rating)].map((_, i) => (
-                          <Star key={i} className="h-5 w-5 text-yellow-500 fill-current" />
+                          <Star key={i} className="h-6 w-6 text-yellow-500 fill-current" />
                         ))}
                       </div>
-                      <blockquote className="text-lg mb-6">"{testimonial.quote}"</blockquote>
+                      <blockquote className="text-xl text-ak-muted mb-8 leading-relaxed">"{testimonial.quote}"</blockquote>
                       <div>
-                        <div className="font-semibold">{testimonial.name}</div>
-                        <div className="text-sm text-muted-foreground">{testimonial.role}</div>
+                        <div className="text-lg font-bold text-ak-text">{testimonial.name}</div>
+                        <div className="text-ak-muted">{testimonial.role}</div>
                       </div>
-                    </Card>
+                    </ModernCard>
                   ))}
-                </div>
+                </ModernGrid>
               </TabsContent>
             </Tabs>
           </div>
-        </div>
-      </section>
+        </ModernContainer>
+      </InteractiveSection>
 
       {/* CTA Section */}
-      <section className="relative py-20 lg:py-32 overflow-hidden mouse-follow-container">
-        <CTABackground />
-        <MouseFollower />
-        <div className="relative z-10 container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-6xl font-bold mb-6">
-              Start Your Crypto Journey
-              <br />
-              <span className="bg-gradient-primary bg-clip-text text-transparent">
-                with AI KEYS
-              </span>
-            </h2>
-            <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
-              Join thousands of users who trust AI KEYS Wallet for secure, intelligent cryptocurrency management.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Button size="lg" className="bg-gradient-primary text-white h-14 px-8">
-                <Download className="mr-2 h-5 w-5" />
-                Download Now
-              </Button>
-              <Button size="lg" variant="outline" className="h-14 px-8" asChild>
-                <a href="https://keys-pay.com">
-                  <QrCode className="mr-2 h-5 w-5" />
-                  Try Web App
-                </a>
-              </Button>
-            </div>
+      <InteractiveSection
+        background="gradient"
+        interactive={true}
+        className="py-20 lg:py-32"
+      >
+        <div className="relative z-10 container mx-auto px-4 text-center">
+          <h2 className="text-5xl md:text-7xl font-black mb-8 tracking-tight text-ak-text">
+            Start Your Crypto Journey
+            <br />
+            <span className="bg-gradient-primary bg-clip-text text-transparent">
+              with AI KEYS
+            </span>
+          </h2>
+          <p className="text-xl md:text-2xl text-ak-muted mb-16 max-w-4xl mx-auto leading-relaxed">
+            Join thousands of users who trust AI KEYS Wallet for secure, intelligent cryptocurrency management.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-8 justify-center">
+            <Button size="xl" variant="premium" className="group">
+              <Download className="mr-2 h-5 w-5" />
+              Download Now
+            </Button>
+            <Button size="xl" variant="glass" className="group" asChild>
+              <a href="https://keys-pay.com">
+                <QrCode className="mr-2 h-5 w-5" />
+                Try Web App
+              </a>
+            </Button>
           </div>
         </div>
-      </section>
+      </InteractiveSection>
 
       <Footer />
     </div>
