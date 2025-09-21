@@ -393,7 +393,7 @@ export default function Token() {
                       <utility.icon className="h-10 w-10 text-ak-blue" />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold mb-3 text-ak-text">{utility.title}</h3>
+                      <h3 className="text-2xl font-bold mb-3 text-white">{utility.title}</h3>
                       <p className="text-ak-muted text-lg leading-relaxed">{utility.description}</p>
                     </div>
                   </div>
