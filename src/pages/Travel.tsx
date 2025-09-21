@@ -240,7 +240,7 @@ export default function Travel() {
                   <div className="p-4 rounded-xl bg-ak-blue/10 group-hover:bg-ak-blue/20 transition-colors mx-auto w-fit mb-8">
                     <service.icon className="h-10 w-10 text-ak-blue group-hover:scale-110 transition-transform" />
                   </div>
-                  <h3 className="font-bold mb-4 text-xl text-ak-text">{service.title}</h3>
+                  <h3 className="font-bold mb-4 text-xl text-white">{service.title}</h3>
                   <p className="text-ak-muted leading-relaxed">{service.description}</p>
                 </div>
               </ModernCard>
