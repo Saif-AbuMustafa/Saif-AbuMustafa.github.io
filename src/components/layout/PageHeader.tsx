@@ -42,14 +42,26 @@ export const PageHeader = ({
           <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/80 to-background/95" />
         </>
       )}
-      {/* Background Animations */}
+      {/* Enhanced Background Animations */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-10 left-10 w-32 h-32 bg-gradient-to-r from-ak-blue/20 to-purple-500/20 rounded-full blur-2xl animate-fade-in animate-pulse" />
-        <div className="absolute bottom-10 right-10 w-40 h-40 bg-gradient-to-l from-ak-blue/15 to-cyan-500/15 rounded-full blur-3xl animate-scale-in hover-scale" style={{ animationDelay: '0.5s' }} />
-        <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-ak-blue/10 rounded-full blur-xl animate-fade-in animate-pulse" style={{ animationDelay: '1s' }} />
-        <div className="absolute top-20 right-1/4 w-28 h-28 bg-gradient-to-br from-ak-blue/8 to-violet-500/8 rounded-full blur-2xl animate-scale-in" style={{ animationDelay: '1.5s' }} />
-        <div className="absolute bottom-1/3 left-1/3 w-36 h-36 bg-gradient-to-tr from-cyan-500/5 to-ak-blue/10 rounded-full blur-3xl animate-enter" style={{ animationDelay: '2s' }} />
-        <div className="absolute top-1/3 right-1/3 w-20 h-20 bg-ak-blue/5 rounded-full blur-xl animate-fade-in animate-pulse" style={{ animationDelay: '2.5s' }} />
+        {/* Primary floating orbs with dynamic animations */}
+        <div className="absolute top-10 left-10 w-40 h-40 bg-gradient-to-r from-ak-blue/20 to-purple-500/20 rounded-full blur-3xl animate-enter animate-pulse" />
+        <div className="absolute bottom-10 right-10 w-52 h-52 bg-gradient-to-l from-ak-blue/15 to-cyan-500/15 rounded-full blur-3xl animate-scale-in hover-scale" style={{ animationDelay: '0.5s' }} />
+        <div className="absolute top-1/2 left-1/4 w-32 h-32 bg-gradient-to-br from-ak-blue/12 to-violet-500/12 rounded-full blur-2xl animate-fade-in animate-pulse" style={{ animationDelay: '1s' }} />
+        
+        {/* Secondary floating elements */}
+        <div className="absolute top-20 right-1/4 w-36 h-36 bg-gradient-to-tr from-cyan-500/8 to-ak-blue/15 rounded-full blur-3xl animate-scale-in" style={{ animationDelay: '1.5s' }} />
+        <div className="absolute bottom-1/3 left-1/3 w-48 h-48 bg-gradient-to-tl from-ak-blue/10 to-purple-500/8 rounded-full blur-3xl animate-enter" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-1/3 right-1/3 w-28 h-28 bg-gradient-to-r from-violet-500/6 to-ak-blue/12 rounded-full blur-2xl animate-fade-in animate-pulse" style={{ animationDelay: '2.5s' }} />
+        
+        {/* Micro floating particles */}
+        <div className="absolute top-16 left-1/2 w-20 h-20 bg-ak-blue/8 rounded-full blur-xl animate-scale-in hover-scale" style={{ animationDelay: '3s' }} />
+        <div className="absolute bottom-16 left-1/5 w-24 h-24 bg-cyan-500/6 rounded-full blur-xl animate-fade-in animate-pulse" style={{ animationDelay: '3.5s' }} />
+        <div className="absolute top-2/3 right-1/5 w-32 h-32 bg-gradient-to-br from-ak-blue/5 to-purple-500/8 rounded-full blur-2xl animate-enter" style={{ animationDelay: '4s' }} />
+        
+        {/* Dynamic mesh gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-ak-blue/3 via-transparent to-purple-500/3 animate-fade-in" style={{ animationDelay: '0.2s' }} />
+        <div className="absolute inset-0 bg-gradient-radial from-ak-blue/2 via-transparent to-transparent animate-scale-in" style={{ animationDelay: '1s' }} />
       </div>
       <div className="relative z-10 container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
