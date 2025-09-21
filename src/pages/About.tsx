@@ -234,7 +234,7 @@ export default function About() {
         <ModernContainer>
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-20">
-              <h2 className="text-5xl md:text-6xl font-black mb-8 tracking-tight text-ak-text">
+              <h2 className="text-5xl md:text-6xl font-black mb-8 tracking-tight text-white">
                 Our <span className="bg-gradient-primary bg-clip-text text-transparent">Journey</span>
               </h2>
               <p className="text-xl md:text-2xl text-ak-muted max-w-3xl mx-auto leading-relaxed">
