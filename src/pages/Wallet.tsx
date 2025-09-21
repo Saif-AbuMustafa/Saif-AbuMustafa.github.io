@@ -216,7 +216,7 @@ export default function WalletPage() {
         <ModernContainer>
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-20">
-              <h2 className="text-5xl md:text-6xl font-black mb-8 tracking-tight text-ak-text animate-enter">
+              <h2 className="text-5xl md:text-6xl font-black mb-8 tracking-tight text-white animate-enter">
                 AI KEYS <span className="bg-gradient-primary bg-clip-text text-transparent animate-scale-in" style={{ animationDelay: '0.3s' }}>Token</span>
               </h2>
               <p className="text-xl md:text-2xl text-ak-muted max-w-4xl mx-auto leading-relaxed animate-fade-in" style={{ animationDelay: '0.5s' }}>
