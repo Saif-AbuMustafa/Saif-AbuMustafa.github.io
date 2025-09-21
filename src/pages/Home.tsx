@@ -226,7 +226,7 @@ export default function Home() {
         <ModernContainer>
           <div className="text-center mb-20">
             <h2 className="text-5xl md:text-6xl font-black mb-8 tracking-tight">
-              Why Choose <span className="bg-gradient-to-r from-ak-blue to-ak-blue/70 bg-clip-text text-transparent">AI KEYS</span>
+              <span className="text-ak-blue">Why Choose</span> <span className="bg-gradient-to-r from-ak-blue to-ak-blue/70 bg-clip-text text-transparent">AI KEYS</span>
             </h2>
             <p className="text-xl md:text-2xl text-black/70 max-w-4xl mx-auto leading-relaxed">
               Built on cutting-edge technology with enterprise-grade security and regulatory compliance
