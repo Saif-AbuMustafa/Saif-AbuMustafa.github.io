@@ -13,13 +13,14 @@ const buttonVariants = cva(
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90 shadow-lg hover:shadow-destructive/25 hover:-translate-y-0.5",
         outline:
-          "border border-ak-blue bg-background/50 backdrop-blur-sm hover:bg-ak-blue/10 hover:text-ak-blue shadow-sm hover:shadow-md hover:-translate-y-0.5 text-ak-blue",
+          "border border-black bg-background/50 backdrop-blur-sm hover:bg-black/10 hover:text-black shadow-sm hover:shadow-md hover:-translate-y-0.5 text-black",
         secondary:
           "bg-ak-beige-200 text-ak-text hover:bg-ak-beige-300 shadow-sm hover:shadow-md hover:-translate-y-0.5",
         ghost: "hover:bg-ak-beige-100 hover:text-ak-text hover:-translate-y-0.5 text-ak-text",
         link: "text-ak-blue underline-offset-4 hover:underline",
-        premium: "bg-gradient-to-r from-ak-blue to-ak-blue/80 text-white shadow-lg hover:shadow-2xl hover:shadow-ak-blue/30 hover:-translate-y-1 active:translate-y-0",
+        premium: "bg-black text-white shadow-lg hover:shadow-2xl hover:shadow-black/30 hover:-translate-y-1 active:translate-y-0",
         glass: "bg-ak-beige-50/60 backdrop-blur-md border border-ak-beige-200/30 text-ak-text hover:bg-ak-beige-100/60 shadow-lg hover:shadow-xl",
+        black: "bg-black text-white shadow-lg hover:shadow-xl hover:shadow-black/25 hover:-translate-y-0.5 active:translate-y-0 active:shadow-md hover:bg-black/90",
       },
       size: {
         default: "h-11 px-6 py-2.5",
