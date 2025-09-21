@@ -302,7 +302,7 @@ export default function Travel() {
                   <div className="w-20 h-20 mx-auto mb-8 bg-gradient-primary rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
                     <Users className="h-10 w-10 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold mb-4 text-ak-text">{useCase.title}</h3>
+                  <h3 className="text-2xl font-bold mb-4 text-white">{useCase.title}</h3>
                   <p className="text-ak-muted mb-8 text-lg leading-relaxed">{useCase.description}</p>
                   
                   <div className="space-y-4">
