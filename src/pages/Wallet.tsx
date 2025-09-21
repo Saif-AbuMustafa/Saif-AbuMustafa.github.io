@@ -108,10 +108,14 @@ export default function WalletPage() {
   ];
 
   const supportedChains = [
-    { name: 'Solana', symbol: 'SOL', logo: '◎', color: 'fintech-purple' },
+    { name: 'Solana', symbol: 'SOL', logo: '◉', color: 'fintech-purple' },
     { name: 'Bitcoin', symbol: 'BTC', logo: '₿', color: 'fintech-gold' },
     { name: 'Ethereum', symbol: 'ETH', logo: 'Ξ', color: 'fintech-blue' },
-    { name: 'Polygon', symbol: 'MATIC', logo: '◊', color: 'fintech-cyan' }
+    { name: 'Polygon', symbol: 'MATIC', logo: '⬟', color: 'fintech-cyan' },
+    { name: 'Cardano', symbol: 'ADA', logo: '♠', color: 'fintech-blue' },
+    { name: 'Chainlink', symbol: 'LINK', logo: '🔗', color: 'fintech-blue' },
+    { name: 'Polkadot', symbol: 'DOT', logo: '●', color: 'fintech-pink' },
+    { name: 'Avalanche', symbol: 'AVAX', logo: '▲', color: 'fintech-red' }
   ];
 
   const testimonials = [
@@ -238,15 +242,15 @@ export default function WalletPage() {
           <div className="max-w-6xl mx-auto">
             <Tabs defaultValue="security" className="w-full">
               <TabsList className="grid w-full grid-cols-3 mb-16 bg-ak-beige-300/30">
-                <TabsTrigger value="security" className="text-ak-text data-[state=active]:bg-ak-blue data-[state=active]:text-ak-white">Security</TabsTrigger>
-                <TabsTrigger value="supported" className="text-ak-text data-[state=active]:bg-ak-blue data-[state=active]:text-ak-white">Supported Assets</TabsTrigger>
-                <TabsTrigger value="testimonials" className="text-ak-text data-[state=active]:bg-ak-blue data-[state=active]:text-ak-white">Testimonials</TabsTrigger>
+                <TabsTrigger value="security" className="text-white data-[state=active]:bg-ak-blue data-[state=active]:text-ak-white">Security</TabsTrigger>
+                <TabsTrigger value="supported" className="text-white data-[state=active]:bg-ak-blue data-[state=active]:text-ak-white">Supported Assets</TabsTrigger>
+                <TabsTrigger value="testimonials" className="text-white data-[state=active]:bg-ak-blue data-[state=active]:text-ak-white">Testimonials</TabsTrigger>
               </TabsList>
               
               <TabsContent value="security">
                 <ModernGrid cols={2} gap="xl">
                   <ModernCard variant="glass" hover="lift" className="p-10">
-                    <h3 className="text-3xl font-bold mb-6 text-ak-text">
+                    <h3 className="text-3xl font-bold mb-6 text-white">
                       <Lock className="inline h-8 w-8 mr-3 text-ak-blue" />
                       Bank-Grade Security
                     </h3>
@@ -288,24 +292,24 @@ export default function WalletPage() {
               <TabsContent value="supported">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                   {supportedChains.map((chain, index) => (
-                    <Card key={index} className="p-6 text-center border-border/50 bg-card/50 backdrop-blur-sm group hover:shadow-lg transition-all duration-300">
+                    <Card key={index} className="p-6 text-center border-border/50 bg-card/50 backdrop-blur-sm group hover:shadow-lg transition-all duration-300 animate-fade-in hover-scale" style={{ animationDelay: `${index * 0.1}s` }}>
                     <div className={cn(
-                      "text-4xl mb-4 group-hover:scale-110 transition-transform text-ak-blue"
-                    )}>
+                      "text-4xl mb-4 group-hover:scale-110 transition-transform text-ak-blue animate-scale-in"
+                    )} style={{ animationDelay: `${index * 0.1 + 0.2}s` }}>
                       {chain.logo}
                     </div>
-                    <h3 className="font-semibold mb-2">{chain.name}</h3>
-                    <Badge variant="outline" className="border-ak-blue text-ak-blue bg-ak-blue/5">
+                    <h3 className="font-semibold mb-2 text-white animate-slide-in-right" style={{ animationDelay: `${index * 0.1 + 0.3}s` }}>{chain.name}</h3>
+                    <Badge variant="outline" className="border-ak-blue text-ak-blue bg-ak-blue/5 animate-fade-in" style={{ animationDelay: `${index * 0.1 + 0.4}s` }}>
                       {chain.symbol}
                     </Badge>
                     </Card>
                   ))}
                 </div>
-                <div className="text-center mt-12">
+                <div className="text-center mt-12 animate-fade-in" style={{ animationDelay: '1.5s' }}>
                   <p className="text-lg text-muted-foreground mb-6">
                     + Support for 100+ cryptocurrencies and tokens
                   </p>
-                  <Button variant="outline" size="lg">
+                  <Button variant="outline" size="lg" className="hover-scale story-link">
                     View All Supported Assets
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
