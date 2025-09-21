@@ -10,6 +10,7 @@ import { ModernSection, ModernContainer, ModernGrid } from '@/components/ui/Mode
 import { ModernCard, ModernCardContent } from '@/components/ui/ModernCard';
 import { ModernHero } from '@/components/ui/ModernHero';
 import { InteractiveSection } from '@/components/ui/InteractiveSection';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { 
   Users, 
   TrendingUp, 
@@ -277,20 +278,34 @@ export default function About() {
               </p>
             </div>
 
-            <ModernGrid cols={2} gap="xl">
-              {leadership.map((leader, index) => (
-                <ModernCard key={index} variant="glass" hover="lift" className="p-10 group text-center">
-                  <div className="w-28 h-28 bg-gradient-primary rounded-full mx-auto mb-8 flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <Users className="h-14 w-14 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold mb-3 text-ak-text">{leader.name}</h3>
-                  <Badge variant="outline" className="mb-6 border-ak-blue text-ak-blue bg-ak-blue/5">
-                    {leader.role}
-                  </Badge>
-                  <p className="text-ak-muted leading-relaxed">{leader.bio}</p>
-                </ModernCard>
-              ))}
-            </ModernGrid>
+            <div className="relative">
+              <Carousel
+                opts={{
+                  align: "center",
+                  loop: true,
+                }}
+                className="w-full max-w-5xl mx-auto"
+              >
+                <CarouselContent className="-ml-2 md:-ml-4">
+                  {leadership.map((leader, index) => (
+                    <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                      <ModernCard variant="glass" hover="lift" className="p-10 group text-center h-full">
+                        <div className="w-28 h-28 bg-gradient-primary rounded-full mx-auto mb-8 flex items-center justify-center group-hover:scale-110 transition-transform">
+                          <Users className="h-14 w-14 text-white" />
+                        </div>
+                        <h3 className="text-2xl font-bold mb-3 text-ak-text">{leader.name}</h3>
+                        <Badge variant="outline" className="mb-6 border-ak-blue text-ak-blue bg-ak-blue/5">
+                          {leader.role}
+                        </Badge>
+                        <p className="text-ak-muted leading-relaxed">{leader.bio}</p>
+                      </ModernCard>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious className="absolute -left-4 top-1/2 -translate-y-1/2 bg-ak-white/90 border-ak-blue/20 hover:bg-ak-blue hover:text-white" />
+                <CarouselNext className="absolute -right-4 top-1/2 -translate-y-1/2 bg-ak-white/90 border-ak-blue/20 hover:bg-ak-blue hover:text-white" />
+              </Carousel>
+            </div>
           </div>
         </ModernContainer>
       </InteractiveSection>
