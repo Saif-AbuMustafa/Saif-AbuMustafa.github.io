@@ -206,7 +206,7 @@ export default function WalletPage() {
             {walletFeatures.map((feature, index) => (
               <ModernCard key={index} variant="glass" hover="lift" className="text-center p-8 group hover-scale animate-fade-in" style={{ animationDelay: `${index * 0.1 + 0.7}s` }}>
                 <feature.icon className="h-16 w-16 mx-auto mb-8 text-ak-blue group-hover:scale-125 transition-all duration-300 animate-scale-in" style={{ animationDelay: `${index * 0.1 + 0.8}s` }} />
-                <h3 className="font-bold mb-4 text-xl text-ak-text animate-slide-in-right" style={{ animationDelay: `${index * 0.1 + 0.9}s` }}>{feature.title}</h3>
+                <h3 className="font-bold mb-4 text-xl text-white animate-slide-in-right" style={{ animationDelay: `${index * 0.1 + 0.9}s` }}>{feature.title}</h3>
                 <p className="text-ak-muted leading-relaxed animate-fade-in" style={{ animationDelay: `${index * 0.1 + 1}s` }}>{feature.description}</p>
               </ModernCard>
             ))}
