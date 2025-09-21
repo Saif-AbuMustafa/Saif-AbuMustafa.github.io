@@ -105,8 +105,8 @@ export const Navigation = () => {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         isScrolled 
-          ? 'bg-ak-white/98 backdrop-blur-xl shadow-xl border-b border-ak-beige-300/80' 
-          : 'bg-transparent'
+          ? 'bg-ak-white/95 backdrop-blur-xl shadow-xl border-b border-ak-beige-300/50' 
+          : 'bg-ak-white/90 backdrop-blur-md shadow-lg border-b border-ak-beige-300/30'
       )}
     >
       <div className="container mx-auto px-4">
@@ -120,7 +120,7 @@ export const Navigation = () => {
                 className="h-12 w-12 transition-transform group-hover:scale-110"
                 loading="eager"
               />
-              <div className="absolute inset-0 bg-fintech-blue/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="absolute inset-0 bg-ak-blue/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
             </div>
             <div className="flex flex-col">
               <span className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
@@ -141,32 +141,32 @@ export const Navigation = () => {
                     <>
                       <NavigationMenuTrigger 
                         className={cn(
-                          "bg-transparent hover:bg-accent/50 data-[state=open]:bg-accent/50",
-                          "text-ak-text hover:text-ak-blue font-medium"
+                          "bg-transparent hover:bg-ak-beige-100 data-[state=open]:bg-ak-beige-100",
+                          "text-ak-text hover:text-ak-blue font-medium transition-all duration-200"
                         )}
                       >
                         {item.label}
                       </NavigationMenuTrigger>
-                      <NavigationMenuContent>
-                        <div className="grid w-[600px] gap-3 p-6 md:grid-cols-2">
+                      <NavigationMenuContent className="bg-ak-white border border-ak-beige-300 shadow-xl">
+                        <div className="grid w-[600px] gap-3 p-6 md:grid-cols-2 bg-ak-white">
                           {item.items?.map((subItem, subIndex) => (
                             <NavigationMenuLink key={subIndex} asChild>
                               <Link
                                 to={subItem.href}
                                 className={cn(
-                                  "block select-none space-y-1 rounded-lg p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground group",
-                                  isActivePath(subItem.href) && "bg-accent text-accent-foreground"
+                                  "block select-none space-y-1 rounded-lg p-4 leading-none no-underline outline-none transition-colors hover:bg-ak-beige-100 hover:text-ak-text focus:bg-ak-beige-100 focus:text-ak-text group border border-transparent hover:border-ak-beige-300/50",
+                                  isActivePath(subItem.href) && "bg-ak-beige-100 text-ak-text border-ak-blue/30"
                                 )}
                               >
                                 <div className="flex items-center space-x-3">
-                                  <div className="p-2 rounded-lg bg-fintech-blue/10 group-hover:bg-fintech-blue/20 transition-colors">
-                                    <subItem.icon className="h-4 w-4 text-fintech-blue" />
+                                  <div className="p-2 rounded-lg bg-ak-blue/10 group-hover:bg-ak-blue/20 transition-colors">
+                                    <subItem.icon className="h-4 w-4 text-ak-blue" />
                                   </div>
                                   <div>
-                                    <div className="text-sm font-medium leading-none">
+                                    <div className="text-sm font-medium leading-none text-ak-text">
                                       {subItem.label}
                                     </div>
-                                    <p className="line-clamp-2 text-sm leading-snug text-muted-foreground mt-1">
+                                    <p className="line-clamp-2 text-sm leading-snug text-ak-muted mt-1">
                                       {subItem.desc}
                                     </p>
                                   </div>
@@ -182,9 +182,9 @@ export const Navigation = () => {
                       <Link
                         to={item.href}
                         className={cn(
-                          "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50",
+                          "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-ak-beige-100 hover:text-ak-blue focus:bg-ak-beige-100 focus:text-ak-blue focus:outline-none disabled:pointer-events-none disabled:opacity-50",
                           isActivePath(item.href) 
-                            ? 'text-ak-text bg-accent/50 font-semibold' 
+                            ? 'text-ak-blue bg-ak-beige-100 font-semibold' 
                             : 'text-ak-text hover:text-ak-blue'
                         )}
                       >
@@ -218,16 +218,16 @@ export const Navigation = () => {
                   <Menu className="h-5 w-5" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+              <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-ak-white border-ak-beige-300">
                 <SheetHeader>
-                  <SheetTitle>Navigation</SheetTitle>
+                  <SheetTitle className="text-ak-text">Navigation</SheetTitle>
                 </SheetHeader>
                 <div className="flex flex-col space-y-4 mt-6">
                   {mainNavItems.map((item, index) => (
                     <div key={index}>
                       {item.trigger ? (
                         <div className="space-y-2">
-                          <div className="font-medium text-sm text-muted-foreground px-2">
+                          <div className="font-medium text-sm text-ak-muted px-2">
                             {item.label}
                           </div>
                           {item.items?.map((subItem, subIndex) => (
@@ -236,16 +236,16 @@ export const Navigation = () => {
                               to={subItem.href}
                               onClick={() => setIsMobileOpen(false)}
                               className={cn(
-                                "flex items-center space-x-3 p-3 rounded-lg hover:bg-accent transition-colors group",
-                                isActivePath(subItem.href) && "bg-accent text-accent-foreground"
+                                "flex items-center space-x-3 p-3 rounded-lg hover:bg-ak-beige-100 transition-colors group",
+                                isActivePath(subItem.href) && "bg-ak-beige-100 text-ak-text"
                               )}
                             >
-                              <subItem.icon className="h-5 w-5 text-fintech-blue" />
+                              <subItem.icon className="h-5 w-5 text-ak-blue" />
                               <div className="flex-1">
-                                <div className="font-medium">{subItem.label}</div>
-                                <div className="text-sm text-muted-foreground">{subItem.desc}</div>
+                                <div className="font-medium text-ak-text">{subItem.label}</div>
+                                <div className="text-sm text-ak-muted">{subItem.desc}</div>
                               </div>
-                              <ChevronRight className="h-4 w-4 text-muted-foreground group-hover:text-foreground" />
+                              <ChevronRight className="h-4 w-4 text-ak-muted group-hover:text-ak-text" />
                             </Link>
                           ))}
                         </div>
@@ -254,12 +254,12 @@ export const Navigation = () => {
                           to={item.href}
                           onClick={() => setIsMobileOpen(false)}
                           className={cn(
-                            "flex items-center space-x-3 p-3 rounded-lg hover:bg-accent transition-colors",
-                            isActivePath(item.href) && "bg-accent"
+                            "flex items-center space-x-3 p-3 rounded-lg hover:bg-ak-beige-100 transition-colors",
+                            isActivePath(item.href) && "bg-ak-beige-100 text-ak-blue"
                           )}
                         >
-                          <item.icon className="h-5 w-5 text-fintech-blue" />
-                          <span className="font-medium">{item.label}</span>
+                          <item.icon className="h-5 w-5 text-ak-blue" />
+                          <span className="font-medium text-ak-text">{item.label}</span>
                         </Link>
                       )}
                     </div>
