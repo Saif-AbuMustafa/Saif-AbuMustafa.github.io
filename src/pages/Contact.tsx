@@ -20,8 +20,6 @@ import {
   CheckCircle,
   ArrowRight
 } from 'lucide-react';
-import { Navigation } from '@/components/layout/Navigation';
-import { Footer } from '@/components/Footer';
 import heroBackground from '@/assets/hero-bg.jpg';
 import { cn } from '@/lib/utils';
 
@@ -372,8 +370,6 @@ export default function Contact() {
           </div>
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 }

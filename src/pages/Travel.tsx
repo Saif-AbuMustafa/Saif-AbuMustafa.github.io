@@ -34,8 +34,6 @@ import {
   TrendingUp
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { Navigation } from '@/components/layout/Navigation';
-import { Footer } from '@/components/Footer';
 import heroBackground from '@/assets/hero-bg.jpg';
 
 export default function Travel() {
@@ -427,8 +425,6 @@ export default function Travel() {
           </div>
         </div>
       </InteractiveSection>
-
-      <Footer />
     </div>
   );
 }

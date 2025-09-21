@@ -370,8 +370,6 @@ export default function WalletPage() {
           </div>
         </div>
       </InteractiveSection>
-
-      <Footer />
     </div>
   );
 }

@@ -1,5 +1,3 @@
-import { Navigation } from '@/components/layout/Navigation';
-import { Footer } from '@/components/Footer';
 import { PageHeader } from '@/components/layout/PageHeader';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
@@ -8,8 +6,6 @@ import heroBackground from '@/assets/hero-bg.jpg';
 export default function Privacy() {
   return (
     <div className="min-h-screen bg-background">
-      <Navigation />
-      
       <PageHeader
         title="Privacy Policy"
         subtitle="Keys Pay Privacy Policy"
@@ -170,8 +166,6 @@ export default function Privacy() {
           </Card>
         </div>
       </div>
-
-      <Footer />
     </div>
   );
 }

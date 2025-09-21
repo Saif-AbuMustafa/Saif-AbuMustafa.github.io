@@ -1,5 +1,3 @@
-import { Navigation } from '@/components/layout/Navigation';
-import { Footer } from '@/components/Footer';
 import { PageHeader } from '@/components/layout/PageHeader';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -51,8 +49,6 @@ export default function Documentation() {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navigation />
-      
       <PageHeader
         title="Documentation"
         subtitle="Resources & Guides"
@@ -159,8 +155,6 @@ export default function Documentation() {
           </Card>
         </div>
       </div>
-
-      <Footer />
     </div>
   );
 }

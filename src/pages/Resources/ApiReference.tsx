@@ -215,8 +215,6 @@ export default function ApiReference() {
           </Card>
         </div>
       </div>
-
-      <Footer />
     </div>
   );
 }

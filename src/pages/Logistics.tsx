@@ -28,8 +28,6 @@ import {
   TrendingUp
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { Navigation } from '@/components/layout/Navigation';
-import { Footer } from '@/components/Footer';
 import heroBackground from '@/assets/hero-bg.jpg';
 
 export default function Logistics() {
@@ -446,8 +444,6 @@ export default function Logistics() {
           </div>
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 }
