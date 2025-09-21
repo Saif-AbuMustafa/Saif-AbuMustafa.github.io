@@ -170,7 +170,7 @@ export default function About() {
             <ModernCard variant="premium" hover="lift" className="p-10">
               <div className="flex items-center space-x-4 mb-8">
                 <Eye className="h-10 w-10 text-ak-blue" />
-                <h2 className="text-4xl font-bold text-ak-text">Our Vision</h2>
+                <h2 className="text-4xl font-bold text-white">Our Vision</h2>
               </div>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 To revolutionize the global financial ecosystem by merging artificial intelligence with secure, 
@@ -182,7 +182,7 @@ export default function About() {
             <ModernCard variant="premium" hover="lift" className="p-10">
               <div className="flex items-center space-x-4 mb-8">
                 <Target className="h-10 w-10 text-ak-blue" />
-                <h2 className="text-4xl font-bold text-ak-text">Our Mission</h2>
+                <h2 className="text-4xl font-bold text-white">Our Mission</h2>
               </div>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 Our mission is to empower users with an AI-driven, all-in-one financial platform that securely 
