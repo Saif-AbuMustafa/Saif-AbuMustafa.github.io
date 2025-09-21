@@ -126,7 +126,7 @@ export const Navigation = () => {
               <span className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
                 AI KEYS
               </span>
-              <span className="text-xs text-muted-foreground hidden sm:block">
+              <span className="text-xs text-black hidden sm:block">
                 Fintech Solutions
               </span>
             </div>
