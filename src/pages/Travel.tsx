@@ -224,7 +224,7 @@ export default function Travel() {
         <BackgroundAnimations variant="subtle" />
         <ModernContainer>
           <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl font-black mb-8 tracking-tight text-ak-text">
+            <h2 className="text-5xl md:text-6xl font-black mb-8 tracking-tight text-white">
               Complete Travel <span className="bg-gradient-primary bg-clip-text text-transparent">Ecosystem</span>
             </h2>
             <p className="text-2xl text-ak-muted max-w-4xl mx-auto leading-relaxed">
