@@ -4,6 +4,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { BackgroundAnimations } from '@/components/ui/BackgroundAnimations';
 
 interface PageHeaderProps {
   title: string;
@@ -32,47 +33,7 @@ export const PageHeader = ({
 }: PageHeaderProps) => {
   return (
     <section className={`relative py-20 lg:py-32 overflow-hidden ${className}`}>
-      {/* Animated Background - replaces static background */}
-      <div className="absolute inset-0">
-        {/* Animated Gradient Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-muted/10 animate-gradient-shift" />
-        
-        {/* Floating Particles */}
-        <div className="absolute inset-0">
-          {[...Array(12)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute w-1 h-1 bg-primary/8 rounded-full animate-float"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 15}s`,
-                animationDuration: `${20 + Math.random() * 15}s`
-              }}
-            />
-          ))}
-        </div>
-
-        {/* Geometric Shapes */}
-        <div className="absolute inset-0">
-          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/2 rounded-full animate-pulse-slow" />
-          <div className="absolute top-3/4 right-1/4 w-48 h-48 bg-ak-blue/2 rounded-full animate-pulse-slow" style={{ animationDelay: '4s' }} />
-          <div className="absolute top-1/2 left-3/4 w-32 h-32 bg-primary/2 rotate-45 animate-spin-slow" />
-        </div>
-
-        {/* Grid Pattern */}
-        <div 
-          className="absolute inset-0 opacity-2"
-          style={{
-            backgroundImage: `
-              linear-gradient(hsl(var(--ak-blue) / 0.3) 1px, transparent 1px),
-              linear-gradient(90deg, hsl(var(--ak-blue) / 0.3) 1px, transparent 1px)
-            `,
-            backgroundSize: '80px 80px',
-            animation: 'grid-move 30s linear infinite'
-          }}
-        />
-      </div>
+      <BackgroundAnimations variant="hero" className="absolute inset-0" />
       <div className="relative z-10 container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           {/* Back Button */}
