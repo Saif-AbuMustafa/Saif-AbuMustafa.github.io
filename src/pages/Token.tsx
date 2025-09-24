@@ -266,7 +266,7 @@ export default function Token() {
         <ModernContainer>
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-20">
-              <h2 className="text-5xl md:text-6xl font-black mb-8 tracking-tight text-white">
+              <h2 className="text-5xl md:text-6xl font-black mb-8 tracking-tight text-black">
                 Token <span className="bg-gradient-primary bg-clip-text text-transparent">Metrics</span>
               </h2>
               <p className="text-xl md:text-2xl text-ak-muted max-w-4xl mx-auto leading-relaxed">
