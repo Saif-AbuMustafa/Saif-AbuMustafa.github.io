@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { BackgroundAnimations } from '@/components/ui/BackgroundAnimations';
+import { PremiumBackground } from '@/components/ui/PremiumBackground';
 
 interface PageHeaderProps {
   title: string;
@@ -33,6 +34,7 @@ export const PageHeader = ({
 }: PageHeaderProps) => {
   return (
     <section className={`relative py-20 lg:py-32 overflow-hidden ${className}`}>
+      <PremiumBackground variant="gradient" />
       <BackgroundAnimations variant="hero" className="absolute inset-0" />
       <div className="relative z-10 container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
