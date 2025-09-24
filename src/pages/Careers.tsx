@@ -1,5 +1,8 @@
 import { PageHeader } from '@/components/layout/PageHeader';
-import { Card, CardContent } from '@/components/ui/card';
+import { ModernCard, ModernCardContent } from '@/components/ui/ModernCard';
+import { ModernSection, ModernContainer, ModernGrid } from '@/components/ui/ModernSection';
+import { InteractiveSection } from '@/components/ui/InteractiveSection';
+import { BackgroundAnimations } from '@/components/ui/BackgroundAnimations';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { 
@@ -114,42 +117,49 @@ export default function Careers() {
       </PageHeader>
 
       {/* Open Positions */}
-      <section className="py-20 lg:py-32">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
+      <InteractiveSection
+        background="particles"
+        className="py-20 lg:py-32"
+      >
+        <BackgroundAnimations variant="section" />
+        <ModernContainer>
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-20">
+              <h2 className="text-5xl md:text-6xl font-black mb-8 tracking-tight text-ak-text">
                 Open <span className="bg-gradient-primary bg-clip-text text-transparent">Positions</span>
               </h2>
+              <p className="text-xl md:text-2xl text-ak-muted max-w-4xl mx-auto leading-relaxed">
+                Join our team of innovators building the future of AI-powered fintech
+              </p>
             </div>
 
             <div className="space-y-6">
               {positions.map((position, index) => (
-                <Card key={index} className="p-6 border-border/50 bg-card/50 backdrop-blur-sm group hover:shadow-lg transition-all duration-300">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <h3 className="text-xl font-semibold mb-2">{position.title}</h3>
-                      <p className="text-muted-foreground mb-2">{position.description}</p>
-                      <div className="flex items-center space-x-4 text-sm">
-                        <Badge variant="outline">{position.department}</Badge>
-                        <span className="flex items-center">
-                          <MapPin className="h-4 w-4 mr-1" />
+                <ModernCard key={index} variant="glass" hover="lift" className="p-8 group">
+                  <ModernCardContent className="flex items-center justify-between">
+                    <div className="flex-1">
+                      <h3 className="text-2xl font-bold mb-3 text-ak-text">{position.title}</h3>
+                      <p className="text-lg text-ak-muted mb-4 leading-relaxed">{position.description}</p>
+                      <div className="flex items-center space-x-6 text-sm">
+                        <Badge variant="outline" className="border-ak-blue text-ak-blue bg-ak-blue/5">{position.department}</Badge>
+                        <span className="flex items-center text-ak-muted">
+                          <MapPin className="h-4 w-4 mr-2 text-ak-blue" />
                           {position.location}
                         </span>
-                        <span>{position.type}</span>
+                        <span className="text-ak-muted">{position.type}</span>
                       </div>
                     </div>
-                    <Button variant="premium" size="sm">
+                    <Button variant="premium" size="lg" className="bg-ak-blue hover:bg-ak-blue/90 text-white group/btn">
                       Apply Now
-                      <ArrowRight className="ml-2 h-4 w-4" />
+                      <ArrowRight className="ml-2 h-5 w-5 group-hover/btn:translate-x-1 transition-transform" />
                     </Button>
-                  </div>
-                </Card>
+                  </ModernCardContent>
+                </ModernCard>
               ))}
             </div>
           </div>
-        </div>
-      </section>
+        </ModernContainer>
+      </InteractiveSection>
     </div>
   );
 }
