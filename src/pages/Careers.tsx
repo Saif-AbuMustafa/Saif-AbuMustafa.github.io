@@ -17,7 +17,7 @@ import {
   Lightbulb
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import heroBackground from '@/assets/hero-bg.jpg';
+
 
 export default function Careers() {
   const positions = [
@@ -100,7 +100,6 @@ export default function Careers() {
         subtitle="Team"
         description="Be part of the revolution in AI-powered fintech. We're looking for passionate individuals to help shape the future of finance."
         badge="Remote-First • Competitive Benefits • Equity"
-        background={heroBackground}
         showBackButton
         backTo="/about"
       >
