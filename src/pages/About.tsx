@@ -283,6 +283,7 @@ export default function About() {
                 opts={{
                   align: "center",
                   loop: true,
+                  duration: 20,
                 }}
                 className="w-full max-w-5xl mx-auto"
               >
@@ -302,8 +303,8 @@ export default function About() {
                     </CarouselItem>
                   ))}
                 </CarouselContent>
-                <CarouselPrevious className="absolute -left-4 top-1/2 -translate-y-1/2 bg-ak-white/90 border-ak-blue/20 hover:bg-ak-blue hover:text-white" />
-                <CarouselNext className="absolute -right-4 top-1/2 -translate-y-1/2 bg-ak-white/90 border-ak-blue/20 hover:bg-ak-blue hover:text-white" />
+                <CarouselPrevious className="absolute -left-4 top-1/2 -translate-y-1/2 bg-ak-white/90 border-ak-blue/20 hover:bg-ak-blue hover:text-white transition-all duration-200 will-change-transform" />
+                <CarouselNext className="absolute -right-4 top-1/2 -translate-y-1/2 bg-ak-white/90 border-ak-blue/20 hover:bg-ak-blue hover:text-white transition-all duration-200 will-change-transform" />
               </Carousel>
             </div>
           </div>
