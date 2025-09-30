@@ -32,9 +32,9 @@ export const LanguageSwitcher = () => {
     <DropdownMenu open={isOpen} onOpenChange={setIsOpen}>
       <DropdownMenuTrigger asChild>
         <Button 
-          variant="ghost" 
+          variant="outline" 
           size="sm" 
-          className="gap-2 text-foreground/80 hover:text-foreground"
+          className="gap-2 text-ak-text hover:text-ak-blue border-ak-beige-300 hover:bg-ak-beige-100"
         >
           <Globe className="h-4 w-4" />
           <span className="hidden sm:inline">
@@ -43,12 +43,12 @@ export const LanguageSwitcher = () => {
           <span className="sm:hidden">{currentLanguage.flag}</span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="min-w-[150px] bg-card/95 backdrop-blur-sm border-border/50">
+      <DropdownMenuContent align="end" className="min-w-[150px] bg-ak-white border-ak-beige-300 shadow-xl z-50">
         {languages.map((language) => (
           <DropdownMenuItem
             key={language.code}
             onClick={() => handleLanguageChange(language.code)}
-            className="gap-2 cursor-pointer hover:bg-primary/10 focus:bg-primary/10"
+            className="gap-2 cursor-pointer text-ak-text hover:bg-ak-beige-100 hover:text-ak-blue focus:bg-ak-beige-100"
           >
             <span className="text-lg">{language.flag}</span>
             <span>{language.name}</span>
