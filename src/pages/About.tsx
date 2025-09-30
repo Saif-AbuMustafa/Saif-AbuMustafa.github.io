@@ -110,7 +110,7 @@ export default function About() {
       bio: 'Distinguished legal expert with PhD in International Law from Egypt, ensuring comprehensive regulatory compliance and legal strategy across global markets.'
     },
     {
-      name: 'Qusai Yousef',
+      name: 'Hassan Yousef',
       role: 'Chief Financial Officer',
       bio: 'Accomplished finance executive with over 20 years of experience in financial management and strategic planning, currently pursuing doctoral studies in advanced financial theory.'
     }
