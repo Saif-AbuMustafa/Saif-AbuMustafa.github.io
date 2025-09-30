@@ -1,18 +1,18 @@
-import { useEffect, useState } from 'react';
+import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { CheckCircle2, XCircle, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
-export default function WaitlistConfirm() {
+const WaitlistConfirm = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
-  const [status, setStatus] = useState<'loading' | 'success' | 'error' | 'already_confirmed'>('loading');
-  const [email, setEmail] = useState('');
+  const [status, setStatus] = React.useState<'loading' | 'success' | 'error' | 'already_confirmed'>('loading');
+  const [email, setEmail] = React.useState('');
 
-  useEffect(() => {
+  React.useEffect(() => {
     const confirmWaitlist = async () => {
       const token = searchParams.get('token');
       
@@ -92,4 +92,6 @@ export default function WaitlistConfirm() {
       </div>
     </div>
   );
-}
+};
+
+export default WaitlistConfirm;

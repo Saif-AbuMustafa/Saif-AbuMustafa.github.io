@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
@@ -21,9 +21,9 @@ const RECAPTCHA_SITE_KEY = "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"; // Test k
 export const WaitlistModal = ({ open, onOpenChange }: WaitlistModalProps) => {
   const { t, i18n } = useTranslation();
   const { toast } = useToast();
-  const [loading, setLoading] = useState(false);
-  const [success, setSuccess] = useState(false);
-  const [formData, setFormData] = useState({
+  const [loading, setLoading] = React.useState(false);
+  const [success, setSuccess] = React.useState(false);
+  const [formData, setFormData] = React.useState({
     email: '',
     country: '',
     city: '',
