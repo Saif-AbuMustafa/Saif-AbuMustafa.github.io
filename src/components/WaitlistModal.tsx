@@ -50,7 +50,7 @@ export const WaitlistModal = ({ open, onOpenChange }: WaitlistModalProps) => {
       // Get reCAPTCHA token
       const recaptchaToken = await new Promise<string>((resolve) => {
         (window as any).grecaptcha.ready(() => {
-          (window as any).grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: 'submit' }).then((token: string) => {
+          (window as any).grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: 'waitlist_submit' }).then((token: string) => {
             resolve(token);
           });
         });
@@ -63,7 +63,7 @@ export const WaitlistModal = ({ open, onOpenChange }: WaitlistModalProps) => {
       const utm_campaign = urlParams.get('utm_campaign') || undefined;
       const referrer_url = document.referrer || undefined;
 
-      const { data, error } = await supabase.functions.invoke('waitlist-submit', {
+      const { data, error } = await supabase.functions.invoke('waitlist', {
         body: {
           email: formData.email,
           country: formData.country,
