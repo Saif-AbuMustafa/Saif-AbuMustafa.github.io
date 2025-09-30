@@ -131,7 +131,7 @@ export default function Home() {
         <ModernGrid cols={4} gap="lg" className="mt-16">
           {stats.map((stat, index) => (
             <ModernCard key={index} variant="glass" hover="lift" className="text-center p-8">
-              <stat.icon className="h-12 w-12 mx-auto mb-6 text-fintech-blue group-hover:scale-125 transition-all duration-500" />
+              <stat.icon className="h-12 w-12 mx-auto mb-6 text-ak-blue group-hover:scale-125 transition-all duration-500" />
               <div className="text-4xl md:text-5xl font-black mb-3 bg-gradient-primary bg-clip-text text-transparent">
                 <AnimatedCounter 
                   end={stat.value} 
@@ -140,7 +140,7 @@ export default function Home() {
                   decimals={stat.decimals}
                 />
               </div>
-              <div className="text-sm font-medium text-muted-foreground">
+              <div className="text-sm font-medium text-black">
                 {stat.label}
               </div>
             </ModernCard>
