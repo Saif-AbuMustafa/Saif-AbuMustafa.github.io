@@ -16,7 +16,7 @@ interface WaitlistModalProps {
   onOpenChange: (open: boolean) => void;
 }
 
-const RECAPTCHA_SITE_KEY = "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"; // Test key - replace in production
+const RECAPTCHA_SITE_KEY = "6LfqUtorAAAAAEeSzFuvOoWwi1VD9doy5Dz_un9Q"; // v3 site key (public)
 
 export const WaitlistModal = ({ open, onOpenChange }: WaitlistModalProps) => {
   const { t, i18n } = useTranslation();
@@ -60,6 +60,7 @@ export const WaitlistModal = ({ open, onOpenChange }: WaitlistModalProps) => {
       }
 
       await new Promise<void>((resolve) => grecaptcha.ready(() => resolve()));
+      console.log('reCAPTCHA hostname:', window.location.hostname, 'site key used:', RECAPTCHA_SITE_KEY);
       const recaptchaToken: string = await grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: 'waitlist_submit' });
       console.log('reCAPTCHA token length:', recaptchaToken?.length || 0);
       if (!recaptchaToken || recaptchaToken.length < 50) {
