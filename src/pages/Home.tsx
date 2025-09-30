@@ -29,6 +29,7 @@ import { cn } from '@/lib/utils';
 import { BackgroundAnimations } from '@/components/ui/BackgroundAnimations';
 import premiumHeroBg from '@/assets/premium-hero-bg.jpg';
 import premiumSectionBg from '@/assets/premium-section-bg.jpg';
+import { useTranslation } from 'react-i18next';
 
 export default function Home() {
   const stats = [

@@ -64,12 +64,30 @@ export const en = {
       description: 'Empowering the future of finance with AI-driven custodian wallet, travel planning, logistics, and student services. UAE licensed and built on Solana blockchain.',
       cta: 'Explore Our Ecosystem',
       watchDemo: 'Watch Demo',
+      badge: 'Fintech Solutions • Solana Blockchain • Dubai, UAE',
       stats: {
         users: 'Active Users',
         transactions: 'Transactions',
         countries: 'Countries',
         uptime: 'Uptime'
       }
+    },
+
+    // Home Page
+    home: {
+      servicesBadge: 'Our Ecosystem',
+      servicesTitleTop: 'Comprehensive',
+      servicesTitleBottom: 'Financial Solutions',
+      servicesDescription: 'Four interconnected platforms powered by AI to revolutionize how you manage finance, travel, logistics, and education',
+      viewAllServices: 'View All Services',
+      whyTitleTop: 'Why Choose',
+      whyTitleBrand: 'AI KEYS',
+      whyDescription: 'Built on cutting-edge technology with enterprise-grade security and regulatory compliance',
+      ctaTitleTop: 'Ready to Transform Your',
+      ctaTitleBottom: 'Financial Future?',
+      ctaDescription: 'Join thousands of users who trust AI KEYS for their financial, travel, logistics, and educational needs.',
+      launchWallet: 'Launch Wallet',
+      contactSales: 'Contact Sales'
     },
     
     // Services
