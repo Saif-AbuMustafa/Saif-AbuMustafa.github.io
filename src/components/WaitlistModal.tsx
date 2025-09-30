@@ -32,6 +32,38 @@ export const WaitlistModal = ({ open, onOpenChange }: WaitlistModalProps) => {
     consent: false,
   });
 
+  // Helper function to get reCAPTCHA token with retry
+  const getRecaptchaTokenWithRetry = async (action = 'waitlist_submit', attempts = 3): Promise<string> => {
+    const grecaptcha = (window as any).grecaptcha;
+    if (!grecaptcha || typeof grecaptcha.execute !== 'function') {
+      throw new Error('reCAPTCHA not loaded. Please refresh and try again.');
+    }
+
+    await new Promise<void>((resolve) => grecaptcha.ready(() => resolve()));
+    
+    let delay = 200;
+    for (let i = 0; i < attempts; i++) {
+      try {
+        console.log(`reCAPTCHA attempt ${i + 1}/${attempts} - hostname:`, window.location.hostname, 'site key:', RECAPTCHA_SITE_KEY);
+        const token: string = await grecaptcha.execute(RECAPTCHA_SITE_KEY, { action });
+        console.log('reCAPTCHA token length:', token?.length || 0);
+        
+        if (token && token.length > 50) {
+          return token; // Valid token
+        }
+      } catch (err) {
+        console.error(`reCAPTCHA attempt ${i + 1} failed:`, err);
+      }
+      
+      if (i < attempts - 1) {
+        await new Promise(resolve => setTimeout(resolve, delay));
+        delay *= 2;
+      }
+    }
+    
+    throw new Error('browser-error');
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
@@ -47,26 +79,14 @@ export const WaitlistModal = ({ open, onOpenChange }: WaitlistModalProps) => {
     setLoading(true);
 
     try {
-      // Ensure reCAPTCHA is loaded and get a fresh token at submit time
-      const grecaptcha = (window as any).grecaptcha;
-      if (!grecaptcha || typeof grecaptcha.execute !== 'function') {
+      // Get reCAPTCHA token with retry
+      let recaptchaToken: string;
+      try {
+        recaptchaToken = await getRecaptchaTokenWithRetry('waitlist_submit', 3);
+      } catch (err: any) {
         toast({
           title: t('waitlist.error'),
-          description: 'reCAPTCHA not loaded. Please refresh and try again.',
-          variant: 'destructive',
-        });
-        setLoading(false);
-        return;
-      }
-
-      await new Promise<void>((resolve) => grecaptcha.ready(() => resolve()));
-      console.log('reCAPTCHA hostname:', window.location.hostname, 'site key used:', RECAPTCHA_SITE_KEY);
-      const recaptchaToken: string = await grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: 'waitlist_submit' });
-      console.log('reCAPTCHA token length:', recaptchaToken?.length || 0);
-      if (!recaptchaToken || recaptchaToken.length < 50) {
-        toast({
-          title: t('waitlist.error'),
-          description: 'reCAPTCHA token missing—please try again.',
+          description: err.message || 'reCAPTCHA: browser error — please try again.',
           variant: 'destructive',
         });
         setLoading(false);
@@ -110,7 +130,44 @@ export const WaitlistModal = ({ open, onOpenChange }: WaitlistModalProps) => {
       const respJson = await res.json().catch(() => ({}));
 
       if (!res.ok) {
-        throw { _type: 'EdgeFnError', status: res.status, value: respJson };
+        const errorData = respJson;
+        let errorMessage = 'Submission failed';
+        let errorDetail = '';
+
+        // Handle specific error types
+        if (errorData.error === 'recaptcha_failed') {
+          errorMessage = 'reCAPTCHA verification failed';
+          errorDetail = `Codes: ${errorData.codes?.join(', ') || 'unknown'}`;
+        } else if (errorData.error === 'recaptcha_action_mismatch') {
+          errorMessage = 'reCAPTCHA action mismatch';
+          errorDetail = `Expected: ${errorData.expected}, Got: ${errorData.got}`;
+        } else if (errorData.error === 'recaptcha_hostname_mismatch') {
+          errorMessage = 'reCAPTCHA hostname not allowed';
+          errorDetail = `Hostname: ${errorData.hostname}`;
+        } else if (errorData.error === 'db_error') {
+          errorMessage = 'Database error';
+          errorDetail = errorData.detail || '';
+        } else if (errorData.error === 'email_error') {
+          errorMessage = 'Failed to send confirmation email';
+          errorDetail = errorData.detail || '';
+        } else if (errorData.error === 'config_missing') {
+          errorMessage = 'Server configuration error';
+          errorDetail = errorData.detail || '';
+        } else if (errorData.error === 'invalid_email') {
+          errorMessage = 'Invalid email address';
+        } else if (errorData.error === 'missing_required_fields') {
+          errorMessage = 'Missing required fields';
+        } else if (errorData.error) {
+          errorMessage = errorData.error;
+        }
+
+        toast({
+          title: t('waitlist.error'),
+          description: errorDetail ? `${errorMessage} — ${errorDetail}` : errorMessage,
+          variant: 'destructive',
+        });
+        setLoading(false);
+        return;
       }
 
       if (respJson.alreadyConfirmed) {
@@ -124,36 +181,9 @@ export const WaitlistModal = ({ open, onOpenChange }: WaitlistModalProps) => {
     } catch (error: any) {
       console.error('Waitlist submission error:', error);
       
-      // Parse error message from edge function response
-      let errorMessage = t('waitlist.errorDesc');
-      let errorDetail = '';
-      
-      if (error?.value) {
-        const errorData = error.value;
-        if (errorData.error === 'recaptcha_failed') {
-          errorMessage = 'reCAPTCHA verification failed. Please try again.';
-          errorDetail = `Error codes: ${errorData.codes?.join(', ') || 'unknown'}`;
-        } else if (errorData.error === 'db_error') {
-          errorMessage = 'Database error. Please try again later.';
-          errorDetail = errorData.detail || '';
-        } else if (errorData.error === 'email_error') {
-          errorMessage = 'Failed to send confirmation email. Please try again.';
-          errorDetail = errorData.detail || '';
-        } else if (errorData.error === 'config_missing') {
-          errorMessage = 'Server configuration error. Please contact support.';
-          errorDetail = errorData.detail || '';
-        } else if (typeof errorData === 'string') {
-          errorMessage = errorData;
-        } else if (error?.message) {
-          errorMessage = error.message;
-        }
-      } else if (error?.message) {
-        errorMessage = error.message;
-      }
-      
       toast({
         title: t('waitlist.error'),
-        description: errorDetail ? `${errorMessage}\n${errorDetail}` : errorMessage,
+        description: error.message || t('waitlist.errorDesc'),
         variant: 'destructive',
       });
     } finally {

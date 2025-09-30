@@ -58,6 +58,8 @@ serve(async (req: Request): Promise<Response> => {
       );
     }
 
+    console.log("reCAPTCHA token length:", recaptchaToken?.length || 0);
+
     const vRes = await fetch("https://www.google.com/recaptcha/api/siteverify", {
       method: "POST",
       headers: { "content-type": "application/x-www-form-urlencoded" },
@@ -70,6 +72,32 @@ serve(async (req: Request): Promise<Response> => {
       const codes = vJson["error-codes"] ?? [];
       console.error("reCAPTCHA failed:", codes);
       return new Response(JSON.stringify({ error: "recaptcha_failed", codes }), { status: 400, headers });
+    }
+
+    // Verify action matches
+    if (vJson.action && vJson.action !== 'waitlist_submit') {
+      console.error("reCAPTCHA action mismatch:", vJson.action);
+      return new Response(
+        JSON.stringify({ error: "recaptcha_action_mismatch", expected: "waitlist_submit", got: vJson.action }), 
+        { status: 400, headers }
+      );
+    }
+
+    // Verify hostname is whitelisted
+    const allowedHosts = ['aikeys.ai', 'aikeys.finance', 'preview--ai-keys-nexus.lovable.app', 'localhost', '127.0.0.1'];
+    if (vJson.hostname) {
+      // Check if hostname matches or is a subdomain of lovableproject.com
+      const isLovableHost = vJson.hostname.endsWith('.lovableproject.com');
+      const isAllowed = allowedHosts.includes(vJson.hostname) || isLovableHost;
+      
+      if (!isAllowed) {
+        console.error("reCAPTCHA hostname mismatch:", vJson.hostname);
+        return new Response(
+          JSON.stringify({ error: "recaptcha_hostname_mismatch", hostname: vJson.hostname }), 
+          { status: 400, headers }
+        );
+      }
+      console.log("reCAPTCHA hostname verified:", vJson.hostname);
     }
 
     // 2) DB upsert
