@@ -31,15 +31,4 @@ i18n
     }
   });
 
-// Set initial direction based on language
-const currentLang = i18n.language || 'en';
-document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
-document.documentElement.lang = currentLang;
-
-// Listen to language changes
-i18n.on('languageChanged', (lng) => {
-  document.documentElement.dir = lng === 'ar' ? 'rtl' : 'ltr';
-  document.documentElement.lang = lng;
-});
-
 export default i18n;
