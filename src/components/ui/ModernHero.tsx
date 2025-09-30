@@ -76,7 +76,7 @@ const ModernHero = React.forwardRef<HTMLElement, ModernHeroProps>(
                     {title}
                   </span>
                   <br />
-                  <span className="bg-gradient-to-r from-ak-blue to-ak-blue/70 bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-red-500 to-ak-blue bg-clip-text text-transparent">
                     {subtitle}
                   </span>
                 </>
