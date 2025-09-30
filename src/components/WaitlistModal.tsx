@@ -92,9 +92,21 @@ export const WaitlistModal = ({ open, onOpenChange }: WaitlistModalProps) => {
       }
     } catch (error: any) {
       console.error('Waitlist submission error:', error);
+      
+      // Parse error message from edge function response
+      let errorMessage = t('waitlist.errorDesc');
+      if (error.message) {
+        try {
+          const errorData = JSON.parse(error.message);
+          errorMessage = errorData.error || errorMessage;
+        } catch {
+          errorMessage = error.message;
+        }
+      }
+      
       toast({
         title: t('waitlist.error'),
-        description: error.message || t('waitlist.errorDesc'),
+        description: errorMessage,
         variant: 'destructive',
       });
     } finally {

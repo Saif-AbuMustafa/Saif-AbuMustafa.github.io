@@ -49,8 +49,23 @@ const handler = async (req: Request): Promise<Response> => {
     console.log("reCAPTCHA verification result:", recaptchaResult);
 
     if (!recaptchaResult.success) {
+      const errorCodes = recaptchaResult["error-codes"] || [];
+      const errorMessage = errorCodes.includes("invalid-input-secret")
+        ? "reCAPTCHA configuration error. Please contact support."
+        : errorCodes.includes("invalid-input-response")
+        ? "Invalid reCAPTCHA token. Please try again."
+        : errorCodes.includes("timeout-or-duplicate")
+        ? "reCAPTCHA expired. Please refresh and try again."
+        : "reCAPTCHA verification failed. Please try again.";
+      
+      console.error("reCAPTCHA verification failed:", errorCodes);
+      
       return new Response(
-        JSON.stringify({ error: "reCAPTCHA verification failed" }),
+        JSON.stringify({ 
+          error: errorMessage,
+          error_codes: errorCodes,
+          type: "recaptcha_failed"
+        }),
         { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
       );
     }
@@ -182,7 +197,10 @@ const handler = async (req: Request): Promise<Response> => {
   } catch (error) {
     console.error("Error in waitlist-submit:", error);
     return new Response(
-      JSON.stringify({ error: error.message }),
+      JSON.stringify({ 
+        error: error.message || "An unexpected error occurred",
+        type: "server_error"
+      }),
       { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
   }
