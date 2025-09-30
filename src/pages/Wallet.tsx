@@ -298,7 +298,7 @@ export default function WalletPage() {
                     )} style={{ animationDelay: `${index * 0.1 + 0.2}s` }}>
                       {chain.logo}
                     </div>
-                    <h3 className="font-semibold mb-2 text-white animate-slide-in-right" style={{ animationDelay: `${index * 0.1 + 0.3}s` }}>{chain.name}</h3>
+                    <h3 className="font-semibold mb-2 text-black animate-slide-in-right" style={{ animationDelay: `${index * 0.1 + 0.3}s` }}>{chain.name}</h3>
                     <Badge variant="outline" className="border-ak-blue text-ak-blue bg-ak-blue/5 animate-fade-in" style={{ animationDelay: `${index * 0.1 + 0.4}s` }}>
                       {chain.symbol}
                     </Badge>
