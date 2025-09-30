@@ -248,7 +248,7 @@ export default function Services() {
         <ModernContainer>
           <div className="text-center mb-20">
             <h2 className="text-5xl md:text-6xl font-black mb-8 tracking-tight">
-              Platform <span className="bg-gradient-primary bg-clip-text text-transparent">Integrations</span>
+              <span className="text-black">Platform</span> <span className="bg-gradient-primary bg-clip-text text-transparent">Integrations</span>
             </h2>
             <p className="text-2xl text-ak-muted max-w-4xl mx-auto leading-relaxed">
               Powerful features that work seamlessly across all our services
