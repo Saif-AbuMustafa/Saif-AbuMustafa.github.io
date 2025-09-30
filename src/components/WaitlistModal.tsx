@@ -47,14 +47,30 @@ export const WaitlistModal = ({ open, onOpenChange }: WaitlistModalProps) => {
     setLoading(true);
 
     try {
-      // Get reCAPTCHA token
-      const recaptchaToken = await new Promise<string>((resolve) => {
-        (window as any).grecaptcha.ready(() => {
-          (window as any).grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: 'waitlist_submit' }).then((token: string) => {
-            resolve(token);
-          });
+      // Ensure reCAPTCHA is loaded and get a fresh token at submit time
+      const grecaptcha = (window as any).grecaptcha;
+      if (!grecaptcha || typeof grecaptcha.execute !== 'function') {
+        toast({
+          title: t('waitlist.error'),
+          description: 'reCAPTCHA not loaded. Please refresh and try again.',
+          variant: 'destructive',
         });
-      });
+        setLoading(false);
+        return;
+      }
+
+      await new Promise<void>((resolve) => grecaptcha.ready(() => resolve()));
+      const recaptchaToken: string = await grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: 'waitlist_submit' });
+      console.log('reCAPTCHA token length:', recaptchaToken?.length || 0);
+      if (!recaptchaToken || recaptchaToken.length < 50) {
+        toast({
+          title: t('waitlist.error'),
+          description: 'reCAPTCHA token missing—please try again.',
+          variant: 'destructive',
+        });
+        setLoading(false);
+        return;
+      }
 
       // Get UTM parameters
       const urlParams = new URLSearchParams(window.location.search);
@@ -63,30 +79,45 @@ export const WaitlistModal = ({ open, onOpenChange }: WaitlistModalProps) => {
       const utm_campaign = urlParams.get('utm_campaign') || undefined;
       const referrer_url = document.referrer || undefined;
 
-      const { data, error } = await supabase.functions.invoke('waitlist', {
-        body: {
-          email: formData.email,
-          country: formData.country,
-          city: formData.city,
-          heard_channel: formData.heard_channel,
-          heard_detail: formData.heard_detail,
-          locale: i18n.language,
-          recaptchaToken: recaptchaToken,
-          utm_source,
-          utm_medium,
-          utm_campaign,
-          referrer_url,
+      const payload = {
+        email: formData.email,
+        country: formData.country,
+        city: formData.city,
+        heard_channel: formData.heard_channel,
+        heard_detail: formData.heard_detail,
+        locale: i18n.language,
+        recaptchaToken,
+        utm_source,
+        utm_medium,
+        utm_campaign,
+        referrer_url,
+      };
+
+      const SUPABASE_URL = "https://iytinmioziskeqewnelm.supabase.co";
+      const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Iml5dGlubWlvemlza2VxZXduZWxtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQ0MTE5NjUsImV4cCI6MjA2OTk4Nzk2NX0.K_EzCsIZ_GaV9kSSXjFyNwkWOayYc3LZrQDktMvnKwA";
+
+      const res = await fetch(`${SUPABASE_URL}/functions/v1/waitlist`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'apikey': SUPABASE_ANON_KEY,
+          'authorization': `Bearer ${SUPABASE_ANON_KEY}`,
         },
+        body: JSON.stringify(payload),
       });
 
-      if (error) throw error;
+      const respJson = await res.json().catch(() => ({}));
 
-      if (data.alreadyConfirmed) {
+      if (!res.ok) {
+        throw { _type: 'EdgeFnError', status: res.status, value: respJson };
+      }
+
+      if (respJson.alreadyConfirmed) {
         toast({
           title: t('waitlist.alreadyConfirmed'),
           description: t('waitlist.alreadyConfirmedDesc'),
         });
-      } else if (data.ok) {
+      } else if (respJson.ok) {
         setSuccess(true);
       }
     } catch (error: any) {
@@ -96,27 +127,27 @@ export const WaitlistModal = ({ open, onOpenChange }: WaitlistModalProps) => {
       let errorMessage = t('waitlist.errorDesc');
       let errorDetail = '';
       
-      if (error.message) {
-        try {
-          const errorData = JSON.parse(error.message);
-          if (errorData.error === 'recaptcha_failed') {
-            errorMessage = 'reCAPTCHA verification failed. Please try again.';
-            errorDetail = `Error codes: ${errorData.codes?.join(', ') || 'unknown'}`;
-          } else if (errorData.error === 'db_error') {
-            errorMessage = 'Database error. Please try again later.';
-            errorDetail = errorData.detail || '';
-          } else if (errorData.error === 'email_error') {
-            errorMessage = 'Failed to send confirmation email. Please try again.';
-            errorDetail = errorData.detail || '';
-          } else if (errorData.error === 'config_missing') {
-            errorMessage = 'Server configuration error. Please contact support.';
-            errorDetail = errorData.detail || '';
-          } else {
-            errorMessage = errorData.detail || errorData.error || errorMessage;
-          }
-        } catch {
+      if (error?.value) {
+        const errorData = error.value;
+        if (errorData.error === 'recaptcha_failed') {
+          errorMessage = 'reCAPTCHA verification failed. Please try again.';
+          errorDetail = `Error codes: ${errorData.codes?.join(', ') || 'unknown'}`;
+        } else if (errorData.error === 'db_error') {
+          errorMessage = 'Database error. Please try again later.';
+          errorDetail = errorData.detail || '';
+        } else if (errorData.error === 'email_error') {
+          errorMessage = 'Failed to send confirmation email. Please try again.';
+          errorDetail = errorData.detail || '';
+        } else if (errorData.error === 'config_missing') {
+          errorMessage = 'Server configuration error. Please contact support.';
+          errorDetail = errorData.detail || '';
+        } else if (typeof errorData === 'string') {
+          errorMessage = errorData;
+        } else if (error?.message) {
           errorMessage = error.message;
         }
+      } else if (error?.message) {
+        errorMessage = error.message;
       }
       
       toast({
