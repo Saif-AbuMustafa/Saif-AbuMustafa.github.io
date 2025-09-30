@@ -7,14 +7,76 @@ export type Json =
   | Json[]
 
 export type Database = {
-  // Allows to automatically instanciate createClient with right options
+  // Allows to automatically instantiate createClient with right options
   // instead of createClient<Database, { PostgrestVersion: 'XX' }>(URL, KEY)
   __InternalSupabase: {
     PostgrestVersion: "13.0.4"
   }
   public: {
     Tables: {
-      [_ in never]: never
+      waitlist_leads: {
+        Row: {
+          city: string | null
+          confirm_token: string
+          consent_ts: string | null
+          country: string
+          created_at: string
+          email: string
+          heard_channel: Database["public"]["Enums"]["heard_channel"]
+          heard_detail: string | null
+          id: string
+          ip_hash: string | null
+          locale: string
+          referrer_url: string | null
+          status: Database["public"]["Enums"]["waitlist_status"]
+          updated_at: string
+          user_agent: string | null
+          utm_campaign: string | null
+          utm_medium: string | null
+          utm_source: string | null
+        }
+        Insert: {
+          city?: string | null
+          confirm_token: string
+          consent_ts?: string | null
+          country: string
+          created_at?: string
+          email: string
+          heard_channel: Database["public"]["Enums"]["heard_channel"]
+          heard_detail?: string | null
+          id?: string
+          ip_hash?: string | null
+          locale?: string
+          referrer_url?: string | null
+          status?: Database["public"]["Enums"]["waitlist_status"]
+          updated_at?: string
+          user_agent?: string | null
+          utm_campaign?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+        }
+        Update: {
+          city?: string | null
+          confirm_token?: string
+          consent_ts?: string | null
+          country?: string
+          created_at?: string
+          email?: string
+          heard_channel?: Database["public"]["Enums"]["heard_channel"]
+          heard_detail?: string | null
+          id?: string
+          ip_hash?: string | null
+          locale?: string
+          referrer_url?: string | null
+          status?: Database["public"]["Enums"]["waitlist_status"]
+          updated_at?: string
+          user_agent?: string | null
+          utm_campaign?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
@@ -23,7 +85,16 @@ export type Database = {
       [_ in never]: never
     }
     Enums: {
-      [_ in never]: never
+      heard_channel:
+        | "twitter"
+        | "instagram"
+        | "linkedin"
+        | "search"
+        | "friend_referral"
+        | "event_money2020"
+        | "press_news"
+        | "other"
+      waitlist_status: "pending_confirm" | "confirmed" | "unsubscribed"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +221,18 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      heard_channel: [
+        "twitter",
+        "instagram",
+        "linkedin",
+        "search",
+        "friend_referral",
+        "event_money2020",
+        "press_news",
+        "other",
+      ],
+      waitlist_status: ["pending_confirm", "confirmed", "unsubscribed"],
+    },
   },
 } as const
