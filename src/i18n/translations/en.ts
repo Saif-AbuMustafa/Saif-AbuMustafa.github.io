@@ -425,6 +425,41 @@ export const en = {
         description: 'An error occurred',
         tryAgain: 'Try Again'
       }
+    },
+    
+    // Waitlist
+    waitlist: {
+      title: "Join the Waitlist",
+      joinWaitlist: "Join Waitlist",
+      email: "Email",
+      emailPlaceholder: "Enter your email",
+      country: "Country",
+      selectCountry: "Select your country",
+      city: "City",
+      cityPlaceholder: "Enter your city (optional)",
+      heardChannel: "How did you hear about us?",
+      selectChannel: "Select an option",
+      heardDetail: "Tell us more (optional)",
+      heardDetailPlaceholder: "Share any additional details...",
+      consent: "I agree to receive early-access updates from AI KEYS and accept the",
+      privacyPolicy: "Privacy Policy",
+      consentRequired: "You must agree to the privacy policy to continue",
+      submit: "Join Waitlist",
+      error: "Error",
+      errorDesc: "Something went wrong. Please try again.",
+      successTitle: "Check Your Email!",
+      successDesc: "We've sent a confirmation email. Please check your inbox and click the link to confirm your subscription.",
+      alreadyConfirmed: "Already Confirmed",
+      alreadyConfirmedDesc: "You're already on our waitlist!",
+      alreadyConfirmedLongDesc: "You're already confirmed on our waitlist. We'll keep you updated with the latest news and early-access opportunities.",
+      confirmationResent: "Email Resent",
+      confirmationResentDesc: "We've resent the confirmation email. Please check your inbox.",
+      confirming: "Confirming...",
+      confirmingDesc: "Please wait while we confirm your subscription.",
+      confirmed: "Email Confirmed!",
+      confirmedDesc: "Thank you for confirming your email address. You're now on the waitlist at",
+      confirmError: "Confirmation Failed",
+      confirmErrorDesc: "The confirmation link is invalid or has expired. Please try joining the waitlist again.",
     }
   }
 };

@@ -424,6 +424,41 @@ export const fr = {
         description: 'Une erreur s\'est produite',
         tryAgain: 'Réessayer'
       }
+    },
+    
+    // Waitlist
+    waitlist: {
+      title: "Rejoindre la liste d'attente",
+      joinWaitlist: "Rejoindre la liste d'attente",
+      email: "E-mail",
+      emailPlaceholder: "Entrez votre e-mail",
+      country: "Pays",
+      selectCountry: "Sélectionnez votre pays",
+      city: "Ville",
+      cityPlaceholder: "Entrez votre ville (optionnel)",
+      heardChannel: "Comment avez-vous entendu parler de nous ?",
+      selectChannel: "Sélectionnez une option",
+      heardDetail: "Dites-nous en plus (optionnel)",
+      heardDetailPlaceholder: "Partagez des détails supplémentaires...",
+      consent: "J'accepte de recevoir les mises à jour d'accès anticipé d'AI KEYS et j'accepte la",
+      privacyPolicy: "Politique de confidentialité",
+      consentRequired: "Vous devez accepter la politique de confidentialité pour continuer",
+      submit: "Rejoindre la liste",
+      error: "Erreur",
+      errorDesc: "Une erreur s'est produite. Veuillez réessayer.",
+      successTitle: "Vérifiez votre e-mail !",
+      successDesc: "Nous avons envoyé un e-mail de confirmation. Veuillez vérifier votre boîte de réception et cliquer sur le lien pour confirmer votre abonnement.",
+      alreadyConfirmed: "Déjà confirmé",
+      alreadyConfirmedDesc: "Vous êtes déjà sur notre liste d'attente !",
+      alreadyConfirmedLongDesc: "Votre inscription est déjà confirmée. Nous vous tiendrons au courant des dernières nouvelles et des opportunités d'accès anticipé.",
+      confirmationResent: "E-mail renvoyé",
+      confirmationResentDesc: "Nous avons renvoyé l'e-mail de confirmation. Veuillez vérifier votre boîte de réception.",
+      confirming: "Confirmation en cours...",
+      confirmingDesc: "Veuillez patienter pendant que nous confirmons votre abonnement.",
+      confirmed: "E-mail confirmé !",
+      confirmedDesc: "Merci d'avoir confirmé votre adresse e-mail. Vous êtes maintenant sur la liste d'attente à",
+      confirmError: "Échec de la confirmation",
+      confirmErrorDesc: "Le lien de confirmation est invalide ou a expiré. Veuillez réessayer de rejoindre la liste d'attente.",
     }
   }
 };

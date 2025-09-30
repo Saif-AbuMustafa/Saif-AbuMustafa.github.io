@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { LanguageSwitcher } from '../LanguageSwitcher';
+import { WaitlistModal } from '../WaitlistModal';
 import { 
   NavigationMenu,
   NavigationMenuContent,
@@ -43,6 +44,7 @@ export const Navigation = () => {
   const location = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const [waitlistOpen, setWaitlistOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -202,6 +204,14 @@ export const Navigation = () => {
             <LanguageSwitcher />
             
             <Button 
+              onClick={() => setWaitlistOpen(true)}
+              variant="outline"
+              className="hidden md:inline-flex border-ak-blue text-ak-blue hover:bg-ak-blue hover:text-white"
+            >
+              {t('waitlist.joinWaitlist')}
+            </Button>
+            
+            <Button 
               asChild
               className="inline-flex bg-ak-blue hover:bg-ak-blue/90 text-white border-0 shadow-lg"
             >
@@ -266,8 +276,19 @@ export const Navigation = () => {
                   ))}
                   
                   <Button 
+                    onClick={() => {
+                      setIsMobileOpen(false);
+                      setWaitlistOpen(true);
+                    }}
+                    variant="outline"
+                    className="mt-4 w-full border-ak-blue text-ak-blue hover:bg-ak-blue hover:text-white"
+                  >
+                    {t('waitlist.joinWaitlist')}
+                  </Button>
+                  
+                  <Button 
                     asChild
-                    className="mt-6 bg-gradient-primary text-white border-0"
+                    className="mt-2 w-full bg-gradient-primary text-white border-0"
                   >
                     <a href="https://keys-pay.com" target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileOpen(false)}>
                       <Wallet className="h-4 w-4 mr-2" />
@@ -280,6 +301,8 @@ export const Navigation = () => {
           </div>
         </div>
       </div>
+      
+      <WaitlistModal open={waitlistOpen} onOpenChange={setWaitlistOpen} />
     </header>
   );
 };

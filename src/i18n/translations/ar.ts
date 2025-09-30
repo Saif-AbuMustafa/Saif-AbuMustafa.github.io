@@ -425,6 +425,41 @@ export const ar = {
         description: 'حدث خطأ',
         tryAgain: 'حاول مرة أخرى'
       }
+    },
+    
+    // Waitlist
+    waitlist: {
+      title: "سجّل اهتمامك",
+      joinWaitlist: "سجّل اهتمامك",
+      email: "البريد الإلكتروني",
+      emailPlaceholder: "أدخل بريدك الإلكتروني",
+      country: "الدولة",
+      selectCountry: "اختر دولتك",
+      city: "المدينة",
+      cityPlaceholder: "أدخل مدينتك (اختياري)",
+      heardChannel: "كيف سمعت عنا؟",
+      selectChannel: "اختر خياراً",
+      heardDetail: "أخبرنا المزيد (اختياري)",
+      heardDetailPlaceholder: "شارك أي تفاصيل إضافية...",
+      consent: "أوافق على تلقي تحديثات الوصول المبكر من AI KEYS وأقبل",
+      privacyPolicy: "سياسة الخصوصية",
+      consentRequired: "يجب أن توافق على سياسة الخصوصية للمتابعة",
+      submit: "انضم للقائمة",
+      error: "خطأ",
+      errorDesc: "حدث خطأ ما. يرجى المحاولة مرة أخرى.",
+      successTitle: "تحقق من بريدك الإلكتروني!",
+      successDesc: "لقد أرسلنا رسالة تأكيد. يرجى التحقق من صندوق الوارد والنقر على الرابط لتأكيد اشتراكك.",
+      alreadyConfirmed: "تم التأكيد بالفعل",
+      alreadyConfirmedDesc: "أنت بالفعل في قائمة الانتظار!",
+      alreadyConfirmedLongDesc: "لقد تم تأكيد اشتراكك بالفعل. سنبقيك على اطلاع بآخر الأخبار وفرص الوصول المبكر.",
+      confirmationResent: "تم إعادة إرسال البريد",
+      confirmationResentDesc: "لقد أعدنا إرسال رسالة التأكيد. يرجى التحقق من صندوق الوارد.",
+      confirming: "جاري التأكيد...",
+      confirmingDesc: "يرجى الانتظار بينما نؤكد اشتراكك.",
+      confirmed: "تم تأكيد البريد الإلكتروني!",
+      confirmedDesc: "شكراً لك على تأكيد عنوان بريدك الإلكتروني. أنت الآن في قائمة الانتظار على",
+      confirmError: "فشل التأكيد",
+      confirmErrorDesc: "رابط التأكيد غير صالح أو منتهي الصلاحية. يرجى المحاولة مرة أخرى.",
     }
   }
 };

@@ -1,1 +1,10 @@
 project_id = "iytinmioziskeqewnelm"
+
+[functions.waitlist-submit]
+verify_jwt = false
+
+[functions.waitlist-send-confirmation]
+verify_jwt = false
+
+[functions.waitlist-confirm]
+verify_jwt = false
