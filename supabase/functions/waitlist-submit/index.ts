@@ -1,209 +1,175 @@
-import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
+import { serve } from "https://deno.land/std@0.224.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
-const corsHeaders = {
-  "Access-Control-Allow-Origin": "*",
-  "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
+const headers = {
+  "content-type": "application/json",
+  "access-control-allow-origin": "*",
+  "access-control-allow-headers": "authorization, x-client-info, apikey, content-type",
+  "access-control-allow-methods": "POST, OPTIONS"
 };
 
-interface WaitlistRequest {
-  email: string;
-  country: string;
-  city?: string;
-  heard_channel: string;
-  heard_detail?: string;
-  locale: string;
-  consent: boolean;
-  recaptcha_token: string;
-  utm_source?: string;
-  utm_medium?: string;
-  utm_campaign?: string;
-  referrer_url?: string;
-}
-
-const handler = async (req: Request): Promise<Response> => {
-  if (req.method === "OPTIONS") {
-    return new Response(null, { headers: corsHeaders });
+serve(async (req) => {
+  if (req.method === "OPTIONS") return new Response("ok", { headers });
+  if (req.method !== "POST") {
+    return new Response(JSON.stringify({ error: "method_not_allowed" }), { status: 405, headers });
   }
-
+  
   try {
-    const data: WaitlistRequest = await req.json();
-    console.log("Waitlist submission received for:", data.email);
+    const {
+      email, country, city, heard_channel, heard_detail,
+      locale, recaptchaToken, utm_source, utm_medium, utm_campaign, referrer_url
+    } = await req.json();
 
-    // Verify reCAPTCHA
+    console.log("Waitlist submission received for:", email);
+
+    // 1) Verify reCAPTCHA on the server
     const recaptchaSecret = Deno.env.get("RECAPTCHA_SECRET_KEY");
     if (!recaptchaSecret) {
-      throw new Error("reCAPTCHA secret not configured");
+      console.error("RECAPTCHA_SECRET_KEY missing");
+      return new Response(
+        JSON.stringify({ error: "config_missing", detail: "RECAPTCHA_SECRET_KEY missing" }), 
+        { status: 500, headers }
+      );
     }
 
-    const recaptchaResponse = await fetch(
-      "https://www.google.com/recaptcha/api/siteverify",
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: `secret=${recaptchaSecret}&response=${data.recaptcha_token}`,
-      }
-    );
-
-    const recaptchaResult = await recaptchaResponse.json();
-    console.log("reCAPTCHA verification result:", recaptchaResult);
-
-    if (!recaptchaResult.success) {
-      const errorCodes = recaptchaResult["error-codes"] || [];
-      const errorMessage = errorCodes.includes("invalid-input-secret")
-        ? "reCAPTCHA configuration error. Please contact support."
-        : errorCodes.includes("invalid-input-response")
-        ? "Invalid reCAPTCHA token. Please try again."
-        : errorCodes.includes("timeout-or-duplicate")
-        ? "reCAPTCHA expired. Please refresh and try again."
-        : "reCAPTCHA verification failed. Please try again.";
-      
+    const vRes = await fetch("https://www.google.com/recaptcha/api/siteverify", {
+      method: "POST",
+      headers: { "content-type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams({ secret: recaptchaSecret, response: recaptchaToken || "" })
+    });
+    const vJson = await vRes.json();
+    
+    console.log("reCAPTCHA verification result:", vJson);
+    
+    if (!vJson.success) {
+      const errorCodes = vJson["error-codes"] ?? [];
       console.error("reCAPTCHA verification failed:", errorCodes);
-      
       return new Response(
-        JSON.stringify({ 
-          error: errorMessage,
-          error_codes: errorCodes,
-          type: "recaptcha_failed"
-        }),
-        { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+        JSON.stringify({ error: "recaptcha_failed", codes: errorCodes }), 
+        { status: 400, headers }
       );
     }
 
-    // Input validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(data.email)) {
+    // 2) DB upsert
+    const supabaseUrl = Deno.env.get("SUPABASE_URL");
+    const supabaseKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
+    
+    if (!supabaseUrl || !supabaseKey) {
+      console.error("Supabase credentials missing");
       return new Response(
-        JSON.stringify({ error: "Invalid email format" }),
-        { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+        JSON.stringify({ error: "config_missing", detail: "Supabase credentials missing" }), 
+        { status: 500, headers }
+      );
+    }
+    
+    const supabase = createClient(supabaseUrl, supabaseKey);
+
+    const token = crypto.randomUUID();
+    const { data: existing } = await supabase
+      .from("waitlist_leads")
+      .select("id,status")
+      .eq("email", (email ?? "").toLowerCase())
+      .maybeSingle();
+
+    if (existing?.status === "confirmed") {
+      console.log("Email already confirmed:", email);
+      return new Response(
+        JSON.stringify({ ok: true, alreadyConfirmed: true }), 
+        { status: 200, headers }
       );
     }
 
-    if (!data.consent) {
-      return new Response(
-        JSON.stringify({ error: "Consent is required" }),
-        { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
-      );
-    }
-
-    // Hash IP address
+    // Hash IP address for privacy
     const clientIp = req.headers.get("x-forwarded-for") || req.headers.get("cf-connecting-ip") || "unknown";
     const encoder = new TextEncoder();
-    const ipData = encoder.encode(clientIp + Deno.env.get("SUPABASE_SERVICE_ROLE_KEY"));
+    const ipData = encoder.encode(clientIp + supabaseKey);
     const hashBuffer = await crypto.subtle.digest("SHA-256", ipData);
     const ipHash = Array.from(new Uint8Array(hashBuffer))
       .map(b => b.toString(16).padStart(2, '0'))
       .join('');
 
-    // Generate confirmation token
-    const tokenData = encoder.encode(data.email + Date.now() + Math.random());
-    const tokenBuffer = await crypto.subtle.digest("SHA-256", tokenData);
-    const confirmToken = Array.from(new Uint8Array(tokenBuffer))
-      .map(b => b.toString(16).padStart(2, '0'))
-      .join('');
-
-    const supabase = createClient(
-      Deno.env.get("SUPABASE_URL") ?? "",
-      Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? ""
-    );
-
-    // Check if email already exists
-    const { data: existing } = await supabase
+    const upsert = await supabase
       .from("waitlist_leads")
-      .select("status")
-      .eq("email", data.email.toLowerCase())
-      .maybeSingle();
-
-    if (existing) {
-      if (existing.status === "confirmed") {
-        return new Response(
-          JSON.stringify({ 
-            message: "already_confirmed",
-            status: "confirmed" 
-          }),
-          { status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" } }
-        );
-      } else {
-        // Resend confirmation
-        const { data: leadData } = await supabase
-          .from("waitlist_leads")
-          .select("confirm_token")
-          .eq("email", data.email.toLowerCase())
-          .single();
-
-        if (leadData) {
-          await supabase.functions.invoke("waitlist-send-confirmation", {
-            body: {
-              email: data.email,
-              locale: data.locale,
-              confirm_token: leadData.confirm_token,
-            },
-          });
-        }
-
-        return new Response(
-          JSON.stringify({ 
-            message: "confirmation_resent",
-            status: "pending_confirm" 
-          }),
-          { status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" } }
-        );
-      }
-    }
-
-    // Insert new lead
-    const { error: insertError } = await supabase
-      .from("waitlist_leads")
-      .insert({
-        email: data.email.toLowerCase(),
-        country: data.country,
-        city: data.city || null,
-        heard_channel: data.heard_channel,
-        heard_detail: data.heard_detail || null,
-        locale: data.locale,
-        utm_source: data.utm_source || null,
-        utm_medium: data.utm_medium || null,
-        utm_campaign: data.utm_campaign || null,
-        referrer_url: data.referrer_url || null,
+      .upsert({
+        email: (email ?? "").toLowerCase(),
+        country, 
+        city, 
+        heard_channel, 
+        heard_detail, 
+        locale,
+        utm_source, 
+        utm_medium, 
+        utm_campaign, 
+        referrer_url,
         ip_hash: ipHash,
         user_agent: req.headers.get("user-agent") || null,
-        confirm_token: confirmToken,
         status: "pending_confirm",
-      });
-
-    if (insertError) {
-      console.error("Insert error:", insertError);
-      throw insertError;
+        confirm_token: token,
+        consent_ts: new Date().toISOString()
+      }, { onConflict: "email" });
+      
+    if (upsert.error) {
+      console.error("DB error:", upsert.error);
+      return new Response(
+        JSON.stringify({ error: "db_error", detail: upsert.error.message }), 
+        { status: 500, headers }
+      );
     }
 
-    // Send confirmation email
-    await supabase.functions.invoke("waitlist-send-confirmation", {
-      body: {
-        email: data.email,
-        locale: data.locale,
-        confirm_token: confirmToken,
+    console.log("DB upsert successful for:", email);
+
+    // 3) Send confirmation email via Resend
+    const resendKey = Deno.env.get("RESEND_API_KEY");
+    if (!resendKey) {
+      console.error("RESEND_API_KEY missing");
+      return new Response(
+        JSON.stringify({ error: "config_missing", detail: "RESEND_API_KEY missing" }), 
+        { status: 500, headers }
+      );
+    }
+    
+    const confirmUrl = `https://aikeys.finance/waitlist/confirm?token=${token}`;
+    const emailRes = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: { 
+        "Authorization": `Bearer ${resendKey}`, 
+        "Content-Type": "application/json" 
       },
+      body: JSON.stringify({
+        from: "AI KEYS <noreply@aikeys.finance>",
+        to: [email],
+        subject: "Confirm your AI KEYS early-access signup",
+        html: `
+          <h1>Welcome to AI KEYS Early Access</h1>
+          <p>Thank you for your interest in AI KEYS! Please confirm your email address to complete your waitlist registration.</p>
+          <p><a href="${confirmUrl}" style="display: inline-block; padding: 12px 24px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 4px;">Confirm Email</a></p>
+          <p>Or copy and paste this link into your browser:</p>
+          <p>${confirmUrl}</p>
+          <p>Best regards,<br>The AI KEYS Team</p>
+        `
+      })
     });
+    
+    if (!emailRes.ok) {
+      const detail = await emailRes.text();
+      console.error("Email send error:", detail);
+      return new Response(
+        JSON.stringify({ error: "email_error", detail }), 
+        { status: 502, headers }
+      );
+    }
 
-    console.log("Waitlist submission successful for:", data.email);
+    console.log("Confirmation email sent successfully to:", email);
 
     return new Response(
-      JSON.stringify({ 
-        message: "success",
-        status: "pending_confirm"
-      }),
-      { status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      JSON.stringify({ ok: true }), 
+      { status: 200, headers }
     );
-  } catch (error) {
-    console.error("Error in waitlist-submit:", error);
+  } catch (e) {
+    console.error("Unexpected error:", e);
     return new Response(
-      JSON.stringify({ 
-        error: error.message || "An unexpected error occurred",
-        type: "server_error"
-      }),
-      { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      JSON.stringify({ error: "server_error", detail: String(e) }), 
+      { status: 500, headers }
     );
   }
-};
-
-serve(handler);
+});

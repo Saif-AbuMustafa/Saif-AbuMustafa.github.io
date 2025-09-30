@@ -65,9 +65,13 @@ export const WaitlistModal = ({ open, onOpenChange }: WaitlistModalProps) => {
 
       const { data, error } = await supabase.functions.invoke('waitlist-submit', {
         body: {
-          ...formData,
+          email: formData.email,
+          country: formData.country,
+          city: formData.city,
+          heard_channel: formData.heard_channel,
+          heard_detail: formData.heard_detail,
           locale: i18n.language,
-          recaptcha_token: recaptchaToken,
+          recaptchaToken: recaptchaToken,
           utm_source,
           utm_medium,
           utm_campaign,
@@ -77,17 +81,12 @@ export const WaitlistModal = ({ open, onOpenChange }: WaitlistModalProps) => {
 
       if (error) throw error;
 
-      if (data.status === 'confirmed') {
+      if (data.alreadyConfirmed) {
         toast({
           title: t('waitlist.alreadyConfirmed'),
           description: t('waitlist.alreadyConfirmedDesc'),
         });
-      } else if (data.message === 'confirmation_resent') {
-        toast({
-          title: t('waitlist.confirmationResent'),
-          description: t('waitlist.confirmationResentDesc'),
-        });
-      } else {
+      } else if (data.ok) {
         setSuccess(true);
       }
     } catch (error: any) {
@@ -95,10 +94,26 @@ export const WaitlistModal = ({ open, onOpenChange }: WaitlistModalProps) => {
       
       // Parse error message from edge function response
       let errorMessage = t('waitlist.errorDesc');
+      let errorDetail = '';
+      
       if (error.message) {
         try {
           const errorData = JSON.parse(error.message);
-          errorMessage = errorData.error || errorMessage;
+          if (errorData.error === 'recaptcha_failed') {
+            errorMessage = 'reCAPTCHA verification failed. Please try again.';
+            errorDetail = `Error codes: ${errorData.codes?.join(', ') || 'unknown'}`;
+          } else if (errorData.error === 'db_error') {
+            errorMessage = 'Database error. Please try again later.';
+            errorDetail = errorData.detail || '';
+          } else if (errorData.error === 'email_error') {
+            errorMessage = 'Failed to send confirmation email. Please try again.';
+            errorDetail = errorData.detail || '';
+          } else if (errorData.error === 'config_missing') {
+            errorMessage = 'Server configuration error. Please contact support.';
+            errorDetail = errorData.detail || '';
+          } else {
+            errorMessage = errorData.detail || errorData.error || errorMessage;
+          }
         } catch {
           errorMessage = error.message;
         }
@@ -106,7 +121,7 @@ export const WaitlistModal = ({ open, onOpenChange }: WaitlistModalProps) => {
       
       toast({
         title: t('waitlist.error'),
-        description: errorMessage,
+        description: errorDetail ? `${errorMessage}\n${errorDetail}` : errorMessage,
         variant: 'destructive',
       });
     } finally {
