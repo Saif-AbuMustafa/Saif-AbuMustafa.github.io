@@ -23,9 +23,15 @@ export const LanguageSwitcher = () => {
 
   const handleLanguageChange = (languageCode: string) => {
     i18n.changeLanguage(languageCode);
+    localStorage.setItem('i18nextLng', languageCode);
     setIsOpen(false);
-    // Update document direction for Arabic
+    
+    // Update document direction and lang attribute
     document.documentElement.dir = languageCode === 'ar' ? 'rtl' : 'ltr';
+    document.documentElement.lang = languageCode;
+    
+    // Reload page to apply all translations
+    window.location.reload();
   };
 
   return (

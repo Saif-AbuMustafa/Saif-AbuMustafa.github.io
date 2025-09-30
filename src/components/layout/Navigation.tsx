@@ -54,43 +54,43 @@ export const Navigation = () => {
 
   const mainNavItems = [
     { 
-      label: 'Home', 
+      label: t('nav.home'), 
       href: '/', 
       icon: Building 
     },
     { 
-      label: 'About', 
+      label: t('nav.about'), 
       href: '/about', 
       icon: Building 
     },
     {
-      label: 'Services',
+      label: t('nav.services'),
       trigger: true,
       items: [
-        { label: 'Overview', href: '/services', icon: Building, desc: 'All our services' },
-        { label: 'KEYS Wallet', href: '/wallet', icon: Wallet, desc: 'Secure crypto & fiat storage' },
-        { label: 'Travel Planner', href: '/travel', icon: Plane, desc: 'AI-powered travel solutions' },
-        { label: 'Logistics', href: '/logistics', icon: Truck, desc: 'Smart logistics automation' },
-        { label: 'Student Services', href: '/education', icon: GraduationCap, desc: 'Educational AI assistance' }
+        { label: t('nav.services'), href: '/services', icon: Building, desc: t('services.description') },
+        { label: t('services.wallet.title'), href: '/wallet', icon: Wallet, desc: t('services.wallet.description') },
+        { label: t('services.travel.title'), href: '/travel', icon: Plane, desc: t('services.travel.description') },
+        { label: t('services.logistics.title'), href: '/logistics', icon: Truck, desc: t('services.logistics.description') },
+        { label: t('services.education.title'), href: '/education', icon: GraduationCap, desc: t('services.education.description') }
       ]
     },
     { 
-      label: 'Technology', 
+      label: t('nav.technology'), 
       href: '/technology', 
       icon: Code 
     },
     { 
-      label: 'KEYS Token', 
+      label: t('nav.token'), 
       href: '/token', 
       icon: Coins 
     },
     {
-      label: 'Company',
+      label: t('about.title'),
       trigger: true,
       items: [
-        { label: 'Careers', href: '/careers', icon: Users, desc: 'Join our team' },
-        { label: 'Investors', href: '/investors', icon: TrendingUp, desc: 'Investment opportunities' },
-        { label: 'Contact', href: '/contact', icon: Phone, desc: 'Get in touch' }
+        { label: t('nav.careers'), href: '/careers', icon: Users, desc: t('common.learnMore') },
+        { label: t('nav.investors'), href: '/investors', icon: TrendingUp, desc: t('common.learnMore') },
+        { label: t('nav.contact'), href: '/contact', icon: Phone, desc: t('contact.subtitle') }
       ]
     }
   ];
@@ -127,7 +127,7 @@ export const Navigation = () => {
                 AI KEYS
               </span>
               <span className="text-xs text-black hidden sm:block">
-                Fintech Solutions
+                {t('hero.subtitle')}
               </span>
             </div>
           </Link>
@@ -207,7 +207,7 @@ export const Navigation = () => {
             >
               <a href="https://keys-pay.com" target="_blank" rel="noopener noreferrer">
                 <Wallet className="h-4 w-4 mr-2" />
-                Launch Wallet
+                {t('common.getStarted')}
               </a>
             </Button>
 
@@ -220,7 +220,7 @@ export const Navigation = () => {
               </SheetTrigger>
               <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-ak-white border-ak-beige-300">
                 <SheetHeader>
-                  <SheetTitle className="text-ak-text">Navigation</SheetTitle>
+                  <SheetTitle className="text-ak-text">{t('nav.services')}</SheetTitle>
                 </SheetHeader>
                 <div className="flex flex-col space-y-4 mt-6">
                   {mainNavItems.map((item, index) => (
@@ -271,7 +271,7 @@ export const Navigation = () => {
                   >
                     <a href="https://keys-pay.com" target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileOpen(false)}>
                       <Wallet className="h-4 w-4 mr-2" />
-                      Launch Wallet
+                      {t('common.getStarted')}
                     </a>
                   </Button>
                 </div>
