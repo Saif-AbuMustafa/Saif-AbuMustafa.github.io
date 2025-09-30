@@ -79,7 +79,7 @@ export const PageHeader = ({
 
           {/* Description */}
           {description && (
-            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8 animate-fade-in" style={{ animationDelay: '0.3s' }}>
+            <p className="text-lg md:text-xl text-black max-w-3xl mx-auto mb-8 animate-fade-in" style={{ animationDelay: '0.3s' }}>
               {description}
             </p>
           )}
