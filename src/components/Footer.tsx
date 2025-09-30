@@ -17,7 +17,7 @@ export const Footer = () => {
 
   const footerSections = [
     {
-      title: 'Platform',
+      title: t('footer.platform'),
       links: [
         { label: t('nav.wallet'), href: '/wallet' },
         { label: t('nav.travel'), href: '/travel' },
@@ -26,38 +26,38 @@ export const Footer = () => {
       ]
     },
     {
-      title: 'Company',
+      title: t('footer.company'),
       links: [
-        { label: 'About Us', href: '/about' },
+        { label: t('nav.about'), href: '/about' },
         { label: t('footer.links.careers'), href: '/careers' },
-        { label: 'Investors', href: '/investors' },
-        { label: 'Press Kit', href: '/press-kit' }
+        { label: t('nav.investors'), href: '/investors' },
+        { label: t('nav.pressKit'), href: '/press-kit' }
       ]
     },
     {
-      title: 'Resources',
+      title: t('footer.resources'),
       links: [
-         { label: 'Documentation', href: '/resources/docs' },
-         { label: 'API Reference', href: '/resources/api' },
+         { label: t('nav.documentation'), href: '/resources/docs' },
+         { label: t('nav.apiReference'), href: '/resources/api' },
         { label: t('footer.links.support'), href: '/contact' },
-        { label: 'Status Page', href: '/resources/status' }
+        { label: t('nav.statusPage'), href: '/resources/status' }
       ]
     },
     {
-      title: 'Legal',
+      title: t('footer.legal'),
       links: [
          { label: t('footer.links.privacy'), href: '/legal/privacy' },
          { label: t('footer.links.terms'), href: '/legal/terms' },
-         { label: 'Cookie Policy', href: '/legal/cookies' },
-         { label: 'Compliance', href: '/legal/compliance' }
+         { label: t('footer.links.cookies'), href: '/legal/cookies' },
+         { label: t('footer.links.compliance'), href: '/legal/compliance' }
       ]
     }
   ];
 
   const socialLinks = [
-    { icon: Twitter, href: 'https://twitter.com/AIKeysOfficial', label: 'Follow AI KEYS on Twitter' },
-    { icon: Linkedin, href: 'https://linkedin.com/company/ai-keys', label: 'Connect with AI KEYS on LinkedIn' },
-    { icon: Github, href: 'https://github.com/ai-keys', label: 'View AI KEYS on GitHub' }
+    { icon: Twitter, href: 'https://twitter.com/AIKeysOfficial', label: t('footer.social.twitter') },
+    { icon: Linkedin, href: 'https://linkedin.com/company/ai-keys', label: t('footer.social.linkedin') },
+    { icon: Github, href: 'https://github.com/ai-keys', label: t('footer.social.github') }
   ];
 
   return (
@@ -88,7 +88,7 @@ export const Footer = () => {
               <div className="space-y-3 mb-6">
                  <div className="flex items-center space-x-3 text-sm">
                    <MapPin className="h-4 w-4 text-fintech-blue" />
-                   <span>B312 NASER AHMED SAEED MOHAMED ALAWADHI -UAE- License Number 1104443</span>
+                   <span>{t('footer.contact.address')}</span>
                  </div>
                 <div className="flex items-center space-x-3 text-sm">
                   <Mail className="h-4 w-4 text-fintech-blue" />
@@ -149,18 +149,18 @@ export const Footer = () => {
           {/* Bottom Footer */}
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} AI KEYS Company. All rights reserved.
+              © {new Date().getFullYear()} {t('footer.copyright')}
             </div>
             
             <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
               <span className="flex items-center space-x-2">
                 <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-                <span>All systems operational</span>
+                <span>{t('footer.status.operational')}</span>
               </span>
               <span>•</span>
-              <span>UAE Licensed & Regulated</span>
+              <span>{t('footer.status.licensed')}</span>
               <span>•</span>
-              <span>Built on Solana</span>
+              <span>{t('footer.status.blockchain')}</span>
             </div>
           </div>
         </div>

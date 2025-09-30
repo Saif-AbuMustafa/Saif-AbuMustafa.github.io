@@ -85,9 +85,51 @@ export const ar = {
       whyDescription: 'مبني على أحدث التقنيات مع أمان على مستوى المؤسسات وامتثال تنظيمي',
       ctaTitleTop: 'هل أنت مستعد لتحويل',
       ctaTitleBottom: 'مستقبلك المالي؟',
-      ctaDescription: 'انضم إلى الآلاف من المستخدمين الذين يثقون بـ AI KEYS لاحتياجاتهم المالية والسفر واللوجستية والتعليمية.',
+      ctaDescription: 'انضم إلى الآلاف من المستخدمين الذين يثقون بـ AI KEYS لاحتياجاتهم المالية والسفر واللوجستية والتعليمية',
       launchWallet: 'إطلاق المحفظة',
-      contactSales: 'تواصل مع المبيعات'
+      contactSales: 'تواصل مع المبيعات',
+      stats: {
+        users: 'مستخدمون نشطون',
+        transactions: 'المعاملات',
+        countries: 'البلدان',
+        uptime: 'وقت التشغيل'
+      },
+      services: {
+        wallet: {
+          title: 'محفظة كيز للحراسة',
+          description: 'تخزين آمن للعملات المشفرة والعملات الورقية مع التشغيل الآلي المدعوم بالذكاء الاصطناعي'
+        },
+        travel: {
+          title: 'مخطط سفر كيز',
+          description: 'تخطيط سفر قائم على الذكاء الاصطناعي مع مدفوعات متكاملة'
+        },
+        logistics: {
+          title: 'خدمات كيز اللوجستية',
+          description: 'حلول لوجستية ذكية مع مدفوعات آلية'
+        },
+        education: {
+          title: 'خدمات كيز للطلاب',
+          description: 'مساعدة تعليمية قائمة على الذكاء الاصطناعي ودعم تعليمي'
+        }
+      },
+      features: {
+        ai: {
+          title: 'التشغيل الآلي المدعوم بالذكاء الاصطناعي',
+          description: 'خوارزميات تعلم آلي متقدمة تُؤتمت مهامك المالية'
+        },
+        security: {
+          title: 'أمان على مستوى المؤسسات',
+          description: 'أمان على مستوى البنوك مع بروتوكولات حماية متعددة الطبقات'
+        },
+        compliance: {
+          title: 'DIFC',
+          description: 'متوافق مع ابتكارات ولوائح DIFC المالية'
+        },
+        speed: {
+          title: 'سرعة فائقة',
+          description: 'مبني على بلوك تشين سولانا للمعاملات الفورية'
+        }
+      }
     },
     
     // Services
@@ -302,8 +344,9 @@ export const ar = {
     
     // Footer
     footer: {
-      company: 'شركة AI KEYS',
-      description: 'حلول مالية ثورية مدعومة بالذكاء الاصطناعي مقرها دبي، الإمارات العربية المتحدة',
+      company: 'الشركة',
+      platform: 'المنصة',
+      description: 'حلول فنتك ثورية مدعومة بالذكاء الاصطناعي مقرها دبي، الإمارات',
       quickLinks: 'روابط سريعة',
       services: 'الخدمات',
       resources: 'الموارد',
@@ -312,8 +355,9 @@ export const ar = {
       newsletter: 'النشرة الإخبارية',
       subscribeNewsletter: 'اشترك في نشرتنا الإخبارية',
       enterEmail: 'أدخل بريدك الإلكتروني',
-      subscribe: 'اشتراك',
+      subscribe: 'اشترك',
       allRightsReserved: 'جميع الحقوق محفوظة',
+      copyright: 'شركة AI KEYS. جميع الحقوق محفوظة.',
       links: {
         privacy: 'سياسة الخصوصية',
         terms: 'شروط الخدمة',
@@ -331,6 +375,16 @@ export const ar = {
         address: 'B312 NASER AHMED SAEED MOHAMED ALAWADHI -UAE- License Number 1104443',
         email: 'info@aikeys.ai',
         phone: '+971 XX XXX XXXX'
+      },
+      social: {
+        twitter: 'تابع AI KEYS على تويتر',
+        linkedin: 'تواصل مع AI KEYS على لينكد إن',
+        github: 'شاهد AI KEYS على جيت هاب'
+      },
+      status: {
+        operational: 'جميع الأنظمة تعمل',
+        licensed: 'مرخص ومنظم في الإمارات',
+        blockchain: 'مبني على سولانا'
       }
     },
     

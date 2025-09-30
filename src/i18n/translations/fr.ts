@@ -72,6 +72,65 @@ export const fr = {
       }
     },
     
+    // Home Page
+    home: {
+      servicesBadge: 'Notre écosystème',
+      servicesTitleTop: 'Solutions',
+      servicesTitleBottom: 'financières complètes',
+      servicesDescription: 'Quatre plateformes interconnectées propulsées par l\'IA pour révolutionner la gestion de vos finances, voyages, logistique et éducation',
+      viewAllServices: 'Voir tous les services',
+      whyTitleTop: 'Pourquoi choisir',
+      whyTitleBrand: 'AI KEYS',
+      whyDescription: 'Construit sur une technologie de pointe avec une sécurité de niveau entreprise et une conformité réglementaire',
+      ctaTitleTop: 'Prêt à transformer votre',
+      ctaTitleBottom: 'avenir financier ?',
+      ctaDescription: 'Rejoignez des milliers d\'utilisateurs qui font confiance à AI KEYS pour leurs besoins financiers, de voyage, logistiques et éducatifs',
+      launchWallet: 'Lancer le portefeuille',
+      contactSales: 'Contacter les ventes',
+      stats: {
+        users: 'Utilisateurs actifs',
+        transactions: 'Transactions',
+        countries: 'Pays',
+        uptime: 'Disponibilité'
+      },
+      services: {
+        wallet: {
+          title: 'Portefeuille dépositaire Keys',
+          description: 'Stockage sécurisé de crypto et monnaie fiduciaire avec automatisation par IA'
+        },
+        travel: {
+          title: 'Planificateur de voyage Keys',
+          description: 'Planification de voyage basée sur l\'IA avec paiements intégrés'
+        },
+        logistics: {
+          title: 'Keys Logistique',
+          description: 'Solutions logistiques intelligentes avec paiements automatisés'
+        },
+        education: {
+          title: 'Services étudiants Keys',
+          description: 'Assistance pédagogique par IA et soutien éducatif'
+        }
+      },
+      features: {
+        ai: {
+          title: 'Automatisation par IA',
+          description: 'Des algorithmes d\'apprentissage automatique avancés automatisent vos tâches financières'
+        },
+        security: {
+          title: 'Sécurité d\'entreprise',
+          description: 'Sécurité de niveau bancaire avec des protocoles de protection multicouches'
+        },
+        compliance: {
+          title: 'DIFC',
+          description: 'Conforme aux innovations et réglementations financières du DIFC'
+        },
+        speed: {
+          title: 'Ultra-rapide',
+          description: 'Construit sur la blockchain Solana pour des transactions instantanées'
+        }
+      }
+    },
+    
     // Services
     services: {
       title: 'Notre Écosystème',
@@ -284,18 +343,20 @@ export const fr = {
     
     // Footer
     footer: {
-      company: 'AI KEYS Company',
-      description: 'Solutions fintech révolutionnaires alimentées par l\'IA basées à Dubaï, EAU',
-      quickLinks: 'Liens Rapides',
+      company: 'Entreprise',
+      platform: 'Plateforme',
+      description: 'Solutions fintech révolutionnaires propulsées par l\'IA basées à Dubaï, EAU',
+      quickLinks: 'Liens rapides',
       services: 'Services',
       resources: 'Ressources',
-      legal: 'Légal',
+      legal: 'Juridique',
       followUs: 'Suivez-nous',
       newsletter: 'Newsletter',
       subscribeNewsletter: 'Abonnez-vous à notre newsletter',
-      enterEmail: 'Entrez votre e-mail',
+      enterEmail: 'Entrez votre email',
       subscribe: 'S\'abonner',
       allRightsReserved: 'Tous droits réservés',
+      copyright: 'Société AI KEYS. Tous droits réservés.',
       links: {
         privacy: 'Politique de Confidentialité',
         terms: 'Conditions de Service',
@@ -313,6 +374,16 @@ export const fr = {
         address: 'B312 NASER AHMED SAEED MOHAMED ALAWADHI -UAE- License Number 1104443',
         email: 'info@aikeys.ai',
         phone: '+971 XX XXX XXXX'
+      },
+      social: {
+        twitter: 'Suivez AI KEYS sur Twitter',
+        linkedin: 'Connectez-vous avec AI KEYS sur LinkedIn',
+        github: 'Voir AI KEYS sur GitHub'
+      },
+      status: {
+        operational: 'Tous les systèmes opérationnels',
+        licensed: 'Licencié et réglementé aux EAU',
+        blockchain: 'Construit sur Solana'
       }
     },
     

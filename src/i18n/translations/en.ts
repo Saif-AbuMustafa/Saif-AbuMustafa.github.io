@@ -59,9 +59,9 @@ export const en = {
     
     // Hero Section
     hero: {
-      title: 'Revolutionary AI-Powered',
-      subtitle: 'Fintech Solutions',
-      description: 'Empowering the future of finance with AI-driven custodian wallet, travel planning, logistics, and student services. UAE licensed and built on Solana blockchain.',
+      title: 'Revolutionary AI-Powered Fintech Solutions',
+      subtitle: '',
+      description: 'Empowering the future of finance with AI-driven custodian wallet, travel planning, logistics, and student services. Built on Solana blockchain with full VARA compliance.',
       cta: 'Explore Our Ecosystem',
       watchDemo: 'Watch Demo',
       badge: 'Fintech Solutions • Solana Blockchain • Dubai, UAE',
@@ -87,7 +87,49 @@ export const en = {
       ctaTitleBottom: 'Financial Future?',
       ctaDescription: 'Join thousands of users who trust AI KEYS for their financial, travel, logistics, and educational needs.',
       launchWallet: 'Launch Wallet',
-      contactSales: 'Contact Sales'
+      contactSales: 'Contact Sales',
+      stats: {
+        users: 'Active Users',
+        transactions: 'Transactions',
+        countries: 'Countries',
+        uptime: 'Uptime'
+      },
+      services: {
+        wallet: {
+          title: 'Keys Custodian Wallet',
+          description: 'Secure crypto and fiat storage with AI-powered automation'
+        },
+        travel: {
+          title: 'Keys Travel Planner',
+          description: 'AI-based travel planning with integrated payments'
+        },
+        logistics: {
+          title: 'Keys Logistics',
+          description: 'Smart logistics solutions with automated payments'
+        },
+        education: {
+          title: 'Keys Student Services',
+          description: 'AI learning assistance and educational support'
+        }
+      },
+      features: {
+        ai: {
+          title: 'AI-Powered Automation',
+          description: 'Advanced machine learning algorithms automate your financial tasks'
+        },
+        security: {
+          title: 'Enterprise Security',
+          description: 'Bank-grade security with multi-layer protection protocols'
+        },
+        compliance: {
+          title: 'DIFC',
+          description: 'Aligned with DIFCs innovation and financial regulations'
+        },
+        speed: {
+          title: 'Lightning Fast',
+          description: 'Built on Solana blockchain for instant transactions'
+        }
+      }
     },
     
     // Services
@@ -302,7 +344,8 @@ export const en = {
     
     // Footer
     footer: {
-      company: 'AI KEYS Company',
+      company: 'Company',
+      platform: 'Platform',
       description: 'Revolutionary AI-powered fintech solutions based in Dubai, UAE',
       quickLinks: 'Quick Links',
       services: 'Services',
@@ -314,6 +357,7 @@ export const en = {
       enterEmail: 'Enter your email',
       subscribe: 'Subscribe',
       allRightsReserved: 'All rights reserved',
+      copyright: 'AI KEYS Company. All rights reserved.',
       links: {
         privacy: 'Privacy Policy',
         terms: 'Terms of Service',
@@ -331,6 +375,16 @@ export const en = {
         address: 'B312 NASER AHMED SAEED MOHAMED ALAWADHI -UAE- License Number 1104443',
         email: 'info@aikeys.ai',
         phone: '+971 XX XXX XXXX'
+      },
+      social: {
+        twitter: 'Follow AI KEYS on Twitter',
+        linkedin: 'Connect with AI KEYS on LinkedIn',
+        github: 'View AI KEYS on GitHub'
+      },
+      status: {
+        operational: 'All systems operational',
+        licensed: 'UAE Licensed & Regulated',
+        blockchain: 'Built on Solana'
       }
     },
     
