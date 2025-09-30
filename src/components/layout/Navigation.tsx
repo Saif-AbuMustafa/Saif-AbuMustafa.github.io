@@ -203,7 +203,7 @@ export const Navigation = () => {
             
             <Button 
               asChild
-              className="hidden sm:inline-flex bg-gradient-primary hover:opacity-90 text-white border-0"
+              className="inline-flex bg-ak-blue hover:bg-ak-blue/90 text-white border-0 shadow-lg"
             >
               <a href="https://keys-pay.com" target="_blank" rel="noopener noreferrer">
                 <Wallet className="h-4 w-4 mr-2" />
