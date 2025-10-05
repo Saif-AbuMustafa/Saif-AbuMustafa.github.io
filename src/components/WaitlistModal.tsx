@@ -209,9 +209,9 @@ export const WaitlistModal = ({ open, onOpenChange }: WaitlistModalProps) => {
         onOpenChange(isOpen);
         if (!isOpen) resetForm();
       }}>
-        <DialogContent className="sm:max-w-md bg-gradient-to-br from-background to-ak-beige-50 border-ak-beige-300">
+        <DialogContent className="sm:max-w-md bg-ak-white border-ak-beige-300">
           <div className="flex flex-col items-center text-center space-y-4 py-6">
-            <CheckCircle2 className="h-16 w-16 text-ak-green" />
+            <CheckCircle2 className="h-16 w-16 text-ak-blue" />
             <DialogTitle className="text-2xl text-ak-text">{t('waitlist.successTitle')}</DialogTitle>
             <p className="text-ak-muted">{t('waitlist.successDesc')}</p>
             <Button 
@@ -219,7 +219,7 @@ export const WaitlistModal = ({ open, onOpenChange }: WaitlistModalProps) => {
                 onOpenChange(false);
                 resetForm();
               }}
-              className="bg-ak-blue hover:bg-ak-blue/90"
+              className="bg-ak-blue hover:bg-ak-blue/90 text-white"
             >
               {t('common.close')}
             </Button>
@@ -231,7 +231,7 @@ export const WaitlistModal = ({ open, onOpenChange }: WaitlistModalProps) => {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-lg max-h-[90vh] overflow-y-auto bg-gradient-to-br from-background to-ak-beige-50 border-ak-beige-300">
+      <DialogContent className="sm:max-w-lg max-h-[90vh] overflow-y-auto bg-ak-white border-ak-beige-300">
         <DialogHeader>
           <DialogTitle className="text-ak-text">{t('waitlist.title')}</DialogTitle>
         </DialogHeader>
