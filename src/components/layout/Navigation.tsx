@@ -205,8 +205,8 @@ export const Navigation = () => {
             
             <Button 
               onClick={() => setWaitlistOpen(true)}
-              variant="outline"
-              className="hidden md:inline-flex border-ak-blue text-ak-blue hover:bg-ak-blue hover:text-white"
+              variant="secondary"
+              className="hidden md:inline-flex"
             >
               {t('waitlist.joinWaitlist')}
             </Button>
