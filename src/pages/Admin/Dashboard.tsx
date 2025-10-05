@@ -62,6 +62,8 @@ export default function AdminDashboard() {
 
   const checkAdminRole = async () => {
     try {
+      console.log("Checking admin role for user:", user?.id);
+      
       const { data, error } = await supabase
         .from("user_roles")
         .select("role")
@@ -69,12 +71,19 @@ export default function AdminDashboard() {
         .eq("role", "admin")
         .maybeSingle();
 
-      if (error) throw error;
+      console.log("Admin role check result:", { data, error });
+
+      if (error) {
+        console.error("Error in admin role query:", error);
+        throw error;
+      }
 
       if (data) {
+        console.log("Admin access granted");
         setIsAdmin(true);
         fetchLeads();
       } else {
+        console.log("No admin role found for user:", user?.id);
         toast.error("Access denied: Admin role required");
         navigate("/");
       }
