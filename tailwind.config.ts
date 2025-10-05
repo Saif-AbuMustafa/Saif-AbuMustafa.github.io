@@ -20,6 +20,13 @@ export default {
 		extend: {
 			fontFamily: {
 				'sans': ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+				'arabic': ['Almarai', 'Tahoma', 'sans-serif'],
+			},
+			spacing: {
+				'4.5': '1.125rem', // 18px
+				'18': '4.5rem',    // 72px
+				'88': '22rem',     // 352px
+				'128': '32rem',    // 512px
 			},
 			fontSize: {
 				'xs': ['0.75rem', { lineHeight: '1rem' }],
@@ -53,11 +60,57 @@ export default {
 				'ak-blue-dark': 'hsl(var(--ak-blue-dark))',
 				'ak-white': 'hsl(var(--ak-white))',
 				
+				// Fintech Primary Palette
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))',
 					glow: 'hsl(var(--primary-glow))',
-					dark: 'hsl(var(--primary-dark))'
+					dark: 'hsl(var(--primary-dark))',
+					50: 'hsl(210, 40%, 98%)',
+					100: 'hsl(210, 40%, 96%)',
+					200: 'hsl(210, 40%, 90%)',
+					300: 'hsl(210, 40%, 80%)',
+					400: 'hsl(210, 40%, 60%)',
+					500: 'hsl(210, 40%, 45%)',
+					600: 'hsl(210, 40%, 35%)',
+					700: 'hsl(210, 40%, 25%)',
+					800: 'hsl(210, 40%, 15%)',
+					900: 'hsl(210, 40%, 10%)',
+					navy: 'hsl(210, 100%, 12%)',
+					blue: 'hsl(220, 100%, 55%)',
+					teal: 'hsl(175, 100%, 38%)',
+				},
+				// Status Colors
+				success: {
+					DEFAULT: 'hsl(142, 70%, 45%)',
+					50: 'hsl(142, 80%, 98%)',
+					500: 'hsl(142, 70%, 45%)',
+					600: 'hsl(142, 70%, 35%)',
+				},
+				warning: {
+					DEFAULT: 'hsl(38, 90%, 55%)',
+					50: 'hsl(38, 90%, 98%)',
+					500: 'hsl(38, 90%, 55%)',
+					600: 'hsl(38, 90%, 45%)',
+				},
+				error: {
+					DEFAULT: 'hsl(0, 85%, 55%)',
+					50: 'hsl(0, 90%, 98%)',
+					500: 'hsl(0, 85%, 55%)',
+					600: 'hsl(0, 85%, 45%)',
+				},
+				// Neutral/Gray Scale
+				gray: {
+					50: 'hsl(220, 40%, 98%)',
+					100: 'hsl(220, 40%, 96%)',
+					200: 'hsl(220, 40%, 90%)',
+					300: 'hsl(220, 40%, 80%)',
+					400: 'hsl(220, 40%, 60%)',
+					500: 'hsl(220, 40%, 45%)',
+					600: 'hsl(220, 40%, 35%)',
+					700: 'hsl(220, 40%, 25%)',
+					800: 'hsl(220, 40%, 15%)',
+					900: 'hsl(220, 40%, 10%)',
 				},
 				fintech: {
 					blue: 'hsl(var(--fintech-blue))',
@@ -103,7 +156,13 @@ export default {
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
-				sm: 'calc(var(--radius) - 4px)'
+				sm: 'calc(var(--radius) - 4px)',
+				'4xl': '2rem',
+			},
+			boxShadow: {
+				'soft': '0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04)',
+				'medium': '0 4px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+				'large': '0 10px 40px -10px rgba(0, 0, 0, 0.15), 0 2px 20px 0 rgba(0, 0, 0, 0.05)',
 			},
 			keyframes: {
 				'accordion-down': {
