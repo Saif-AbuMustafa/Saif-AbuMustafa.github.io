@@ -209,15 +209,18 @@ export const WaitlistModal = ({ open, onOpenChange }: WaitlistModalProps) => {
         onOpenChange(isOpen);
         if (!isOpen) resetForm();
       }}>
-        <DialogContent className="sm:max-w-md">
+        <DialogContent className="sm:max-w-md bg-gradient-to-br from-background to-ak-beige-50 border-ak-beige-300">
           <div className="flex flex-col items-center text-center space-y-4 py-6">
-            <CheckCircle2 className="h-16 w-16 text-green-500" />
-            <DialogTitle className="text-2xl">{t('waitlist.successTitle')}</DialogTitle>
-            <p className="text-muted-foreground">{t('waitlist.successDesc')}</p>
-            <Button onClick={() => {
-              onOpenChange(false);
-              resetForm();
-            }}>
+            <CheckCircle2 className="h-16 w-16 text-ak-green" />
+            <DialogTitle className="text-2xl text-ak-text">{t('waitlist.successTitle')}</DialogTitle>
+            <p className="text-ak-muted">{t('waitlist.successDesc')}</p>
+            <Button 
+              onClick={() => {
+                onOpenChange(false);
+                resetForm();
+              }}
+              className="bg-ak-blue hover:bg-ak-blue/90"
+            >
               {t('common.close')}
             </Button>
           </div>
@@ -228,9 +231,9 @@ export const WaitlistModal = ({ open, onOpenChange }: WaitlistModalProps) => {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-lg max-h-[90vh] overflow-y-auto">
+      <DialogContent className="sm:max-w-lg max-h-[90vh] overflow-y-auto bg-gradient-to-br from-background to-ak-beige-50 border-ak-beige-300">
         <DialogHeader>
-          <DialogTitle>{t('waitlist.title')}</DialogTitle>
+          <DialogTitle className="text-ak-text">{t('waitlist.title')}</DialogTitle>
         </DialogHeader>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-2">
@@ -317,7 +320,7 @@ export const WaitlistModal = ({ open, onOpenChange }: WaitlistModalProps) => {
             </Label>
           </div>
 
-          <Button type="submit" className="w-full" disabled={loading}>
+          <Button type="submit" className="w-full bg-ak-blue hover:bg-ak-blue/90 text-white" disabled={loading}>
             {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
             {t('waitlist.submit')}
           </Button>
