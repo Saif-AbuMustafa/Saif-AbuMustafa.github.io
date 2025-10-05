@@ -8,9 +8,11 @@ import {
   Twitter,
   Linkedin,
   Github,
-  ExternalLink
+  ExternalLink,
+  Shield
 } from 'lucide-react';
 import logo from '@/assets/keys-favicon.png';
+import { TrustBadges } from '@/components/ui/TrustBadges';
 
 export const Footer = () => {
   const { t } = useTranslation();
@@ -146,6 +148,19 @@ export const Footer = () => {
 
           <Separator className="mb-8" />
 
+          {/* Trust Badges Section */}
+          <div className="mb-8">
+            <div className="text-center mb-6">
+              <h3 className="text-lg font-semibold text-[hsl(220,13%,23%)] mb-4 flex items-center justify-center gap-2">
+                <Shield className="h-5 w-5 text-[hsl(217,91%,60%)]" />
+                Secure & Compliant Platform
+              </h3>
+              <TrustBadges variant="horizontal" size="md" />
+            </div>
+          </div>
+
+          <Separator className="mb-8" />
+
           {/* Bottom Footer */}
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-sm text-muted-foreground">
@@ -157,6 +172,10 @@ export const Footer = () => {
                 <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
                 <span>{t('footer.status.operational')}</span>
               </span>
+              <span>•</span>
+              <a href="/legal/privacy" className="hover:text-[hsl(217,91%,60%)] transition-colors">
+                Privacy Policy
+              </a>
               <span>•</span>
               <span>{t('footer.status.licensed')}</span>
               <span>•</span>

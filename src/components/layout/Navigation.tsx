@@ -224,20 +224,37 @@ export const Navigation = () => {
             {/* Mobile Menu */}
             <Sheet open={isMobileOpen} onOpenChange={setIsMobileOpen}>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="sm" className="lg:hidden">
-                  <Menu className="h-5 w-5" />
+                <Button 
+                  variant="ghost" 
+                  size="icon" 
+                  className="lg:hidden min-h-[48px] min-w-[48px]"
+                  aria-label="Open navigation menu"
+                >
+                  <Menu className="h-6 w-6" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-ak-white border-ak-beige-300">
-                <SheetHeader>
+              <SheetContent 
+                side="right" 
+                className="w-[300px] sm:w-[400px] bg-ak-white border-ak-beige-300 transform transition-transform duration-300 ease-out"
+              >
+                <SheetHeader className="flex flex-row items-center justify-between">
                   <SheetTitle className="text-ak-text">{t('nav.services')}</SheetTitle>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    onClick={() => setIsMobileOpen(false)}
+                    className="min-h-[44px] min-w-[44px]"
+                    aria-label="Close navigation menu"
+                  >
+                    <X className="h-5 w-5" />
+                  </Button>
                 </SheetHeader>
-                <div className="flex flex-col space-y-4 mt-6">
+                <div className="flex flex-col space-y-2 mt-6">
                   {mainNavItems.map((item, index) => (
                     <div key={index}>
                       {item.trigger ? (
-                        <div className="space-y-2">
-                          <div className="font-medium text-sm text-ak-muted px-2">
+                        <div className="space-y-1">
+                          <div className="font-medium text-sm text-[hsl(220,9%,46%)] px-3 py-2">
                             {item.label}
                           </div>
                           {item.items?.map((subItem, subIndex) => (
@@ -246,16 +263,16 @@ export const Navigation = () => {
                               to={subItem.href}
                               onClick={() => setIsMobileOpen(false)}
                               className={cn(
-                                "flex items-center space-x-3 p-3 rounded-lg hover:bg-ak-beige-100 transition-colors group",
-                                isActivePath(subItem.href) && "bg-ak-beige-100 text-ak-text"
+                                "flex items-center space-x-3 p-4 min-h-[48px] rounded-lg hover:bg-[hsl(36,30%,92%)] transition-colors group",
+                                isActivePath(subItem.href) && "bg-[hsl(36,30%,92%)] text-[hsl(220,13%,23%)]"
                               )}
                             >
-                              <subItem.icon className="h-5 w-5 text-ak-blue" />
+                              <subItem.icon className="h-5 w-5 text-[hsl(217,91%,60%)]" />
                               <div className="flex-1">
-                                <div className="font-medium text-ak-text">{subItem.label}</div>
-                                <div className="text-sm text-ak-muted">{subItem.desc}</div>
+                                <div className="font-medium text-[hsl(220,13%,23%)]">{subItem.label}</div>
+                                <div className="text-sm text-[hsl(220,9%,46%)]">{subItem.desc}</div>
                               </div>
-                              <ChevronRight className="h-4 w-4 text-ak-muted group-hover:text-ak-text" />
+                              <ChevronRight className="h-4 w-4 text-[hsl(220,9%,46%)] group-hover:text-[hsl(220,13%,23%)]" />
                             </Link>
                           ))}
                         </div>
@@ -264,12 +281,12 @@ export const Navigation = () => {
                           to={item.href}
                           onClick={() => setIsMobileOpen(false)}
                           className={cn(
-                            "flex items-center space-x-3 p-3 rounded-lg hover:bg-ak-beige-100 transition-colors",
-                            isActivePath(item.href) && "bg-ak-beige-100 text-ak-blue"
+                            "flex items-center space-x-3 p-4 min-h-[48px] rounded-lg hover:bg-[hsl(36,30%,92%)] transition-colors",
+                            isActivePath(item.href) && "bg-[hsl(36,30%,92%)] text-[hsl(217,91%,60%)]"
                           )}
                         >
-                          <item.icon className="h-5 w-5 text-ak-blue" />
-                          <span className="font-medium text-ak-text">{item.label}</span>
+                          <item.icon className="h-5 w-5 text-[hsl(217,91%,60%)]" />
+                          <span className="font-medium text-[hsl(220,13%,23%)]">{item.label}</span>
                         </Link>
                       )}
                     </div>
@@ -281,17 +298,19 @@ export const Navigation = () => {
                       setWaitlistOpen(true);
                     }}
                     variant="outline"
-                    className="mt-4 w-full border-ak-blue text-ak-blue hover:bg-ak-blue hover:text-white"
+                    size="lg"
+                    className="mt-6 w-full min-h-[48px]"
                   >
                     {t('waitlist.joinWaitlist')}
                   </Button>
                   
                   <Button 
                     asChild
-                    className="mt-2 w-full bg-gradient-primary text-white border-0"
+                    size="lg"
+                    className="mt-3 w-full min-h-[48px]"
                   >
                     <a href="https://keys-pay.com" target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileOpen(false)}>
-                      <Wallet className="h-4 w-4 mr-2" />
+                      <Wallet className="h-5 w-5 mr-2" />
                       {t('common.getStarted')}
                     </a>
                   </Button>

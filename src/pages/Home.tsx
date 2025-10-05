@@ -7,6 +7,9 @@ import { ModernCard, ModernCardContent } from '@/components/ui/ModernCard';
 import { ModernSection, ModernContainer, ModernGrid } from '@/components/ui/ModernSection';
 import { ModernHero } from '@/components/ui/ModernHero';
 import { InteractiveSection } from '@/components/ui/InteractiveSection';
+import { Testimonials } from '@/components/Testimonials';
+import { TrustBadges } from '@/components/ui/TrustBadges';
+import { FAQ } from '@/components/FAQ';
 
 import { 
   ArrowRight, 
@@ -76,22 +79,22 @@ export default function Home() {
     {
       icon: Brain,
       title: t('home.features.ai.title'),
-      description: t('home.features.ai.description')
+      description: "Save 2+ hours daily on repetitive tasks with intelligent automation"
     },
     {
       icon: Lock,
       title: t('home.features.security.title'),
-      description: t('home.features.security.description')
+      description: "Reduce security risks by 95% with enterprise-grade encryption"
     },
     {
       icon: CheckCircle,
       title: t('home.features.compliance.title'),
-      description: t('home.features.compliance.description')
+      description: "Stay 100% compliant with automated regulatory updates"
     },
     {
       icon: Zap,
       title: t('home.features.speed.title'),
-      description: t('home.features.speed.description')
+      description: "3x your workflow efficiency with instant processing"
     }
   ];
 
@@ -107,11 +110,11 @@ export default function Home() {
         backgroundVariant="gradient"
       >
         <BackgroundAnimations variant="hero" />
-        <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
+        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-8">
           <Button 
             size="xl" 
-            variant="premium"
-            className="min-w-[280px] group"
+            variant="default"
+            className="min-w-[280px] group shadow-xl"
             asChild
           >
             <Link to="/services">
@@ -121,7 +124,7 @@ export default function Home() {
           </Button>
           
           <Button 
-            variant="glass" 
+            variant="outline" 
             size="xl" 
             className="min-w-[280px] group"
           >
@@ -129,13 +132,18 @@ export default function Home() {
             {t('hero.watchDemo')}
           </Button>
         </div>
+        
+        {/* Trust Badges */}
+        <div className="mt-8">
+          <TrustBadges size="sm" />
+        </div>
 
         {/* Stats Section inside Hero */}
         <ModernGrid cols={4} gap="lg" className="mt-16">
           {stats.map((stat, index) => (
             <ModernCard key={index} variant="glass" hover="lift" className="text-center p-8">
-              <stat.icon className="h-12 w-12 mx-auto mb-6 text-ak-blue group-hover:scale-125 transition-all duration-500" />
-              <div className="text-4xl md:text-5xl font-black mb-3 bg-gradient-primary bg-clip-text text-transparent">
+              <stat.icon className="h-12 w-12 mx-auto mb-6 text-[hsl(217,91%,60%)] group-hover:scale-125 transition-all duration-500" />
+              <div className="text-4xl md:text-5xl font-black mb-3 bg-gradient-to-r from-[hsl(217,91%,60%)] to-[hsl(224,76%,48%)] bg-clip-text text-transparent">
                 <AnimatedCounter 
                   end={stat.value} 
                   prefix={stat.prefix} 
@@ -143,7 +151,7 @@ export default function Home() {
                   decimals={stat.decimals}
                 />
               </div>
-              <div className="text-sm font-medium text-black">
+              <div className="text-sm font-medium text-[hsl(220,13%,23%)]">
                 {stat.label}
               </div>
             </ModernCard>
@@ -248,6 +256,12 @@ export default function Home() {
         </ModernContainer>
       </InteractiveSection>
 
+      {/* Testimonials Section */}
+      <Testimonials />
+
+      {/* FAQ Section */}
+      <FAQ />
+
       {/* CTA Section */}
       <InteractiveSection
         background="gradient"
@@ -265,19 +279,24 @@ export default function Home() {
           <p className="text-xl md:text-2xl text-black/80 mb-16 max-w-3xl mx-auto animate-slide-up leading-relaxed">
             {t('home.ctaDescription')}
           </p>
-          <div className="flex flex-col sm:flex-row gap-8 justify-center animate-scale-in">
-            <Button size="xl" variant="premium" asChild className="group bg-ak-blue hover:bg-ak-blue/90 text-white">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center animate-scale-in">
+            <Button size="xl" variant="default" asChild className="group shadow-2xl">
               <a href="https://keys-pay.com">
                 <Wallet className="mr-2 h-6 w-6" />
                 {t('home.launchWallet')}
               </a>
             </Button>
-            <Button size="xl" variant="glass" asChild className="group border-ak-blue text-ak-blue hover:bg-ak-blue/10">
+            <Button size="xl" variant="outline" asChild className="group">
               <Link to="/contact">
                 {t('home.contactSales')}
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
+          </div>
+          
+          {/* Trust Indicators */}
+          <div className="mt-12">
+            <TrustBadges />
           </div>
         </div>
       </InteractiveSection>
