@@ -37,6 +37,8 @@ import Cookies from "./pages/Legal/Cookies";
 import Compliance from "./pages/Legal/Compliance";
 import NotFound from "./pages/NotFound";
 import WaitlistConfirm from "./pages/WaitlistConfirm";
+import AdminLogin from "./pages/Admin/Login";
+import AdminDashboard from "./pages/Admin/Dashboard";
 
 const queryClient = new QueryClient();
 
@@ -95,6 +97,8 @@ const AppContent = () => {
           <Route path="/legal/cookies" element={<Cookies />} />
           <Route path="/legal/compliance" element={<Compliance />} />
           <Route path="/waitlist/confirm" element={<WaitlistConfirm />} />
+          <Route path="/admin/login" element={<AdminLogin />} />
+          <Route path="/admin/dashboard" element={<AdminDashboard />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
