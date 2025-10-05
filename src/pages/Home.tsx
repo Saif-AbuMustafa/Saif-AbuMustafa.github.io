@@ -10,6 +10,9 @@ import { InteractiveSection } from '@/components/ui/InteractiveSection';
 import { Testimonials } from '@/components/Testimonials';
 import { TrustBadges } from '@/components/ui/TrustBadges';
 import { FAQ } from '@/components/FAQ';
+import HeroSection from '@/components/sections/HeroSection';
+import TrustBar from '@/components/sections/TrustBar';
+import ClientLogos from '@/components/sections/ClientLogos';
 
 import { 
   ArrowRight, 
@@ -100,64 +103,14 @@ export default function Home() {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <ModernHero
-        title={t('hero.title')}
-        subtitle={t('hero.subtitle')}
-        description={t('hero.description')}
-        badge={t('hero.badge')}
-        background={premiumHeroBg}
-        backgroundVariant="gradient"
-      >
-        <BackgroundAnimations variant="hero" />
-        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-8">
-          <Button 
-            size="xl" 
-            variant="default"
-            className="min-w-[280px] group shadow-xl"
-            asChild
-          >
-            <Link to="/services">
-              {t('hero.cta')}
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </Button>
-          
-          <Button 
-            variant="outline" 
-            size="xl" 
-            className="min-w-[280px] group"
-          >
-            <Play className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
-            {t('hero.watchDemo')}
-          </Button>
-        </div>
-        
-        {/* Trust Badges */}
-        <div className="mt-8">
-          <TrustBadges size="sm" />
-        </div>
-
-        {/* Stats Section inside Hero */}
-        <ModernGrid cols={4} gap="lg" className="mt-16">
-          {stats.map((stat, index) => (
-            <ModernCard key={index} variant="glass" hover="lift" className="text-center p-8">
-              <stat.icon className="h-12 w-12 mx-auto mb-6 text-[hsl(217,91%,60%)] group-hover:scale-125 transition-all duration-500" />
-              <div className="text-4xl md:text-5xl font-black mb-3 bg-gradient-to-r from-[hsl(217,91%,60%)] to-[hsl(224,76%,48%)] bg-clip-text text-transparent">
-                <AnimatedCounter 
-                  end={stat.value} 
-                  prefix={stat.prefix} 
-                  suffix={stat.suffix}
-                  decimals={stat.decimals}
-                />
-              </div>
-              <div className="text-sm font-medium text-[hsl(220,13%,23%)]">
-                {stat.label}
-              </div>
-            </ModernCard>
-          ))}
-        </ModernGrid>
-      </ModernHero>
+      {/* New Fintech Hero Section */}
+      <HeroSection />
+      
+      {/* Trust Bar */}
+      <TrustBar />
+      
+      {/* Client Logos */}
+      <ClientLogos />
 
       {/* Services Preview */}
       <InteractiveSection
