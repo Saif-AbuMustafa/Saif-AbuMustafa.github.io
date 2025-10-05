@@ -64,22 +64,20 @@ export default function AdminDashboard() {
     try {
       console.log("Checking admin role for user:", user?.id);
       
-      const { data, error } = await supabase
-        .from("user_roles")
-        .select("role")
-        .eq("user_id", user?.id)
-        .eq("role", "admin")
-        .maybeSingle();
+      const { data, error } = await supabase.rpc('has_role', {
+        _user_id: user?.id,
+        _role: 'admin'
+      });
 
-      console.log("Admin role check result:", { data, error });
+      console.log('Admin role (rpc) check:', { data, error });
 
       if (error) {
-        console.error("Error in admin role query:", error);
+        console.error('Error in admin role rpc:', error);
         throw error;
       }
 
-      if (data) {
-        console.log("Admin access granted");
+      if (data === true) {
+        console.log('Admin access granted');
         setIsAdmin(true);
         fetchLeads();
       } else {
