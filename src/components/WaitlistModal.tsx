@@ -231,13 +231,16 @@ export const WaitlistModal = ({ open, onOpenChange }: WaitlistModalProps) => {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-lg max-h-[90vh] overflow-y-auto bg-ak-white border-ak-beige-300">
-        <DialogHeader>
-          <DialogTitle className="text-ak-text">{t('waitlist.title')}</DialogTitle>
+      <DialogContent className="sm:max-w-lg max-h-[90vh] overflow-y-auto bg-ak-white border-2 border-ak-beige-300 shadow-2xl">
+        <DialogHeader className="space-y-3 pb-6 border-b border-ak-beige-200">
+          <DialogTitle className="text-2xl font-bold text-ak-text">{t('waitlist.title')}</DialogTitle>
+          <p className="text-sm text-ak-muted">Join thousands waiting for the future of payments</p>
         </DialogHeader>
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div className="space-y-2">
-            <Label htmlFor="email">{t('waitlist.email')} *</Label>
+        <form onSubmit={handleSubmit} className="space-y-6 pt-6">
+          <div className="space-y-3">
+            <Label htmlFor="email" className="text-base font-semibold text-ak-text flex items-center gap-2">
+              {t('waitlist.email')} <span className="text-ak-blue">*</span>
+            </Label>
             <Input
               id="email"
               type="email"
@@ -245,16 +248,19 @@ export const WaitlistModal = ({ open, onOpenChange }: WaitlistModalProps) => {
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
               placeholder={t('waitlist.emailPlaceholder')}
+              className="h-12 border-2 border-ak-beige-300 focus:border-ak-blue bg-ak-white text-ak-text placeholder:text-ak-muted"
             />
           </div>
 
-          <div className="space-y-2">
-            <Label htmlFor="country">{t('waitlist.country')} *</Label>
+          <div className="space-y-3">
+            <Label htmlFor="country" className="text-base font-semibold text-ak-text flex items-center gap-2">
+              {t('waitlist.country')} <span className="text-ak-blue">*</span>
+            </Label>
             <Select required value={formData.country} onValueChange={(value) => setFormData({ ...formData, country: value })}>
-              <SelectTrigger>
+              <SelectTrigger className="h-12 border-2 border-ak-beige-300 focus:border-ak-blue bg-ak-white text-ak-text">
                 <SelectValue placeholder={t('waitlist.selectCountry')} />
               </SelectTrigger>
-              <SelectContent>
+              <SelectContent className="bg-ak-white border-2 border-ak-beige-300">
                 <SelectItem value="AE">United Arab Emirates</SelectItem>
                 <SelectItem value="SA">Saudi Arabia</SelectItem>
                 <SelectItem value="US">United States</SelectItem>
@@ -266,24 +272,29 @@ export const WaitlistModal = ({ open, onOpenChange }: WaitlistModalProps) => {
             </Select>
           </div>
 
-          <div className="space-y-2">
-            <Label htmlFor="city">{t('waitlist.city')}</Label>
+          <div className="space-y-3">
+            <Label htmlFor="city" className="text-base font-semibold text-ak-text">
+              {t('waitlist.city')}
+            </Label>
             <Input
               id="city"
               type="text"
               value={formData.city}
               onChange={(e) => setFormData({ ...formData, city: e.target.value })}
               placeholder={t('waitlist.cityPlaceholder')}
+              className="h-12 border-2 border-ak-beige-300 focus:border-ak-blue bg-ak-white text-ak-text placeholder:text-ak-muted"
             />
           </div>
 
-          <div className="space-y-2">
-            <Label htmlFor="heard_channel">{t('waitlist.heardChannel')} *</Label>
+          <div className="space-y-3">
+            <Label htmlFor="heard_channel" className="text-base font-semibold text-ak-text flex items-center gap-2">
+              {t('waitlist.heardChannel')} <span className="text-ak-blue">*</span>
+            </Label>
             <Select required value={formData.heard_channel} onValueChange={(value) => setFormData({ ...formData, heard_channel: value })}>
-              <SelectTrigger>
+              <SelectTrigger className="h-12 border-2 border-ak-beige-300 focus:border-ak-blue bg-ak-white text-ak-text">
                 <SelectValue placeholder={t('waitlist.selectChannel')} />
               </SelectTrigger>
-              <SelectContent>
+              <SelectContent className="bg-ak-white border-2 border-ak-beige-300">
                 <SelectItem value="twitter">X/Twitter</SelectItem>
                 <SelectItem value="instagram">Instagram</SelectItem>
                 <SelectItem value="linkedin">LinkedIn</SelectItem>
@@ -297,31 +308,39 @@ export const WaitlistModal = ({ open, onOpenChange }: WaitlistModalProps) => {
           </div>
 
           {formData.heard_channel && (
-            <div className="space-y-2">
-              <Label htmlFor="heard_detail">{t('waitlist.heardDetail')}</Label>
+            <div className="space-y-3 animate-fade-in">
+              <Label htmlFor="heard_detail" className="text-base font-semibold text-ak-text">
+                {t('waitlist.heardDetail')}
+              </Label>
               <Textarea
                 id="heard_detail"
                 value={formData.heard_detail}
                 onChange={(e) => setFormData({ ...formData, heard_detail: e.target.value })}
                 placeholder={t('waitlist.heardDetailPlaceholder')}
                 rows={3}
+                className="border-2 border-ak-beige-300 focus:border-ak-blue bg-ak-white text-ak-text placeholder:text-ak-muted resize-none"
               />
             </div>
           )}
 
-          <div className="flex items-start space-x-2">
+          <div className="flex items-start space-x-3 p-4 bg-ak-beige-50 rounded-lg border border-ak-beige-300">
             <Checkbox
               id="consent"
               checked={formData.consent}
               onCheckedChange={(checked) => setFormData({ ...formData, consent: checked as boolean })}
+              className="mt-1 border-2 border-ak-beige-400 data-[state=checked]:bg-ak-blue"
             />
-            <Label htmlFor="consent" className="text-sm leading-snug cursor-pointer">
-              {t('waitlist.consent')} <a href="/legal/privacy" target="_blank" className="text-blue-600 hover:underline">{t('waitlist.privacyPolicy')}</a>
+            <Label htmlFor="consent" className="text-sm leading-relaxed cursor-pointer text-ak-text font-medium">
+              {t('waitlist.consent')} <a href="/legal/privacy" target="_blank" className="text-ak-blue hover:underline font-semibold">{t('waitlist.privacyPolicy')}</a>
             </Label>
           </div>
 
-          <Button type="submit" className="w-full bg-ak-blue hover:bg-ak-blue/90 text-white" disabled={loading}>
-            {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+          <Button 
+            type="submit" 
+            className="w-full h-12 bg-ak-blue hover:bg-ak-blue/90 text-white text-base font-semibold shadow-lg hover:shadow-xl transition-all duration-200" 
+            disabled={loading}
+          >
+            {loading && <Loader2 className="mr-2 h-5 w-5 animate-spin" />}
             {t('waitlist.submit')}
           </Button>
         </form>
