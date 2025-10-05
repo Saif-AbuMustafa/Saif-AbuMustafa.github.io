@@ -165,7 +165,7 @@ serve(async (req: Request): Promise<Response> => {
     }
 
     // 3) Send confirmation email via Resend REST API
-    const confirmUrl = `https://aikeys.finance/waitlist/confirm?token=${token}`;
+    const confirmUrl = `https://aikeys.ai/waitlist/confirm?token=${token}`;
     const emailRes = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
@@ -173,7 +173,7 @@ serve(async (req: Request): Promise<Response> => {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        from: "AI KEYS <noreply@aikeys.finance>",
+        from: "AI KEYS <noreply@aikeys.ai>",
         to: [email],
         subject: "Confirm your AI KEYS early-access signup",
         html: `<p>Tap the button below to confirm your email and join the waitlist.</p><p><a href="${confirmUrl}">Confirm Email</a></p>`
