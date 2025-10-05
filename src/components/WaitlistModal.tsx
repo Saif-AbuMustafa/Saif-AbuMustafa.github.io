@@ -114,22 +114,26 @@ export const WaitlistModal = ({ open, onOpenChange }: WaitlistModalProps) => {
         referrer_url,
       };
 
-      const SUPABASE_URL = "https://iytinmioziskeqewnelm.supabase.co";
-      const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Iml5dGlubWlvemlza2VxZXduZWxtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQ0MTE5NjUsImV4cCI6MjA2OTk4Nzk2NX0.K_EzCsIZ_GaV9kSSXjFyNwkWOayYc3LZrQDktMvnKwA";
-
-      const res = await fetch(`${SUPABASE_URL}/functions/v1/waitlist`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'apikey': SUPABASE_ANON_KEY,
-          'authorization': `Bearer ${SUPABASE_ANON_KEY}`,
-        },
-        body: JSON.stringify(payload),
+      // Use supabase.functions.invoke instead of raw fetch
+      const { data, error: invokeError } = await supabase.functions.invoke('waitlist', {
+        body: payload,
       });
 
-      const respJson = await res.json().catch(() => ({}));
+      if (invokeError) {
+        // Handle invocation error
+        toast({
+          title: t('waitlist.error'),
+          description: invokeError.message || t('waitlist.errorDesc'),
+          variant: 'destructive',
+        });
+        setLoading(false);
+        return;
+      }
 
-      if (!res.ok) {
+      const respJson = data || {};
+
+      // Check for application errors in response
+      if (respJson.error) {
         const errorData = respJson;
         let errorMessage = 'Submission failed';
         let errorDetail = '';

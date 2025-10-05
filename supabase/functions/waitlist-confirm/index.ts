@@ -22,6 +22,15 @@ const handler = async (req: Request): Promise<Response> => {
       );
     }
 
+    // Validate token format (basic validation)
+    const trimmedToken = token.trim();
+    if (trimmedToken.length > 500 || trimmedToken.length < 10) {
+      return new Response(
+        JSON.stringify({ error: "Invalid token format" }),
+        { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
+    }
+
     console.log("Confirming waitlist entry with token");
 
     const supabase = createClient(
@@ -33,7 +42,7 @@ const handler = async (req: Request): Promise<Response> => {
     const { data: lead, error: fetchError } = await supabase
       .from("waitlist_leads")
       .select("id, email, status")
-      .eq("confirm_token", token)
+      .eq("confirm_token", trimmedToken)
       .maybeSingle();
 
     if (fetchError) {

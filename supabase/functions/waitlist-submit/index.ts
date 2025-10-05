@@ -15,12 +15,50 @@ serve(async (req) => {
   }
   
   try {
-    const {
+    let {
       email, country, city, heard_channel, heard_detail,
       locale, recaptchaToken, utm_source, utm_medium, utm_campaign, referrer_url
     } = await req.json();
 
     console.log("Waitlist submission received for:", email);
+
+    // Input validation with length limits
+    const validateInput = (val: any, maxLen: number, field: string, required = false): string | undefined => {
+      if (!val || String(val).trim() === '') {
+        if (required) throw new Error(`${field} is required`);
+        return undefined;
+      }
+      const trimmed = String(val).trim();
+      if (trimmed.length > maxLen) throw new Error(`${field} exceeds ${maxLen} characters`);
+      return trimmed;
+    };
+
+    try {
+      // Validate email
+      email = String(email || '').trim().toLowerCase();
+      if (email.length > 255) throw new Error('Email exceeds 255 characters');
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) throw new Error('Invalid email format');
+
+      // Validate required fields
+      country = validateInput(country, 100, 'Country', true);
+      heard_channel = validateInput(heard_channel, 50, 'Heard channel', true);
+      
+      // Validate optional fields
+      city = validateInput(city, 100, 'City', false);
+      heard_detail = validateInput(heard_detail, 1000, 'Heard detail', false);
+      locale = validateInput(locale, 10, 'Locale', false) || 'en';
+      utm_source = validateInput(utm_source, 255, 'UTM source', false);
+      utm_medium = validateInput(utm_medium, 255, 'UTM medium', false);
+      utm_campaign = validateInput(utm_campaign, 255, 'UTM campaign', false);
+      referrer_url = validateInput(referrer_url, 500, 'Referrer URL', false);
+    } catch (validationError: any) {
+      console.error('Validation error:', validationError.message);
+      return new Response(
+        JSON.stringify({ error: "invalid_input", detail: validationError.message }), 
+        { status: 400, headers }
+      );
+    }
 
     // 1) Verify reCAPTCHA on the server
     const recaptchaSecret = Deno.env.get("RECAPTCHA_SECRET_KEY");
