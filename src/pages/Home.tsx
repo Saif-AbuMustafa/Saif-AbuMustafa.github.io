@@ -1,17 +1,19 @@
-import { Hero } from '@/components/sections/Hero';
+import { HeroSection } from '@/components/sections/HeroSection';
+import { SecurityTrust } from '@/components/sections/SecurityTrust';
+import { GlobalPlatform } from '@/components/sections/GlobalPlatform';
 import { Solutions } from '@/components/sections/Solutions';
 import { HowItWorks } from '@/components/sections/HowItWorks';
-import { Security } from '@/components/sections/Security';
 import { ComplianceFAQ } from '@/components/sections/ComplianceFAQ';
 import { WaitlistCTA } from '@/components/sections/WaitlistCTA';
 
 export default function Home() {
   return (
     <div className="min-h-screen">
-      <Hero />
+      <HeroSection />
+      <SecurityTrust />
+      <GlobalPlatform />
       <Solutions />
       <HowItWorks />
-      <Security />
       <ComplianceFAQ />
       <WaitlistCTA />
     </div>

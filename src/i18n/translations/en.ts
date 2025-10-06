@@ -75,12 +75,16 @@ export const en = {
 
     // Home Page
     home: {
-      hero: {
-        headline: 'Money, made simple across the GCC',
-        subheadline: 'Send and spend across borders with virtual & physical cards and a trusted checkout experience.',
-        primaryCTA: 'Join the waitlist',
-        secondaryCTA: 'See our security practices'
-      },
+    hero: {
+      platformStatus: "Enterprise-ready AI platform",
+      headline: "Intelligent Payment Workflow Automation",
+      subheadline: "AI-powered keyboard shortcuts that streamline cross-border payments, virtual card management, and financial operations with enterprise-grade security.",
+      primaryCTA: "Join the Waitlist",
+      secondaryCTA: "View Security Features",
+      feature1: "Cross-border Payments",
+      feature2: "Virtual Card Management",
+      feature3: "Checkout Optimization",
+    },
       solutions: {
         title: 'Built for real-world payments',
         remittance: {
@@ -115,23 +119,49 @@ export const en = {
         }
       },
       security: {
-        title: 'Security by design',
-        subtitle: 'Our approach to keeping your money and data safe',
-        encryption: {
-          title: 'Encrypted in transit and at rest',
-          description: 'All data is protected using industry-standard encryption protocols.'
+        title: 'Enterprise-Grade Security Foundation',
+        subtitle: 'Built for financial workflows with security and compliance at the core',
+        feature1: {
+          title: 'Secure by Design',
+          description: 'Built with security-first architecture from the ground up'
         },
-        accessControl: {
-          title: 'Access controls & auditability',
-          description: 'Least-privilege access model with full audit trails for all operations.'
+        feature2: {
+          title: 'Encrypted End-to-End',
+          description: 'AES-256 encryption in transit and at rest for all data'
         },
-        kyc: {
-          title: 'KYC/AML workflows',
-          description: 'Identity verification and anti-money laundering practices aligned to GCC standards.'
+        feature3: {
+          title: 'GCC Compliance Alignment',
+          description: 'Platform architecture designed for GCC regulatory standards'
         },
-        review: {
-          title: 'Independent reviews',
-          description: 'Continuous improvement through regular security assessments and updates.'
+        feature4: {
+          title: 'Enterprise Infrastructure',
+          description: 'Multi-region deployment with robust failover capabilities'
+        },
+        complianceNote: 'Platform architecture designed to support financial institution requirements and regional compliance standards'
+      },
+      platform: {
+        title: 'Global-Ready Payment Platform',
+        subtitle: 'Designed for financial institutions operating in international markets',
+        feature1: {
+          title: 'Cross-Border Payments',
+          description: 'Streamline international payment workflows with AI-assisted processing'
+        },
+        feature2: {
+          title: 'Virtual Card Management',
+          description: 'Manage and automate virtual card operations across multiple providers'
+        },
+        feature3: {
+          title: 'Payment Checkout Optimization',
+          description: 'AI-powered checkout experiences with fraud detection patterns'
+        },
+        feature4: {
+          title: 'Financial Workflow Automation',
+          description: 'Automate repetitive financial operations with intelligent shortcuts'
+        },
+        partnership: {
+          title: 'Partner with Leading Institutions',
+          description: 'Our platform is designed to meet the rigorous requirements of financial institutions worldwide',
+          cta: 'Explore Partnership Opportunities'
         }
       },
       faq: {
