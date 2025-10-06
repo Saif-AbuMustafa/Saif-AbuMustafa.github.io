@@ -76,30 +76,68 @@ export const en = {
     // Home Page
     home: {
     hero: {
-      platformStatus: "Enterprise-ready AI platform",
-      headline: "Intelligent Payment Workflow Automation",
-      subheadline: "AI-powered keyboard shortcuts that streamline cross-border payments, virtual card management, and financial operations with enterprise-grade security.",
-      primaryCTA: "Join the Waitlist",
-      secondaryCTA: "View Security Features",
-      feature1: "Cross-border Payments",
-      feature2: "Virtual Card Management",
-      feature3: "Checkout Optimization",
-    },
-      solutions: {
-        title: 'Built for real-world payments',
-        remittance: {
-          title: 'Remittance',
-          description: 'Cross-border transfers with transparent fees and clear timelines.'
-        },
-        cards: {
-          title: 'Cards',
-          description: 'Virtual & physical cards for everyday spend and online checkout.'
-        },
-        checkout: {
-          title: 'Checkout',
-          description: 'Friction-light checkout that helps you convert more.'
-        }
+      badge: "UAE-Based Fintech Platform",
+      headline1: "GCC-First",
+      headline2: "Financial Ecosystem",
+      subheadline: "Cross-border remittance, multi-currency cards, and AI-powered financial apps designed for the Middle East and global markets.",
+      primaryCTA: "Explore Products",
+      secondaryCTA: "View Pricing",
+      feature1: "Cross-Border Remittance",
+      feature2: "Virtual & Physical Cards",
+      feature3: "Merchant Checkout",
+      card1: {
+        title: "Silver Card",
+        subtitle: "Essential tier"
       },
+      card2: {
+        title: "Global Remittance",
+        subtitle: "GCC to worldwide"
+      },
+      card3: {
+        title: "Checkout Solution",
+        subtitle: "For merchants"
+      },
+      card4: {
+        title: "AI Apps",
+        subtitle: "Wallet, Travel, more"
+      }
+    },
+    solutions: {
+      title: "AI-Powered Financial Solutions",
+      subtitle: "Specialized financial apps designed for different lifestyles and business needs",
+      wallet: {
+        name: "AI KEYS Wallet",
+        description: "Multi-currency digital wallet with instant transfers and smart budgeting",
+        feature1: "Multi-currency accounts",
+        feature2: "Instant transfers",
+        feature3: "Smart budgeting",
+        feature4: "Bill payments"
+      },
+      travel: {
+        name: "AI KEYS Travel",
+        description: "Travel-focused financial products with optimized exchange rates and travel insurance",
+        feature1: "Travel cards",
+        feature2: "Optimized exchange",
+        feature3: "Travel insurance",
+        feature4: "Global support"
+      },
+      student: {
+        name: "AI KEYS Student",
+        description: "Financial solutions for students with parental controls and educational discounts",
+        feature1: "Student cards",
+        feature2: "Parental controls",
+        feature3: "Educational discounts",
+        feature4: "Budget tracking"
+      },
+      logistics: {
+        name: "AI KEYS Logistics",
+        description: "Payment and financial management for logistics and supply chain businesses",
+        feature1: "Business accounts",
+        feature2: "Bulk payments",
+        feature3: "Supply chain finance",
+        feature4: "API integration"
+      }
+    },
       howItWorks: {
         title: 'How it works',
         step1: {
@@ -119,49 +157,66 @@ export const en = {
         }
       },
       security: {
-        title: 'Enterprise-Grade Security Foundation',
-        subtitle: 'Built for financial workflows with security and compliance at the core',
+        title: "Built on Trust & Security",
+        subtitle: "Our platform is designed with security as the foundation, ensuring your financial operations are protected with enterprise-grade measures while maintaining full regulatory compliance.",
         feature1: {
-          title: 'Secure by Design',
-          description: 'Built with security-first architecture from the ground up'
+          title: "Bank-Grade Security",
+          description: "Enterprise-level security protocols protecting all financial transactions and data"
         },
         feature2: {
-          title: 'Encrypted End-to-End',
-          description: 'AES-256 encryption in transit and at rest for all data'
+          title: "GCC Compliance Focus",
+          description: "Platform architecture designed to meet UAE and GCC financial regulations"
         },
         feature3: {
-          title: 'GCC Compliance Alignment',
-          description: 'Platform architecture designed for GCC regulatory standards'
+          title: "Data Encryption",
+          description: "Advanced encryption standards for data in transit and at rest"
         },
         feature4: {
-          title: 'Enterprise Infrastructure',
-          description: 'Multi-region deployment with robust failover capabilities'
+          title: "Regular Audits",
+          description: "Ongoing security assessments and compliance reviews"
         },
-        complianceNote: 'Platform architecture designed to support financial institution requirements and regional compliance standards'
+        cta: "Learn About Compliance",
+        visualization: {
+          title: "Security Architecture",
+          item1: "Transaction Security",
+          item2: "Data Protection",
+          item3: "Compliance Monitoring"
+        }
       },
-      platform: {
-        title: 'Global-Ready Payment Platform',
-        subtitle: 'Designed for financial institutions operating in international markets',
-        feature1: {
-          title: 'Cross-Border Payments',
-          description: 'Streamline international payment workflows with AI-assisted processing'
+      global: {
+        title: "GCC-First, Global Reach",
+        subtitle: "Starting from our UAE foundation, expanding to serve financial needs across continents",
+        region1: {
+          name: "GCC",
+          description: "United Arab Emirates, Saudi Arabia, Qatar, Kuwait, Bahrain, Oman",
+          status: "Live"
         },
-        feature2: {
-          title: 'Virtual Card Management',
-          description: 'Manage and automate virtual card operations across multiple providers'
+        region2: {
+          name: "MENA",
+          description: "Egypt, Jordan, Lebanon, Morocco, and surrounding regions",
+          status: "Expanding"
         },
-        feature3: {
-          title: 'Payment Checkout Optimization',
-          description: 'AI-powered checkout experiences with fraud detection patterns'
+        region3: {
+          name: "APAC",
+          description: "Singapore, Malaysia, Indonesia, and key Asian markets",
+          status: "Q4 2024"
         },
-        feature4: {
-          title: 'Financial Workflow Automation',
-          description: 'Automate repetitive financial operations with intelligent shortcuts'
+        region4: {
+          name: "Europe",
+          description: "United Kingdom, European Union markets",
+          status: "2025"
         },
-        partnership: {
-          title: 'Partner with Leading Institutions',
-          description: 'Our platform is designed to meet the rigorous requirements of financial institutions worldwide',
-          cta: 'Explore Partnership Opportunities'
+        remittance: {
+          title: "Cross-Border Remittance",
+          description: "Send money from GCC countries to over 50 destinations worldwide with competitive exchange rates and fast processing times.",
+          cta: "Explore Remittance",
+          stat1: "Destinations",
+          stat2: "Processing",
+          stat2value: "Fast",
+          stat3: "Rates",
+          stat3value: "Competitive",
+          stat4: "Transfers",
+          stat4value: "Secure"
         }
       },
       faq: {
