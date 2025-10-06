@@ -75,61 +75,154 @@ export const en = {
 
     // Home Page
     home: {
-      servicesBadge: 'Our Ecosystem',
-      servicesTitleTop: 'Comprehensive',
-      servicesTitleBottom: 'Financial Solutions',
-      servicesDescription: 'Four interconnected platforms powered by AI to revolutionize how you manage finance, travel, logistics, and education',
-      viewAllServices: 'View All Services',
-      whyTitleTop: 'Why Choose',
-      whyTitleBrand: 'AI KEYS',
-      whyDescription: 'Built on cutting-edge technology with enterprise-grade security and regulatory compliance',
-      ctaTitleTop: 'Ready to Transform Your',
-      ctaTitleBottom: 'Financial Future?',
-      ctaDescription: 'Join thousands of users who trust AI KEYS for their financial, travel, logistics, and educational needs.',
-      launchWallet: 'Launch Wallet',
-      contactSales: 'Contact Sales',
+      hero: {
+        headline: 'Money, made simple across the GCC',
+        subheadline: 'Send and spend across borders with virtual & physical cards and a trusted checkout experience.',
+        primaryCTA: 'Join the waitlist',
+        secondaryCTA: 'See our security practices'
+      },
+      solutions: {
+        title: 'Built for real-world payments',
+        remittance: {
+          title: 'Remittance',
+          description: 'Cross-border transfers with transparent fees and clear timelines.'
+        },
+        cards: {
+          title: 'Cards',
+          description: 'Virtual & physical cards for everyday spend and online checkout.'
+        },
+        checkout: {
+          title: 'Checkout',
+          description: 'Friction-light checkout that helps you convert more.'
+        }
+      },
+      howItWorks: {
+        title: 'How it works',
+        step1: {
+          number: '1',
+          title: 'Sign up',
+          description: 'Join the waitlist and complete identity verification when we launch.'
+        },
+        step2: {
+          number: '2',
+          title: 'Get your card',
+          description: 'Receive your virtual card instantly, physical card arrives by mail.'
+        },
+        step3: {
+          number: '3',
+          title: 'Start spending',
+          description: 'Send money, spend online, and manage everything from one place.'
+        }
+      },
+      security: {
+        title: 'Security by design',
+        subtitle: 'Our approach to keeping your money and data safe',
+        encryption: {
+          title: 'Encrypted in transit and at rest',
+          description: 'All data is protected using industry-standard encryption protocols.'
+        },
+        accessControl: {
+          title: 'Access controls & auditability',
+          description: 'Least-privilege access model with full audit trails for all operations.'
+        },
+        kyc: {
+          title: 'KYC/AML workflows',
+          description: 'Identity verification and anti-money laundering practices aligned to GCC standards.'
+        },
+        review: {
+          title: 'Independent reviews',
+          description: 'Continuous improvement through regular security assessments and updates.'
+        }
+      },
+      faq: {
+        title: 'Frequently asked questions',
+        items: {
+          0: {
+            question: 'Where is AI KEYS launching first?',
+            answer: 'We are launching in GCC countries first, with staged expansion to other MENA regions planned for later phases.'
+          },
+          1: {
+            question: 'Will I get a physical card?',
+            answer: 'We will support virtual cards at launch, with physical cards to follow based on demand and regulatory readiness.'
+          },
+          2: {
+            question: 'How do fees work?',
+            answer: 'We will publish transparent fee tables before public launch. Our goal is to keep costs clear and competitive.'
+          },
+          3: {
+            question: 'How do you keep my data safe?',
+            answer: 'We use encryption, access controls, and ongoing security reviews to protect your information. All systems are designed with security as a core principle.'
+          },
+          4: {
+            question: 'What currencies will you support?',
+            answer: 'Initial support will focus on GCC currencies and major international currencies. Additional currencies will be added based on user demand.'
+          },
+          5: {
+            question: 'Is AI KEYS licensed?',
+            answer: 'We are working with regulatory partners to ensure full compliance in all operating jurisdictions before launch.'
+          },
+          6: {
+            question: 'When will the service be available?',
+            answer: 'We are targeting a staged rollout in 2025. Join the waitlist to be notified when we launch in your region.'
+          }
+        }
+      },
+      waitlistCTA: {
+        title: 'Be among the first to experience AI KEYS',
+        subtitle: 'Join the waitlist and get early access when we launch in your region.',
+        button: 'Join the waitlist'
+      },
       stats: {
         users: 'Active Users',
         transactions: 'Transactions',
         countries: 'Countries',
         uptime: 'Uptime'
       },
+      servicesBadge: 'Comprehensive Platform',
+      servicesTitleTop: 'Everything You Need',
+      servicesTitleBottom: 'In One Place',
+      servicesDescription: 'Four integrated solutions working together seamlessly for your financial, travel, logistics, and education needs',
       services: {
         wallet: {
-          title: 'Keys Custodian Wallet',
-          description: 'Secure crypto and fiat storage with AI-powered automation'
+          title: 'AI Wallet',
+          description: 'Smart financial management with AI-powered insights and instant global transactions'
         },
         travel: {
-          title: 'Keys Travel Planner',
-          description: 'AI-based travel planning with integrated payments'
+          title: 'AI Travel',
+          description: 'Seamless booking and management of flights, hotels, and experiences with AI recommendations'
         },
         logistics: {
-          title: 'Keys Logistics',
-          description: 'Smart logistics solutions with automated payments'
+          title: 'AI Logistics',
+          description: 'Efficient shipping and tracking solutions powered by intelligent route optimization'
         },
         education: {
-          title: 'Keys Student Services',
-          description: 'AI learning assistance and educational support'
+          title: 'AI Education',
+          description: 'Personalized learning experiences and institutional payment solutions'
         }
       },
+      viewAllServices: 'Explore All Services',
+      whyTitleTop: 'Why Choose',
+      whyTitleBrand: 'AI KEYS?',
+      whyDescription: 'Experience the future of integrated financial and service solutions with cutting-edge AI technology',
       features: {
         ai: {
-          title: 'AI-Powered Automation',
-          description: 'Advanced machine learning algorithms automate your financial tasks'
+          title: 'AI-Powered Intelligence'
         },
         security: {
-          title: 'Enterprise Security',
-          description: 'Bank-grade security with multi-layer protection protocols'
+          title: 'Enterprise Security'
         },
         compliance: {
-          title: 'DIFC',
-          description: 'Aligned with DIFCs innovation and financial regulations'
+          title: 'Full Compliance'
         },
         speed: {
-          title: 'Lightning Fast',
-          description: 'Built on Solana blockchain for instant transactions'
+          title: 'Lightning Fast'
         }
-      }
+      },
+      ctaTitleTop: 'Ready to Transform',
+      ctaTitleBottom: 'Your Financial Experience?',
+      ctaDescription: 'Join thousands of users already experiencing the future of payments',
+      launchWallet: 'Launch AI Wallet',
+      contactSales: 'Contact Sales'
     },
     
     // Services
