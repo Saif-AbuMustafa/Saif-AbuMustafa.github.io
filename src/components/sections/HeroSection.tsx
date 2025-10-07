@@ -17,103 +17,103 @@ export const HeroSection = () => {
           {/* Content Column */}
           <div className="text-center lg:text-left">
             {/* GCC Focus Badge */}
-            <div className="inline-flex items-center gap-2 bg-white rounded-full px-4 py-2 shadow-soft border border-gray-200 mb-8">
-              <div className="w-2 h-2 bg-success-500 rounded-full" />
+            <div className="inline-flex items-center gap-2 bg-white rounded-full px-4 py-2 shadow-soft border border-gray-200 mb-8 animate-fade-in">
+              <div className="w-2 h-2 bg-success-500 rounded-full animate-pulse" />
               <span className="text-sm font-medium text-gray-700">
-                {t('home.hero.badge')}
+                UAE-Based Fintech Platform
               </span>
             </div>
 
             {/* Real Product Headline */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-navy leading-tight mb-6">
-              {t('home.hero.headline1')}
-              <span className="text-primary-blue block">{t('home.hero.headline2')}</span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-navy leading-tight mb-6 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+              Money, made simple
+              <span className="text-primary-blue block">across the GCC</span>
             </h1>
 
             {/* Real Value Proposition */}
-            <p className="text-xl text-gray-600 mb-8 leading-relaxed max-w-2xl">
-              {t('home.hero.subheadline')}
+            <p className="text-xl text-gray-600 mb-8 leading-relaxed max-w-2xl animate-fade-in" style={{ animationDelay: '0.4s' }}>
+              Send and spend across borders with virtual & physical cards and a trusted checkout experience.
             </p>
 
-            {/* Product Feature Highlights */}
-            <div className="flex flex-wrap gap-4 mb-8 justify-center lg:justify-start">
-              <div className="bg-white rounded-lg px-4 py-2 shadow-soft border border-gray-200 text-sm font-medium text-gray-700">
-                {t('home.hero.feature1')}
-              </div>
-              <div className="bg-white rounded-lg px-4 py-2 shadow-soft border border-gray-200 text-sm font-medium text-gray-700">
-                {t('home.hero.feature2')}
-              </div>
-              <div className="bg-white rounded-lg px-4 py-2 shadow-soft border border-gray-200 text-sm font-medium text-gray-700">
-                {t('home.hero.feature3')}
-              </div>
-            </div>
-
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button size="lg" className="text-lg px-8 py-4" asChild>
-                <Link to="/services">
-                  {t('home.hero.primaryCTA')}
-                  <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8 animate-fade-in" style={{ animationDelay: '0.6s' }}>
+              <Button size="lg" className="text-lg px-8 py-4 group hover-lift" asChild>
+                <a href="#waitlist">
+                  Join the waitlist
+                  <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
-                </Link>
+                </a>
               </Button>
-              <Button variant="secondary" size="lg" className="text-lg px-8 py-4" asChild>
-                <Link to="/contact">
-                  {t('home.hero.secondaryCTA')}
-                </Link>
+              <Button variant="secondary" size="lg" className="text-lg px-8 py-4 hover-lift" asChild>
+                <a href="#security">
+                  See our security practices
+                </a>
               </Button>
+            </div>
+
+            {/* Product Feature Highlights */}
+            <div className="flex flex-wrap gap-4 mb-0 justify-center lg:justify-start animate-fade-in" style={{ animationDelay: '0.8s' }}>
+              <div className="bg-white rounded-lg px-4 py-2 shadow-soft border border-gray-200 text-sm font-medium text-gray-700 hover-lift">
+                Cross-border transfers
+              </div>
+              <div className="bg-white rounded-lg px-4 py-2 shadow-soft border border-gray-200 text-sm font-medium text-gray-700 hover-lift">
+                Virtual & physical cards
+              </div>
+              <div className="bg-white rounded-lg px-4 py-2 shadow-soft border border-gray-200 text-sm font-medium text-gray-700 hover-lift">
+                Merchant payments
+              </div>
             </div>
           </div>
 
           {/* Product Visualization */}
-          <div className="relative">
+          <div className="relative animate-fade-in" style={{ animationDelay: '1s' }}>
             <div className="grid grid-cols-2 gap-4">
               {/* Card Tier Visualization */}
-              <div className="bg-white rounded-2xl p-6 shadow-large border-0 transform hover:scale-105 transition-all duration-300">
+              <div className="bg-white rounded-2xl p-6 shadow-large border-0 hover-lift animate-fade-in" style={{ animationDelay: '1.1s' }}>
                 <div className="text-center">
                   <div className="w-12 h-8 bg-gradient-to-r from-gray-400 to-gray-600 rounded-md mx-auto mb-3"></div>
-                  <div className="font-semibold text-gray-900">{t('home.hero.card1.title')}</div>
-                  <div className="text-sm text-gray-600">{t('home.hero.card1.subtitle')}</div>
+                  <div className="font-semibold text-gray-900">Card Tiers</div>
+                  <div className="text-sm text-gray-600">Essential to Premium</div>
                 </div>
               </div>
               
               {/* Remittance Visualization */}
-              <div className="bg-white rounded-2xl p-6 shadow-large border-0 transform hover:scale-105 transition-all duration-300">
+              <div className="bg-white rounded-2xl p-6 shadow-large border-0 hover-lift animate-fade-in" style={{ animationDelay: '1.2s' }}>
                 <div className="text-center">
                   <div className="w-12 h-12 bg-gradient-to-r from-primary-blue to-primary-teal rounded-full mx-auto mb-3 flex items-center justify-center">
                     <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
                     </svg>
                   </div>
-                  <div className="font-semibold text-gray-900">{t('home.hero.card2.title')}</div>
-                  <div className="text-sm text-gray-600">{t('home.hero.card2.subtitle')}</div>
+                  <div className="font-semibold text-gray-900">Remittance</div>
+                  <div className="text-sm text-gray-600">Global transfers</div>
                 </div>
               </div>
 
               {/* Checkout Visualization */}
-              <div className="bg-white rounded-2xl p-6 shadow-large border-0 transform hover:scale-105 transition-all duration-300">
+              <div className="bg-white rounded-2xl p-6 shadow-large border-0 hover-lift animate-fade-in" style={{ animationDelay: '1.3s' }}>
                 <div className="text-center">
                   <div className="w-12 h-12 bg-gradient-to-r from-warning-500 to-warning-600 rounded-full mx-auto mb-3 flex items-center justify-center">
                     <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                     </svg>
                   </div>
-                  <div className="font-semibold text-gray-900">{t('home.hero.card3.title')}</div>
-                  <div className="text-sm text-gray-600">{t('home.hero.card3.subtitle')}</div>
+                  <div className="font-semibold text-gray-900">Checkout</div>
+                  <div className="text-sm text-gray-600">For merchants</div>
                 </div>
               </div>
 
               {/* AI Apps Visualization */}
-              <div className="bg-white rounded-2xl p-6 shadow-large border-0 transform hover:scale-105 transition-all duration-300">
+              <div className="bg-white rounded-2xl p-6 shadow-large border-0 hover-lift animate-fade-in" style={{ animationDelay: '1.4s' }}>
                 <div className="text-center">
                   <div className="w-12 h-12 bg-gradient-to-r from-success-500 to-success-600 rounded-full mx-auto mb-3 flex items-center justify-center">
                     <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
                   </div>
-                  <div className="font-semibold text-gray-900">{t('home.hero.card4.title')}</div>
-                  <div className="text-sm text-gray-600">{t('home.hero.card4.subtitle')}</div>
+                  <div className="font-semibold text-gray-900">AI Apps</div>
+                  <div className="text-sm text-gray-600">Wallet, Travel, more</div>
                 </div>
               </div>
             </div>
