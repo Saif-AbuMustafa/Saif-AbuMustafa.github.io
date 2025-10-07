@@ -5,10 +5,12 @@ import { HowItWorks } from '@/components/sections/HowItWorks';
 import { Security } from '@/components/sections/Security';
 import { FAQ } from '@/components/FAQ';
 import { WaitlistCTA } from '@/components/sections/WaitlistCTA';
+import { Footer } from '@/components/Footer';
+import { Navigation } from '@/components/layout/Navigation';
 
 export default function Home() {
   useEffect(() => {
-    // Scroll animation trigger
+    // Initialize IntersectionObserver for fade-up animations
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -17,10 +19,11 @@ export default function Home() {
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
     );
 
-    document.querySelectorAll('.fade-in-up').forEach((el) => {
+    // Observe all fade-up elements
+    document.querySelectorAll('.fade-up').forEach((el) => {
       observer.observe(el);
     });
 
@@ -28,13 +31,15 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
+      <Navigation />
       <HeroSection />
       <Solutions />
       <HowItWorks />
       <Security />
       <FAQ />
       <WaitlistCTA />
+      <Footer />
     </div>
   );
 }

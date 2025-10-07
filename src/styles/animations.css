@@ -1,0 +1,49 @@
+/* Minimal, elegant animations for premium fintech feel */
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation classes */
+.floating {
+  animation: float 3s ease-in-out infinite;
+}
+
+.fade-up {
+  opacity: 0;
+  animation: fadeUp 0.35s ease-out both;
+}
+
+.fade-up.visible {
+  opacity: 1;
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .floating,
+  .fade-up {
+    animation: none !important;
+  }
+  
+  .fade-up {
+    opacity: 1 !important;
+  }
+  
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

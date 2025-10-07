@@ -10,33 +10,33 @@ interface FAQItem {
 
 const faqs: FAQItem[] = [
   {
-    question: "How secure is AI KEYS?",
-    answer: "AI KEYS uses enterprise-grade encryption with AES-256 and SSL/TLS protocols. We're GDPR compliant, SOC 2 certified, and maintain 99.9% uptime with regular security audits. Your data is encrypted both in transit and at rest.",
+    question: "Where is AI KEYS launching first?",
+    answer: "AI KEYS is launching in the GCC region, starting with the UAE. We're building a financial platform specifically designed for the Middle East market with plans to expand across MENA and globally.",
     icon: Shield
   },
   {
-    question: "What integrations does AI KEYS support?",
-    answer: "AI KEYS integrates seamlessly with major financial platforms, travel booking systems, logistics providers, and educational platforms. Our REST API allows for custom integrations with your existing tools and workflows.",
-    icon: Zap
-  },
-  {
-    question: "How long does setup take?",
-    answer: "Most users are up and running in under 15 minutes. Our intuitive onboarding process requires no technical expertise. For enterprise deployments, our team provides white-glove setup and training.",
+    question: "When will physical cards be available?",
+    answer: "Virtual cards are available now. Physical cards will launch in phased rollout beginning Q3 2025, starting with select regions in the GCC.",
     icon: Clock
   },
   {
-    question: "What's included in the free trial?",
-    answer: "Our 14-day free trial includes full access to all features with no credit card required. You'll get unlimited transactions, all integrations, priority support, and access to our learning resources.",
+    question: "How are fees structured?",
+    answer: "We believe in transparency. Detailed fee schedules will be published before service launch. Our goal is competitive, clear pricing with no hidden charges.",
     icon: Lock
   },
   {
-    question: "Can I export my data?",
-    answer: "Absolutely. You have complete control over your data. Export at any time in multiple formats (CSV, JSON, PDF). We believe your data belongs to you and make it easy to transfer or backup.",
+    question: "How is my data protected?",
+    answer: "We use enterprise-grade encryption for all data in transit and at rest. Our platform follows strict security protocols with regular audits and compliance with regional regulations.",
     icon: Shield
   },
   {
-    question: "What kind of support do you offer?",
-    answer: "All plans include email support with 24-hour response time. Premium plans get priority support with 2-hour response time, live chat, and dedicated account management. Enterprise clients receive 24/7 phone support.",
+    question: "What currencies are supported?",
+    answer: "We support major GCC currencies (AED, SAR, QAR, KWD, BHD, OMR) and major international currencies including USD, EUR, and GBP for cross-border transfers.",
+    icon: Zap
+  },
+  {
+    question: "How do I get early access?",
+    answer: "Join our waitlist to get priority access when we launch. Waitlist members will receive exclusive benefits and early access to new features.",
     icon: Zap
   }
 ];
