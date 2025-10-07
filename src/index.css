@@ -44,6 +44,29 @@ All colors MUST be HSL.
   transform: translateY(0);
 }
 
+/* Premium typography utilities */
+@layer base {
+  body {
+    font-size: 1rem; /* 16px mobile */
+    line-height: 1.5;
+  }
+  
+  @media (min-width: 768px) {
+    body {
+      font-size: 1.0625rem; /* 17px desktop */
+    }
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    letter-spacing: -0.02em; /* Tighter tracking for headings */
+    line-height: var(--leading-heading);
+  }
+  
+  h1 {
+    line-height: var(--leading-tight);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .floating,
   .animate-float-slow,
@@ -85,10 +108,11 @@ All colors MUST be HSL.
     --font-sans: 'Inter', system-ui, sans-serif;
     --font-arabic: 'Almarai', 'Tahoma', sans-serif;
     
-    /* Typography Scale */
+    /* Typography Scale - Premium Fintech */
     --text-xs: 0.75rem;    /* 12px */
     --text-sm: 0.875rem;   /* 14px */
-    --text-base: 1rem;     /* 16px */
+    --text-base: 1rem;     /* 16px mobile */
+    --text-base-desktop: 1.0625rem; /* 17px desktop */
     --text-lg: 1.125rem;   /* 18px */
     --text-xl: 1.25rem;    /* 20px */
     --text-2xl: 1.5rem;    /* 24px */
@@ -97,8 +121,13 @@ All colors MUST be HSL.
     --text-5xl: 3rem;      /* 48px */
     --text-6xl: 3.75rem;   /* 60px */
     
-    /* Line Heights */
-    --leading-tight: 1.25;
+    /* Premium Section Spacing */
+    --section-padding-mobile: 4rem;    /* 64px py-16 */
+    --section-padding-desktop: 6rem;   /* 96px py-24 */
+    
+    /* Line Heights - Premium Fintech */
+    --leading-tight: 1.15;    /* For large headings */
+    --leading-heading: 1.2;   /* For medium headings */
     --leading-snug: 1.375;
     --leading-normal: 1.5;
     --leading-relaxed: 1.625;

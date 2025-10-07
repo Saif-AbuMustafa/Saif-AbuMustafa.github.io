@@ -10,23 +10,22 @@ export const WaitlistCTA = () => {
 
   return (
     <>
-      <section id="waitlist" className="py-20 lg:py-32 bg-gradient-to-br from-primary-navy to-primary-800 text-white scroll-mt-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+      <section id="waitlist" className="py-16 md:py-24 bg-gradient-to-r from-ak-blue via-ak-blue-dark to-ak-blue text-white scroll-mt-20">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="text-center">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
               {t('home.waitlistCTA.title')}
             </h2>
-            <p className="text-xl text-primary-100 mb-8 leading-relaxed max-w-2xl mx-auto">
+            <p className="text-xl md:text-2xl text-white/90 mb-10 leading-relaxed max-w-2xl mx-auto">
               {t('home.waitlistCTA.subtitle')}
             </p>
             <Button 
               size="lg" 
-              variant="secondary"
-              className="text-lg px-8"
+              className="bg-white text-ak-blue hover:bg-gray-100 text-lg px-10 py-6 shadow-xl hover:shadow-2xl transition-all duration-300"
               onClick={() => setIsWaitlistOpen(true)}
             >
               {t('home.waitlistCTA.button')}
-              <ArrowRight className="ml-2 h-5 w-5" />
+              <ArrowRight className="ml-2 h-6 w-6" />
             </Button>
           </div>
         </div>

@@ -2,53 +2,49 @@ export const Solutions = () => {
   const solutions = [
     {
       name: "Remittance",
-      description: "Fast, secure cross-border money transfers with competitive rates",
+      description: "Cross-border transfers with transparent fees and clear timelines",
       icon: "💸",
-      color: "from-blue-500 to-blue-600"
     },
     {
       name: "Cards",
-      description: "Virtual and physical cards for seamless global spending",
+      description: "Virtual & physical cards for everyday spend and online checkout",
       icon: "💳",
-      color: "from-purple-500 to-purple-600"
     },
     {
       name: "Checkout",
-      description: "Integrated payment solutions for merchants and businesses",
+      description: "Friction-light checkout that helps you convert more",
       icon: "🛒",
-      color: "from-green-500 to-green-600"
     }
   ];
 
   return (
-    <section className="py-20 bg-white">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16 fade-in-up">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary-navy mb-4">
+    <section className="py-16 md:py-24 bg-gray-50">
+      <div className="container mx-auto px-4 max-w-7xl">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             Built for real-world payments
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            مصمّم لمدفوعات العالم الحقيقي
+          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+            Three core products designed for the way money moves today
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
           {solutions.map((solution, index) => (
             <div 
               key={solution.name}
-              className="group cursor-pointer fade-in-up"
-              style={{ animationDelay: `${index * 100}ms` }}
+              className="group cursor-pointer transition-all duration-300"
             >
-              <div className="bg-white rounded-2xl p-8 shadow-soft border border-gray-200 hover:shadow-large hover:border-gray-300 hover-lift h-full">
-                <div className="text-4xl mb-6 group-hover:scale-110 transition-transform">
+              <div className="bg-white rounded-2xl p-8 lg:p-10 hover:shadow-xl border border-gray-200 hover:border-gray-300 transition-all duration-300 h-full transform hover:-translate-y-1">
+                <div className="text-5xl mb-6 group-hover:scale-110 transition-transform">
                   {solution.icon}
                 </div>
                 
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">
                   {solution.name}
                 </h3>
                 
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-gray-600 leading-relaxed text-lg">
                   {solution.description}
                 </p>
               </div>

@@ -107,29 +107,25 @@ export const Navigation = () => {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         isScrolled 
-          ? 'bg-ak-white/95 backdrop-blur-xl shadow-xl border-b border-ak-beige-300/50' 
-          : 'bg-ak-white/90 backdrop-blur-md shadow-lg border-b border-ak-beige-300/30'
+          ? 'bg-white/95 backdrop-blur-xl shadow-sm border-b border-gray-200' 
+          : 'bg-white/90 backdrop-blur-md border-b border-gray-100'
       )}
     >
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+      <div className="container mx-auto px-4 max-w-7xl">
+        <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3 group">
             <div className="relative">
               <img 
                 src={logo} 
                 alt="AI KEYS Company Logo - Navigate to homepage" 
-                className="h-12 w-12 transition-transform group-hover:scale-110"
+                className="h-10 w-10 transition-transform group-hover:scale-105"
                 loading="eager"
               />
-              <div className="absolute inset-0 bg-ak-blue/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
             </div>
             <div className="flex flex-col">
-              <span className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
+              <span className="text-xl font-bold text-gray-900">
                 AI KEYS
-              </span>
-              <span className="text-xs text-black hidden sm:block">
-                {t('hero.subtitle')}
               </span>
             </div>
           </Link>

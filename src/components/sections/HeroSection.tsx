@@ -6,117 +6,96 @@ export const HeroSection = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="relative min-h-[80vh] flex items-center bg-gradient-to-br from-gray-50 via-white to-primary-50 overflow-hidden">
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:60px_60px]" />
-      <div className="absolute top-1/4 -left-10 w-80 h-80 bg-primary-100 rounded-full blur-3xl opacity-20 animate-float-slow" />
-      <div className="absolute bottom-1/4 -right-10 w-96 h-96 bg-primary-50 rounded-full blur-3xl opacity-30 animate-float-slower" />
+    <section className="relative min-h-[90vh] flex items-center bg-white overflow-hidden">
+      {/* Subtle Background Elements */}
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-50/50 via-white to-ak-beige-50/30" />
+      <div className="absolute top-1/4 -left-20 w-96 h-96 bg-ak-blue/5 rounded-full blur-3xl animate-float-slower" />
+      <div className="absolute bottom-1/4 -right-20 w-[30rem] h-[30rem] bg-ak-beige-100/40 rounded-full blur-3xl animate-float-slow" />
       
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Content Column */}
-          <div className="text-center lg:text-left">
+      <div className="container mx-auto px-4 relative z-10 max-w-7xl">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center py-16 md:py-24">
+          {/* Content Column - Generous white space */}
+          <div className="text-left max-w-xl">
             {/* GCC Focus Badge */}
-            <div className="inline-flex items-center gap-2 bg-white rounded-full px-4 py-2 shadow-soft border border-gray-200 mb-8 animate-fade-in">
-              <div className="w-2 h-2 bg-success-500 rounded-full animate-pulse" />
+            <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm rounded-full px-4 py-2 shadow-sm border border-gray-200 mb-8">
+              <div className="w-2 h-2 bg-success-500 rounded-full" />
               <span className="text-sm font-medium text-gray-700">
                 UAE-Based Fintech Platform
               </span>
             </div>
 
-            {/* Real Product Headline */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-navy leading-tight mb-6 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+            {/* Headline - Premium fintech style */}
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6" style={{ lineHeight: '1.15', letterSpacing: '-0.02em' }}>
               Money, made simple
-              <span className="text-primary-blue block">across the GCC</span>
+              <span className="text-ak-blue block">across the GCC</span>
             </h1>
 
-            {/* Real Value Proposition */}
-            <p className="text-xl text-gray-600 mb-8 leading-relaxed max-w-2xl animate-fade-in" style={{ animationDelay: '0.4s' }}>
+            {/* Value Proposition - Clean and concise */}
+            <p className="text-lg md:text-xl text-gray-600 mb-10 leading-relaxed">
               Send and spend across borders with virtual & physical cards and a trusted checkout experience.
             </p>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8 animate-fade-in" style={{ animationDelay: '0.6s' }}>
-              <Button size="lg" className="text-lg px-8 py-4 group hover-lift" asChild>
-                <a href="#waitlist">
+            {/* CTA Buttons - Prominent */}
+            <div className="flex flex-col sm:flex-row gap-4 mb-12">
+              <Button size="lg" className="text-base px-8 py-6 bg-ak-blue hover:bg-ak-blue-dark transition-all duration-200 shadow-lg hover:shadow-xl" asChild>
+                <a href="#waitlist" className="group">
                   Join the waitlist
                   <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
                 </a>
               </Button>
-              <Button variant="secondary" size="lg" className="text-lg px-8 py-4 hover-lift" asChild>
+              <Button variant="outline" size="lg" className="text-base px-8 py-6 border-2 hover:bg-gray-50 transition-all duration-200" asChild>
                 <a href="#security">
-                  See our security practices
+                  See security practices
                 </a>
               </Button>
             </div>
 
-            {/* Product Feature Highlights */}
-            <div className="flex flex-wrap gap-4 mb-0 justify-center lg:justify-start animate-fade-in" style={{ animationDelay: '0.8s' }}>
-              <div className="bg-white rounded-lg px-4 py-2 shadow-soft border border-gray-200 text-sm font-medium text-gray-700 hover-lift">
+            {/* Feature Pills - Minimal */}
+            <div className="flex flex-wrap gap-3">
+              <span className="text-sm text-gray-600 px-4 py-2 bg-gray-50 rounded-full border border-gray-200">
                 Cross-border transfers
-              </div>
-              <div className="bg-white rounded-lg px-4 py-2 shadow-soft border border-gray-200 text-sm font-medium text-gray-700 hover-lift">
+              </span>
+              <span className="text-sm text-gray-600 px-4 py-2 bg-gray-50 rounded-full border border-gray-200">
                 Virtual & physical cards
-              </div>
-              <div className="bg-white rounded-lg px-4 py-2 shadow-soft border border-gray-200 text-sm font-medium text-gray-700 hover-lift">
+              </span>
+              <span className="text-sm text-gray-600 px-4 py-2 bg-gray-50 rounded-full border border-gray-200">
                 Merchant payments
-              </div>
+              </span>
             </div>
           </div>
 
-          {/* Product Visualization */}
-          <div className="relative animate-fade-in" style={{ animationDelay: '1s' }}>
-            <div className="grid grid-cols-2 gap-4">
-              {/* Card Tier Visualization */}
-              <div className="bg-white rounded-2xl p-6 shadow-large border-0 hover-lift animate-fade-in" style={{ animationDelay: '1.1s' }}>
-                <div className="text-center">
-                  <div className="w-12 h-8 bg-gradient-to-r from-gray-400 to-gray-600 rounded-md mx-auto mb-3"></div>
-                  <div className="font-semibold text-gray-900">Card Tiers</div>
-                  <div className="text-sm text-gray-600">Essential to Premium</div>
+          {/* Device Mockup - Right side */}
+          <div className="relative lg:pl-12">
+            {/* Placeholder for device mockup - will be replaced with actual image */}
+            <div className="relative w-full aspect-[4/3] bg-gradient-to-br from-gray-100 to-gray-50 rounded-3xl shadow-2xl overflow-hidden animate-float-slow">
+              {/* Mock device frame */}
+              <div className="absolute inset-8 bg-white rounded-2xl shadow-lg p-6">
+                {/* Mock app interface */}
+                <div className="space-y-4">
+                  <div className="h-3 bg-gray-200 rounded w-3/4"></div>
+                  <div className="h-24 bg-gradient-to-r from-ak-blue/10 to-ak-blue/5 rounded-xl"></div>
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="h-20 bg-gray-100 rounded-lg"></div>
+                    <div className="h-20 bg-gray-100 rounded-lg"></div>
+                  </div>
+                  <div className="h-16 bg-ak-blue/5 rounded-lg"></div>
                 </div>
               </div>
               
-              {/* Remittance Visualization */}
-              <div className="bg-white rounded-2xl p-6 shadow-large border-0 hover-lift animate-fade-in" style={{ animationDelay: '1.2s' }}>
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-gradient-to-r from-primary-blue to-primary-teal rounded-full mx-auto mb-3 flex items-center justify-center">
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
-                    </svg>
-                  </div>
-                  <div className="font-semibold text-gray-900">Remittance</div>
-                  <div className="text-sm text-gray-600">Global transfers</div>
-                </div>
-              </div>
-
-              {/* Checkout Visualization */}
-              <div className="bg-white rounded-2xl p-6 shadow-large border-0 hover-lift animate-fade-in" style={{ animationDelay: '1.3s' }}>
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-gradient-to-r from-warning-500 to-warning-600 rounded-full mx-auto mb-3 flex items-center justify-center">
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-                    </svg>
-                  </div>
-                  <div className="font-semibold text-gray-900">Checkout</div>
-                  <div className="text-sm text-gray-600">For merchants</div>
-                </div>
-              </div>
-
-              {/* AI Apps Visualization */}
-              <div className="bg-white rounded-2xl p-6 shadow-large border-0 hover-lift animate-fade-in" style={{ animationDelay: '1.4s' }}>
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-gradient-to-r from-success-500 to-success-600 rounded-full mx-auto mb-3 flex items-center justify-center">
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                  </div>
-                  <div className="font-semibold text-gray-900">AI Apps</div>
-                  <div className="text-sm text-gray-600">Wallet, Travel, more</div>
+              {/* Floating card visual */}
+              <div className="absolute -right-4 top-12 w-48 h-32 bg-gradient-to-r from-gray-800 to-gray-900 rounded-2xl shadow-2xl transform rotate-6 animate-float-slower">
+                <div className="p-4 text-white">
+                  <div className="w-10 h-8 bg-gradient-to-r from-gray-400 to-gray-600 rounded mb-2"></div>
+                  <div className="text-xs opacity-70 mb-1">AI KEYS Card</div>
+                  <div className="text-sm font-semibold">•••• 8472</div>
                 </div>
               </div>
             </div>
+            
+            {/* Note: Replace above with actual device mockup image using next/image */}
+            {/* <Image src="/hero-device-mockup.png" alt="AI KEYS platform interface" width={1200} height={900} priority className="rounded-3xl shadow-2xl" /> */}
           </div>
         </div>
       </div>
