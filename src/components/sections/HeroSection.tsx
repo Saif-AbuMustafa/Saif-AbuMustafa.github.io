@@ -73,7 +73,7 @@ export const HeroSection = () => {
             <img 
               src={heroMockup}
               alt="AI KEYS mobile wallet app interface"
-              className="w-full max-w-[600px] h-auto drop-shadow-2xl floating mx-auto"
+              className="w-full max-w-[600px] h-auto drop-shadow-2xl mx-auto"
               width={600}
               height={400}
               loading="eager"
