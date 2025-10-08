@@ -12,44 +12,35 @@ import logo from '@/assets/keys-favicon.png';
 export const Footer = () => {
   const { t } = useTranslation();
 
-  const footerSections = [
-    {
-      title: t('footer.company', 'Company'),
-      links: [
-        { label: t('nav.about', 'About'), href: '/about' },
-        { label: t('footer.links.careers', 'Careers'), href: '/careers' },
-        { label: t('nav.contact', 'Contact'), href: '/contact' },
-        { label: t('footer.links.investors', 'Investors'), href: '/investors' },
-        { label: t('footer.links.pressKit', 'Press Kit'), href: '/press-kit' }
-      ]
-    },
-    {
-      title: t('footer.products', 'Products'),
-      links: [
-        { label: t('nav.wallet', 'Wallet'), href: '/wallet' },
-        { label: t('nav.travel', 'Travel'), href: '/travel' },
-        { label: t('nav.education', 'Education'), href: '/education' },
-        { label: t('nav.logistics', 'Logistics'), href: '/logistics' },
-        { label: t('nav.token', 'Token'), href: '/token' }
-      ]
-    },
-    {
-      title: t('footer.legal', 'Legal'),
-      links: [
-         { label: t('footer.links.privacy', 'Privacy Policy'), href: '/legal/privacy' },
-         { label: t('footer.links.terms', 'Terms of Service'), href: '/legal/terms' },
-         { label: t('footer.links.cookies', 'Cookie Policy'), href: '/legal/cookies' },
-         { label: t('footer.links.compliance', 'Compliance'), href: '/legal/compliance' }
-      ]
-    },
-    {
-      title: t('footer.resources', 'Resources'),
-      links: [
-        { label: t('footer.links.docs', 'Documentation'), href: '/resources/docs' },
-        { label: t('footer.links.api', 'API Reference'), href: '/resources/api' },
-        { label: t('footer.links.status', 'Status Page'), href: '/resources/status' }
-      ]
-    }
+  // Link groups (preserving all existing links)
+  const platformLinks = [
+    { label: t('nav.wallet', 'Wallet'), href: '/wallet' },
+    { label: t('nav.travel', 'Travel'), href: '/travel' },
+    { label: t('nav.education', 'Education'), href: '/education' },
+    { label: t('nav.logistics', 'Logistics'), href: '/logistics' },
+    { label: t('nav.technology', 'Technology'), href: '/technology' },
+    { label: t('nav.token', 'Token'), href: '/token' },
+  ];
+
+  const companyLinks = [
+    { label: t('nav.about', 'About'), href: '/about' },
+    { label: t('footer.links.careers', 'Careers'), href: '/careers' },
+    { label: t('nav.contact', 'Contact'), href: '/contact' },
+    { label: t('footer.links.investors', 'Investors'), href: '/investors' },
+    { label: t('footer.links.pressKit', 'Press Kit'), href: '/press-kit' },
+  ];
+
+  const resourcesLinks = [
+    { label: t('footer.links.docs', 'Documentation'), href: '/resources/docs' },
+    { label: t('footer.links.api', 'API Reference'), href: '/resources/api' },
+    { label: t('footer.links.status', 'Status Page'), href: '/resources/status' },
+  ];
+
+  const legalLinks = [
+    { label: t('footer.links.privacy', 'Privacy Policy'), href: '/legal/privacy' },
+    { label: t('footer.links.terms', 'Terms of Service'), href: '/legal/terms' },
+    { label: t('footer.links.cookies', 'Cookie Policy'), href: '/legal/cookies' },
+    { label: t('footer.links.compliance', 'Compliance'), href: '/legal/compliance' },
   ];
 
   const socialLinks = [
@@ -60,7 +51,7 @@ export const Footer = () => {
   return (
     <footer className="bg-gray-50 border-t border-gray-200">
       <div className="container mx-auto px-6 md:px-8 py-12 md:py-16 max-w-[1280px]">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand Column */}
           <div className="lg:col-span-2 md:col-span-2">
             <div className="flex items-center space-x-3 mb-6">
