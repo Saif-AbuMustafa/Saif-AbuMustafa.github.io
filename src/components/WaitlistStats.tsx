@@ -59,26 +59,26 @@ export const WaitlistStats = () => {
   }
 
   return (
-    <div className="py-12 border-t border-gray-200">
-      <div className="container mx-auto px-6 md:px-8 max-w-[1280px]">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
-          <div className="text-center fade-up">
-            <div className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">
-              <AnimatedCounter end={stats.total} duration={600} />
+    <div className="py-20 bg-white border-y border-gray-100">
+      <div className="container mx-auto px-6 md:px-12 lg:px-16 max-w-5xl">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div className="text-center space-y-2 fade-up">
+            <div className="text-5xl md:text-6xl font-bold text-gray-900">
+              <AnimatedCounter end={stats.total} duration={600} />+
             </div>
-            <div className="text-sm text-gray-600 uppercase tracking-wide">Total Signups</div>
+            <div className="text-base text-gray-600 font-medium">People on waitlist</div>
           </div>
-          <div className="text-center fade-up" style={{ animationDelay: '0.1s' }}>
-            <div className="text-4xl md:text-5xl font-bold text-success mb-2">
+          <div className="text-center space-y-2 fade-up" style={{ animationDelay: '0.1s' }}>
+            <div className="text-5xl md:text-6xl font-bold text-primary">
               <AnimatedCounter end={stats.confirmed} duration={600} />
             </div>
-            <div className="text-sm text-gray-600 uppercase tracking-wide">Confirmed</div>
+            <div className="text-base text-gray-600 font-medium">Confirmed members</div>
           </div>
-          <div className="text-center fade-up" style={{ animationDelay: '0.2s' }}>
-            <div className="text-4xl md:text-5xl font-bold text-gray-600 mb-2">
+          <div className="text-center space-y-2 fade-up" style={{ animationDelay: '0.2s' }}>
+            <div className="text-5xl md:text-6xl font-bold text-gray-400">
               <AnimatedCounter end={stats.pending} duration={600} />
             </div>
-            <div className="text-sm text-gray-600 uppercase tracking-wide">Pending</div>
+            <div className="text-base text-gray-600 font-medium">Pending verification</div>
           </div>
         </div>
       </div>

@@ -23,40 +23,34 @@ export const HowItWorks = () => {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-white">
-      <div className="container mx-auto px-6 md:px-8 max-w-[1280px]">
+    <section className="py-32 bg-gray-50">
+      <div className="container mx-auto px-6 md:px-12 lg:px-16 max-w-7xl">
         <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-16 max-w-[720px] mx-auto">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 leading-[1.15] tracking-tight">
-              {t('howItWorks.heading', 'How It Works')}
+          <div className="text-center mb-24 max-w-3xl mx-auto space-y-4">
+            <h2 className="text-5xl md:text-6xl font-bold text-gray-900 tracking-tight leading-tight">
+              {t('howItWorks.heading', 'How it works')}
             </h2>
-            <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
-              {t('howItWorks.subheading', 'Get started in three simple steps')}
+            <p className="text-xl md:text-2xl text-gray-600 leading-relaxed">
+              {t('howItWorks.subheading', 'Get started in minutes')}
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
-            {/* Connecting lines for desktop */}
-            <div className="hidden md:block absolute top-12 left-0 right-0 h-0.5 bg-gray-200 -z-10" style={{ top: '3rem' }} />
-            
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
             {steps.map((step, index) => (
-              <div key={index} className="relative fade-up" style={{ animationDelay: `${index * 0.1}s` }}>
-                <div className="flex flex-col items-center text-center">
+              <div key={index} className="relative fade-up" style={{ animationDelay: `${index * 0.15}s` }}>
+                <div className="flex flex-col items-center text-center space-y-6">
                   {/* Number badge */}
-                  <div className="w-24 h-24 rounded-full bg-primary flex items-center justify-center mb-6 relative z-10">
-                    <span className="text-3xl font-bold text-white">{step.number}</span>
+                  <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-4xl font-bold text-primary">{step.number}</span>
                   </div>
                   
                   {/* Content */}
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">
+                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
                     {step.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-lg text-gray-600 leading-relaxed max-w-xs">
                     {step.description}
                   </p>
-                  
-                  {/* Check icon */}
-                  <CheckCircle className="w-6 h-6 text-success mt-4" />
                 </div>
               </div>
             ))}

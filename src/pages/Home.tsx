@@ -19,15 +19,16 @@ export default function Home() {
           }
         });
       },
-      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+      { threshold: 0.1, rootMargin: '0px 0px -100px 0px' }
     );
 
     // Observe all fade-up elements
-    document.querySelectorAll('.fade-up').forEach((el) => {
-      observer.observe(el);
-    });
+    const elements = document.querySelectorAll('.fade-up');
+    elements.forEach((el) => observer.observe(el));
 
-    return () => observer.disconnect();
+    return () => {
+      elements.forEach((el) => observer.unobserve(el));
+    };
   }, []);
 
   return (

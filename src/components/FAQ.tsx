@@ -49,107 +49,100 @@ export const FAQ = () => {
   };
 
   return (
-    <section className="py-20 lg:py-32 bg-white">
-      <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
-          {/* Section Header */}
-          <div className="text-center mb-16">
-            <div className="inline-block px-4 py-2 bg-[hsl(217,91%,60%)]/10 rounded-full mb-6">
-              <span className="text-[hsl(217,91%,60%)] font-semibold text-sm">
-                FREQUENTLY ASKED QUESTIONS
-              </span>
-            </div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 text-[hsl(220,13%,23%)]">
-              Got Questions? We've Got Answers
-            </h2>
-            <p className="text-xl text-[hsl(220,9%,46%)] max-w-2xl mx-auto">
-              Everything you need to know about AI KEYS and how it can transform your workflow
-            </p>
-          </div>
+    <section className="py-32 bg-gray-50">
+      <div className="container mx-auto px-6 md:px-12 lg:px-16 max-w-5xl">
+        {/* Section Header */}
+        <div className="text-center mb-20 space-y-4">
+          <h2 className="text-5xl md:text-6xl font-bold text-gray-900 tracking-tight leading-tight">
+            Got questions?
+          </h2>
+          <p className="text-xl md:text-2xl text-gray-600 max-w-2xl mx-auto">
+            Everything you need to know about AI KEYS
+          </p>
+        </div>
 
-          {/* FAQ Items */}
-          <div className="space-y-4">
-            {faqs.map((faq, index) => {
-              const Icon = faq.icon || Shield;
-              const isOpen = openIndex === index;
-              
-              return (
-                <div
-                  key={index}
-                  className={cn(
-                    "border-2 rounded-lg transition-all duration-300 overflow-hidden",
+        {/* FAQ Items */}
+        <div className="space-y-4">
+          {faqs.map((faq, index) => {
+            const Icon = faq.icon || Shield;
+            const isOpen = openIndex === index;
+            
+            return (
+              <div
+                key={index}
+                className={cn(
+                  "bg-white rounded-2xl border-2 transition-all duration-300 overflow-hidden",
+                  isOpen 
+                    ? "border-primary shadow-lg" 
+                    : "border-gray-100 hover:border-gray-200"
+                )}
+              >
+                <button
+                  onClick={() => toggleQuestion(index)}
+                  className="w-full p-8 flex items-center justify-between text-left hover:bg-gray-50/50 transition-colors"
+                  aria-expanded={isOpen}
+                >
+                  <div className="flex items-center gap-5 flex-1">
+                    <div className={cn(
+                      "p-3 rounded-xl transition-colors",
+                      isOpen 
+                        ? "bg-primary" 
+                        : "bg-gray-50"
+                    )}>
+                      <Icon className={cn(
+                        "h-6 w-6 transition-colors",
+                        isOpen ? "text-white" : "text-primary"
+                      )} />
+                    </div>
+                    <span className="text-xl font-bold text-gray-900">
+                      {faq.question}
+                    </span>
+                  </div>
+                  <div className={cn(
+                    "ml-4 p-2.5 rounded-full transition-all",
                     isOpen 
-                      ? "border-[hsl(217,91%,60%)] shadow-lg" 
-                      : "border-[hsl(36,20%,85%)] hover:border-[hsl(217,91%,60%)]/50"
+                      ? "bg-primary rotate-180" 
+                      : "bg-gray-100"
+                  )}>
+                    {isOpen ? (
+                      <Minus className="h-5 w-5 text-white" />
+                    ) : (
+                      <Plus className="h-5 w-5 text-primary" />
+                    )}
+                  </div>
+                </button>
+                
+                <div
+                  className={cn(
+                    "overflow-hidden transition-all duration-300",
+                    isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
                   )}
                 >
-                  <button
-                    onClick={() => toggleQuestion(index)}
-                    className="w-full p-6 flex items-center justify-between text-left hover:bg-[hsl(36,30%,92%)]/30 transition-colors"
-                    aria-expanded={isOpen}
-                  >
-                    <div className="flex items-center gap-4 flex-1">
-                      <div className={cn(
-                        "p-3 rounded-lg transition-colors",
-                        isOpen 
-                          ? "bg-[hsl(217,91%,60%)]" 
-                          : "bg-[hsl(217,91%,60%)]/10"
-                      )}>
-                        <Icon className={cn(
-                          "h-5 w-5 transition-colors",
-                          isOpen ? "text-white" : "text-[hsl(217,91%,60%)]"
-                        )} />
-                      </div>
-                      <span className="text-lg font-semibold text-[hsl(220,13%,23%)]">
-                        {faq.question}
-                      </span>
-                    </div>
-                    <div className={cn(
-                      "ml-4 p-2 rounded-full transition-all",
-                      isOpen 
-                        ? "bg-[hsl(217,91%,60%)] rotate-180" 
-                        : "bg-[hsl(36,30%,92%)]"
-                    )}>
-                      {isOpen ? (
-                        <Minus className="h-5 w-5 text-white" />
-                      ) : (
-                        <Plus className="h-5 w-5 text-[hsl(217,91%,60%)]" />
-                      )}
-                    </div>
-                  </button>
-                  
-                  <div
-                    className={cn(
-                      "overflow-hidden transition-all duration-300",
-                      isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-                    )}
-                  >
-                    <div className="p-6 pt-0 pl-20 pr-6">
-                      <p className="text-[hsl(220,9%,46%)] leading-relaxed">
-                        {faq.answer}
-                      </p>
-                    </div>
+                  <div className="px-8 pb-8 pl-24">
+                    <p className="text-lg text-gray-600 leading-relaxed">
+                      {faq.answer}
+                    </p>
                   </div>
                 </div>
-              );
-            })}
-          </div>
+              </div>
+            );
+          })}
+        </div>
 
-          {/* Contact CTA */}
-          <div className="mt-12 text-center p-8 bg-gradient-to-r from-[hsl(217,91%,60%)]/5 to-[hsl(224,76%,48%)]/5 rounded-lg border border-[hsl(217,91%,60%)]/20">
-            <h3 className="text-2xl font-bold text-[hsl(220,13%,23%)] mb-3">
-              Still have questions?
-            </h3>
-            <p className="text-[hsl(220,9%,46%)] mb-6">
-              Our team is here to help. Get in touch and we'll respond within 24 hours.
-            </p>
-            <a 
-              href="/contact"
-              className="inline-flex items-center justify-center h-11 min-h-[44px] px-6 py-3 rounded-lg text-sm font-semibold bg-gradient-to-r from-[hsl(217,91%,60%)] to-[hsl(224,76%,48%)] text-white shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200"
-            >
-              Contact Support
-            </a>
-          </div>
+        {/* Contact CTA */}
+        <div className="mt-16 text-center p-12 bg-white rounded-3xl border border-gray-100">
+          <h3 className="text-3xl font-bold text-gray-900 mb-4">
+            Still have questions?
+          </h3>
+          <p className="text-lg text-gray-600 mb-8 max-w-lg mx-auto">
+            Our team is here to help. Get in touch and we'll respond within 24 hours.
+          </p>
+          <a 
+            href="/contact"
+            className="inline-flex items-center justify-center h-14 px-10 rounded-full text-base font-semibold bg-primary text-white shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200"
+          >
+            Contact Support
+          </a>
         </div>
       </div>
     </section>

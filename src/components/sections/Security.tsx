@@ -28,29 +28,31 @@ export const Security = () => {
   ];
 
   return (
-    <section id="security" className="py-16 md:py-24 bg-white">
-      <div className="container mx-auto px-6 md:px-8 max-w-[1280px]">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+    <section id="security" className="py-32 bg-white">
+      <div className="container mx-auto px-6 md:px-12 lg:px-16 max-w-7xl">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           {/* Content */}
-          <div className="max-w-[720px]">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-[1.15] tracking-tight">
-              {t('security.heading', 'Security by design')}
-            </h2>
-            <p className="text-lg md:text-xl text-gray-600 mb-12 leading-relaxed">
-              {t('security.subheading', 'Built with enterprise-grade security from the ground up, ensuring your financial data stays protected')}
-            </p>
+          <div className="max-w-2xl space-y-8">
+            <div className="space-y-4">
+              <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 tracking-tight leading-tight">
+                {t('security.heading', 'Bank-grade security')}
+              </h2>
+              <p className="text-xl md:text-2xl text-gray-600 leading-relaxed">
+                {t('security.subheading', 'Your money and data are protected with enterprise-level security')}
+              </p>
+            </div>
             
-            <div className="space-y-8">
+            <div className="space-y-8 pt-6">
               {securityFeatures.map((feature, index) => (
-                <div key={index} className="flex items-start gap-4 fade-up" style={{ animationDelay: `${index * 0.1}s` }}>
-                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <feature.icon className="w-6 h-6 text-primary" />
+                <div key={index} className="flex items-start gap-5 fade-up" style={{ animationDelay: `${index * 0.15}s` }}>
+                  <div className="w-14 h-14 bg-gray-50 rounded-2xl flex items-center justify-center flex-shrink-0 border border-gray-100">
+                    <feature.icon className="w-7 h-7 text-primary" />
                   </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 text-lg mb-2">
+                  <div className="space-y-2">
+                    <h3 className="font-bold text-gray-900 text-xl">
                       {feature.title}
                     </h3>
-                    <p className="text-gray-600 leading-relaxed">
+                    <p className="text-lg text-gray-600 leading-relaxed">
                       {feature.description}
                     </p>
                   </div>
@@ -61,27 +63,34 @@ export const Security = () => {
 
           {/* Visualization */}
           <div className="relative fade-up" style={{ animationDelay: '0.4s' }}>
-            <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl p-8 lg:p-12 shadow-xl">
-              <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-8 text-white">
-                <div className="text-center mb-8">
-                  <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Shield className="w-8 h-8 text-white" />
-                  </div>
-                  <div className="font-semibold text-xl">{t('security.architecture', 'Security Architecture')}</div>
+            <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-3xl p-12 lg:p-16 shadow-2xl">
+              <div className="text-center mb-12">
+                <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Shield className="w-10 h-10 text-white" />
                 </div>
-                
-                <div className="space-y-4">
-                  <div className="flex justify-between items-center bg-gray-700/50 rounded-lg px-4 py-4">
-                    <span className="font-medium">{t('security.status.encryption', 'Encryption Active')}</span>
-                    <div className="w-3 h-3 bg-success rounded-full"></div>
+                <div className="font-bold text-2xl text-white">{t('security.architecture', 'Security Status')}</div>
+              </div>
+              
+              <div className="space-y-4">
+                <div className="flex justify-between items-center bg-white/5 backdrop-blur-sm rounded-2xl px-6 py-5 border border-white/10">
+                  <span className="font-semibold text-white text-lg">{t('security.status.encryption', 'Encryption')}</span>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2.5 h-2.5 bg-green-400 rounded-full animate-pulse"></div>
+                    <span className="text-green-400 font-medium">Active</span>
                   </div>
-                  <div className="flex justify-between items-center bg-gray-700/50 rounded-lg px-4 py-4">
-                    <span className="font-medium">{t('security.status.compliance', 'Compliance Check')}</span>
-                    <div className="w-3 h-3 bg-success rounded-full"></div>
+                </div>
+                <div className="flex justify-between items-center bg-white/5 backdrop-blur-sm rounded-2xl px-6 py-5 border border-white/10">
+                  <span className="font-semibold text-white text-lg">{t('security.status.compliance', 'Compliance')}</span>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2.5 h-2.5 bg-green-400 rounded-full animate-pulse"></div>
+                    <span className="text-green-400 font-medium">Active</span>
                   </div>
-                  <div className="flex justify-between items-center bg-gray-700/50 rounded-lg px-4 py-4">
-                    <span className="font-medium">{t('security.status.audit', 'Audit Trail')}</span>
-                    <div className="w-3 h-3 bg-success rounded-full"></div>
+                </div>
+                <div className="flex justify-between items-center bg-white/5 backdrop-blur-sm rounded-2xl px-6 py-5 border border-white/10">
+                  <span className="font-semibold text-white text-lg">{t('security.status.audit', 'Monitoring')}</span>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2.5 h-2.5 bg-green-400 rounded-full animate-pulse"></div>
+                    <span className="text-green-400 font-medium">Active</span>
                   </div>
                 </div>
               </div>

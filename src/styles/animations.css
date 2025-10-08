@@ -1,14 +1,18 @@
-/* Minimal, elegant animations for premium fintech feel */
+/* N26-inspired smooth animations for premium fintech feel */
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-8px); }
+  0%, 100% { 
+    transform: translateY(0px) rotate(6deg); 
+  }
+  50% { 
+    transform: translateY(-15px) rotate(6deg); 
+  }
 }
 
 @keyframes fadeUp {
   0% {
     opacity: 0;
-    transform: translateY(12px);
+    transform: translateY(30px);
   }
   100% {
     opacity: 1;
@@ -16,18 +20,42 @@
   }
 }
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 /* Animation classes */
 .floating {
-  animation: float 3s ease-in-out infinite;
+  animation: float 4s ease-in-out infinite;
 }
 
 .fade-up {
   opacity: 0;
-  animation: fadeUp 0.35s ease-out both;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .fade-up.visible {
   opacity: 1;
+  transform: translateY(0);
 }
 
 /* Respect reduced motion preferences */

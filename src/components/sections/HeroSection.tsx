@@ -7,88 +7,74 @@ export const HeroSection = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="relative min-h-[90vh] flex items-center bg-white overflow-hidden">
-      {/* Subtle Background - behind content only */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-50/30" />
-      <div className="absolute top-1/4 -left-10 w-80 h-80 bg-primary/5 rounded-full blur-3xl opacity-30" />
-      <div className="absolute bottom-1/4 -right-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl opacity-40" />
+    <section className="relative min-h-screen flex items-center justify-center bg-white overflow-hidden">
+      {/* Clean minimal background - N26 style */}
+      <div className="absolute inset-0 bg-gradient-to-b from-white via-gray-50/30 to-white" />
       
-      <div className="container mx-auto px-6 md:px-8 relative z-10 max-w-[1280px]">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-24 items-center py-20 md:py-28">
+      <div className="container mx-auto px-6 md:px-12 lg:px-16 relative z-10 max-w-7xl">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center py-24 md:py-32">
           {/* Content Column */}
-          <div className="text-left max-w-[720px]">
-            {/* GCC Focus Badge */}
-            <div className="inline-flex items-center gap-2 bg-white backdrop-blur-sm rounded-full px-4 py-2 shadow-sm border border-gray-200 mb-8 fade-up">
-              <div className="w-2 h-2 bg-success rounded-full" />
+          <div className="text-left space-y-8">
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 bg-gray-50 rounded-full px-5 py-2.5 border border-gray-200 animate-fade-in">
+              <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
               <span className="text-sm font-medium text-gray-700">
                 {t('hero.badge', 'UAE-Based Fintech Platform')}
               </span>
             </div>
 
-            {/* Headline */}
-            <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-gray-900 mb-8 leading-[1.1] tracking-tight fade-up" style={{ animationDelay: '0.1s' }}>
-              {t('hero.title1', 'Money, made simple')}
-              <span className="text-primary block">{t('hero.title2', 'across the GCC')}</span>
+            {/* Headline - N26 style large and bold */}
+            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-gray-900 leading-[1.05] tracking-tight animate-fade-in" style={{ animationDelay: '0.1s' }}>
+              {t('hero.title1', 'The first wallet')}
+              <br />
+              <span className="text-primary">{t('hero.title2', 'you\'ll love')}</span>
             </h1>
 
-            {/* Value Proposition */}
-            <p className="text-xl md:text-2xl text-gray-600 mb-12 leading-relaxed max-w-[640px] fade-up" style={{ animationDelay: '0.2s' }}>
-              {t('hero.subtitle', 'Send and spend across borders with virtual & physical cards and a trusted checkout experience.')}
+            {/* Subtitle */}
+            <p className="text-xl md:text-2xl text-gray-600 leading-relaxed max-w-2xl animate-fade-in" style={{ animationDelay: '0.2s' }}>
+              {t('hero.subtitle', 'Bank, send and spend in one beautifully simple app trusted across the GCC.')}
             </p>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 mb-16 fade-up" style={{ animationDelay: '0.3s' }}>
-              <Button size="lg" className="text-lg px-10 py-7 h-16 rounded-xl bg-primary hover:bg-primary/90 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300" asChild>
-                <a href="#waitlist" className="group">
+            {/* CTA Button - Single prominent button like N26 */}
+            <div className="flex flex-col sm:flex-row gap-4 animate-fade-in" style={{ animationDelay: '0.3s' }}>
+              <Button 
+                size="lg" 
+                className="h-14 px-10 text-base font-semibold rounded-full bg-primary hover:bg-primary-dark text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105" 
+                asChild
+              >
+                <a href="#waitlist" className="group inline-flex items-center justify-center">
                   {t('hero.cta.primary', 'Join the waitlist')}
                   <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
                 </a>
               </Button>
-              <Button variant="outline" size="lg" className="text-lg px-10 py-7 h-16 rounded-xl border-2 hover:bg-gray-50 font-semibold transition-all duration-300" asChild>
-                <a href="#security">
-                  {t('hero.cta.secondary', 'See security practices')}
-                </a>
-              </Button>
-            </div>
-
-            {/* Feature Pills */}
-            <div className="flex flex-wrap gap-3 fade-up" style={{ animationDelay: '0.4s' }}>
-              <span className="text-sm text-gray-600 px-4 py-2 bg-gray-50 rounded-full border border-gray-200">
-                {t('hero.features.remittance', 'Cross-border transfers')}
-              </span>
-              <span className="text-sm text-gray-600 px-4 py-2 bg-gray-50 rounded-full border border-gray-200">
-                {t('hero.features.cards', 'Virtual & physical cards')}
-              </span>
-              <span className="text-sm text-gray-600 px-4 py-2 bg-gray-50 rounded-full border border-gray-200">
-                {t('hero.features.checkout', 'Merchant payments')}
-              </span>
             </div>
           </div>
 
-          {/* Device Mockup - Right side */}
-          <div className="relative lg:pl-12 fade-up" style={{ animationDelay: '0.5s' }}>
-            {/* Main app mockup */}
-            <img 
-              src={heroMockup}
-              alt="AI KEYS mobile wallet app interface"
-              className="w-full max-w-[600px] h-auto drop-shadow-2xl mx-auto"
-              width={600}
-              height={400}
-              loading="eager"
-            />
-            
-            {/* Floating card visual */}
-            <img 
-              src={virtualCard}
-              alt="AI KEYS virtual card"
-              className="absolute -right-8 md:-right-12 top-12 w-40 md:w-48 h-auto drop-shadow-2xl transform rotate-6 floating"
-              style={{ animationDelay: '1s' }}
-              width={192}
-              height={121}
-              loading="eager"
-            />
+          {/* Device Mockup - Right side with smooth animation */}
+          <div className="relative flex justify-center lg:justify-end animate-fade-in" style={{ animationDelay: '0.4s' }}>
+            <div className="relative w-full max-w-md">
+              {/* Main app mockup */}
+              <img 
+                src={heroMockup}
+                alt="AI KEYS mobile wallet app interface"
+                className="w-full h-auto drop-shadow-2xl"
+                width={600}
+                height={800}
+                loading="eager"
+              />
+              
+              {/* Floating card visual */}
+              <img 
+                src={virtualCard}
+                alt="AI KEYS virtual card"
+                className="absolute -right-4 md:-right-8 top-16 w-36 md:w-44 h-auto drop-shadow-2xl transform rotate-6 animate-float"
+                width={192}
+                height={121}
+                loading="eager"
+              />
+            </div>
           </div>
         </div>
       </div>
