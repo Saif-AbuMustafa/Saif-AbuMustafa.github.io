@@ -53,7 +53,7 @@ export const HeroSection = () => {
           </div>
 
           {/* Device Mockup - Right side with smooth animation */}
-          <div className="relative flex justify-center lg:justify-end animate-fade-in" style={{ animationDelay: '0.4s' }}>
+          <div className="hidden relative flex justify-center lg:justify-end animate-fade-in" style={{ animationDelay: '0.4s' }}>
             <div className="relative w-full max-w-md">
               {/* Main app mockup */}
               <img 
