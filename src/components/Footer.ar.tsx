@@ -1,4 +1,3 @@
-import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { 
@@ -9,83 +8,81 @@ import {
 } from 'lucide-react';
 import logo from '@/assets/keys-favicon.png';
 
-export const Footer = () => {
-  const { t } = useTranslation();
-
+export const FooterAr = () => {
   const footerSections = [
     {
-      title: t('footer.company', 'Company'),
+      title: 'الشركة',
       links: [
-        { label: t('nav.about', 'About'), href: '/about' },
-        { label: t('footer.links.careers', 'Careers'), href: '/careers' },
-        { label: t('nav.contact', 'Contact'), href: '/contact' },
-        { label: t('footer.links.investors', 'Investors'), href: '/investors' },
-        { label: t('footer.links.pressKit', 'Press Kit'), href: '/press-kit' }
+        { label: 'من نحن', href: '/about' },
+        { label: 'الوظائف', href: '/careers' },
+        { label: 'اتصل بنا', href: '/contact' },
+        { label: 'المستثمرون', href: '/investors' },
+        { label: 'المواد الصحفية', href: '/press-kit' }
       ]
     },
     {
-      title: t('footer.products', 'Products'),
+      title: 'المنتجات',
       links: [
-        { label: t('nav.wallet', 'Wallet'), href: '/wallet' },
-        { label: t('nav.travel', 'Travel'), href: '/travel' },
-        { label: t('nav.education', 'Education'), href: '/education' },
-        { label: t('nav.logistics', 'Logistics'), href: '/logistics' },
-        { label: t('nav.token', 'Token'), href: '/token' }
+        { label: 'المحفظة', href: '/wallet' },
+        { label: 'السفر', href: '/travel' },
+        { label: 'التعليم', href: '/education' },
+        { label: 'اللوجستيات', href: '/logistics' },
+        { label: 'الرمز', href: '/token' }
       ]
     },
     {
-      title: t('footer.legal', 'Legal'),
+      title: 'القانونية',
       links: [
-         { label: t('footer.links.privacy', 'Privacy Policy'), href: '/legal/privacy' },
-         { label: t('footer.links.terms', 'Terms of Service'), href: '/legal/terms' },
-         { label: t('footer.links.cookies', 'Cookie Policy'), href: '/legal/cookies' },
-         { label: t('footer.links.compliance', 'Compliance'), href: '/legal/compliance' }
+        { label: 'سياسة الخصوصية', href: '/legal/privacy' },
+        { label: 'شروط الخدمة', href: '/legal/terms' },
+        { label: 'سياسة ملفات تعريف الارتباط', href: '/legal/cookies' },
+        { label: 'الامتثال', href: '/legal/compliance' }
       ]
     },
     {
-      title: t('footer.resources', 'Resources'),
+      title: 'الموارد',
       links: [
-        { label: t('footer.links.docs', 'Documentation'), href: '/resources/docs' },
-        { label: t('footer.links.api', 'API Reference'), href: '/resources/api' },
-        { label: t('footer.links.status', 'Status Page'), href: '/resources/status' }
+        { label: 'التوثيق', href: '/resources/docs' },
+        { label: 'مرجع API', href: '/resources/api' },
+        { label: 'صفحة الحالة', href: '/resources/status' }
       ]
     }
   ];
 
   const socialLinks = [
-    { icon: Twitter, href: 'https://twitter.com/AIKeysOfficial', label: 'Twitter' },
-    { icon: Linkedin, href: 'https://linkedin.com/company/ai-keys', label: 'LinkedIn' }
+    { icon: Twitter, href: 'https://twitter.com/AIKeysOfficial', label: 'تويتر' },
+    { icon: Linkedin, href: 'https://linkedin.com/company/ai-keys', label: 'لينكدإن' }
   ];
 
   return (
-    <footer className="bg-gray-50 border-t border-gray-200">
+    <footer dir="rtl" className="bg-gray-50 border-t border-gray-200">
       <div className="container mx-auto px-6 md:px-8 py-12 md:py-16 max-w-[1280px]">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12 mb-12">
           {/* Brand Column */}
           <div className="lg:col-span-2 md:col-span-2">
-            <div className="flex items-center space-x-3 mb-6">
+            <div className="flex items-center space-x-3 space-x-reverse mb-6">
               <img src={logo} alt="AI KEYS Logo" className="h-10 w-10" />
               <div className="text-xl font-bold text-gray-900">AI KEYS</div>
             </div>
             
             <p className="text-gray-600 mb-6 max-w-md leading-relaxed">
-              {t('footer.description', 'UAE-based fintech platform delivering cross-border payments and AI-powered financial services across the GCC.')}
+              منصة تقنية مالية مقرها الإمارات تقدم المدفوعات عبر الحدود وخدمات مالية مدعومة بالذكاء الاصطناعي عبر دول الخليج.
             </p>
 
             <div className="space-y-3 mb-6">
-               <div className="flex items-center space-x-3 text-sm text-gray-600">
+               <div className="flex items-center space-x-3 space-x-reverse text-sm text-gray-600">
                  <MapPin className="h-4 w-4 text-primary flex-shrink-0" />
-                 <span>{t('footer.contact.address', 'Dubai, United Arab Emirates')}</span>
+                 <span>دبي، الإمارات العربية المتحدة</span>
                </div>
-              <div className="flex items-center space-x-3 text-sm text-gray-600">
+              <div className="flex items-center space-x-3 space-x-reverse text-sm text-gray-600">
                 <Mail className="h-4 w-4 text-primary flex-shrink-0" />
                 <a href="mailto:info@aikeys.ai" className="hover:text-primary transition-colors">
-                  {t('footer.contact.email', 'info@aikeys.ai')}
+                  info@aikeys.ai
                 </a>
               </div>
             </div>
 
-            <div className="flex space-x-3">
+            <div className="flex space-x-3 space-x-reverse">
               {socialLinks.map((social, index) => (
                 <Button 
                   key={index}
@@ -130,21 +127,21 @@ export const Footer = () => {
         <Separator className="mb-8" />
 
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-          <div className="text-sm text-gray-600 text-center md:text-left">
-            © {new Date().getFullYear()} AI KEYS Investment in Technological Enterprises and Management CO. L.L.C. All rights reserved.
+          <div className="text-sm text-gray-600 text-center md:text-right">
+            © {new Date().getFullYear()} AI KEYS Investment in Technological Enterprises and Management CO. L.L.C. جميع الحقوق محفوظة.
           </div>
           
           <div className="flex items-center gap-4 text-sm text-gray-600">
             <a href="/legal/privacy" className="hover:text-primary transition-colors hover:underline">
-              Privacy
+              الخصوصية
             </a>
             <span>•</span>
             <a href="/legal/terms" className="hover:text-primary transition-colors hover:underline">
-              Terms
+              الشروط
             </a>
             <span>•</span>
             <a href="/legal/cookies" className="hover:text-primary transition-colors hover:underline">
-              Cookies
+              ملفات تعريف الارتباط
             </a>
           </div>
         </div>
