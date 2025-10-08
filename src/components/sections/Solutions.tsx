@@ -1,5 +1,7 @@
-import { CreditCard, Send, ShoppingCart } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import remittanceImg from '@/assets/remittance-illustration.png';
+import cardsImg from '@/assets/cards-illustration.png';
+import checkoutImg from '@/assets/checkout-illustration.png';
 
 export const Solutions = () => {
   const { t } = useTranslation();
@@ -8,17 +10,17 @@ export const Solutions = () => {
     {
       name: t('solutions.remittance.title', 'Remittance'),
       description: t('solutions.remittance.desc', 'Cross-border transfers with transparent fees and clear timelines'),
-      icon: Send,
+      image: remittanceImg,
     },
     {
       name: t('solutions.cards.title', 'Cards'),
       description: t('solutions.cards.desc', 'Virtual & physical cards for everyday spend and online checkout'),
-      icon: CreditCard,
+      image: cardsImg,
     },
     {
       name: t('solutions.checkout.title', 'Checkout'),
       description: t('solutions.checkout.desc', 'Friction-light checkout that helps you convert more'),
-      icon: ShoppingCart,
+      image: checkoutImg,
     }
   ];
 
@@ -42,8 +44,13 @@ export const Solutions = () => {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="bg-white rounded-2xl p-8 lg:p-10 shadow-[0_8px_30px_rgba(0,0,0,0.06)] border border-gray-100 hover:shadow-[0_16px_40px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300 h-full focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2">
-                <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
-                  <solution.icon className="w-8 h-8 text-primary" />
+                <div className="w-full aspect-square mb-6 rounded-xl overflow-hidden bg-gradient-to-br from-primary/5 to-primary/10 flex items-center justify-center p-6">
+                  <img 
+                    src={solution.image}
+                    alt={solution.name}
+                    className="w-full h-full object-contain"
+                    loading="lazy"
+                  />
                 </div>
                 
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">
