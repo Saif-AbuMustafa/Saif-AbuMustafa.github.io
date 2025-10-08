@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { useTranslation } from 'react-i18next';
-import heroMockup from '@/assets/hero-app-mockup.png';
-import virtualCard from '@/assets/virtual-card.png';
+import heroMockup from '@/assets/hero-phone-transparent.png';
+import virtualCard from '@/assets/card-transparent.png';
 
 export const HeroSection = () => {
   const { t } = useTranslation();
