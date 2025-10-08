@@ -69,29 +69,26 @@ export const HeroSection = () => {
 
           {/* Device Mockup - Right side */}
           <div className="relative lg:pl-12 fade-up" style={{ animationDelay: '0.5s' }}>
-            <div className="relative w-full max-w-[600px] mx-auto floating">
-              {/* Main app mockup */}
-              <img 
-                src={heroMockup}
-                alt="AI KEYS mobile wallet app interface"
-                className="w-full h-auto drop-shadow-2xl"
-                width={600}
-                height={400}
-                loading="eager"
-              />
-              
-              {/* Floating card visual */}
-              <div className="absolute -right-8 md:-right-12 top-12 w-40 md:w-48 floating" style={{ animationDelay: '1s' }}>
-                <img 
-                  src={virtualCard}
-                  alt="AI KEYS virtual card"
-                  className="w-full h-auto drop-shadow-2xl transform rotate-6"
-                  width={192}
-                  height={121}
-                  loading="eager"
-                />
-              </div>
-            </div>
+            {/* Main app mockup */}
+            <img 
+              src={heroMockup}
+              alt="AI KEYS mobile wallet app interface"
+              className="w-full max-w-[600px] h-auto drop-shadow-2xl floating mx-auto"
+              width={600}
+              height={400}
+              loading="eager"
+            />
+            
+            {/* Floating card visual */}
+            <img 
+              src={virtualCard}
+              alt="AI KEYS virtual card"
+              className="absolute -right-8 md:-right-12 top-12 w-40 md:w-48 h-auto drop-shadow-2xl transform rotate-6 floating"
+              style={{ animationDelay: '1s' }}
+              width={192}
+              height={121}
+              loading="eager"
+            />
           </div>
         </div>
       </div>
