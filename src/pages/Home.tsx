@@ -5,6 +5,7 @@ import { HowItWorks } from '@/components/sections/HowItWorks';
 import { Security } from '@/components/sections/Security';
 import { FAQ } from '@/components/FAQ';
 import { WaitlistCTA } from '@/components/sections/WaitlistCTA';
+import { WaitlistStats } from '@/components/WaitlistStats';
 import { Footer } from '@/components/Footer';
 import { Navigation } from '@/components/layout/Navigation';
 
@@ -34,6 +35,7 @@ export default function Home() {
     <div className="min-h-screen bg-white">
       <Navigation />
       <HeroSection />
+      <WaitlistStats />
       <Solutions />
       <HowItWorks />
       <Security />

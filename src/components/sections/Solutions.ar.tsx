@@ -1,36 +1,33 @@
 import { CreditCard, Send, ShoppingCart } from 'lucide-react';
-import { useTranslation } from 'react-i18next';
 
-export const Solutions = () => {
-  const { t } = useTranslation();
-  
+export const SolutionsAr = () => {
   const solutions = [
     {
-      name: t('solutions.remittance.title', 'Remittance'),
-      description: t('solutions.remittance.desc', 'Cross-border transfers with transparent fees and clear timelines'),
+      name: 'التحويلات',
+      description: 'تحويلات عبر الحدود برسوم شفافة وجداول زمنية واضحة',
       icon: Send,
     },
     {
-      name: t('solutions.cards.title', 'Cards'),
-      description: t('solutions.cards.desc', 'Virtual & physical cards for everyday spend and online checkout'),
+      name: 'البطاقات',
+      description: 'بطاقات افتراضية وفيزيائية للإنفاق اليومي والدفع عبر الإنترنت',
       icon: CreditCard,
     },
     {
-      name: t('solutions.checkout.title', 'Checkout'),
-      description: t('solutions.checkout.desc', 'Friction-light checkout that helps you convert more'),
+      name: 'الدفع',
+      description: 'تجربة دفع سلسة تساعدك على زيادة التحويلات',
       icon: ShoppingCart,
     }
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-gray-50">
+    <section dir="rtl" className="py-16 md:py-24 bg-gray-50">
       <div className="container mx-auto px-6 md:px-8 max-w-[1280px]">
         <div className="text-center mb-16 max-w-[840px] mx-auto">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-[1.15] tracking-tight">
-            {t('solutions.heading', 'Built for real-world payments')}
+            مصمّم لمدفوعات العالم الحقيقي
           </h2>
           <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
-            {t('solutions.subheading', 'Three core products designed for the way money moves today')}
+            ثلاثة منتجات أساسية مصممة لطريقة تحرك الأموال اليوم
           </p>
         </div>
 
@@ -41,7 +38,7 @@ export const Solutions = () => {
               className="group cursor-pointer fade-up"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="bg-white rounded-2xl p-8 lg:p-10 shadow-[0_8px_30px_rgba(0,0,0,0.06)] border border-gray-100 hover:shadow-[0_16px_40px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300 h-full focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2">
+              <div className="bg-white rounded-2xl p-8 lg:p-10 shadow-[0_8px_30px_rgba(0,0,0,0.06)] border border-gray-100 hover:shadow-[0_16px_40px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300 h-full">
                 <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
                   <solution.icon className="w-8 h-8 text-primary" />
                 </div>

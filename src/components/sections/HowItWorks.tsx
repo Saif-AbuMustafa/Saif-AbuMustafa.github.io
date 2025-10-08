@@ -27,7 +27,7 @@ export const HowItWorks = () => {
       <div className="container mx-auto px-6 md:px-8 max-w-[1280px]">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16 max-w-[720px] mx-auto">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 leading-[1.15] tracking-tight">
               {t('howItWorks.heading', 'How It Works')}
             </h2>
             <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
@@ -43,7 +43,7 @@ export const HowItWorks = () => {
               <div key={index} className="relative fade-up" style={{ animationDelay: `${index * 0.1}s` }}>
                 <div className="flex flex-col items-center text-center">
                   {/* Number badge */}
-                  <div className="w-24 h-24 rounded-full bg-primary-blue flex items-center justify-center mb-6 relative z-10">
+                  <div className="w-24 h-24 rounded-full bg-primary flex items-center justify-center mb-6 relative z-10">
                     <span className="text-3xl font-bold text-white">{step.number}</span>
                   </div>
                   
@@ -56,7 +56,7 @@ export const HowItWorks = () => {
                   </p>
                   
                   {/* Check icon */}
-                  <CheckCircle className="w-6 h-6 text-success-500 mt-4" />
+                  <CheckCircle className="w-6 h-6 text-success mt-4" />
                 </div>
               </div>
             ))}
