@@ -7,14 +7,14 @@ export const HeroSection = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="relative min-h-[80vh] flex items-center bg-white overflow-hidden">
+    <section className="relative min-h-[90vh] flex items-center bg-white overflow-hidden">
       {/* Subtle Background - behind content only */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-50/30" />
-      <div className="absolute top-1/4 -left-10 w-80 h-80 bg-primary/5 rounded-full blur-3xl opacity-30 floating" style={{ animationDelay: '0s' }} />
-      <div className="absolute bottom-1/4 -right-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl opacity-40 floating" style={{ animationDelay: '1.5s' }} />
+      <div className="absolute top-1/4 -left-10 w-80 h-80 bg-primary/5 rounded-full blur-3xl opacity-30" />
+      <div className="absolute bottom-1/4 -right-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl opacity-40" />
       
       <div className="container mx-auto px-6 md:px-8 relative z-10 max-w-[1280px]">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center py-16 md:py-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-24 items-center py-20 md:py-28">
           {/* Content Column */}
           <div className="text-left max-w-[720px]">
             {/* GCC Focus Badge */}
@@ -26,19 +26,19 @@ export const HeroSection = () => {
             </div>
 
             {/* Headline */}
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-[1.15] tracking-tight fade-up" style={{ animationDelay: '0.1s' }}>
+            <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-gray-900 mb-8 leading-[1.1] tracking-tight fade-up" style={{ animationDelay: '0.1s' }}>
               {t('hero.title1', 'Money, made simple')}
               <span className="text-primary block">{t('hero.title2', 'across the GCC')}</span>
             </h1>
 
             {/* Value Proposition */}
-            <p className="text-lg md:text-xl text-gray-600 mb-10 leading-relaxed max-w-[600px] fade-up" style={{ animationDelay: '0.2s' }}>
+            <p className="text-xl md:text-2xl text-gray-600 mb-12 leading-relaxed max-w-[640px] fade-up" style={{ animationDelay: '0.2s' }}>
               {t('hero.subtitle', 'Send and spend across borders with virtual & physical cards and a trusted checkout experience.')}
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 mb-12 fade-up" style={{ animationDelay: '0.3s' }}>
-              <Button size="lg" className="text-base px-8 py-6 h-14 bg-primary hover:bg-primary/90 text-white" asChild>
+            <div className="flex flex-col sm:flex-row gap-4 mb-16 fade-up" style={{ animationDelay: '0.3s' }}>
+              <Button size="lg" className="text-lg px-10 py-7 h-16 rounded-xl bg-primary hover:bg-primary/90 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300" asChild>
                 <a href="#waitlist" className="group">
                   {t('hero.cta.primary', 'Join the waitlist')}
                   <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -46,7 +46,7 @@ export const HeroSection = () => {
                   </svg>
                 </a>
               </Button>
-              <Button variant="outline" size="lg" className="text-base px-8 py-6 h-14 border-2 hover:bg-gray-50" asChild>
+              <Button variant="outline" size="lg" className="text-lg px-10 py-7 h-16 rounded-xl border-2 hover:bg-gray-50 font-semibold transition-all duration-300" asChild>
                 <a href="#security">
                   {t('hero.cta.secondary', 'See security practices')}
                 </a>
