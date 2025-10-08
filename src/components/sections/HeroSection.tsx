@@ -12,9 +12,9 @@ export const HeroSection = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-white via-gray-50/30 to-white" />
       
       <div className="container mx-auto px-6 md:px-12 lg:px-16 relative z-10 max-w-7xl">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center py-24 md:py-32">
+        <div className="flex items-center justify-center py-24 md:py-32">
           {/* Content Column */}
-          <div className="text-left space-y-8">
+          <div className="text-center space-y-8 max-w-4xl">
             {/* Badge */}
             <div className="inline-flex items-center gap-2 bg-gray-50 rounded-full px-5 py-2.5 border border-gray-200 animate-fade-in">
               <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
@@ -31,12 +31,12 @@ export const HeroSection = () => {
             </h1>
 
             {/* Subtitle */}
-            <p className="text-xl md:text-2xl text-gray-600 leading-relaxed max-w-2xl animate-fade-in" style={{ animationDelay: '0.2s' }}>
+            <p className="text-xl md:text-2xl text-gray-600 leading-relaxed max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: '0.2s' }}>
               {t('hero.subtitle', 'Bank, send and spend in one beautifully simple app trusted across the GCC.')}
             </p>
 
             {/* CTA Button - Single prominent button like N26 */}
-            <div className="flex flex-col sm:flex-row gap-4 animate-fade-in" style={{ animationDelay: '0.3s' }}>
+            <div className="flex justify-center animate-fade-in" style={{ animationDelay: '0.3s' }}>
               <Button 
                 size="lg" 
                 className="h-14 px-10 text-base font-semibold rounded-full bg-primary hover:bg-primary-dark text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105" 
@@ -52,10 +52,9 @@ export const HeroSection = () => {
             </div>
           </div>
 
-          {/* Device Mockup - Right side with smooth animation */}
-          <div className="hidden relative flex justify-center lg:justify-end animate-fade-in" style={{ animationDelay: '0.4s' }}>
+          {/* Device Mockup - HIDDEN but kept in code 
+          <div className="relative flex justify-center lg:justify-end animate-fade-in" style={{ animationDelay: '0.4s' }}>
             <div className="relative w-full max-w-md">
-              {/* Main app mockup */}
               <img 
                 src={heroMockup}
                 alt="AI KEYS mobile wallet app interface"
@@ -65,7 +64,6 @@ export const HeroSection = () => {
                 loading="eager"
               />
               
-              {/* Floating card visual */}
               <img 
                 src={virtualCard}
                 alt="AI KEYS virtual card"
@@ -76,6 +74,7 @@ export const HeroSection = () => {
               />
             </div>
           </div>
+          */}
         </div>
       </div>
     </section>
