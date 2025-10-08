@@ -99,23 +99,50 @@ export const Footer = () => {
           </div>
 
           {/* Link Columns */}
-          {footerSections.map((section, index) => (
-            <div key={index} className="space-y-4">
-              <h3 className="font-semibold text-gray-900">{section.title}</h3>
+          <div className="space-y-4">
+            <h3 className="font-semibold text-gray-900">{t('footer.platform', 'Platform')}</h3>
+            <ul className="space-y-3">
+              {platformLinks.map((link, i) => (
+                <li key={i}>
+                  <a href={link.href} className="text-sm text-gray-500 hover:text-primary transition-colors hover:underline">{link.label}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="space-y-4">
+            <h3 className="font-semibold text-gray-900">{t('footer.company', 'Company')}</h3>
+            <ul className="space-y-3">
+              {companyLinks.map((link, i) => (
+                <li key={i}>
+                  <a href={link.href} className="text-sm text-gray-500 hover:text-primary transition-colors hover:underline">{link.label}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="space-y-6">
+            <div className="space-y-4">
+              <h3 className="font-semibold text-gray-900">{t('footer.resources', 'Resources')}</h3>
               <ul className="space-y-3">
-                {section.links.map((link, linkIndex) => (
-                  <li key={linkIndex}>
-                   <a 
-                      href={link.href}
-                      className="text-sm text-gray-600 hover:text-primary transition-colors hover:underline"
-                    >
-                      {link.label}
-                    </a>
+                {resourcesLinks.map((link, i) => (
+                  <li key={i}>
+                    <a href={link.href} className="text-sm text-gray-500 hover:text-primary transition-colors hover:underline">{link.label}</a>
                   </li>
                 ))}
               </ul>
             </div>
-          ))}
+            <div className="space-y-4">
+              <h3 className="font-semibold text-gray-900">{t('footer.legal', 'Legal')}</h3>
+              <ul className="space-y-3">
+                {legalLinks.map((link, i) => (
+                  <li key={i}>
+                    <a href={link.href} className="text-sm text-gray-500 hover:text-primary transition-colors hover:underline">{link.label}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
 
         <Separator className="mb-8" />
