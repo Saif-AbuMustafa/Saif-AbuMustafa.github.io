@@ -8,8 +8,8 @@ export const Solutions = () => {
   
   const solutions = [
     {
-      name: t('solutions.remittance.title', 'Send money for free'),
-      description: t('solutions.remittance.desc', 'Transfer money across borders with zero fees and instant delivery to over 50 countries.'),
+      name: t('solutions.remittance.title', 'Cross-border transfers'),
+      description: t('solutions.remittance.desc', 'Transfer money across borders with competitive rates and instant delivery to over 50 countries.'),
       image: remittanceImg,
     },
     {
