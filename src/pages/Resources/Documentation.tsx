@@ -1,5 +1,8 @@
 import { PageHeader } from '@/components/layout/PageHeader';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { ModernSection, ModernContainer, ModernGrid } from '@/components/ui/ModernSection';
+import { ModernCard } from '@/components/ui/ModernCard';
+import { InteractiveSection } from '@/components/ui/InteractiveSection';
+import { BackgroundAnimations } from '@/components/ui/BackgroundAnimations';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { 
@@ -55,106 +58,106 @@ export default function Documentation() {
         description="Comprehensive documentation to help you get the most out of AI KEYS platform"
         badge="Always Updated • Comprehensive • Developer Friendly"
         background={heroBackground}
+        showBackButton
       />
 
-      <div className="container mx-auto px-4 py-16">
-        <div className="max-w-6xl mx-auto">
+      <ModernSection padding="xl">
+        <BackgroundAnimations variant="section" />
+        <ModernContainer>
           
           {/* Quick Links */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-            <Card className="text-center p-6">
-              <Shield className="h-12 w-12 text-fintech-blue mx-auto mb-4" />
-              <h3 className="font-semibold mb-2">Security Guide</h3>
-              <p className="text-muted-foreground text-sm mb-4">
+          <ModernGrid cols={3} gap="lg" className="mb-20">
+            <ModernCard variant="glass" hover="lift" className="text-center p-8 group">
+              <Shield className="h-12 w-12 text-ak-blue mx-auto mb-6 group-hover:scale-110 transition-transform" />
+              <h3 className="text-xl font-bold mb-4 text-ak-text">Security Guide</h3>
+              <p className="text-ak-muted leading-relaxed mb-6">
                 Learn about our security measures and best practices
               </p>
               <Button variant="outline" size="sm">
                 <ExternalLink className="h-4 w-4 mr-2" />
                 View Guide
               </Button>
-            </Card>
+            </ModernCard>
             
-            <Card className="text-center p-6">
-              <Zap className="h-12 w-12 text-fintech-blue mx-auto mb-4" />
-              <h3 className="font-semibold mb-2">Quick Start</h3>
-              <p className="text-muted-foreground text-sm mb-4">
+            <ModernCard variant="glass" hover="lift" className="text-center p-8 group">
+              <Zap className="h-12 w-12 text-ak-blue mx-auto mb-6 group-hover:scale-110 transition-transform" />
+              <h3 className="text-xl font-bold mb-4 text-ak-text">Quick Start</h3>
+              <p className="text-ak-muted leading-relaxed mb-6">
                 Get up and running with AI KEYS in minutes
               </p>
               <Button variant="outline" size="sm">
                 <ExternalLink className="h-4 w-4 mr-2" />
                 Start Now
               </Button>
-            </Card>
+            </ModernCard>
             
-            <Card className="text-center p-6">
-              <Globe className="h-12 w-12 text-fintech-blue mx-auto mb-4" />
-              <h3 className="font-semibold mb-2">API Reference</h3>
-              <p className="text-muted-foreground text-sm mb-4">
+            <ModernCard variant="glass" hover="lift" className="text-center p-8 group">
+              <Globe className="h-12 w-12 text-ak-blue mx-auto mb-6 group-hover:scale-110 transition-transform" />
+              <h3 className="text-xl font-bold mb-4 text-ak-text">API Reference</h3>
+              <p className="text-ak-muted leading-relaxed mb-6">
                 Complete API documentation for developers
               </p>
               <Button variant="outline" size="sm">
                 <ExternalLink className="h-4 w-4 mr-2" />
                 Browse API
               </Button>
-            </Card>
-          </div>
+            </ModernCard>
+          </ModernGrid>
 
           {/* Documentation Sections */}
-          <div className="space-y-8">
+          <div className="space-y-8 animate-fade-in">
             {documentSections.map((section, index) => (
-              <Card key={index}>
-                <CardHeader>
-                  <CardTitle className="flex items-center space-x-3">
-                    <section.icon className="h-6 w-6 text-fintech-blue" />
-                    <span>{section.title}</span>
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    {section.documents.map((doc, docIndex) => (
-                      <div 
-                        key={docIndex}
-                        className="flex items-center justify-between p-4 border rounded-lg hover:bg-muted/50 transition-colors"
-                      >
-                        <div className="flex items-center space-x-3">
-                          <FileText className="h-5 w-5 text-muted-foreground" />
-                          <div>
-                            <h4 className="font-medium text-sm">{doc.name}</h4>
-                            <p className="text-xs text-muted-foreground">
-                              {doc.type} • {doc.size}
-                            </p>
-                          </div>
-                        </div>
-                        <Button variant="ghost" size="sm">
-                          <Download className="h-4 w-4" />
-                        </Button>
-                      </div>
-                    ))}
+              <ModernCard key={index} variant="glass" hover="lift" className="p-8">
+                <div className="flex items-center space-x-4 mb-8">
+                  <div className="p-3 rounded-xl bg-ak-blue/10">
+                    <section.icon className="h-8 w-8 text-ak-blue" />
                   </div>
-                </CardContent>
-              </Card>
+                  <h3 className="text-2xl font-bold text-ak-text">{section.title}</h3>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {section.documents.map((doc, docIndex) => (
+                    <div 
+                      key={docIndex}
+                      className="flex items-center justify-between p-4 border border-ak-beige-300 rounded-xl hover:bg-ak-beige-300/20 transition-colors group"
+                    >
+                      <div className="flex items-center space-x-3">
+                        <FileText className="h-5 w-5 text-ak-muted" />
+                        <div>
+                          <h4 className="font-medium text-sm text-ak-text">{doc.name}</h4>
+                          <p className="text-xs text-ak-muted">
+                            {doc.type} • {doc.size}
+                          </p>
+                        </div>
+                      </div>
+                      <Button variant="ghost" size="sm" className="group-hover:text-ak-blue">
+                        <Download className="h-4 w-4" />
+                      </Button>
+                    </div>
+                  ))}
+                </div>
+              </ModernCard>
             ))}
           </div>
 
           {/* Support Section */}
-          <Card className="mt-12 text-center p-8">
-            <h3 className="text-xl font-semibold mb-4">Need Additional Help?</h3>
-            <p className="text-muted-foreground mb-6">
+          <ModernCard variant="premium" hover="lift" className="mt-16 text-center p-12">
+            <h3 className="text-3xl font-bold mb-6 text-ak-text">Need Additional Help?</h3>
+            <p className="text-xl text-ak-muted mb-8 max-w-2xl mx-auto leading-relaxed">
               Can't find what you're looking for? Our support team is here to help.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button>
-                <Mail className="h-4 w-4 mr-2" />
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <Button size="lg" variant="premium">
+                <Mail className="h-5 w-5 mr-2" />
                 Contact Support
               </Button>
-              <Button variant="outline">
-                <FileText className="h-4 w-4 mr-2" />
+              <Button size="lg" variant="outline">
+                <FileText className="h-5 w-5 mr-2" />
                 Request Documentation
               </Button>
             </div>
-          </Card>
-        </div>
-      </div>
+          </ModernCard>
+        </ModernContainer>
+      </ModernSection>
     </div>
   );
 }
