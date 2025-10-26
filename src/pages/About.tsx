@@ -24,17 +24,36 @@ import {
   Building,
   MapPin,
   Calendar,
-  CheckCircle
+  CheckCircle,
+  Zap,
+  Shield,
+  Lock
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import premiumHeroBg from '@/assets/premium-hero-bg.jpg';
 
 export default function About() {
-  const stats = [
-    { icon: Users, value: 50000, suffix: '+', label: 'Global Users' },
-    { icon: TrendingUp, value: 2.5, suffix: 'M+', prefix: '$', label: 'Transaction Volume' },
-    { icon: Globe, value: 45, suffix: '+', label: 'Countries Served' },
-    { icon: Award, value: 15, suffix: '+', label: 'Industry Awards' }
+  const trustPillars = [
+    { 
+      icon: Zap, 
+      title: 'Solana-Powered Performance', 
+      description: 'Built on Solana\'s programmable network for fast finality and low fees.'
+    },
+    { 
+      icon: Shield, 
+      title: 'Compliance-First Architecture', 
+      description: 'Designed against VARA\'s rulebooks (Company, Compliance/Risk, Technology & Market Conduct).'
+    },
+    { 
+      icon: Lock, 
+      title: 'Security by Design', 
+      description: 'MPC-based custody integrations and maker/checker controls, with audit-ready workflows.'
+    },
+    { 
+      icon: MapPin, 
+      title: 'UAE Data Privacy & Residency', 
+      description: 'Aligned with UAE PDPL (Federal Decree-Law No. 45 of 2021) and local hosting requirements.'
+    }
   ];
 
   const values = [
@@ -148,21 +167,15 @@ export default function About() {
         </div>
       </ModernHero>
 
-      {/* Company Stats */}
+      {/* Trust Pillars */}
       <ModernSection variant="accent" padding="xl">
         <ModernContainer>
           <ModernGrid cols={4} gap="xl">
-            {stats.map((stat, index) => (
+            {trustPillars.map((pillar, index) => (
               <ModernCard key={index} variant="premium" hover="lift" className="text-center p-10">
-                <stat.icon className="h-16 w-16 mx-auto mb-6 text-ak-blue group-hover:scale-125 transition-all duration-500" />
-                <div className="text-4xl font-black mb-3 bg-gradient-primary bg-clip-text text-transparent">
-                  <AnimatedCounter 
-                    end={stat.value} 
-                    prefix={stat.prefix} 
-                    suffix={stat.suffix}
-                  />
-                </div>
-                <div className="text-sm font-medium text-muted-foreground">{stat.label}</div>
+                <pillar.icon className="h-16 w-16 mx-auto mb-6 text-ak-blue group-hover:scale-125 transition-all duration-500" />
+                <h3 className="text-xl font-bold mb-4 text-gray-900">{pillar.title}</h3>
+                <p className="text-sm text-gray-700 leading-relaxed">{pillar.description}</p>
               </ModernCard>
             ))}
           </ModernGrid>
