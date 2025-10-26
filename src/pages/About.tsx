@@ -297,18 +297,18 @@ export default function About() {
               <ModernGrid cols={3} gap="xl" className="text-center">
                 <div>
                   <Building className="h-16 w-16 mx-auto mb-6 text-ak-blue" />
-                  <h3 className="text-xl font-bold mb-3 text-white">Headquarters</h3>
-                  <p className="text-ak-muted text-lg">Dubai, UAE</p>
+                  <h3 className="text-xl font-bold mb-3 text-gray-900">Headquarters</h3>
+                  <p className="text-gray-700 text-lg">Dubai, UAE</p>
                 </div>
                 <div>
                   <MapPin className="h-16 w-16 mx-auto mb-6 text-ak-blue" />
-                  <h3 className="text-xl font-bold mb-3 text-white">Founded</h3>
-                  <p className="text-ak-muted text-lg">March 2025</p>
+                  <h3 className="text-xl font-bold mb-3 text-gray-900">Founded</h3>
+                  <p className="text-gray-700 text-lg">March 2025</p>
                 </div>
                 <div>
                   <Lightbulb className="h-16 w-16 mx-auto mb-6 text-ak-blue" />
-                  <h3 className="text-xl font-bold mb-3 text-white">AI-Powered</h3>
-                  <p className="text-ak-muted text-lg">Advanced Technology</p>
+                  <h3 className="text-xl font-bold mb-3 text-gray-900">AI-Powered</h3>
+                  <p className="text-gray-700 text-lg">Advanced Technology</p>
                 </div>
               </ModernGrid>
             </ModernCard>
