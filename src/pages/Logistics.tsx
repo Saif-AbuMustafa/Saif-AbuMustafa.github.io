@@ -202,52 +202,54 @@ export default function Logistics() {
       </PageHeader>
 
       {/* Core Features */}
-      <section className="py-20 lg:py-32">
-        <div className="container mx-auto px-4">
+      <InteractiveSection background="gradient" className="py-20 lg:py-32">
+        <BackgroundAnimations variant="section" />
+        <ModernContainer>
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16 animate-fade-in">
-              <h2 className="text-5xl md:text-6xl font-black mb-8 tracking-tight text-white">
+              <h2 className="text-5xl md:text-6xl font-black mb-8 tracking-tight text-ak-text">
                 Revolutionary <span className="bg-gradient-primary bg-clip-text text-transparent">Smart Features</span>
               </h2>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: '0.3s' }}>
+              <p className="text-xl text-ak-muted max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: '0.3s' }}>
                 AI-powered logistics solutions that transform your supply chain operations
               </p>
             </div>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <ModernGrid cols={2} gap="xl">
               {features.map((feature, index) => (
-                <Card key={index} className="p-8 border-border/50 bg-card/50 backdrop-blur-sm group hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] hover-scale animate-fade-in" style={{ animationDelay: `${index * 0.2}s` }}>
-                  <div className="flex items-start space-x-4 mb-6">
-                    <div className="p-3 rounded-xl bg-ak-blue/10 group-hover:bg-ak-blue/20 transition-colors group-hover:scale-110">
-                      <feature.icon className="h-8 w-8 text-ak-blue transition-transform" />
+                <ModernCard key={index} variant="premium" hover="lift" className="p-10 group animate-fade-in" style={{ animationDelay: `${index * 0.2}s` }}>
+                  <div className="flex items-start space-x-6 mb-8">
+                    <div className="p-4 rounded-xl bg-ak-blue/10 group-hover:bg-ak-blue/20 transition-colors">
+                      <feature.icon className="h-10 w-10 text-ak-blue" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-semibold mb-2 text-white animate-slide-in-right" style={{ animationDelay: `${index * 0.2 + 0.1}s` }}>{feature.title}</h3>
-                      <p className="text-muted-foreground animate-fade-in" style={{ animationDelay: `${index * 0.2 + 0.2}s` }}>{feature.description}</p>
+                      <h3 className="text-2xl font-bold mb-4 text-ak-text">{feature.title}</h3>
+                      <p className="text-ak-muted text-lg leading-relaxed mb-6">{feature.description}</p>
                     </div>
                   </div>
                   
-                  <div className="grid grid-cols-2 gap-3">
+                  <div className="grid grid-cols-2 gap-4">
                     {feature.benefits.map((benefit, idx) => (
-                      <div key={idx} className="flex items-center space-x-2 text-sm">
-                        <div className="w-2 h-2 rounded-full bg-fintech-purple" />
-                        <span className="text-muted-foreground">{benefit}</span>
+                      <div key={idx} className="flex items-center space-x-3">
+                        <div className="w-3 h-3 rounded-full bg-ak-blue" />
+                        <span className="text-ak-muted font-medium">{benefit}</span>
                       </div>
                     ))}
                   </div>
-                </Card>
+                </ModernCard>
               ))}
-            </div>
+            </ModernGrid>
           </div>
-        </div>
-      </section>
+        </ModernContainer>
+      </InteractiveSection>
 
       {/* Key Benefits */}
-      <section className="py-20 lg:py-32 bg-accent/5">
-        <div className="container mx-auto px-4">
+      <ModernSection padding="xl">
+        <BackgroundAnimations variant="subtle" />
+        <ModernContainer>
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-5xl md:text-6xl font-black mb-8 tracking-tight text-white animate-enter">
-                Measurable <span className="bg-gradient-primary bg-clip-text text-transparent animate-scale-in" style={{ animationDelay: '0.3s' }}>Results</span>
+            <div className="text-center mb-20">
+              <h2 className="text-5xl md:text-6xl font-black mb-8 tracking-tight text-ak-text">
+                Measurable <span className="bg-gradient-primary bg-clip-text text-transparent">Results</span>
               </h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: '0.5s' }}>
                 Real performance improvements our clients experience with AI KEYS Logistics
@@ -265,10 +267,10 @@ export default function Logistics() {
                   <p className="text-sm text-muted-foreground animate-fade-in" style={{ animationDelay: `${index * 0.1 + 1.1}s` }}>{benefit.description}</p>
                 </Card>
               ))}
-            </div>
+            </ModernGrid>
           </div>
-        </div>
-      </section>
+        </ModernContainer>
+      </ModernSection>
 
       {/* Logistics Services */}
       <section className="py-20 lg:py-32">
