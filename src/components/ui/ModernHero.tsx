@@ -1,7 +1,6 @@
 import * as React from "react"
 import { cn } from "@/lib/utils"
 import { Badge } from "@/components/ui/badge"
-import { PremiumBackground } from "./PremiumBackground"
 
 interface ModernHeroProps extends React.HTMLAttributes<HTMLElement> {
   title: string
@@ -21,82 +20,57 @@ const ModernHero = React.forwardRef<HTMLElement, ModernHeroProps>(
     subtitle, 
     description, 
     badge, 
-    background, 
     children, 
-    overlay = "default",
-    backgroundVariant = "gradient",
     ...props 
   }, ref) => {
     return (
       <section
         ref={ref}
         className={cn(
-          "relative min-h-screen flex items-center justify-center overflow-hidden bg-background",
+          "relative min-h-screen flex items-center justify-center overflow-hidden bg-white",
           className
         )}
         {...props}
       >
-        {/* Premium Background System */}
-        <PremiumBackground variant={backgroundVariant} />
-        
-        {/* Custom Background Image */}
-        {background && (
-          <div 
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20 mix-blend-multiply"
-            style={{ backgroundImage: `url(${background})` }}
-          />
-        )}
-        
-        {/* Subtle overlay for content readability */}
-        <div className={cn(
-          "absolute inset-0 bg-gradient-to-br from-background/5 via-transparent to-background/10",
-          {
-            "from-background/10 to-background/20": overlay === "strong",
-            "from-background/2 to-background/5": overlay === "minimal",
-          }
-        )} />
+        {/* Clean minimal background - matching homepage */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white via-gray-50/30 to-white" />
 
-        <div className="relative z-10 container mx-auto px-4 py-20">
-          <div className="max-w-6xl mx-auto text-center">
+        <div className="relative z-10 container mx-auto px-6 md:px-12 lg:px-16 max-w-7xl">
+          <div className="text-center space-y-8 max-w-4xl mx-auto py-24 md:py-32">
             {/* Badge */}
             {badge && (
-              <Badge 
-                variant="outline" 
-                className="mb-8 border-primary/30 text-primary bg-primary/5 backdrop-blur-sm animate-fade-in px-6 py-2 text-sm font-medium"
-              >
-                {badge}
-              </Badge>
+              <div className="inline-flex items-center gap-2 bg-gray-50 rounded-full px-5 py-2.5 border border-gray-200 animate-fade-in">
+                <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
+                <span className="text-sm font-medium text-gray-700">
+                  {badge}
+                </span>
+              </div>
             )}
 
             {/* Title */}
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 animate-slide-up tracking-tight">
-              {subtitle && (
+            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-gray-900 leading-[1.05] tracking-tight animate-fade-in" style={{ animationDelay: '0.1s' }}>
+              {subtitle ? (
                 <>
-                  <span className="bg-gradient-primary bg-clip-text text-transparent">
-                    {title}
-                  </span>
-                  <br />
-                  <span className="bg-gradient-to-r from-red-500 to-ak-blue bg-clip-text text-transparent">
-                    {subtitle}
-                  </span>
-                </>
-              )}
-              {!subtitle && (
-                <span className="bg-gradient-primary bg-clip-text text-transparent">
                   {title}
-                </span>
+                  <br />
+                  <span className="text-primary">{subtitle}</span>
+                </>
+              ) : (
+                <span className="text-primary">{title}</span>
               )}
             </h1>
 
             {/* Description */}
-            <p className="text-xl md:text-2xl text-black max-w-4xl mx-auto mb-12 animate-fade-in leading-relaxed" style={{ animationDelay: '0.3s' }}>
+            <p className="text-xl md:text-2xl text-gray-600 leading-relaxed max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: '0.2s' }}>
               {description}
             </p>
 
             {/* CTA Buttons */}
-            <div className="mb-24 animate-fade-in" style={{ animationDelay: '0.6s' }}>
-              {children}
-            </div>
+            {children && (
+              <div className="flex justify-center animate-fade-in" style={{ animationDelay: '0.3s' }}>
+                {children}
+              </div>
+            )}
           </div>
         </div>
 

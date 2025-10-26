@@ -123,19 +123,24 @@ export default function About() {
         subtitle="AI KEYS"
         description="We're revolutionizing the global financial ecosystem by merging artificial intelligence with secure, accessible, and versatile digital asset management."
         badge="Dubai, UAE • Since 2025"
-        background={premiumHeroBg}
-        backgroundVariant="gradient"
       >
-        <BackgroundAnimations variant="hero" />
-        <div className="flex flex-col sm:flex-row gap-6 justify-center">
-          <Button size="xl" variant="premium" asChild className="group">
-            <Link to="/careers">
+        <div className="flex flex-col sm:flex-row gap-6">
+          <Button 
+            size="lg" 
+            className="h-14 px-10 text-base font-semibold rounded-full bg-primary hover:bg-primary-dark text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105" 
+            asChild
+          >
+            <Link to="/careers" className="inline-flex items-center justify-center">
               <Users className="mr-2 h-5 w-5" />
               Join Our Team
             </Link>
           </Button>
-          <Button size="xl" variant="glass" asChild className="group">
-            <Link to="/contact">
+          <Button 
+            size="lg"
+            className="h-14 px-10 text-base font-semibold rounded-full bg-white border-2 border-gray-200 hover:border-primary text-gray-900 hover:text-primary shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+            asChild
+          >
+            <Link to="/contact" className="group inline-flex items-center justify-center">
               Contact Us
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Link>

@@ -9,18 +9,16 @@ interface ModernSectionProps extends React.HTMLAttributes<HTMLElement> {
 
 const ModernSection = React.forwardRef<HTMLElement, ModernSectionProps>(
   ({ className, variant = "default", padding = "lg", children, ...props }, ref) => {
+    // All variants use clean white background, only accent is slightly tinted
+    const bgClass = variant === "accent" ? "bg-gray-50/30" : "bg-white";
+    
     return (
       <section
         ref={ref}
         className={cn(
           "relative overflow-hidden",
+          bgClass,
           {
-            // Variants
-            "bg-background": variant === "default",
-            "bg-accent/5": variant === "accent",
-            "bg-muted/20": variant === "dark",
-            "bg-gradient-to-br from-background via-accent/5 to-background": variant === "gradient",
-            
             // Padding
             "py-0": padding === "none",
             "py-12 lg:py-16": padding === "sm",

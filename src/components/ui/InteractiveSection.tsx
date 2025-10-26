@@ -1,6 +1,5 @@
 import * as React from "react"
 import { cn } from "@/lib/utils"
-import { PremiumBackground } from "./PremiumBackground"
 
 interface InteractiveSectionProps extends React.HTMLAttributes<HTMLElement> {
   background?: "default" | "gradient" | "mesh" | "particles"
@@ -9,7 +8,7 @@ interface InteractiveSectionProps extends React.HTMLAttributes<HTMLElement> {
 }
 
 const InteractiveSection = React.forwardRef<HTMLElement, InteractiveSectionProps>(
-  ({ className, background = "default", interactive = false, children, ...props }, ref) => {
+  ({ className, interactive = false, children, ...props }, ref) => {
     const [mousePosition, setMousePosition] = React.useState({ x: 0, y: 0 })
     
     const handleMouseMove = React.useCallback((e: React.MouseEvent) => {
@@ -25,17 +24,18 @@ const InteractiveSection = React.forwardRef<HTMLElement, InteractiveSectionProps
       <section
         ref={ref}
         className={cn(
-          "relative overflow-hidden",
+          "relative overflow-hidden bg-white",
           className
         )}
         onMouseMove={handleMouseMove}
         {...props}
       >
-        <PremiumBackground variant={background} />
+        {/* Clean minimal background - matching homepage */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white via-gray-50/30 to-white" />
         
         {interactive && (
           <div
-            className="absolute pointer-events-none z-10 w-96 h-96 bg-gradient-radial from-ak-blue/3 to-transparent rounded-full blur-2xl transition-all duration-500"
+            className="absolute pointer-events-none z-10 w-96 h-96 bg-gradient-radial from-primary/3 to-transparent rounded-full blur-2xl transition-all duration-500"
             style={{
               left: `${mousePosition.x * 100}%`,
               top: `${mousePosition.y * 100}%`,
