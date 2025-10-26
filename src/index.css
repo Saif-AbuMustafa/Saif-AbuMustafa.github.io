@@ -49,13 +49,15 @@ All colors MUST be HSL.
 
 /* Premium typography utilities */
 @layer base {
-  body {
+  html, body {
     font-size: 1rem; /* 16px mobile */
     line-height: 1.5;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
   }
   
   @media (min-width: 768px) {
-    body {
+    html, body {
       font-size: 1.0625rem; /* 17px desktop */
     }
   }
@@ -153,7 +155,7 @@ All colors MUST be HSL.
     --shadow-large: 0 10px 40px -10px rgba(0, 0, 0, 0.15), 0 2px 20px 0 rgba(0, 0, 0, 0.05);
 
     /* Theme Mappings */
-    --background: var(--ak-beige-100);
+    --background: var(--ak-white);
     --foreground: var(--ak-text);
 
     --card: var(--ak-beige-50);
