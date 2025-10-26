@@ -193,9 +193,12 @@ export default function WalletPage() {
       <ModernSection padding="xl">
         <BackgroundAnimations variant="subtle" />
         <ModernContainer>
-          <div className="text-center mb-20">
+          <div className="text-center mb-20 max-w-6xl mx-auto">
             <h2 className="text-5xl md:text-6xl font-black mb-8 tracking-tight text-white animate-enter">
-              Everything You Need in <span className="bg-gradient-primary bg-clip-text text-transparent animate-scale-in" style={{ animationDelay: '0.3s' }}>One Wallet</span>
+              Everything You Need in{' '}
+              <span className="bg-gradient-primary bg-clip-text text-transparent animate-scale-in" style={{ animationDelay: '0.3s' }}>
+                One Wallet
+              </span>
             </h2>
             <p className="text-2xl text-ak-muted max-w-4xl mx-auto leading-relaxed animate-fade-in" style={{ animationDelay: '0.5s' }}>
               From basic transactions to advanced DeFi strategies, AI KEYS Wallet has you covered
