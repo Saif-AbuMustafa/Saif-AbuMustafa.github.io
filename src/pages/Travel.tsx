@@ -162,7 +162,7 @@ export default function Travel() {
   ];
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen">
       <PageHeader
         title="Keys Travel"
         subtitle=""

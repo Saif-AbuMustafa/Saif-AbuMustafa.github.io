@@ -53,7 +53,7 @@ export default function TravelDocs() {
   ];
 
   return (
-    <div className="pt-20">
+    <div className="min-h-screen">
       <PageHeader
         title="Keys Travel"
         subtitle=""

@@ -73,7 +73,7 @@ export default function EducationDocs() {
   ];
 
   return (
-    <div className="pt-20">
+    <div className="min-h-screen">
       <PageHeader
         title="Keys Education Services"
         subtitle=""

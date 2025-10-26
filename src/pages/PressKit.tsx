@@ -109,7 +109,7 @@ export default function PressKit() {
   ];
 
   return (
-    <div className="pt-20">
+    <div className="min-h-screen">
       <PageHeader
         title="Press"
         subtitle="Kit"

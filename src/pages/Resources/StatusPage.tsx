@@ -124,7 +124,7 @@ export default function StatusPage() {
   };
 
   return (
-    <div className="pt-20">
+    <div className="min-h-screen">
       <PageHeader
         title="System"
         subtitle="Status"

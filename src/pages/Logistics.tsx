@@ -4,6 +4,10 @@ import { MouseFollower } from '@/components/ui/MouseFollower';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { BackgroundAnimations } from '@/components/ui/BackgroundAnimations';
+import { ModernSection, ModernContainer, ModernGrid } from '@/components/ui/ModernSection';
+import { ModernCard } from '@/components/ui/ModernCard';
+import { InteractiveSection } from '@/components/ui/InteractiveSection';
 import { 
   Truck, 
   Package,
@@ -256,7 +260,7 @@ export default function Logistics() {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+            <ModernGrid cols={4} gap="lg">
               {benefits.map((benefit, index) => (
                 <Card key={index} className="text-center p-8 border-border/50 bg-card/30 backdrop-blur-sm group hover:shadow-lg transition-all duration-300 hover-scale animate-fade-in" style={{ animationDelay: `${index * 0.1 + 0.7}s` }}>
                   <benefit.icon className="h-12 w-12 mx-auto mb-6 text-fintech-purple group-hover:scale-125 transition-all duration-300 animate-scale-in" style={{ animationDelay: `${index * 0.1 + 0.8}s` }} />

@@ -56,7 +56,7 @@ export default function ApiReference() {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen">
       <Navigation />
       
       <PageHeader

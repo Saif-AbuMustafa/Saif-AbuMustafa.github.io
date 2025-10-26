@@ -24,7 +24,7 @@ export default function Investors() {
   ];
 
   return (
-    <div className="pt-20">
+    <div className="min-h-screen">
       <PageHeader
         title="Investor"
         subtitle="Relations"

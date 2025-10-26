@@ -125,7 +125,7 @@ export default function Contact() {
   ];
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen">
       <PageHeader
         title="Get in"
         subtitle="Touch"
