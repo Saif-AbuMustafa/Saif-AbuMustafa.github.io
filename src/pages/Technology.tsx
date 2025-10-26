@@ -451,10 +451,10 @@ export default function Technology() {
 
           <ModernGrid cols={4} gap="lg">
             {[
-              { metric: '99.99%', label: 'Uptime', icon: Server },
-              { metric: '<100ms', label: 'API Response', icon: Zap },
-              { metric: '50M+', label: 'Transactions', icon: BarChart3 },
-              { metric: '256-bit', label: 'Encryption', icon: Lock }
+              { metric: 'Solana', label: 'Blockchain Network', icon: Server },
+              { metric: 'MPC', label: 'Custody Protocol', icon: Lock },
+              { metric: 'VARA', label: 'Dubai Compliance', icon: Shield },
+              { metric: 'AI-Driven', label: 'Smart Processing', icon: Zap }
             ].map((stat, index) => (
               <ModernCard key={index} variant="glass" hover="lift" className="text-center p-8 group">
                 <stat.icon className="h-16 w-16 mx-auto mb-8 text-ak-blue group-hover:scale-110 transition-transform" />
