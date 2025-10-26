@@ -24,38 +24,12 @@ import {
   Building,
   MapPin,
   Calendar,
-  CheckCircle,
-  Zap,
-  Shield,
-  Lock
+  CheckCircle
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import premiumHeroBg from '@/assets/premium-hero-bg.jpg';
 
 export default function About() {
-  const trustPillars = [
-    { 
-      icon: Zap, 
-      title: 'Solana-Powered Performance', 
-      description: 'Built on Solana\'s programmable network for fast finality and low fees.'
-    },
-    { 
-      icon: Shield, 
-      title: 'Compliance-First Architecture', 
-      description: 'Designed against VARA\'s rulebooks (Company, Compliance/Risk, Technology & Market Conduct).'
-    },
-    { 
-      icon: Lock, 
-      title: 'Security by Design', 
-      description: 'MPC-based custody integrations and maker/checker controls, with audit-ready workflows.'
-    },
-    { 
-      icon: MapPin, 
-      title: 'UAE Data Privacy & Residency', 
-      description: 'Aligned with UAE PDPL (Federal Decree-Law No. 45 of 2021) and local hosting requirements.'
-    }
-  ];
-
   const values = [
     {
       icon: Target,
@@ -166,21 +140,6 @@ export default function About() {
           </Button>
         </div>
       </ModernHero>
-
-      {/* Trust Pillars */}
-      <ModernSection variant="accent" padding="xl">
-        <ModernContainer>
-          <ModernGrid cols={4} gap="xl">
-            {trustPillars.map((pillar, index) => (
-              <ModernCard key={index} variant="premium" hover="lift" className="text-center p-10">
-                <pillar.icon className="h-16 w-16 mx-auto mb-6 text-ak-blue group-hover:scale-125 transition-all duration-500" />
-                <h3 className="text-xl font-bold mb-4 text-gray-900">{pillar.title}</h3>
-                <p className="text-sm text-gray-700 leading-relaxed">{pillar.description}</p>
-              </ModernCard>
-            ))}
-          </ModernGrid>
-        </ModernContainer>
-      </ModernSection>
 
       {/* Vision & Mission */}
       <ModernSection padding="xl">
