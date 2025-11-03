@@ -1,6 +1,14 @@
 import { useEffect, useRef, useState } from 'react';
 import { cn } from '@/lib/utils';
 import arabBank from '@/assets/partners/arab-bank.svg';
+import scalable from '@/assets/partners/scalable.svg';
+import insource from '@/assets/partners/insource.jpeg';
+import bequant from '@/assets/partners/bequant.jpg';
+import sumsub from '@/assets/partners/sumsub.svg';
+import chainalysis from '@/assets/partners/chainalysis.svg';
+import b2c2 from '@/assets/partners/b2c2.png';
+import unlimit from '@/assets/partners/unlimit.svg';
+import shFinance from '@/assets/partners/sh-finance.png';
 
 interface Partner {
   name: string;
@@ -16,34 +24,42 @@ const partners: Partner[] = [
   },
   {
     name: 'Scalable Solutions',
+    logo: scalable,
     subtitle: 'Digital asset infrastructure & exchange technology',
   },
   {
     name: 'Insource Contact Center',
+    logo: insource,
     subtitle: 'CX operations & support services',
   },
   {
     name: 'Bequant',
+    logo: bequant,
     subtitle: 'Prime brokerage & trading infrastructure',
   },
   {
     name: 'Sumsub',
+    logo: sumsub,
     subtitle: 'KYC, KYB & AML onboarding platform',
   },
   {
     name: 'Chainalysis',
+    logo: chainalysis,
     subtitle: 'Blockchain analytics & compliance monitoring',
   },
   {
     name: 'B2C2',
+    logo: b2c2,
     subtitle: 'Institutional liquidity provider',
   },
   {
     name: 'Unlimit',
+    logo: unlimit,
     subtitle: 'Cross-border payments & issuing',
   },
   {
     name: 'SH Finance',
+    logo: shFinance,
     subtitle: 'Financial advisory & services',
   },
 ];
