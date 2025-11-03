@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { PageHeader } from '@/components/layout/PageHeader';
 import { CTABackground } from '@/components/ui/CTABackground';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -8,6 +9,7 @@ import { BackgroundAnimations } from '@/components/ui/BackgroundAnimations';
 import { ModernSection, ModernContainer, ModernGrid } from '@/components/ui/ModernSection';
 import { ModernCard, ModernCardContent } from '@/components/ui/ModernCard';
 import { InteractiveSection } from '@/components/ui/InteractiveSection';
+import { scrollAnimations } from '@/utils/scrollAnimations';
 import { 
   Brain, 
   Shield, 
@@ -35,6 +37,12 @@ import { Link } from 'react-router-dom';
 import premiumHeroBg from '@/assets/premium-hero-bg.jpg';
 
 export default function Technology() {
+  useEffect(() => {
+    scrollAnimations.initScrollReveal({ threshold: 0.15, staggerDelay: 150 });
+    scrollAnimations.registerParallax();
+    return () => scrollAnimations.destroy();
+  }, []);
+
   const techStack = [
     {
       icon: Brain,
@@ -191,10 +199,10 @@ export default function Technology() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <InteractiveSection background="gradient" className="min-h-[calc(100vh-80px)] pt-20 flex items-center justify-center">
+      <InteractiveSection background="gradient" className="min-h-[calc(100vh-80px)] pt-20 flex items-center justify-center" data-parallax="0.05">
         <BackgroundAnimations variant="hero" />
         <ModernContainer>
-          <div className="text-center max-w-6xl mx-auto px-4">
+          <div className="text-center max-w-6xl mx-auto px-4" data-animate="section">
             {/* Badge */}
             <Badge 
               variant="outline" 
@@ -235,12 +243,12 @@ export default function Technology() {
       </InteractiveSection>
 
       {/* Technology Stack Overview */}
-      <ModernSection padding="xl">
+      <ModernSection padding="xl" data-parallax="0.1">
         <BackgroundAnimations variant="section" />
         <ModernContainer>
-          <ModernGrid cols={2} gap="xl">
+          <ModernGrid cols={2} gap="xl" data-animate="stagger">
             {techStack.map((tech, index) => (
-              <ModernCard key={index} variant="premium" hover="lift" className="p-10 group relative overflow-hidden">
+              <ModernCard key={index} variant="premium" hover="lift" className="p-10 group relative overflow-hidden" data-stagger-child>
                 <div className="relative z-10">
                   <div className="flex items-start space-x-6 mb-8">
                      <div className="p-4 rounded-xl bg-ak-blue/10 group-hover:bg-ak-blue/20 transition-colors">
@@ -268,10 +276,10 @@ export default function Technology() {
       </ModernSection>
 
       {/* Detailed Technology Sections */}
-      <InteractiveSection background="particles" className="py-20 lg:py-32">
+      <InteractiveSection background="particles" className="py-20 lg:py-32" data-parallax="0.15">
         <BackgroundAnimations variant="subtle" />
         <ModernContainer>
-          <Tabs defaultValue="ai" className="w-full">
+          <Tabs defaultValue="ai" className="w-full" data-animate="section">
             <TabsList className="grid w-full grid-cols-4 mb-16 bg-ak-beige-300/30">
               <TabsTrigger value="ai" className="text-ak-text data-[state=active]:bg-ak-blue data-[state=active]:text-ak-white">AI & Machine Learning</TabsTrigger>
               <TabsTrigger value="blockchain" className="text-ak-text data-[state=active]:bg-ak-blue data-[state=active]:text-ak-white">Blockchain</TabsTrigger>

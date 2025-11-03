@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { PageHeader } from '@/components/layout/PageHeader';
 import { CTABackground } from '@/components/ui/CTABackground';
 import { MouseFollower } from '@/components/ui/MouseFollower';
@@ -11,6 +12,7 @@ import { ModernCard, ModernCardContent } from '@/components/ui/ModernCard';
 import { ModernHero } from '@/components/ui/ModernHero';
 import { InteractiveSection } from '@/components/ui/InteractiveSection';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import { scrollAnimations } from '@/utils/scrollAnimations';
 import { 
   Users, 
   TrendingUp, 
@@ -30,6 +32,12 @@ import { Link } from 'react-router-dom';
 import premiumHeroBg from '@/assets/premium-hero-bg.jpg';
 
 export default function About() {
+  useEffect(() => {
+    scrollAnimations.initScrollReveal({ threshold: 0.15, staggerDelay: 150 });
+    scrollAnimations.registerParallax();
+    return () => scrollAnimations.destroy();
+  }, []);
+
   const values = [
     {
       icon: Target,
@@ -111,7 +119,8 @@ export default function About() {
 
   return (
     <div className="min-h-screen pt-20">
-      <ModernHero
+      <div data-animate="section">
+        <ModernHero
         title="About"
         subtitle="AI KEYS"
         description="We're revolutionizing the global financial ecosystem by merging artificial intelligence with secure, accessible, and versatile digital asset management."
@@ -140,12 +149,13 @@ export default function About() {
           </Button>
         </div>
       </ModernHero>
+      </div>
 
       {/* Vision & Mission */}
-      <ModernSection padding="xl">
+      <ModernSection padding="xl" data-parallax="0.1">
         <ModernContainer>
-          <ModernGrid cols={2} gap="xl">
-            <ModernCard variant="premium" hover="lift" className="p-10">
+          <ModernGrid cols={2} gap="xl" data-animate="stagger">
+            <ModernCard variant="premium" hover="lift" className="p-10" data-stagger-child>
               <div className="flex items-center space-x-4 mb-8">
                 <Eye className="h-10 w-10 text-ak-blue" />
                 <h2 className="text-4xl font-bold text-white">Our Vision</h2>
@@ -157,7 +167,7 @@ export default function About() {
               </p>
             </ModernCard>
 
-            <ModernCard variant="premium" hover="lift" className="p-10">
+            <ModernCard variant="premium" hover="lift" className="p-10" data-stagger-child>
               <div className="flex items-center space-x-4 mb-8">
                 <Target className="h-10 w-10 text-ak-blue" />
                 <h2 className="text-4xl font-bold text-white">Our Mission</h2>
@@ -173,11 +183,11 @@ export default function About() {
       </ModernSection>
 
       {/* Company Values */}
-      <InteractiveSection background="particles" className="py-20 lg:py-32">
+      <InteractiveSection background="particles" className="py-20 lg:py-32" data-parallax="0.15">
         <BackgroundAnimations variant="subtle" />
         <ModernContainer>
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-20">
+            <div className="text-center mb-20" data-animate="section">
               <h2 className="text-5xl md:text-6xl font-black mb-8 tracking-tight text-ak-text">
                 Our <span className="bg-gradient-primary bg-clip-text text-transparent">Core Values</span>
               </h2>
@@ -186,9 +196,9 @@ export default function About() {
               </p>
             </div>
 
-            <ModernGrid cols={2} gap="xl">
+            <ModernGrid cols={2} gap="xl" data-animate="stagger">
               {values.map((value, index) => (
-                <ModernCard key={index} variant="glass" hover="lift" className="p-10 group">
+                <ModernCard key={index} variant="glass" hover="lift" className="p-10 group" data-stagger-child>
                   <div className="flex items-start space-x-6">
                     <div className="p-4 rounded-xl bg-ak-blue/10 group-hover:bg-ak-blue/20 transition-colors">
                       <value.icon className="h-10 w-10 text-ak-blue" />
@@ -206,11 +216,11 @@ export default function About() {
       </InteractiveSection>
 
       {/* Company Timeline */}
-      <ModernSection padding="xl">
+      <ModernSection padding="xl" data-parallax="0.1">
         <BackgroundAnimations variant="section" />
         <ModernContainer>
           <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-20">
+            <div className="text-center mb-20" data-animate="section">
               <h2 className="text-5xl md:text-6xl font-black mb-8 tracking-tight text-white">
                 Our <span className="bg-gradient-primary bg-clip-text text-transparent">Journey</span>
               </h2>
@@ -219,9 +229,9 @@ export default function About() {
               </p>
             </div>
 
-            <div className="space-y-12">
+            <div className="space-y-12" data-animate="stagger">
               {milestones.map((milestone, index) => (
-                <div key={index} className="flex items-start space-x-8 group">
+                <div key={index} className="flex items-start space-x-8 group" data-stagger-child>
                   <div className="flex-shrink-0">
                     <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
                       <Calendar className="h-8 w-8 text-white" />

@@ -12,6 +12,7 @@ import { BackgroundAnimations } from '@/components/ui/BackgroundAnimations';
 import { ModernSection, ModernContainer, ModernGrid } from '@/components/ui/ModernSection';
 import { ModernCard, ModernCardContent } from '@/components/ui/ModernCard';
 import { InteractiveSection } from '@/components/ui/InteractiveSection';
+import { scrollAnimations } from '@/utils/scrollAnimations';
 import { 
   Coins, 
   TrendingUp, 
@@ -54,6 +55,12 @@ export default function Token() {
     totalSupply: 50000000000, // 50B tokens
     circulatingSupply: 36000000000 // 72% circulating based on LP locked data
   });
+
+  useEffect(() => {
+    scrollAnimations.initScrollReveal({ threshold: 0.15, staggerDelay: 150 });
+    scrollAnimations.registerParallax();
+    return () => scrollAnimations.destroy();
+  }, []);
 
   useEffect(() => {
     const fetchRealTokenData = async () => {
@@ -222,7 +229,8 @@ export default function Token() {
 
   return (
     <div className="pt-20">
-      <PageHeader
+      <div data-animate="section">
+        <PageHeader
         title="KEYS"
         subtitle="Token (SPL)"
         description="The native utility token powering the entire KEYS ecosystem. Built on Solana blockchain for fast, secure, and cost-effective transactions with comprehensive utility across all platform services."
@@ -248,24 +256,27 @@ export default function Token() {
           >
             <ExternalLink className="mr-2 h-5 w-5" />
             Trade on Jupiter
-          </Button>
-        </div>
-      </PageHeader>
+            </Button>
+          </div>
+        </PageHeader>
+      </div>
 
       {/* Live Token Data */}
-      <InteractiveSection background="gradient" className="py-20 lg:py-32">
+      <InteractiveSection background="gradient" className="py-20 lg:py-32" data-parallax="0.1">
         <BackgroundAnimations variant="subtle" />
         <ModernContainer>
-          <TokenDisplay />
+          <div data-animate="section">
+            <TokenDisplay />
+          </div>
         </ModernContainer>
       </InteractiveSection>
 
       {/* Token Metrics */}
-      <ModernSection padding="xl">
+      <ModernSection padding="xl" data-parallax="0.1">
         <BackgroundAnimations variant="section" />
         <ModernContainer>
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-20">
+            <div className="text-center mb-20" data-animate="section">
               <h2 className="text-5xl md:text-6xl font-black mb-8 tracking-tight text-black">
                 Token <span className="bg-gradient-primary bg-clip-text text-transparent">Metrics</span>
               </h2>
@@ -274,7 +285,7 @@ export default function Token() {
               </p>
             </div>
 
-            <ModernGrid cols={3} gap="lg">
+            <ModernGrid cols={3} gap="lg" data-animate="stagger">
               {[
                 { 
                   label: 'Total Supply', 
@@ -307,7 +318,7 @@ export default function Token() {
                   color: 'ak-blue'
                 }
               ].map((metric, index) => (
-                <ModernCard key={index} variant="glass" hover="lift" className="text-center p-8 group">
+                <ModernCard key={index} variant="glass" hover="lift" className="text-center p-8 group" data-stagger-child>
                   <metric.icon className="h-12 w-12 mx-auto mb-6 text-ak-blue group-hover:scale-110 transition-transform" />
                   <div className="text-3xl font-black mb-4 bg-gradient-primary bg-clip-text text-transparent">
                     {metric.value}

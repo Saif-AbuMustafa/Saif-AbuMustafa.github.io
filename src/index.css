@@ -2,6 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Premium Scroll-Reveal Animations */
+@layer utilities {
+  .animate-reveal {
+    animation: reveal-up 0.8s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+  }
+
+  @keyframes reveal-up {
+    from {
+      opacity: 0;
+      transform: translateY(35px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Parallax layers */
+  [data-parallax] {
+    transition: transform 0.05s linear;
+  }
+
+  /* Accessibility: Respect reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-reveal,
+    [data-parallax] {
+      animation: none !important;
+      transition: none !important;
+      transform: none !important;
+      opacity: 1 !important;
+    }
+  }
+}
+
 /* Import animations */
 @import './styles/animations.css';
 

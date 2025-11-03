@@ -7,40 +7,46 @@ import { FAQ } from '@/components/FAQ';
 import { WaitlistCTA } from '@/components/sections/WaitlistCTA';
 import { WaitlistStats } from '@/components/WaitlistStats';
 import { Navigation } from '@/components/layout/Navigation';
+import { scrollAnimations } from '@/utils/scrollAnimations';
 
 export default function Home() {
   useEffect(() => {
-    // Initialize IntersectionObserver for fade-up animations
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      },
-      { threshold: 0.1, rootMargin: '0px 0px -100px 0px' }
-    );
-
-    // Observe all fade-up elements
-    const elements = document.querySelectorAll('.fade-up');
-    elements.forEach((el) => observer.observe(el));
+    // Initialize premium scroll animations
+    scrollAnimations.initScrollReveal({
+      threshold: 0.15,
+      staggerDelay: 150,
+    });
+    scrollAnimations.registerParallax();
 
     return () => {
-      elements.forEach((el) => observer.unobserve(el));
+      scrollAnimations.destroy();
     };
   }, []);
 
   return (
     <div className="min-h-screen">
       <Navigation />
-      <HeroSection />
-      <WaitlistStats />
-      <Solutions />
-      <HowItWorks />
-      <Security />
-      <FAQ />
-      <WaitlistCTA />
+      <div data-animate="section">
+        <HeroSection />
+      </div>
+      <div data-animate="section" data-delay="200">
+        <WaitlistStats />
+      </div>
+      <div data-animate="section">
+        <Solutions />
+      </div>
+      <div data-animate="section">
+        <HowItWorks />
+      </div>
+      <div data-animate="section">
+        <Security />
+      </div>
+      <div data-animate="section">
+        <FAQ />
+      </div>
+      <div data-animate="section">
+        <WaitlistCTA />
+      </div>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-
+import { useEffect } from 'react';
 import { PageHeader } from '@/components/layout/PageHeader';
 import { CTABackground } from '@/components/ui/CTABackground';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -8,6 +8,7 @@ import { BackgroundAnimations } from '@/components/ui/BackgroundAnimations';
 import { ModernSection, ModernContainer, ModernGrid } from '@/components/ui/ModernSection';
 import { ModernCard, ModernCardContent } from '@/components/ui/ModernCard';
 import { InteractiveSection } from '@/components/ui/InteractiveSection';
+import { scrollAnimations } from '@/utils/scrollAnimations';
 import { 
   Wallet, 
   Plane, 
@@ -30,6 +31,12 @@ import premiumHeroBg from '@/assets/premium-hero-bg.jpg';
 import { cn } from '@/lib/utils';
 
 export default function Services() {
+  useEffect(() => {
+    scrollAnimations.initScrollReveal({ threshold: 0.15, staggerDelay: 150 });
+    scrollAnimations.registerParallax();
+    return () => scrollAnimations.destroy();
+  }, []);
+
   const services = [
     {
       icon: Wallet,
@@ -131,10 +138,10 @@ export default function Services() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <InteractiveSection background="gradient" className="py-20">
+      <InteractiveSection background="gradient" className="py-20" data-parallax="0.05">
         <BackgroundAnimations variant="hero" />
         <ModernContainer>
-          <div className="text-center max-w-6xl mx-auto py-20">
+          <div className="text-center max-w-6xl mx-auto py-20" data-animate="section">
             {/* Badge */}
             <Badge 
               variant="outline" 
@@ -177,16 +184,17 @@ export default function Services() {
       </InteractiveSection>
 
       {/* Services Grid */}
-      <InteractiveSection background="gradient" className="py-20 lg:py-32">
+      <InteractiveSection background="gradient" className="py-20 lg:py-32" data-parallax="0.1">
         <BackgroundAnimations variant="section" />
         <ModernContainer>
-          <ModernGrid cols={2} gap="xl">
+          <ModernGrid cols={2} gap="xl" data-animate="stagger">
             {services.map((service, index) => (
               <ModernCard 
                 key={index}
                 variant="premium" 
                 hover="lift"
                 className="group relative overflow-hidden"
+                data-stagger-child
               >
                 {/* Status Badge */}
                 <Badge 
