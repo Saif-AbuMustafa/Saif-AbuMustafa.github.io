@@ -83,7 +83,7 @@ export const PartnerGallery = () => {
     <section
       ref={sectionRef}
       className={cn(
-        'relative py-20 overflow-hidden transition-all duration-1000 ease-out',
+        'relative py-20 overflow-hidden transition-all duration-1000 ease-out bg-transparent',
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       )}
       style={{ willChange: 'transform, opacity' }}
