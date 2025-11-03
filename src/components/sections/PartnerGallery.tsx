@@ -187,16 +187,16 @@ export const PartnerGallery = () => {
 
       <style>{`
         @keyframes ticker-scroll {
-          0% {
+          from {
             transform: translateX(0);
           }
-          100% {
-            transform: translateX(calc(-100% / 3));
+          to {
+            transform: translateX(calc(-33.333%));
           }
         }
 
         .animate-ticker-scroll {
-          animation: ticker-scroll 30s linear infinite;
+          animation: ticker-scroll 20s linear infinite;
         }
 
         @media (prefers-reduced-motion: reduce) {

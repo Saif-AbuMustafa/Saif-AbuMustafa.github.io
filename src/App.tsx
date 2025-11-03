@@ -23,6 +23,7 @@ import Token from "./pages/Token";
 import Contact from "./pages/Contact";
 import Careers from "./pages/Careers";
 import Investors from "./pages/Investors";
+import ProcessLogos from "./pages/ProcessLogos";
 import WalletDocs from "./pages/Resources/WalletDocs";
 import TravelDocs from "./pages/Resources/TravelDocs";
 import LogisticsDocs from "./pages/Resources/LogisticsDocs";
@@ -84,6 +85,7 @@ const AppContent = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/investors" element={<Investors />} />
+          <Route path="/process-logos" element={<ProcessLogos />} />
           <Route path="/resources/docs" element={<Documentation />} />
           <Route path="/resources/api" element={<ApiReference />} />
           <Route path="/resources/wallet" element={<WalletDocs />} />
