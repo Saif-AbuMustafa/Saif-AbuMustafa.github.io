@@ -200,16 +200,6 @@ export const Navigation = () => {
             >
               {t('waitlist.joinWaitlist')}
             </Button>
-            
-            <Button 
-              asChild
-              className="inline-flex bg-ak-blue hover:bg-ak-blue/90 text-white border-0 shadow-lg"
-            >
-              <a href="https://keys-pay.com" target="_blank" rel="noopener noreferrer">
-                <Wallet className="h-4 w-4 mr-2" />
-                {t('common.getStarted')}
-              </a>
-            </Button>
 
             {/* Mobile Menu */}
             <Sheet open={isMobileOpen} onOpenChange={setIsMobileOpen}>
@@ -292,17 +282,6 @@ export const Navigation = () => {
                     className="mt-6 w-full min-h-[48px]"
                   >
                     {t('waitlist.joinWaitlist')}
-                  </Button>
-                  
-                  <Button 
-                    asChild
-                    size="lg"
-                    className="mt-3 w-full min-h-[48px]"
-                  >
-                    <a href="https://keys-pay.com" target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileOpen(false)}>
-                      <Wallet className="h-5 w-5 mr-2" />
-                      {t('common.getStarted')}
-                    </a>
                   </Button>
                 </div>
               </SheetContent>
