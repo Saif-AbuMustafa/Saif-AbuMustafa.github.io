@@ -136,10 +136,10 @@ export const PartnerGallery = () => {
       <div className="container mx-auto px-4 relative z-20">
         {/* Header */}
         <div className="text-center mb-16 space-y-3">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-gray-900">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
             Trusted Partners & Ecosystem Providers
           </h2>
-          <p className="text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             We work with global leaders in security, compliance, and digital asset infrastructure to ensure a safe, scalable, and compliant user experience.
           </p>
         </div>
@@ -161,8 +161,8 @@ export const PartnerGallery = () => {
           onTouchEnd={handleDragEnd}
         >
           {/* Gradient fades */}
-          <div className="absolute left-0 top-0 bottom-0 w-24 md:w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-24 md:w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-24 md:w-32 bg-gradient-to-r from-primary/5 to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-24 md:w-32 bg-gradient-to-l from-primary/5 to-transparent z-10 pointer-events-none" />
 
           <div
             ref={trackRef}
