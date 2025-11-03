@@ -91,10 +91,10 @@ export const PartnerGallery = () => {
       <div className="container mx-auto px-4 relative z-20">
         {/* Header */}
         <div className="text-center mb-16 space-y-3">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-gray-900">
             Trusted Partners & Ecosystem Providers
           </h2>
-          <p className="text-foreground/70 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-gray-600 max-w-3xl mx-auto leading-relaxed">
             We work with global leaders in security, compliance, and digital asset infrastructure to ensure a safe, scalable, and compliant user experience.
           </p>
         </div>
@@ -194,7 +194,7 @@ const PartnerCard = ({ partner }: PartnerCardProps) => {
               <div
                 className={cn(
                   'text-lg font-bold tracking-tight transition-all duration-500',
-                  'text-foreground/50 group-hover:text-foreground'
+                  'text-gray-500 group-hover:text-gray-900'
                 )}
               >
                 {partner.name}
@@ -207,8 +207,8 @@ const PartnerCard = ({ partner }: PartnerCardProps) => {
         <p
           className={cn(
             'text-center text-xs leading-relaxed transition-all duration-300',
-            'text-foreground/60',
-            'group-hover:text-foreground'
+            'text-gray-500',
+            'group-hover:text-gray-900'
           )}
         >
           {partner.subtitle}
