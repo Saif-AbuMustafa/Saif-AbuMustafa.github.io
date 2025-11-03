@@ -88,7 +88,7 @@ export const PartnerGallery = () => {
       )}
       style={{ willChange: 'transform, opacity' }}
     >
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 relative z-20">
         {/* Header */}
         <div className="text-center mb-16 space-y-3">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
@@ -102,12 +102,12 @@ export const PartnerGallery = () => {
         {/* Ticker track transparent */}
         <div className="relative overflow-hidden">
           {/* Gradient fades */}
-          <div className="absolute left-0 top-0 bottom-0 w-24 md:w-32 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-24 md:w-32 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-24 md:w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-24 md:w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
 
           <div
             ref={trackRef}
-            className="relative py-12"
+            className="relative py-12 z-0"
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
           >
