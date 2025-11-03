@@ -2,7 +2,13 @@ import { useEffect, useRef, useState } from 'react';
 import { cn } from '@/lib/utils';
 import arabBank from '@/assets/partners/arab-bank.svg';
 
-const partners = [
+interface Partner {
+  name: string;
+  logo?: string;
+  subtitle: string;
+}
+
+const partners: Partner[] = [
   {
     name: 'Arab Bank (Switzerland) Ltd',
     logo: arabBank,
@@ -10,42 +16,34 @@ const partners = [
   },
   {
     name: 'Scalable Solutions',
-    logo: '',
     subtitle: 'Digital asset infrastructure & exchange technology',
   },
   {
     name: 'Insource Contact Center',
-    logo: '',
     subtitle: 'CX operations & support services',
   },
   {
     name: 'Bequant',
-    logo: '',
     subtitle: 'Prime brokerage & trading infrastructure',
   },
   {
     name: 'Sumsub',
-    logo: '',
     subtitle: 'KYC, KYB & AML onboarding platform',
   },
   {
     name: 'Chainalysis',
-    logo: '',
     subtitle: 'Blockchain analytics & compliance monitoring',
   },
   {
     name: 'B2C2',
-    logo: '',
     subtitle: 'Institutional liquidity provider',
   },
   {
     name: 'Unlimit',
-    logo: '',
     subtitle: 'Cross-border payments & issuing',
   },
   {
     name: 'SH Finance',
-    logo: '',
     subtitle: 'Financial advisory & services',
   },
 ];
@@ -53,10 +51,10 @@ const partners = [
 export const PartnerGallery = () => {
   const [isPaused, setIsPaused] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
-  const scrollerRef = useRef<HTMLDivElement>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
 
-  // Scroll reveal animation
+  // Scroll reveal
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -64,7 +62,7 @@ export const PartnerGallery = () => {
           setIsVisible(true);
         }
       },
-      { threshold: 0.15 }
+      { threshold: 0.15, rootMargin: '0px 0px -50px 0px' }
     );
 
     if (sectionRef.current) {
@@ -78,78 +76,53 @@ export const PartnerGallery = () => {
     };
   }, []);
 
-  // Duplicate items for infinite scroll
-  const duplicatedPartners = [...partners, ...partners, ...partners];
+  // Triple the partners for seamless infinite scroll
+  const triplePartners = [...partners, ...partners, ...partners];
 
   return (
     <section
       ref={sectionRef}
       className={cn(
-        'relative py-24 overflow-hidden transition-all duration-1000',
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
+        'relative py-20 overflow-hidden transition-all duration-1000 ease-out',
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       )}
       style={{ willChange: 'transform, opacity' }}
     >
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/20 to-background" />
-
-      <div className="container relative z-10 mx-auto px-4">
-        {/* Section header */}
-        <div className="text-center mb-16 space-y-4">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight">
+      <div className="container mx-auto px-4">
+        {/* Header */}
+        <div className="text-center mb-16 space-y-3">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
             Trusted Partners & Ecosystem Providers
           </h2>
-          <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
+          <p className="text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             We work with global leaders in security, compliance, and digital asset infrastructure to ensure a safe, scalable, and compliant user experience.
           </p>
         </div>
 
-        {/* Infinite ticker container */}
-        <div className="relative">
-          {/* Gradient masks for fade effect */}
-          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
+        {/* Ticker track with shadow */}
+        <div className="relative bg-background rounded-2xl shadow-lg border border-border/50 overflow-hidden">
+          {/* Gradient fades */}
+          <div className="absolute left-0 top-0 bottom-0 w-24 md:w-32 bg-gradient-to-r from-background via-background/80 to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-24 md:w-32 bg-gradient-to-l from-background via-background/80 to-transparent z-10 pointer-events-none" />
 
           <div
-            ref={scrollerRef}
-            className="overflow-hidden"
+            ref={trackRef}
+            className="relative py-12"
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
           >
             <div
               className={cn(
-                'flex gap-16 py-8',
-                !isPaused && 'animate-infinite-scroll'
+                'flex items-center gap-20',
+                !isPaused && 'animate-ticker-scroll'
               )}
               style={{
                 animationPlayState: isPaused ? 'paused' : 'running',
+                willChange: 'transform',
               }}
             >
-              {duplicatedPartners.map((partner, index) => (
-                <div
-                  key={`${partner.name}-${index}`}
-                  className="flex-shrink-0 w-48 group"
-                >
-                  <div className="relative h-24 flex items-center justify-center transition-all duration-500 ease-out group-hover:scale-110">
-                    {partner.logo ? (
-                      <img
-                        src={partner.logo}
-                        alt={partner.name}
-                        className="max-w-full max-h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-500 dark:brightness-0 dark:invert dark:group-hover:brightness-100 dark:group-hover:invert-0"
-                        loading="lazy"
-                      />
-                    ) : (
-                      <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-muted to-muted/50 rounded-lg border border-border/50 group-hover:border-primary/50 transition-all duration-500">
-                        <span className="text-sm font-semibold text-foreground/70 group-hover:text-foreground transition-colors duration-300 px-4 text-center">
-                          {partner.name}
-                        </span>
-                      </div>
-                    )}
-                  </div>
-                  <p className="text-center text-xs text-muted-foreground mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    {partner.subtitle}
-                  </p>
-                </div>
+              {triplePartners.map((partner, index) => (
+                <PartnerCard key={`${partner.name}-${index}`} partner={partner} />
               ))}
             </div>
           </div>
@@ -157,25 +130,90 @@ export const PartnerGallery = () => {
       </div>
 
       <style>{`
-        @keyframes infinite-scroll {
+        @keyframes ticker-scroll {
           0% {
             transform: translateX(0);
           }
           100% {
-            transform: translateX(-33.333%);
+            transform: translateX(calc(-100% / 3));
           }
         }
 
-        .animate-infinite-scroll {
-          animation: infinite-scroll 40s linear infinite;
+        .animate-ticker-scroll {
+          animation: ticker-scroll 30s linear infinite;
         }
 
         @media (prefers-reduced-motion: reduce) {
-          .animate-infinite-scroll {
-            animation: none;
+          .animate-ticker-scroll {
+            animation-duration: 60s;
           }
         }
       `}</style>
     </section>
+  );
+};
+
+interface PartnerCardProps {
+  partner: Partner;
+}
+
+const PartnerCard = ({ partner }: PartnerCardProps) => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <div
+      className="flex-shrink-0 w-56 group cursor-pointer"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <div className="relative">
+        {/* Logo container with spotlight effect */}
+        <div
+          className={cn(
+            'h-20 flex items-center justify-center mb-3 transition-all duration-500 ease-out',
+            'transform-gpu',
+            isHovered ? 'scale-110' : 'scale-100'
+          )}
+          style={{ willChange: 'transform' }}
+        >
+          {partner.logo ? (
+            <img
+              src={partner.logo}
+              alt={partner.name}
+              className={cn(
+                'max-h-16 w-auto object-contain transition-all duration-500',
+                'grayscale opacity-60',
+                'group-hover:grayscale-0 group-hover:opacity-100',
+                'dark:brightness-0 dark:invert',
+                'dark:group-hover:brightness-100 dark:group-hover:invert-0'
+              )}
+              loading="lazy"
+            />
+          ) : (
+            <div className="text-center px-4">
+              <div
+                className={cn(
+                  'text-lg font-bold tracking-tight transition-all duration-500',
+                  'text-foreground/50 group-hover:text-foreground'
+                )}
+              >
+                {partner.name}
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* Subtitle */}
+        <p
+          className={cn(
+            'text-center text-xs leading-relaxed transition-all duration-300',
+            'text-muted-foreground/60',
+            'group-hover:text-muted-foreground'
+          )}
+        >
+          {partner.subtitle}
+        </p>
+      </div>
+    </div>
   );
 };
