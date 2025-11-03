@@ -238,10 +238,8 @@ const PartnerCard = ({ partner }: PartnerCardProps) => {
               alt={partner.name}
               className={cn(
                 'max-h-16 w-auto object-contain transition-all duration-500',
-                'grayscale opacity-60',
-                'group-hover:grayscale-0 group-hover:opacity-100',
-                'dark:brightness-0 dark:invert',
-                'dark:group-hover:brightness-100 dark:group-hover:invert-0'
+                'opacity-90 group-hover:opacity-100',
+                'filter brightness-90 group-hover:brightness-100'
               )}
               loading="lazy"
             />
