@@ -128,7 +128,7 @@ export const PartnerGallery = () => {
     <section
       ref={sectionRef}
       className={cn(
-        'relative py-20 overflow-hidden transition-all duration-1000 ease-out bg-primary/5',
+        'relative py-20 overflow-hidden transition-all duration-1000 ease-out',
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       )}
       style={{ willChange: 'transform, opacity' }}
@@ -160,9 +160,9 @@ export const PartnerGallery = () => {
           onTouchMove={handleDragMove}
           onTouchEnd={handleDragEnd}
         >
-          {/* Gradient fades */}
-          <div className="absolute left-0 top-0 bottom-0 w-24 md:w-32 bg-gradient-to-r from-primary/5 to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-24 md:w-32 bg-gradient-to-l from-primary/5 to-transparent z-10 pointer-events-none" />
+          {/* Gradient fades removed for clean look */}
+          <div className="absolute left-0 top-0 bottom-0 w-24 md:w-32 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-24 md:w-32 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
 
           <div
             ref={trackRef}

@@ -189,8 +189,8 @@ All colors MUST be HSL.
     --shadow-large: 0 10px 40px -10px rgba(0, 0, 0, 0.15), 0 2px 20px 0 rgba(0, 0, 0, 0.05);
 
     /* Theme Mappings */
-    --background: var(--ak-blue);
-    --foreground: var(--ak-white);
+    --background: var(--ak-white);
+    --foreground: var(--ak-text);
 
     --card: var(--ak-beige-50);
     --card-foreground: var(--ak-text);
