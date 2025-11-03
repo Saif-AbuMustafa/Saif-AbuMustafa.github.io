@@ -94,16 +94,16 @@ export const PartnerGallery = () => {
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
             Trusted Partners & Ecosystem Providers
           </h2>
-          <p className="text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-foreground/70 max-w-3xl mx-auto leading-relaxed">
             We work with global leaders in security, compliance, and digital asset infrastructure to ensure a safe, scalable, and compliant user experience.
           </p>
         </div>
 
-        {/* Ticker track with shadow */}
-        <div className="relative bg-background rounded-2xl shadow-lg border border-border/50 overflow-hidden">
+        {/* Ticker track transparent */}
+        <div className="relative overflow-hidden">
           {/* Gradient fades */}
-          <div className="absolute left-0 top-0 bottom-0 w-24 md:w-32 bg-gradient-to-r from-background via-background/80 to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-24 md:w-32 bg-gradient-to-l from-background via-background/80 to-transparent z-10 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-24 md:w-32 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-24 md:w-32 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
 
           <div
             ref={trackRef}
@@ -207,8 +207,8 @@ const PartnerCard = ({ partner }: PartnerCardProps) => {
         <p
           className={cn(
             'text-center text-xs leading-relaxed transition-all duration-300',
-            'text-muted-foreground/60',
-            'group-hover:text-muted-foreground'
+            'text-foreground/60',
+            'group-hover:text-foreground'
           )}
         >
           {partner.subtitle}
