@@ -128,7 +128,7 @@ export const PartnerGallery = () => {
     <section
       ref={sectionRef}
       className={cn(
-        'relative py-20 overflow-hidden transition-all duration-1000 ease-out bg-background',
+        'relative py-20 overflow-hidden transition-all duration-1000 ease-out bg-[hsl(var(--ak-white))] dark:bg-[hsl(var(--ak-white))]',
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       )}
       style={{ willChange: 'transform, opacity' }}
@@ -136,7 +136,7 @@ export const PartnerGallery = () => {
       <div className="container mx-auto px-4 relative z-20">
         {/* Header */}
         <div className="text-center mb-16 space-y-3">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[hsl(var(--ak-text))]">
             Trusted Partners & Ecosystem Providers
           </h2>
           <p className="text-muted-foreground max-w-3xl mx-auto leading-relaxed">
@@ -160,9 +160,9 @@ export const PartnerGallery = () => {
           onTouchMove={handleDragMove}
           onTouchEnd={handleDragEnd}
         >
-          {/* Gradient fades removed for clean look */}
-          <div className="absolute left-0 top-0 bottom-0 w-24 md:w-32 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-24 md:w-32 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
+          {/* Gradient fades tuned to match light background */}
+          <div className="absolute left-0 top-0 bottom-0 w-24 md:w-32 bg-gradient-to-r from-[hsl(var(--ak-white))] to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-24 md:w-32 bg-gradient-to-l from-[hsl(var(--ak-white))] to-transparent z-10 pointer-events-none" />
 
           <div
             ref={trackRef}
