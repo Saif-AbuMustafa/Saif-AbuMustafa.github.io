@@ -139,7 +139,7 @@ export const PartnerGallery = () => {
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[hsl(var(--ak-text))]">
             Trusted Partners & Ecosystem Providers
           </h2>
-          <p className="text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-[hsl(var(--ak-text))]/80 max-w-3xl mx-auto leading-relaxed">
             We work with global leaders in security, compliance, and digital asset infrastructure to ensure a safe, scalable, and compliant user experience.
           </p>
         </div>
