@@ -154,8 +154,7 @@ export const PartnerGallery = () => {
           >
             <div
               className={cn(
-                'flex items-center gap-20',
-                !isPaused && !isDragging && 'animate-ticker-scroll'
+                'flex items-center gap-20 animate-ticker-scroll'
               )}
               style={{
                 animationPlayState: isPaused || isDragging ? 'paused' : 'running',
