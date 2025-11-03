@@ -105,21 +105,22 @@ export const Navigation = () => {
   return (
     <header 
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out",
         isScrolled 
-          ? 'bg-white/95 backdrop-blur-xl shadow-sm border-b border-gray-200' 
-          : 'bg-white/90 backdrop-blur-md border-b border-gray-100'
+          ? 'bg-white/98 backdrop-blur-xl shadow-lg border-b border-ak-beige-200' 
+          : 'bg-white/95 backdrop-blur-lg border-b border-ak-beige-100 shadow-md'
       )}
     >
-      <div className="container mx-auto px-4 max-w-7xl">
-        <div className="flex items-center justify-between h-16">
+      <div className="container mx-auto px-6 lg:px-8 max-w-7xl">
+        <div className="flex items-center justify-between h-20 lg:h-24">
           {/* Logo */}
           <Link to="/" className="flex items-center group">
             <img 
               src={logo} 
               alt="AI KEYS Company Logo - Navigate to homepage" 
-              className="h-12 w-auto transition-transform group-hover:scale-105"
+              className="h-14 lg:h-16 w-auto object-contain transition-all duration-300 group-hover:scale-105"
               loading="eager"
+              style={{ maxWidth: '220px' }}
             />
           </Link>
 
@@ -189,7 +190,7 @@ export const Navigation = () => {
           </NavigationMenu>
 
           {/* Right side */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center gap-3 lg:gap-4">
             <LanguageSwitcher />
             
             <Button 
