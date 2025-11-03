@@ -35,7 +35,7 @@ import {
   ChevronRight
 } from 'lucide-react';
 
-import logo from '@/assets/keys-favicon.png';
+import logo from '@/assets/ai-keys-full-logo.png';
 
 import { cn } from '@/lib/utils';
 
@@ -114,20 +114,13 @@ export const Navigation = () => {
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3 group">
-            <div className="relative">
-              <img 
-                src={logo} 
-                alt="AI KEYS Company Logo - Navigate to homepage" 
-                className="h-10 w-10 transition-transform group-hover:scale-105"
-                loading="eager"
-              />
-            </div>
-            <div className="flex flex-col">
-              <span className="text-xl font-bold text-gray-900">
-                AI KEYS
-              </span>
-            </div>
+          <Link to="/" className="flex items-center group">
+            <img 
+              src={logo} 
+              alt="AI KEYS Company Logo - Navigate to homepage" 
+              className="h-12 w-auto transition-transform group-hover:scale-105"
+              loading="eager"
+            />
           </Link>
 
           {/* Desktop Navigation */}
