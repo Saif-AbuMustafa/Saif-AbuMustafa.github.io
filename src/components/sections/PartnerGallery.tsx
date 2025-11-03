@@ -3,7 +3,7 @@ import { cn } from '@/lib/utils';
 import arabBank from '@/assets/partners/arab-bank.png';
 import scalable from '@/assets/partners/scalable.svg';
 import insource from '@/assets/partners/insource.jpeg';
-import bequant from '@/assets/partners/bequant.jpg';
+import bequant from '@/assets/partners/bequant.png';
 import sumsub from '@/assets/partners/sumsub.svg';
 import chainalysis from '@/assets/partners/chainalysis.svg';
 import b2c2 from '@/assets/partners/b2c2.png';
