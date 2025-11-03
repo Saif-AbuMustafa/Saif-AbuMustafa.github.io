@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { cn } from '@/lib/utils';
-import arabBank from '@/assets/partners/arab-bank.svg';
+import arabBank from '@/assets/partners/arab-bank.png';
 import scalable from '@/assets/partners/scalable.svg';
 import insource from '@/assets/partners/insource.jpeg';
 import bequant from '@/assets/partners/bequant.jpg';
