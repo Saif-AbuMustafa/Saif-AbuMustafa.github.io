@@ -35,7 +35,7 @@ const partners: Partner[] = [
   {
     name: 'Bequant',
     logo: bequant,
-    subtitle: 'Prime brokerage & trading infrastructure',
+    subtitle: 'Digital asset custody & safekeeping',
   },
   {
     name: 'Sumsub',
