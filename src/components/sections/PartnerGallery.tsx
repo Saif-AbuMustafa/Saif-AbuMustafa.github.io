@@ -51,7 +51,11 @@ const partners: Partner[] = [
 export const PartnerGallery = () => {
   const [isPaused, setIsPaused] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
   const trackRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
 
   // Scroll reveal
@@ -75,6 +79,31 @@ export const PartnerGallery = () => {
       }
     };
   }, []);
+
+  // Handle mouse/touch drag
+  const handleDragStart = (e: React.MouseEvent | React.TouchEvent) => {
+    setIsDragging(true);
+    setIsPaused(true);
+    const pageX = 'touches' in e ? e.touches[0].pageX : e.pageX;
+    setStartX(pageX - (containerRef.current?.offsetLeft || 0));
+    setScrollLeft(containerRef.current?.scrollLeft || 0);
+  };
+
+  const handleDragMove = (e: React.MouseEvent | React.TouchEvent) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const pageX = 'touches' in e ? e.touches[0].pageX : e.pageX;
+    const x = pageX - (containerRef.current?.offsetLeft || 0);
+    const walk = (x - startX) * 2;
+    if (containerRef.current) {
+      containerRef.current.scrollLeft = scrollLeft - walk;
+    }
+  };
+
+  const handleDragEnd = () => {
+    setIsDragging(false);
+    setIsPaused(false);
+  };
 
   // Triple the partners for seamless infinite scroll
   const triplePartners = [...partners, ...partners, ...partners];
@@ -100,7 +129,21 @@ export const PartnerGallery = () => {
         </div>
 
         {/* Ticker track transparent */}
-        <div className="relative overflow-hidden">
+        <div 
+          ref={containerRef}
+          className="relative overflow-hidden cursor-grab active:cursor-grabbing"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => {
+            if (!isDragging) setIsPaused(false);
+            handleDragEnd();
+          }}
+          onMouseDown={handleDragStart}
+          onMouseMove={handleDragMove}
+          onMouseUp={handleDragEnd}
+          onTouchStart={handleDragStart}
+          onTouchMove={handleDragMove}
+          onTouchEnd={handleDragEnd}
+        >
           {/* Gradient fades */}
           <div className="absolute left-0 top-0 bottom-0 w-24 md:w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
           <div className="absolute right-0 top-0 bottom-0 w-24 md:w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
@@ -108,16 +151,14 @@ export const PartnerGallery = () => {
           <div
             ref={trackRef}
             className="relative py-12 z-0"
-            onMouseEnter={() => setIsPaused(true)}
-            onMouseLeave={() => setIsPaused(false)}
           >
             <div
               className={cn(
                 'flex items-center gap-20',
-                !isPaused && 'animate-ticker-scroll'
+                !isPaused && !isDragging && 'animate-ticker-scroll'
               )}
               style={{
-                animationPlayState: isPaused ? 'paused' : 'running',
+                animationPlayState: isPaused || isDragging ? 'paused' : 'running',
                 willChange: 'transform',
               }}
             >
