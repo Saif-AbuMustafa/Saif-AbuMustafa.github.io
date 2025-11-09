@@ -39,9 +39,9 @@ export default function Home() {
       <div data-animate="section">
         <HowItWorks />
       </div>
-      <div data-animate="section">
+      {/* <div data-animate="section">
         <PartnerGallery />
-      </div>
+      </div> */}
       <div data-animate="section">
         <Security />
       </div>
